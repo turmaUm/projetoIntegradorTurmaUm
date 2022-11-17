@@ -29,8 +29,6 @@ nav img {
     padding-bottom: 0px;
 }
 
-
-
 nav a {
     /* background-color: purple; */
     display: inline-block;
@@ -68,7 +66,7 @@ section {
     background-color:#EFF2F6;
     max-height: 800px;
 }
-.container{
+.container-part{
     /* background-color: blue; */
     width: 490px;
     height:80px;
@@ -78,7 +76,7 @@ section {
     top:45px;
     
 }
-.container h3{
+.container-part h3{
     /* background-color: yellow; */
     line-height: 44px;
     font-size: 32px;
