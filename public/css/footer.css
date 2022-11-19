@@ -6,12 +6,6 @@
     font-family: 'Public Sans', sans-serif;
     
 }
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-}
 
 .container-total{
     background-color:#EFF2F6;
