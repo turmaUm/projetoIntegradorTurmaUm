@@ -1,0 +1,29 @@
+.corpoCliente {
+    display: inline-block;
+    background-color: red;
+    width: 100%;    
+}
+
+.centroPessoal {
+    background-color: orange;
+    display: inline-block;
+}
+
+.perfilEPedidos {
+    background-color: purple;
+}
+
+#perfil {
+    background-color: orange;
+    width: 50%;
+}
+
+#pedidos {
+    background-color: orange;
+    width: 50%;
+}
+
+.servicoEDesejo{
+    display: inline-block;
+    background-color: orange;
+}
