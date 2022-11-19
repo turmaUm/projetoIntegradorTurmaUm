@@ -1,0 +1,107 @@
+#logo {
+    display: flex;
+    position: relative;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    /* padding: 3px; */
+}
+
+#logo2 img {
+    width: 30px;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#carrinho {
+    /* background-color: pink; */
+    position: relative;
+    padding: 3px;
+    height: 30px;
+}
+
+#carrinho img {
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+#carrinho span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: orange;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.menu {
+    display: flex;
+    height: 85px;
+    line-height: 85px;
+    /* text-align: center; */
+    /* background-color: purple; */
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+nav a {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 85px;
+    color: black;
+    /* background-color: orange; */
+}
+
+.pesquisar {
+    display: flex;
+    justify-content: right;
+    height: 30px;
+    /* margin-left: auto; */
+    /* border: 2px solid black; */
+}
+
+
+header button {
+    height: 30px;
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+
+header input {
+    height: 25px;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerHeader {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    /* background-color: rgb(227, 227, 227); */
+    background-color: black;
+    color: white;
+    justify-content:right;
+    justify-content: space-between;
+    height: 38px;
+}
+
+.containerHeader a {
+    color: white;
+    justify-content: right;
+}
