@@ -1,0 +1,26 @@
+.containerPromocao {
+    width: 60%;
+    height: 20%;
+    display: block;
+    /*border: 3px solid red;*/
+    margin-top: 0.5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promocao > a > img {
+    width: 100%;
+    height: 90%;
+    display: inline;
+}
+
+.escrita {
+    height: 10%;
+    width: 100%;
+    display: inline-block;
+    /*border: 3px solid green;*/
+    margin-bottom: 1%;
+    margin-top: 0.5%;
+}
+
