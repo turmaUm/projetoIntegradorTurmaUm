@@ -5,8 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../public/css/login.css">
 </head>
 <body>
+    <section id="paginaLogin">
+
+        <article class="login">
+            <h1 class="tituloLogin">LOGIN</h1>
+            <p>Login com seu e-mail</p>
+            <label for="email"></label>
+            <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+            <br>
+            <label for="senha"></label>
+            <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
+            <br>
+            <input type="checkbox" name="lembrar" id="lembrar">
+            <label for="lembrar">Lembrar de mim</label>
+            
+            <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
+            <br><br>
+            <input class="btEnviar" type="submit" name="enviar" id="envair" placeholder="ENVIAR">
+        </article>
     
+        <article class="cadastro">
+            <h1 class="tituloCadastro">CADASTRE-SE</Cadastre-se></h1>
+            <p>Cadastre-se com seu e-mail e senha</p>
+            <label for="nomeCadastro"></label>
+            <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo">
+            <br>
+            <label for="emailCadastro"></label>
+            <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail">
+            <br>
+            <label for="senhaCadastro"></label>
+            <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha">
+            <br>
+            <label for="confirmeSenha"></label>
+            <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
+            <br><br>
+            <input class="btEnviar" type="submit" name="enviarCadastro" id="enviarCadastro">
+        </article>
+    
+    </section>
 </body>
 </html>

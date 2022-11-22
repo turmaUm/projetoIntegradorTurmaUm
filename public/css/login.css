@@ -1,0 +1,68 @@
+header {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+    border: solid 2px black;
+    background-color: black;
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+    border: solid 2px black;
+    background-color: black;
+}
+
+p {
+    color: grey;
+}
+
+#paginaLogin {
+    font-family: 'Times New Roman', Times, serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(219, 219, 219);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+}
+
+.login{
+    box-sizing: border-box;
+    max-width: 450px;
+    max-height: 480px;
+    background-color: white;
+    padding: 50px;
+    margin: 100px;
+}
+
+.cadastro {
+    box-sizing: border-box;
+    max-width: 450px;
+    max-height: 450px;
+    background-color: white;
+    padding: 50px;
+    margin: 100px;
+}
+
+.estiloBotao {
+    color: grey;
+    width: 300px;
+    height: 25px;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid grey;
+}
+
+.btEnviar{
+    background-color: black;
+    font-size: 15px;
+    color: azure;
+    margin: 5px;
+    padding: 10px;
+    width: 260px;
+}
