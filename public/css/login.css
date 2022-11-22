@@ -1,22 +1,5 @@
-header {
-    text-align: center;
-    font-size: 30px;
-    padding: 10px;
-    color: white;
-    border: solid 2px black;
-    background-color: black;
-}
 
-footer {
-    text-align: center;
-    font-size: 30px;
-    padding: 10px;
-    color: white;
-    border: solid 2px black;
-    background-color: black;
-}
-
-p {
+.paragrafoParaLogin {
     color: grey;
 }
 
