@@ -10,6 +10,11 @@ app.get("/login", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'login.html'))
 });
 
+//Criando rota para página de carrinho
+app.get("/carrinho", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'carrinho.html'))
+});
+
 //Colocar o servidor no modo "escuta"
 app.listen(3000);
 
