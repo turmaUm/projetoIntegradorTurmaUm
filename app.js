@@ -1,3 +1,15 @@
 const express = require('express');
-const app = express()
+const path = require("path");
+const app = express();
+
+//Define a pasta public como sendo a pasta de arquivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+//Criando rota para página de login
+app.get("/login", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'login.html'))
+});
+
+//Colocar o servidor no modo "escuta"
+app.listen(3000);
 
