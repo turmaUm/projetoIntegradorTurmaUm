@@ -7,78 +7,216 @@
     font-family: 'Public Sans', sans-serif;
     
 }
-header {
-    background-color: white;
-    /* border: 1px solid black; */
-    height: 80px;
-
-}
-
-nav {
+logo {
     display: flex;
-    text-align: center;
+    position: relative;
+    width: 30px;
     justify-content: center;
-    height: 80px;
-    
+    align-items: center;
+    /* padding: 3px; */
 }
 
-nav img {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding-bottom: 0px;
+#logo2 img {
+    width: 30px;
+}
+
+#logo img {
+    width: 100%;
+}
+
+#carrinho {
+    /* background-color: pink; */
+    position: relative;
+    padding: 3px;
+    height: 30px;
+}
+
+#carrinho img {
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+#carrinho span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: orange;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.menu {
+    display: flex;
+    height: 85px;
+    line-height: 85px;
+    /* text-align: center; */
+    /* background-color: purple; */
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 nav a {
-    /* background-color: purple; */
     display: inline-block;
+    text-align: center;
+    width: 100px;
+    height: 85px;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 50px;
-    margin-right: 50px;
-    /* border: 1px solid black; */
-    /* padding: 5px; */
-    padding-top: 25px;
+    /* background-color: orange; */
 }
 
-button {
+.pesquisar {
+    display: flex;
+    justify-content: right;
+    height: 30px;
+    /* margin-left: auto; */
+    /* border: 2px solid black; */
+}
+
+
+header button {
     height: 30px;
     display: inline-block;
     background-color: black;
-    box-shadow: 2px 2px 0px orange;
     color: white;
 }
 
-span {
-    background-color: white;
+header input {
+    height: 25px;
 }
 
-input {
-    width: 200px;
-    height: 30px;
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.containerHeader {
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    /* background-color: rgb(227, 227, 227); */
+    background-color: black;
+    color: white;
+    justify-content:right;
+    justify-content: space-between;
+    height: 38px;
+}
+
+.containerHeader a {
+    color: white;
+    justify-content: right;
+}
+
+/* --------------FIM HEADER--------------- */
 
 section {
+
     padding-top: 20px;
 }
 
-.container{
+main{
     display: flex;
+    justify-content: center;
+}
+
+.container-global {
+    background-color:blue;
+    width: 100rem;
+
+
+}
+.container-main{
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.name-prod{
+    padding: 5px;
+    background-color:green;
+}
+.box-description{
+    width:20rem;
+    padding: 50px;
+    background-color:red;
+}
+.img-prod{
+    background-color: aqua;
+    height: 30rem;
+    width: 30rem;
+    /* border: 1px solid black; */
+    padding: 10px;
+    display:flex;
     flex-wrap: wrap;
+    justify-content:center;
+    
+}
+
+.img-prod img{
+    width: 220px;
+    height: 220px;
+    padding: 5px;
+
+   
+}
+
+.cores{
+    width: 80px;
+    background-color:blue;
+    display: flex;
+    justify-content: space-around;
+}
+.cor1{
+    width:30px;
+    height:30px;
+    background-color:#DF9167;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
+.cor2{
+    width:30px;
+    height:30px;
+    background-color:#000000;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.tamanhos{
+    width: 200px;
+    display:flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+.tam1{
+    width:30px;
+    height:30px;
+    /* background-color:#DF9167; */
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
     justify-content: center;
     
 }
 
-.name-prod{
-    padding: 50px;
+.select-prod{
+    background-color: purple;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 0px 3px;
+
 }
-.box-description{
-    padding: 50px;
-}
-.img-prod{
-    background-color: aqua;
-    height: 300px;
-    width: 300px;
-    /* border: 1px solid black; */
-    padding: 50px;
+
+.select-num{
+    background-color:greenyellow;
+    border: 1px solid black;
 }
