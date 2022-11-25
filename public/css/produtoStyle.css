@@ -145,12 +145,30 @@ main{
     width:40px;
     border: none;
 }
-@media(max-width:600px){
+@media(max-width:800px){
     .container-main{
         display:flex;
         flex-direction: column;
+        border: 3px solid #000;
+        
     }
+    .img-prod{
     
+        display:grid;
+        grid-template-columns: 220px;
+        gap: 15px;
+        
+        justify-content: center;
+    
+    }
+  
+    .name-prod{
+        text-align: center;
+    }
+    .box-description {
+        width: 100%;
+    }
+
 }
 
 
