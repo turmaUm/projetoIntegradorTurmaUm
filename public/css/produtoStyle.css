@@ -7,115 +7,7 @@
     font-family: 'Public Sans', sans-serif;
     
 }
-logo {
-    display: flex;
-    position: relative;
-    width: 30px;
-    justify-content: center;
-    align-items: center;
-    /* padding: 3px; */
-}
 
-#logo2 img {
-    width: 30px;
-}
-
-#logo img {
-    width: 100%;
-}
-
-#carrinho {
-    /* background-color: pink; */
-    position: relative;
-    padding: 3px;
-    height: 30px;
-}
-
-#carrinho img {
-    height: 100%;
-    margin-bottom: 30px;
-}
-
-#carrinho span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: orange;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-}
-
-.menu {
-    display: flex;
-    height: 85px;
-    line-height: 85px;
-    /* text-align: center; */
-    /* background-color: purple; */
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-nav a {
-    display: inline-block;
-    text-align: center;
-    width: 100px;
-    height: 85px;
-    color: black;
-    /* background-color: orange; */
-}
-
-.pesquisar {
-    display: flex;
-    justify-content: right;
-    height: 30px;
-    /* margin-left: auto; */
-    /* border: 2px solid black; */
-}
-
-
-header button {
-    height: 30px;
-    display: inline-block;
-    background-color: black;
-    color: white;
-}
-
-header input {
-    height: 25px;
-}
-
-.container {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.containerHeader {
-    padding-left: 30px;
-    padding-right: 30px;
-    display: flex;
-    align-items: center;
-    /* background-color: rgb(227, 227, 227); */
-    background-color: black;
-    color: white;
-    justify-content:right;
-    justify-content: space-between;
-    height: 38px;
-}
-
-.containerHeader a {
-    color: white;
-    justify-content: right;
-}
-
-/* --------------FIM HEADER--------------- */
 
 section {
 
@@ -128,50 +20,62 @@ main{
 }
 
 .container-global {
-    background-color:blue;
+ 
     width: 100rem;
 
 
 }
 .container-main{
-    background-color: yellow;
+
     display: flex;
     justify-content: center;
    
 }
-
-.name-prod{
-    padding: 5px;
-    background-color:green;
+.container-main-2{
+    width:420px;
+ 
+    margin: 0px 10px;
 }
+/* .name-prod{
+    background-color:green;
+} */
 .box-description{
     width:20rem;
-    padding: 50px;
-    background-color:red;
+    margin: 50px 0px;
+
+}
+.description{
+    text-align: justify;
 }
 .img-prod{
-    background-color: aqua;
-    height: 30rem;
-    width: 30rem;
-    /* border: 1px solid black; */
-    padding: 10px;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    
+ 
+    display:grid;
+    grid-template-columns: 220px 220px;
+    gap: 15px;
+
 }
 
 .img-prod img{
     width: 220px;
-    height: 220px;
-    padding: 5px;
-
+    height: 250px;
    
 }
+.box-cores h5{
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+    margin: 10px 0px;
+    text-transform: uppercase;
 
+}
+.box-tamanhos h5{
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+    margin: 10px 0px;
+    text-transform: uppercase;
+
+}
 .cores{
     width: 80px;
-    background-color:blue;
     display: flex;
     justify-content: space-around;
 }
@@ -191,16 +95,16 @@ main{
     border-radius: 50%;
 }
 .tamanhos{
-    width: 200px;
+   
     display:flex;
-    justify-content: space-between;
-    padding: 3px;
+    gap: 5px;
+    
 }
 .tam1{
     width:30px;
     height:30px;
     /* background-color:#DF9167; */
-    border: 1px solid black;
+    border: 1px solid #333;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,15 +112,45 @@ main{
 }
 
 .select-prod{
-    background-color: purple;
-    width: 10rem;
+
     display: flex;
-    justify-content: space-between;
-    padding: 0px 0px 0px 3px;
+    margin: 50px 0px;
 
 }
 
-.select-num{
-    background-color:greenyellow;
-    border: 1px solid black;
+.comprar{
+    width:320px;
+    height:40px;
+    background-color: #0D0D0D;
+    color:white;
 }
+
+
+.select-prod div{
+    display: flex;
+    border: 1px solid #333;
+    
+}
+.select-prod div:last-child{
+    margin-left: auto;
+}
+.select-prod div button{
+    background-color: transparent;
+    border: none;
+    width:1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    
+}
+.select-prod div button:hover{
+    background-color: #333;
+    color: #fff;
+}
+.select-prod div input{
+    text-align: center;
+    width:40px;
+    border: none;
+}
+
+
+
