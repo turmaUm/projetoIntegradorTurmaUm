@@ -1,0 +1,137 @@
+main {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainn {
+    margin-top: 8rem;
+    height: 724px;
+}
+
+.container {
+    padding: 70px 50px 200px 50px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    /*border: 2px solid red;*/
+    flex-wrap: wrap;
+    width: 45rem;
+    row-gap: 1.8rem;
+}
+
+.linha1 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha1 .cep {
+    padding-left: 10px;
+    /*background-color: aqua;*/
+    display: flex;
+    width: 13rem;
+    height: 2.5rem;
+    margin-top: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    
+}
+
+.linha1 .estado {
+    /*background-color: aqua;*/
+    display: flex;
+    width: 28rem;
+    margin-left: auto;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+
+.linha2 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha2 .cidade {
+    /*background-color: crimson;*/
+    display: flex;
+    width: 20rem;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha2 .bairro {
+    /*background-color: crimson;*/
+    display: flex;
+    width: 21rem;
+    height: 3.2rem;
+    margin-left: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha3 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha3 .tipo {
+    /*background-color: darkorange;*/
+    display: flex;
+    width: 12rem;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha3 .logradouro {
+    /*background-color: darkorange;*/
+    display: flex;
+    width: 28rem;
+    height: 3.2rem;
+    margin-left: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha4 {
+    /*background-color: lightslategray;*/
+    display: flex;
+    width: 12rem;
+    height: 3.0rem;
+    border: none;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+
+.spanEndereco {
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline;
+
+}
