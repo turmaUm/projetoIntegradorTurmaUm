@@ -13,6 +13,7 @@ header{
 }
 #logo2 img {
     width: 30px;
+    margin-right: 3rem;
 }
 
 #logo img {
@@ -25,6 +26,7 @@ header{
     padding: 3px;
     height: 30px;
     margin-left: 20px;
+    
 }
 
 #carrinho img {
@@ -47,17 +49,22 @@ header{
 }
 
 .menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
     line-height: 100%;
     /* height: 85px; */
     line-height: 85px;
     text-align: center;
-    /* background-color: purple; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
+
 }
+
+/* nav{
+    background-color:white;
+} */
 
 nav a {
     display: inline-block;
@@ -80,8 +87,8 @@ nav a {
 } */
 
 .pesquisar:nth-child(3){
-    background-color:green;
-    /* margin-left: auto; */
+    /* background-color:green; */
+    margin-left: auto;
 }
 
 .pesquisar input{
@@ -123,3 +130,15 @@ header input {
     color: white;
     justify-content: right;
 }
+
+/* @media(max-width:800px){
+    .menu nav{
+        background-color: green;
+    }
+    
+    .pesquisar{
+        background-color: blue;
+    }
+
+
+} */
