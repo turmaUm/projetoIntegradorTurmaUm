@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Public Sans', sans-serif;
+    
+}
 
 .paragrafoParaLogin {
-    color: grey;
+    color: #EFF2F6;;
 }
 
 #paginaLogin {
