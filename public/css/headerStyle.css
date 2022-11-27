@@ -102,9 +102,10 @@ header button {
     color: white;
 }
 
-header input {
+.pesquisar input{
     height: 25px;
 }
+
 
 .container {
     display: flex;
