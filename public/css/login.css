@@ -9,14 +9,14 @@
 }
 
 .paragrafoParaLogin {
-    color: #EFF2F6;;
+    color: #222;
 }
 
 #paginaLogin {
-    font-family: 'Times New Roman', Times, serif;
+    
     width: 100vw;
     height: 100vh;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(250, 250, 250);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,34 +27,47 @@
     box-sizing: border-box;
     max-width: 450px;
     max-height: 480px;
-    background-color: white;
+    background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
+    border: 1.5px solid #999
 }
 
 .cadastro {
     box-sizing: border-box;
     max-width: 450px;
-    max-height: 450px;
-    background-color: white;
+    max-height: 480px;
+    background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
+    border: 1.5px solid #999
 }
-
+article h1{
+    text-transform:uppercase; 
+}
 .estiloBotao {
     color: grey;
     width: 300px;
     height: 25px;
     margin: 5px;
     padding: 5px;
-    border: 2px solid grey;
+    border: 2px solid gray;
 }
 
 .btEnviar{
     background-color: black;
     font-size: 15px;
     color: azure;
-    margin: 5px;
+    margin: 35px;
     padding: 10px;
     width: 260px;
+
+}
+
+.login a{
+    margin-left: 40px;
+}
+.paragrafoParaLogin{
+    margin-bottom: 10px;
+
 }
