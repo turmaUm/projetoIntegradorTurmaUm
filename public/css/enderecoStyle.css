@@ -4,16 +4,54 @@ main {
     margin: 0px;
     padding: 0px;
     justify-content: center;
-    align-items: center;
+    height: 1200px;
 }
 
 .mainn {
-    margin-top: 8rem;
-    height: 724px;
+    margin-top: 4rem;
+    height: 790px;
+}
+
+.container1 {
+    display: flex;
+    /*border: 2px solid red;*/
+    width: 45rem;
+    background-color: rgb(255, 255, 255);
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 60px 30px 80px 30px;
+}
+
+.select {
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.container1 .enderecoCadastrado {
+    display: flex;
+    width: 30rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+
+}
+
+.container1 .save {
+    width: 20rem;
+    height: 3rem;
+    margin-top: 2rem;
 }
 
 .container {
-    padding: 70px 50px 200px 50px;
+    padding: 70px 50px 170px 50px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -133,5 +171,15 @@ main {
     display: flex;
     font-size: 20px;
     text-decoration: underline;
+    text-underline-position: under;
+}
 
+.back {
+    width: 12rem;
+    height: 3rem;
+}
+
+.salvar {
+    width: 12rem;
+    height: 3rem;
 }
