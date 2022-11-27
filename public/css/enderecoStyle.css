@@ -5,6 +5,7 @@ main {
     padding: 0px;
     justify-content: center;
     height: 1200px;
+    background-color:rgb(250, 250, 250);
 }
 
 .mainn {
@@ -16,7 +17,7 @@ main {
     display: flex;
     /*border: 2px solid red;*/
     width: 45rem;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(240, 240, 240);
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
@@ -48,12 +49,15 @@ main {
     width: 20rem;
     height: 3rem;
     margin-top: 2rem;
+    display: inline-block;
+    background-color: black;
+    color: white;
 }
 
-.container {
+.container2 {
     padding: 70px 50px 170px 50px;
     border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(240, 240, 240);
     display: flex;
     /*border: 2px solid red;*/
     flex-wrap: wrap;
@@ -177,9 +181,17 @@ main {
 .back {
     width: 12rem;
     height: 3rem;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin-left: 25%;
 }
 
 .salvar {
     width: 12rem;
     height: 3rem;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin-left: 50%;
 }
