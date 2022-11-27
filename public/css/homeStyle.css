@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+
+.grid {
+	display: grid;
+    grid-template-areas:
+		"one segundo"
+		"quarto sexto" ;
+}
+
+/* .containerPromocao {
+    grid-area: 6;
+} */
+.item1 {
+	grid-area: one;
+    background-color: blue;
+}
+
+.item2 {
+	grid-area: terceiro;
+    background-color: green;
+}
+
+
+.item3 {
+	grid-area: quarto;
+    background-color: purple;
+}
+
+
+.item4 {
+	grid-area: segundo;
+    background-color: yellow;
+}
+
+/* .item5 {
+	grid-area: quinto;
+    background-color: orange;
+} */
+
+.item6 {
+	grid-area: sexto;
+    background-color: red;
+}
+
+/* .item7 {
+    grid-area: 7;
+    background-color:gray;
+} */
