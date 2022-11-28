@@ -6,26 +6,59 @@
     display:grid;
 	grid-template-areas:
 		"item1 item1"
-		"item6 item4"
-		"item6 item3"
-        "item7 item7"
+		"item2 item2"
+		"item3 item3"
+        "item4 item4"
         "item5 item5"
+        "item6 item6"
+        "item7 item7"
 		;
+    gap: 30px;
 }
 
 .item1{
     grid-area: item1 ;
-    background-color: green;
+    /* background-color: green; */
+    justify-self: center;
 }
-
+.item2{
+    grid-area: item2 ;
+    justify-self: center;
+    background-color: white;
+    text-align: center;
+    height:80px;
+    width: 40%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.item2 a{
+    background-color: black;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;;
+    
+    
+}
 .item3{
     grid-area: item3 ;
-    background-color: blue;
+    /* background-color: blue; */
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.item3 img{
+    width:80%;
 }
 .item4{
     grid-area: item4 ;
     background-color: rosybrown;
+    
 }
+
 .item6{
     grid-area: item6 ;
     background-color: yellowgreen;
