@@ -1,16 +1,54 @@
+.pagamentoSeguro {
+    height: 3rem;   
+    display: flex;
+    background-color: rgb(250, 250, 250);
+    border-bottom: ridge;
+}
+
+.logo_check {
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    font-size: 1.7rem;
+    /*border: 2px solid yellow;*/
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5%;
+    font-size: 2.0rem;
+    /*border: 2px solid green;*/
+}
+
+.pagamentoSeguro > img {
+    margin-top: 0.8rem;
+    height: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+.letras_checkoutSeguro {
+    /*border: 2px solid red;*/
+    display: flex;
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #83b293;
+    margin-left: 0.4rem;
+}
+
 main {
     box-sizing: border-box;
     display: flex;
     margin: 0px;
     padding: 0px;
     justify-content: center;
-    height: 1200px;
+    height: 1000px;
     background-color:rgb(250, 250, 250);
 }
 
 .mainn {
     margin-top: 4rem;
-    height: 790px;
+    height: 600px;
 }
 
 .container1 {
@@ -24,7 +62,7 @@ main {
     margin-bottom: 2.5rem;
     justify-content: center;
     border-radius: 5px;
-    padding: 60px 30px 80px 30px;
+    padding: 50px 30px 50px 30px;
 }
 
 .select {
@@ -46,16 +84,19 @@ main {
 }
 
 .container1 .save {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     width: 20rem;
     height: 3rem;
     margin-top: 2rem;
-    display: inline-block;
+    display: flex;
     background-color: black;
     color: white;
 }
 
 .container2 {
-    padding: 70px 50px 170px 50px;
+    padding: 55px 50px 80px 50px;
     border-radius: 5px;
     background-color: rgb(240, 240, 240);
     display: flex;
@@ -179,19 +220,25 @@ main {
 }
 
 .back {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 12rem;
     height: 3rem;
-    display: inline-block;
+    display: flex;
     background-color: black;
     color: white;
-    margin-left: 25%;
+    margin-left: 8%;
 }
 
 .salvar {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 12rem;
     height: 3rem;
-    display: inline-block;
+    display: flex;
     background-color: black;
     color: white;
-    margin-left: 50%;
+    margin-left: 8%;
 }
