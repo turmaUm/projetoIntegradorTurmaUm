@@ -1,49 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 
-.grid {
-	display: grid;
-    grid-template-areas:
-		"one segundo"
-		"quarto sexto" ;
+
+.grid-template-areas-1 {
+    display:grid;
+	grid-template-areas:
+		"item1 item1"
+		"item6 item4"
+		"item6 item3"
+        "item7 item7"
+        "item5 item5"
+		;
 }
 
-/* .containerPromocao {
-    grid-area: 6;
-} */
-.item1 {
-	grid-area: one;
-    background-color: blue;
-}
-
-.item2 {
-	grid-area: terceiro;
+.item1{
+    grid-area: item1 ;
     background-color: green;
 }
 
-
-.item3 {
-	grid-area: quarto;
-    background-color: purple;
+.item3{
+    grid-area: item3 ;
+    background-color: blue;
 }
-
-
-.item4 {
-	grid-area: segundo;
-    background-color: yellow;
+.item4{
+    grid-area: item4 ;
+    background-color: rosybrown;
 }
-
-/* .item5 {
-	grid-area: quinto;
-    background-color: orange;
-} */
-
-.item6 {
-	grid-area: sexto;
+.item6{
+    grid-area: item6 ;
+    background-color: yellowgreen;
+}
+.item7{
+    grid-area: item7 ;
     background-color: red;
 }
-
-/* .item7 {
-    grid-area: 7;
-    background-color:gray;
-} */
+.item5{
+    grid-area: item5 ;
+    background-color: black;
+}
