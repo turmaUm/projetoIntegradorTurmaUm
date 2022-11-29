@@ -14,6 +14,7 @@ app.get("/checkout-endereco", (req,res)=>{
 app.get("/checkout-pagamento", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_pagamento.html'))
 });
+
 //Criando rota para página cliente
 app.get("/cliente", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'cliente.html'))
