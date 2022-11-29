@@ -6,7 +6,7 @@
 
 main {
     display: flex;
-    padding: 15px;
+    padding: 10px;
     margin: 80px;
     font-size: 1.2rem;
     justify-content: space-around;
@@ -16,6 +16,7 @@ main .products-container{
     display: flex;
     flex-wrap: wrap;
     padding-left: 100px;
+    font-size: 1.0rem;
 }
 
 li {
@@ -30,12 +31,18 @@ li {
 }
 
 .categoria-titulo {
-    padding: 8px;
+    padding: 20px;
 }
 
 .categoria-link {
     text-decoration: none;
+    padding: 10px;
     color: black;
+}
+
+.img-produto-detalhado{
+    width: 250px;
+    height: 250px;
 }
 
 .produto-detalhado {
@@ -48,7 +55,7 @@ li {
 .link-mais-detalhes {
     text-decoration: none;
     color: black;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
 }
 
 .bt-mais-detalhes:hover{
@@ -56,8 +63,8 @@ li {
 }
 
 .bt-mais-detalhes {
-    background-color: brown;
+    background-color: black;
     color: aliceblue;
-    padding: 5px;
-    border: 0;
+    padding: 10px;
+    border-radius: 9px;
 }
