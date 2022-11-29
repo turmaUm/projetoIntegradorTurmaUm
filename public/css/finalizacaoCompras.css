@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    color: aliceblue;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+main {
+    width: 100vw;
+    height: 70vh;
+    font-size: 1.2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .primeira-section {
+    display: flex;
+    flex-direction: column; 
+    margin: 40px;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+
+}
+
+main .segunda-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .terceira-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 15px;
+}
+
+h1 .titulo-compra{
+    margin: 15px;
+    padding: 15px;
+}
+
+h3 .titulo-h3 {
+    margin: 15px;
+    padding: 15px;
+}
+
+.btInicio {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    font-size: 1.0rem;
+    border-radius: 8px 8px 8px 8px;
+    background-color: rgba(0,0,0,0.1);
+    color: black;
+    border: none;
+    width: auto;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img {
+    display: flex;
+    width: 100px;
+}
+
+button:hover, .link-pedido:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: aliceblue;
+}
+
+.link-inicio{
+    text-decoration: none;
+    color: black;
+}
+
+.link-pedido{
+    display: flex;
+    font-size: 1.0rem;
+    flex-direction: column;
+    width: 200px;
+    padding: 8px;
+    border-radius: 8px 8px 8px 8px;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
+    color: black;
+}
+
+footer{
+    background-color: aliceblue;
+    border: solid black 5px;
+    color:black;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/*A partir daqui código somente da keyframe para h1*/
+
+@-webkit-keyframes pulse {
+    from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    }
+    @keyframes pulse {
+    from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    }
+    #animate__pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+  

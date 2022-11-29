@@ -10,6 +10,11 @@ app.get("/login", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'login.html'))
 });
 
+//Criando rota para pagina finalização de compra
+app.get("/finalizacao", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'finalizacaoCompras.html'))
+});
+
 //Colocar o servidor no modo "escuta"
 app.listen(3000);
 
