@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     /* box-sizing: border-box; */
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .paragrafoParaLogin {
@@ -41,9 +41,11 @@
     margin: 100px;
     border: 1.5px solid #999
 }
+
 article h1{
     text-transform:uppercase; 
 }
+
 .estiloBotao {
     color: grey;
     width: 300px;
@@ -67,7 +69,7 @@ article h1{
 .login a{
     margin-left: 40px;
 }
+
 .paragrafoParaLogin{
     margin-bottom: 10px;
-
 }
