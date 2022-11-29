@@ -7,17 +7,15 @@
     /* padding: 3px; 
 } 
 */
-header{
+
+header {
    background-color:#EFF2F6;
+   margin-right: 1.5rem;
     /* border-bottom: 1px solid #333; */
 }
-#logo2 img {
-    width: 30px;
-    margin-right: 3rem;
-}
 
-#logo img {
-    width: 100%;
+.paragrafo-logo{ 
+    font-weight: bold;
 }
 
 #carrinho {
@@ -26,7 +24,6 @@ header{
     padding: 3px;
     height: 30px;
     margin-left: 20px;
-    
 }
 
 #carrinho img {
@@ -59,12 +56,7 @@ header{
     align-items: center;
     padding-left: 30px;
     padding-right: 30px;
-
 }
-
-/* nav{
-    background-color:white;
-} */
 
 nav a {
     display: inline-block;
@@ -106,17 +98,16 @@ header button {
     height: 25px;
 }
 
-
 .container {
     display: flex;
     text-align: center;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .containerHeader {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 12px;
     display: flex;
     align-items: center;
     /* background-color: rgb(227, 227, 227); */
@@ -125,11 +116,13 @@ header button {
     justify-content:right;
     justify-content: space-between;
     height: 38px;
+    width: 100%;
 }
 
 .containerHeader a {
     color: white;
     justify-content: right;
+    text-decoration: none;
 }
 
 /* @media(max-width:800px){
@@ -140,6 +133,4 @@ header button {
     .pesquisar{
         background-color: blue;
     }
-
-
 } */
