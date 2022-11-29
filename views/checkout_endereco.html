@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/headerStyle.css">
-    <link rel="stylesheet" href="../public/css/mainStyle.css">
     <link rel="stylesheet" href="../public/css/geral.css">
+    <link rel="stylesheet" href="../public/css/enderecoStyle.css">
+    <link rel="stylesheet" href="../public/css/headerStyle.css">
     <link rel="stylesheet" href="../public/css/footerStyle.css">
-    <link rel="stylesheet" href="../public/css/produtoStyle.css">
-    <title>BRACKISH</title>
+    <title>Cadastro Endereço</title>
 </head>
-
 <body>
+
     <header>
         <div class="containerHeader" id="containerHeader">
             BRACKISH
@@ -20,12 +19,11 @@
                 <img src="../public/img/logotemporario.png" alt="logo"> -->
             <!-- </a> -->
 
-   
+                <a href="/feminino">Ajuda</a>
+                <a href="/feminino">Cadastro</a>
+                <a href="/feminino">Login</a>
 
         </div>
-
-
-
         <div class="menu">
             <a href="" id="logo2">
                 <img src="../public/img/casual-t-shirt-.png" alt="logo2">
@@ -34,7 +32,6 @@
                 <a href="/feminino">Feminino</a>
                 <a href="/masculino">Masculino</a>
                 <a href="/infantil">Infantil</a>
-                <a href="/calcados">Calçados</a>
                 <a href="/lancamentos">Lançamentos</a>
                 <a href="/promoções">Promoções</a>
                 
@@ -51,62 +48,51 @@
             </a>
         </div>
     </header>
-    <main>
-            <div class="container-main">
-                <div class="img-prod">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <div class="container-main-2">
-                    <div class="name-prod">
-                        <h1>Men's winter jacket</h1>
-                        <span>$99</span>
-                    </div>
-                    <div class="box-description">
-                        <div class="description">
-                            <p>
-                                Revamp your style with the latest designer trends in 
-                                men’s clothing or achieve a perfectly curated wardrobe 
-                                thanks to our line-up of timeless pieces.
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <div class="box-cores">
-                        <h5>Cor</h5>
-                        <div class="cores">
-                            <div class="cor1"></div>
-                            <div class="cor2"></div>
-                        </div>
-                    </div>
-                    <div class="box-tamanhos">
-                        <h5>Tamanho</h5>
-                        <div class="tamanhos">
-                            <div class="tam1">PP</div>
-                            <div class="tam1">P</div>
-                            <div class="tam1">M</div>
-                            <div class="tam1">G</div>
-                            <div class="tam1">GG</div>
-                            <div class="tam1">XG</div>
-                        </div>
-                    </div>
+    <div class="pagamentoSeguro">
+        <span class="logo_check">BRACKISH</span>
+        <span class="barra">/</span>
+        <img src="../public/img/cadeado3.png" alt="">
+        <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
+    </div>
 
-                    <div class="select-prod">
-                        <button class="comprar"> Adicionar ao carinho </button>
-                            <div>
-                                <button class="remove" type="button"> - </button>
-                                <input class ="qtd-camisa"  step="1" min="0" max="100" value="1">
-                                <button class="add" type="button"> + </button>
-               
-                            </div>
-                        
-                    </div>
-    
+    <main>
+        <div class="mainn">
+
+            <div class="container1">
+                <span class="select">SELECIONE UM ENDEREÇO</span>
+                <div>
+                    <input class="enderecoCadastrado" type="text" placeholder="Ex. Rua Maria das Flores, 622, CEP 89675-626">
                 </div>
+                <a class="save" href=""> Salvar e continuar para pagamento</a>
+
             </div>
+            
+            <div class="container2">
+                <span class="spanEndereco">CADASTRAR NOVO ENDEREÇO</span>
+                <div class="linha1">
+                    <input class="cep" type="text" placeholder="CEP" maxlength="9">
+                    <input class="estado" type="text" placeholder="Estado">
+                </div>
+
+                <div class="linha2">
+                    <input class="cidade" type="text" placeholder="Cidade">
+                    <input class="bairro" type="text" placeholder="Bairro">
+                </div>
+                
+                <div class="linha3">
+                    <input class="tipo" type="text" placeholder="Tipo">
+                    <input class="logradouro" type="text" placeholder="Logradouro">
+                </div>
+
+                <input class="linha4" type="text" placeholder="Número" maxlength="10">
+
+                <a class="back" href="#">Voltar ao carrinho</a>
+                <a class="salvar" href="#" >Salvar e Continuar</a>
+                
+            </div>
+        </div>
     </main>
+
     <footer >
         <div class="container-total">
             <div class ="row">
@@ -116,7 +102,6 @@
                     </div>
                     <div>
                         <a class="noticias" href="">Seja o primeiro a saber sobre os nossos lançamentos!</a>
-
                     </div>
                     <div class="form-group">
                         <input type="email" class="email" placeholder="Digite seu email">
@@ -165,6 +150,8 @@
             </div>
         </div>        
     </footer>
+
+
 
 </body>
 </html>

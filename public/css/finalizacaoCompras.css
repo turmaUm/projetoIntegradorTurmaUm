@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-header {
-    background-color: black;
-    color: aliceblue;
-    width: 100%;
-    padding: 30px;
-    text-align: center;
-    font-size: 2rem;
-}
-
 main {
     width: 100vw;
     height: 70vh;
@@ -76,7 +67,7 @@ h3 .titulo-h3 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-img {
+.sacola-de-compra {
     display: flex;
     width: 100px;
 }
@@ -102,17 +93,6 @@ button:hover, .link-pedido:hover {
     background-color: rgba(0,0,0,0.1);
     color: black;
 }
-
-footer{
-    background-color: aliceblue;
-    border: solid black 5px;
-    color:black;
-    width: 100%;
-    padding: 30px;
-    text-align: center;
-    font-size: 2rem;
-}
-
 
 /*A partir daqui código somente da keyframe para h1*/
 

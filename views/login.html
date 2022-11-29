@@ -4,48 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="/css/geral.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/footerStyle.css">
+    <link rel="stylesheet" href="/css/headerStyle.css">
+    <title>Login</title>
 </head>
 <body>
-    <section id="paginaLogin">
+    <header>
+        <div class="containerHeader" id="containerHeader">
+            BRACKISH
+            <!-- <a href="" id="logo">
+                <img src="../public/img/logotemporario.png" alt="logo"> -->
+            <!-- </a> -->
 
-        <article class="login">
-            <h1 class="tituloLogin">LOGIN</h1>
-            <p class="paragrafoParaLogin">Login com seu e-mail</p>
-            <label for="email"></label>
-            <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-            <br>
-            <label for="senha"></label>
-            <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
-            <br>
-            <input type="checkbox" name="lembrar" id="lembrar">
-            <label for="lembrar">Lembrar de mim</label>
-            
-            <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
-            <br><br>
-            <input class="btEnviar" type="submit" name="enviar" id="envair" placeholder="ENVIAR">
-        </article>
-    
-        <article class="cadastro">
-            <h1 class="tituloCadastro">CADASTRE-SE</Cadastre-se></h1>
-            <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
-            <label for="nomeCadastro"></label>
-            <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo" required>
-            <br>
-            <label for="emailCadastro"></label>
-            <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail" required>
-            <br>
-            <label for="senhaCadastro"></label>
-            <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha" required>
-            <br>
-            <label for="confirmeSenha"></label>
-            <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha" required>
-            <br><br>
-            <input class="btEnviar" type="submit" name="enviarCadastro" id="enviarCadastro">
-        </article>
-    
-    </section>
+        </div>
+    <header>
+    <main>
+        
+        <section id="paginaLogin">
+
+            <article class="login">
+                <h1 class="tituloLogin">login</h1>
+                <br>
+                <p class="paragrafoParaLogin">Login com seu e-mail</p>
+                <label for="email"></label>
+                <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                <br>
+                <label for="senha"></label>
+                <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
+                <br>
+                <br>
+                <input type="checkbox" name="lembrar" id="lembrar">
+                <label for="lembrar">Lembrar de mim</label>
+                
+                <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
+                <br><br>
+                <input class="btEnviar" type="submit" name="enviar" id="envair" placeholder="ENVIAR">
+            </article>
+        
+            <article class="cadastro">
+                <h1 class="tituloCadastro">cadastra-se</Cadastre-se></h1>
+                <br>
+                <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
+                <label for="nomeCadastro"></label>
+                <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo">
+                <br>
+                <label for="emailCadastro"></label>
+                <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail">
+                <br>
+                <label for="senhaCadastro"></label>
+                <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha">
+                <br>
+                <label for="confirmeSenha"></label>
+                <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
+                <br><br>
+                <input class="btEnviar" type="submit" name="enviarCadastro" id="enviarCadastro">
+            </article>
+        
+        </section>
+    </main>
+    <footer >
+        <div class="container-total">
+            <div class ="row">
+                <div class="container-part">
+                    <div>
+                        <h3>Receba novidades por email</h3>
+                    </div>
+                    <div>
+                        <a class="noticias" href="">Seja o primeiro a saber sobre os nossos lançamentos!</a>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="email" placeholder="Digite seu email">
+                        <button class="botao">Cadastrar</button>
+                    </div>
+                </div>   
+                <div class="col-md">
+                    <h4>Categorias</h4>
+                    <ul class="table1">
+                        <li><a href="">Women</a></li>
+                        <li> <a href="">Men</a></li>
+                        <li><a href="">Kids</a></li>
+                        <li><a href="">Shoes</a></li>
+                        <li><a href="">Equipament</a></li>
+                        <li><a href="">By activity</a></li>
+                        <li><a href="">Gift Cards</a></li>
+                        <li><a href="">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <h4>Help</h4>
+                    <ul class="table1">
+                        <li><a href="">Help Center</a></li>
+                        <li> <a href="">Order Status</a></li>
+                        <li><a href="">Size Chart</a></li>
+                        <li><a href="">Returns & Warranty</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <h4>About</h4>
+                    <ul class="table1">
+                        <li><a href="">Sobre Nós</a></li>
+                        <li> <a href="">Trabalhe com a gente</a></li>
+                        <li><a href="">Technology & Innovation</a></li>
+                        <li><a href="">Explore our stories</a></li>
+                    </ul>
+                </div>
+                <div class="midias-sociais">
+                    <a href=""><img src="/img/facebook.svg" alt="facebook"></a>
+                    <a href=""><img src="/img/instagram.svg" alt="Instagram"></a>
+                    <a href=""><img src="/img/youtube.svg" alt="YouTube"></a>
+                    <a href=""><img src="/img/twitter.svg" alt="Twitter"></a>
+                    
+                </div>
+            </div>
+        </div>        
+    </footer>
 </body>
 </html>

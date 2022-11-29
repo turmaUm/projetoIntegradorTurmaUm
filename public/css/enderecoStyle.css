@@ -1,0 +1,248 @@
+body {
+    font-family: 'Public Sans', 'sans-serif';
+}
+
+.pagamentoSeguro {
+    height: 3rem;   
+    display: flex;
+    background-color: rgb(250, 250, 250);
+    border-bottom: ridge;
+}
+
+.logo_check {
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    font-size: 1.7rem;
+    /*border: 2px solid yellow;*/
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5%;
+    font-size: 2.0rem;
+    /*border: 2px solid green;*/
+}
+
+.pagamentoSeguro > img {
+    margin-top: 0.8rem;
+    height: 1.3rem;
+    margin-left: 0.5rem;
+}
+
+.letras_checkoutSeguro {
+    /*border: 2px solid red;*/
+    display: flex;
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #83b293;
+    margin-left: 0.4rem;
+}
+
+main {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    height: 1000px;
+    background-color:rgb(250, 250, 250);
+}
+
+.mainn {
+    margin-top: 4rem;
+    height: 600px;
+}
+
+.container1 {
+    display: flex;
+    /*border: 2px solid red;*/
+    width: 45rem;
+    background-color: rgb(240, 240, 240);
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 50px 30px 50px 30px;
+}
+
+.select {
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.container1 .enderecoCadastrado {
+    display: flex;
+    width: 30rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+
+}
+
+.container1 .save {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 20rem;
+    height: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+.container2 {
+    padding: 55px 50px 80px 50px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    /*border: 2px solid red;*/
+    flex-wrap: wrap;
+    width: 45rem;
+    row-gap: 1.8rem;
+}
+
+.linha1 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha1 .cep {
+    padding-left: 10px;
+    /*background-color: aqua;*/
+    display: flex;
+    width: 13rem;
+    height: 2.5rem;
+    margin-top: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    
+}
+
+.linha1 .estado {
+    /*background-color: aqua;*/
+    display: flex;
+    width: 28rem;
+    margin-left: auto;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+
+.linha2 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha2 .cidade {
+    /*background-color: crimson;*/
+    display: flex;
+    width: 20rem;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha2 .bairro {
+    /*background-color: crimson;*/
+    display: flex;
+    width: 21rem;
+    height: 3.2rem;
+    margin-left: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha3 {
+    /*border: 2px solid green;*/
+    display: flex;
+    height: 3.5rem;
+    width: 100rem;
+}
+
+.linha3 .tipo {
+    /*background-color: darkorange;*/
+    display: flex;
+    width: 12rem;
+    height: 3.2rem;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha3 .logradouro {
+    /*background-color: darkorange;*/
+    display: flex;
+    width: 28rem;
+    height: 3.2rem;
+    margin-left: auto;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.linha4 {
+    /*background-color: lightslategray;*/
+    display: flex;
+    width: 12rem;
+    height: 3.0rem;
+    border: none;
+    border: 3px solid rgb(247, 247, 247);
+    border-style: groove;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+
+.spanEndereco {
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.back {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    background-color: black;
+    color: white;
+    margin-left: 8%;
+}
+
+.salvar {
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    background-color: black;
+    color: white;
+    margin-left: 8%;
+}

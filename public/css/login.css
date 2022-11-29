@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Public Sans', sans-serif;
+}
 
 .paragrafoParaLogin {
-    color: grey;
+    color: #222;
 }
 
 #paginaLogin {
-    font-family: 'Times New Roman', Times, serif;
+    
     width: 100vw;
     height: 100vh;
-    background-color: rgb(219, 219, 219);
+    background-color: #222;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -18,20 +26,24 @@
     box-sizing: border-box;
     max-width: 450px;
     max-height: 480px;
-    background-color: white;
+    background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
+    border: 1.5px solid #999
 }
 
 .cadastro {
     box-sizing: border-box;
     max-width: 450px;
-    max-height: 450px;
-    background-color: white;
+    max-height: 480px;
+    background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
+    border: 1.5px solid #999
 }
-
+article h1{
+    text-transform:uppercase; 
+}
 .estiloBotao {
     color: grey;
     width: 300px;
@@ -46,8 +58,16 @@
     background-color: black;
     font-size: 15px;
     color: azure;
-    margin: 5px;
+    margin: 35px;
     padding: 10px;
     width: 260px;
     cursor: pointer;
+}
+
+.login a{
+    margin-left: 40px;
+}
+.paragrafoParaLogin{
+    margin-bottom: 10px;
+
 }
