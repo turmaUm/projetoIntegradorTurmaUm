@@ -1,3 +1,7 @@
+body {
+    font-family: 'Public Sans', 'sans-serif';
+}
+
 .pagamentoSeguro {
     height: 3rem;   
     display: flex;
