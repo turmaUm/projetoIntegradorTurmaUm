@@ -9,6 +9,9 @@ section{
     flex-direction: column;
     align-items: center;
 }
+.item1 img{
+    width:80rem;
+}
 .item2{
     display:flex;
     background-color: white;
@@ -30,6 +33,25 @@ section{
 }
 .item3 img{
     width:1280px;
+}
+.item31{
+    display:flex;
+    background-color: white;
+    text-align: center;
+    height:80px;
+    width: 40%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item31 a{
+    background-color: black;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    
+    
 }
 .item4{
     display:grid;
@@ -119,14 +141,16 @@ section{
 .item51{
     resize: horizontal;
     overflow: auto;
+
    
 }
-.item6 a{
-    width:10rem;
-    resize: horizontal;
-    overflow: auto;
+.item6 a img  {
+    width:40rem;
+    height: 40rem;
 
 }
+
+
 /* .grid-template-areas-1 {
     display:grid;
 	grid-template-areas:
