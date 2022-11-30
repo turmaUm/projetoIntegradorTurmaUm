@@ -5,92 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/geral.css">
-    <link rel="stylesheet" href="/css/enderecoStyle.css">
-    <link rel="stylesheet" href="/css/headerStyle.css">
+    <link rel="stylesheet" href="/css/finalizacaoCompras.css">
     <link rel="stylesheet" href="/css/footerStyle.css">
-    <title>Cadastro Endereço</title>
+    <link rel="stylesheet" href="/css/headerStyle.css">
+
+    <title>Finalização De Compra</title>
 </head>
 <body>
 
     <header>
         <div class="containerHeader" id="containerHeader">
-            BRACKISH
-            <!-- <a href="" id="logo">
-                <img src="../public/img/logotemporario.png" alt="logo"> -->
-            <!-- </a> -->
-
-                <a href="/feminino">Ajuda</a>
-                <a href="/feminino">Cadastro</a>
-                <a href="/feminino">Login</a>
-
-        </div>
-        <div class="menu">
-            <a href="" id="logo2">
-                <img src="/img/casual-t-shirt-.png" alt="logo2">
-            </a>
-            <nav>
-                <a href="/feminino">Feminino</a>
-                <a href="/masculino">Masculino</a>
-                <a href="/infantil">Infantil</a>
-                <a href="/lancamentos">Lançamentos</a>
-                <a href="/promoções">Promoções</a>
-                
-                
-            </nav>
-
-            <div class="pesquisar" id="pesquisar">
-                <input type="text" placeholder="Buscar">
-                <button type="submit">Buscar</button>
-            </div>
-            <a href="/carrinho" id="carrinho">
-                <img src="/img/carrinho.png" alt="carrinho">
-                <span>0</span>
-            </a>
+            <p class="paragrafo-logo">BRACKISH</p> 
+            <a href="/views/home.html">Home</a>
+            <a href="/views/produto.html">Produtos</a>
+            <a href="/views/login.html">Login</a>
         </div>
     </header>
-    <div class="pagamentoSeguro">
-        <span class="logo_check">BRACKISH</span>
-        <span class="barra">/</span>
-        <img src="/img/cadeado3.png" alt="">
-        <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
-    </div>
-
+    
     <main>
-        <div class="mainn">
 
-            <div class="container1">
-                <span class="select">SELECIONE UM ENDEREÇO</span>
-                <div>
-                    <input class="enderecoCadastrado" type="text" placeholder="Ex. Rua Maria das Flores, 622, CEP 89675-626">
-                </div>
-                <a class="save" href=""> Salvar e continuar para pagamento</a>
+        <section class="primeira-section">
+            <h1 class="titulo-compra">COMPRA REALIZADA COM SUCESSO!</h1>
+            <p>Nossas peças foram criadas especialmente para aqueles que desejam transportar sua singularidade, mas com muito estilo.</p> 
+        </section>
 
-            </div>
-            
-            <div class="container2">
-                <span class="spanEndereco">CADASTRAR NOVO ENDEREÇO</span>
-                <div class="linha1">
-                    <input class="cep" type="text" placeholder="CEP" maxlength="9">
-                    <input class="estado" type="text" placeholder="Estado">
-                </div>
+        <section class="segunda-section">   
+            <h3 class="titulo-h3">Seu pedido já está em separação e te enviaremos o quanto antes.</h3>
+            <p>Para acompanhar seu pedido, clique no botão abaixo:</p>
+            <img src="/img/sacolas-de-compras.png" alt="icone-sacola" class="sacola-de-compra">
+            <p><a href="/carrinho" class="link-pedido">Acompanhar pedido</a></p>
+        </section>
 
-                <div class="linha2">
-                    <input class="cidade" type="text" placeholder="Cidade">
-                    <input class="bairro" type="text" placeholder="Bairro">
-                </div>
-                
-                <div class="linha3">
-                    <input class="tipo" type="text" placeholder="Tipo">
-                    <input class="logradouro" type="text" placeholder="Logradouro">
-                </div>
-
-                <input class="linha4" type="text" placeholder="Número" maxlength="10">
-
-                <a class="back" href="#">Voltar ao carrinho</a>
-                <a class="salvar" href="#" >Salvar e Continuar</a>
-                
-            </div>
-        </div>
+        <section class="terceira-section">
+            <h3 class="titulo-h3">Faltou alguma coisa?</h3>
+            <button class="btInicio" id="animate__pulse"><a href="/inicio" class="link-inicio">Voltar ao início</a></button>
+        </section>
+    
     </main>
 
     <footer >
@@ -102,6 +52,7 @@
                     </div>
                     <div>
                         <a class="noticias" href="">Seja o primeiro a saber sobre os nossos lançamentos!</a>
+
                     </div>
                     <div class="form-group">
                         <input type="email" class="email" placeholder="Digite seu email">
@@ -150,8 +101,6 @@
             </div>
         </div>        
     </footer>
-
-
 
 </body>
 </html>
