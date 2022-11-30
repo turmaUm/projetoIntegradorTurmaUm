@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/public/css/geral.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 
         <span class="logo_check">BRACKISH</span>
         <span class="barra">/</span>
-        <img src="/img/cadeado3.png" alt="">
+        <img src="/public/img/cadeado3.png" alt="">
         <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
 
     </div>  
@@ -21,7 +21,7 @@
     
     <main>
 
-        <link rel="stylesheet" href="/css/pagamentoStyle.css">
+        <link rel="stylesheet" href="/public/css/pagamentoStyle.css">
 
         <div class="container">
             <div class="container1">
@@ -47,11 +47,62 @@
                     <span class="span-form">Escolha a forma de pagamento</span>
 
                     <div class="container3">
-                        <article class="paypal"><img src="/img/paypal.png" alt=""></article>
-                        <article class="boleto"><img src="/img/Boleto .jpg" alt=""></article>
-                        <article class="card"><img src="/img/iconecard2.png" alt="">Cartão de crédito ou débito</article>
+                        <article class="paypal"><img src="/public/img/paypal.png" alt=""></article>
+                        <article class="boleto"><img src="/public/img/Boleto .jpg" alt=""></article>
+                        <article class="card"><img src="/public/img/iconecard2.png" alt="">Cartão de crédito ou débito</article>
                     </div>
-                </section>
+                
+
+                    <div class="opcao-de-pagamento">
+                        <input type="text" name="" id="" placeholder="1x de R$ 3.919,00 sem juros">
+                    </div>
+
+                    <span class="information">Pagamento em até 12x com parcela mínima de R$ 5 </span>
+
+                    <p style="margin-top: 2rem; font-size: 17px;" >DADOS DO CARTÃO</p>
+
+                    <div class="div-inform-card">
+                        <form action="/registro">
+                            <label for="nome">Nome do titular do cartão</label>
+                            <input class="input-nome" type="text" name="nome">
+
+                            <label for="numero">Número do cartão</label>
+                            <input class="input-num-card" type="text" name="numero">
+
+                            <label style="margin-left: 14.5rem" for="valid">Data de Validade</label>
+                            <input placeholder="MM/AA" class="input-num-valid" type="number" name="Data">
+
+                            <label for="cvm">Código de segurança</label>
+                            <input class="cvm" type="text" name="cvm">
+
+                            <input class="checkbox-save-dice" type="checkbox" name="save-dice">
+                            <label for="save-dice">Salvar dados do pagamento</label>
+                            
+                        </form>
+
+                    </div>
+
+                    <p>ENDEREÇO DE COBRANÇA</p>
+
+                    <div class="adress-collection">
+
+                        <div class="name">
+                            <span>João Paulo Araújo fontes</span>
+                        </div>
+
+                        <div class="adress">
+                            <span>Rua das rosas</span>
+                            <span>196</span>
+                            <span>Curitiba</span>
+                            <span>Praça da espanha, 89345-354</span>
+                        </div>
+
+                        <div class="country">
+                            <span>Brasil</span>
+                            <span class="editar"><strong>editar</strong></span>
+                        </div>
+
+                    </div>
             </div>
             
     </main>
