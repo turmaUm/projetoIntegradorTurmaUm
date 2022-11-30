@@ -8,9 +8,15 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+.item1{
+    display:flex;
+    justify-content:center;
+    
 }
 .item1 img{
-    width:80rem;
+    width:70%;
 }
 .item2{
     display:flex;
@@ -31,8 +37,13 @@ section{
     
     
 }
+.item3{
+    display: flex;
+    justify-content:center;
+}
 .item3 img{
-    width:1280px;
+    width:70%;
+    
 }
 .item31{
     display:flex;
@@ -65,8 +76,9 @@ section{
 
     ;
     gap:3px;
-    width:80rem;
-    height:60rem;
+    width:70%;
+    
+    
 }
 
 .item41{
