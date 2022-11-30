@@ -4,8 +4,130 @@ main{
     background-color: rgb(250,250,250);
 }
 
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item2{
+    display:flex;
+    background-color: white;
+    text-align: center;
+    height:80px;
+    width: 40%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item2 a{
+    background-color: black;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    
+    
+}
+.item3 img{
+    width:1280px;
+}
+.item4{
+    display:grid;
+    /* grid-template-columns: 1fr 1fr 2fr 1fr; */
+	
+    grid-template-areas:
+        "item41 item43 item45 item45"
+        "item41 item43 item45 item45"
+        "item42 item43 item46 item47"
+        "item42 item44 item44 item47"
 
-.grid-template-areas-1 {
+    ;
+    gap:3px;
+    width:80rem;
+    height:60rem;
+}
+
+.item41{
+    grid-area: item41;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.item41 img{
+    width:200px;
+    height:200px;
+}
+
+.item42{
+    grid-area: item42;
+    background-color: yellowgreen;
+    
+}
+.item42 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item43{
+    grid-area: item43 ;
+    background-color: red;
+}
+.item43 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item44{
+    grid-area: item44;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} 
+.item44 img{
+    width: 200px;
+    height:200px
+}
+.item45{
+    grid-area: item45;
+    background-color:yellow;
+
+}
+.item45 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+     
+}
+.item46{
+    grid-area: item46;
+   
+}
+.item47{
+    grid-area: item47;
+    background-color:blue;
+}
+.item47 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item41, .item44, .item46{
+    background-color:black;
+}
+.item51{
+    resize: horizontal;
+    overflow: auto;
+   
+}
+.item6 a{
+    width:10rem;
+    resize: horizontal;
+    overflow: auto;
+
+}
+/* .grid-template-areas-1 {
     display:grid;
 	grid-template-areas:
 		"item1 item1"
@@ -17,15 +139,15 @@ main{
         "item7 item7"
 		;
     gap: 30px;
-}
+} */
 
-.item1{
+/* .item1{
     grid-area: item1 ;
-    /* background-color: green; */
+    
     justify-self: center;
     margin-top: 50px;
-}
-.item2{
+} */
+/* .item2{
     grid-area: item2 ;
     justify-self: center;
     background-color: white;
@@ -36,8 +158,8 @@ main{
     justify-content: space-around;
     align-items: center;
     
-}
-.item2 a{
+} */
+/* .item2 a{
     background-color: black;
     border-radius: 30px;
     padding: 15px;
@@ -45,24 +167,36 @@ main{
     font-weight: bold;;
     
     
-}
-.item3{
+} */
+/* .item3{
     grid-area: item3 ;
     /* background-color: blue; */
-    display:flex;
+    /* display:flex;
     justify-content: space-around;
     align-items: center;
     
-}
-.item3 img{
+} */
+/* .item3 img{
     width:80%;
-}
-.item4{
+} */
+/* .item4{
     grid-area: item4 ;
     background-color: rosybrown;
-    
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+    grid-template-areas: 
+       "item41 item41"
+       "item42 item42"
+       "item43 item43"
+       "item44 item44"
+       "item45 item45"   
+    ;
+} */
+/* .item4 > div{
+    width: 30%;
+    background-color: turquoise;
 }
-
 .item6{
     grid-area: item6 ;
     background-color: yellowgreen;
@@ -74,4 +208,4 @@ main{
 .item5{
     grid-area: item5 ;
     background-color: black;
-}
+} */
