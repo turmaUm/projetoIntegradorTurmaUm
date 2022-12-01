@@ -1,9 +1,9 @@
-header  {
-    background-color: grey;
-    width: 100%;
-    height: 70px;
-    color: aliceblue;
-    text-align: center;
+*{
+    margin: 0;
+    padding: 20px;
+    font-family: 'Public Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 #carrinho{
     display: flex;
@@ -11,30 +11,41 @@ header  {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+.compras{
+    padding-right: 20px;
+}
 .cx1{
     display: inline-block;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
 }
 .sub{
     display: flex;
+    border-bottom: 1px solid grey;
+    padding-bottom: 300px;
 }
-.sub h4{
+.sub h5{
     padding-right: 50px;
+    border-bottom: 1px solid grey;
 }
 .sub .produtos{
-    padding-right: 200px;
+    padding-right: 250px;
+    border-bottom: 1px solid grey;
 }
 .cx2{
-    background-color: gray;
+    background-color: #F7F8FA;
+}
+button{
+    background-color: black;
+    color: white;
+    width: 95%;
+    align-items: flex-end;
+    margin-top: 10px;
 }
 
-
-footer  {
-    background-color: blanchedalmond;
-    width: 100%;
-    height: 70px;
-    color: black;
+.total{
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding-bottom: 70%;
+}
+a{
     text-align: center;
-    padding: 10px;
 }
