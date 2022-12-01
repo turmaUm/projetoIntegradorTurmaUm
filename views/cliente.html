@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/headerStyle.css">
     <link rel="stylesheet" href="/css/mainStyle.css">
-    <link rel="stylesheet" href="/css/geral.css">
+    <!-- <link rel="stylesheet" href="/css/geral.css"> -->
     <link rel="stylesheet" href="/css/footerStyle.css">
     <link rel="stylesheet" href="/css/clienteStyle.css">
     <title>BRACKISH</title>
@@ -18,85 +18,128 @@
 <body>
     <header>
         <div class="containerHeader" id="containerHeader">
-            BRACKISH
-            <!-- <a href="" id="logo">
-                <img src="../public/img/logotemporario.png" alt="logo"> -->
-            <!-- </a> -->
-
-            <a href="/feminino">Ajuda</a>
-            <a href="/feminino">Cadastro</a>
-            <a href="/feminino">Login</a>
+            <a href="">BRACKISH</a>
+            <nav>
+                <a href="/feminino">Ajuda</a>
+                |
+                <a href="/feminino">Cadastro</a>
+                |
+                <a href="/feminino">Login</a>
+            </nav>
 
         </div>
 
-
-
         <div class="menu">
             <a href="" id="logo2">
-                <img src="/img/casual-t-shirt-.png" alt="logo2">
+                <img src="img/earth.png" alt="logo2">
             </a>
             <nav>
                 <a href="/feminino">Feminino</a>
                 <a href="/masculino">Masculino</a>
                 <a href="/infantil">Infantil</a>
-                <a href="/calcados">Calçados</a>
                 <a href="/lancamentos">Lançamentos</a>
-                <a href="/promoções">Promoções</a>
+                <a href="/lancamentos">Black Friday</a>
+                <a href="/lancamentos">Mais Vendidos</a>
+                <a href="/lancamentos">Promoções</a>
             </nav>
 
             <div class="pesquisar" id="pesquisar">
                 <input type="text" placeholder="Buscar">
-                <button type="submit">Buscar</button>
+                <button type="submit">
+                    <a href="/resultado_busca.html">
+                    <img src="/img/loupe.png" alt="">
+                    </a>
+                </button>
             </div>
             <a href="/carrinho" id="carrinho">
-                <img src="/img/carrinho.png" alt="carrinho">
+                <img src="img/carrinho.png" alt="carrinho">
                 <span>0</span>
             </a>
         </div>
     </header>
 
 
-    <main class="corpoCliente">
-        <div class="centroPessoal">
-            <h1>Centro Pessoal</h1>
-            <h2>Minha conta</h2>
-            <h2>Meus Ativos</h2>
-            <h2>Meus Pedidos</h2>
-            <h2>As Minhas Listas</h2>
-            <h2>Serviço Ao Cliente</h2>
-            <h2>Outros Serviços</h2>
-            <h2>Política</h2>
-            <h2>Sair</h2>
+
+    <main>
+        <section class="containerMain">
+            <div class="centroPessoal">
+                <h1>Centro pessoal</h1>
+                    <h2>Minha conta</h2>
+                    <h2>Meus ativos</h2>
+                    <h2>Meus pedidos</h2>
+                    <h2>As minhas listas</h2>
+                    <h2>Serviço ao cliente</h2>
+                    <h2>Outros serviços</h2>
+                    <h2>Política</h2>
+                    <h2>Sair</h2>
+            </div>
+        <div class="cliente">
+                <h1>Cliente</h1>
+            <div class="clienteContainer">
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Cupons
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Pontos
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Carteira
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Cartão de presente
+                </a>
+            </div>
         </div>
 
-        <div class="perfilEPedidos">
-            <div id="perfil">
-                <h1>Oi</h1>
-                <h2>Meu perfil</h2>
-                <a href="">Cupons</a>
-                <a href="">Pontos</a>
-                <a href="">Carteira</a>
-                <a href="">Cartão de presente</a>
-            </div>
-
-            <div id="pedidos">
-                <h1>Oi</h1>
-                <h2>Meu perfil</h2>
-                <a href="">Cupons</a>
-                <a href="">Pontos</a>
-                <a href="">Carteira</a>
-                <a href="">Cartão de presente</a>
+        <div class="pedidos">
+                <h1>Meus pedidos</h1>
+            <div class="pedidosContainer">
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Não pago
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Processando
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Enviado
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Devolução
+                </a>
             </div>
         </div>
 
-        <div class="servicoEDesejo">
-            <div id="servico">
-                <h1>Serviço Ao Cliente</h1>
-                <a href="">Minha Mensagem</a>
-                <a href="">Serviço Registros</a>
+        <div class="servico">
+                <h1>Serviço ao cliente</h1>
+            <div class="servicoContainer">
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Minhas mensagens
+                </a>
+                <a href="">
+                    <img src="..//public/img/carrinho.png" alt="">
+                    Serviço registros
+                </a>
             </div>
+        </div>
 
-            <div id="listaDesejos">Lista De Desejos</div>
+            <div class="desejos">
+                <h1>Lista de desejos</h1>
+                <div id="desejosImg">
+                    <img src="..//public/img/carrinho.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        </section>
         </div>
     </main>
 
