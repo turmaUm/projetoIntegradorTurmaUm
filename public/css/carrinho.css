@@ -2,12 +2,10 @@
     margin: 0;
     padding: 20px;
     font-family: 'Public Sans', sans-serif;
-    justify-content: center;
-    align-items: center;
 }
 #carrinho{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -20,7 +18,7 @@
 .sub{
     display: flex;
     border-bottom: 1px solid grey;
-    padding-bottom: 300px;
+    padding-bottom: 70%;
 }
 .sub h5{
     padding-right: 50px;
@@ -32,20 +30,29 @@
 }
 .cx2{
     background-color: #F7F8FA;
+    text-align: left;
+}
+.finalizar{
+    text-align: center;
 }
 button{
     background-color: black;
     color: white;
-    width: 95%;
+    width: 100%;
     align-items: flex-end;
     margin-top: 10px;
+    font-size: 17px;
 }
 
 .total{
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
-    padding-bottom: 70%;
+    padding-bottom: 80%;
 }
 a{
-    text-align: center;
+    padding: 20px;
+}
+a.cupom{
+    text-decoration: none;
+    font-size: 12px;
 }
