@@ -1,19 +1,18 @@
 html {
     /*border: 2px solid green;*/
-    height: 120%;
     box-sizing: border-box;
 
 }
 
 body {
     font-family: 'Public Sans', 'sans-serif';
+    background-color: rgb(250, 250, 250);
 }
 
 main {
     display: flex;
-    height: 120%;
     justify-content: center;
-    background-color:rgb(250, 250, 250);
+    padding: 0;
 }
 
 .pagamentoSeguro {
@@ -21,6 +20,7 @@ main {
     display: flex;
     background-color: rgb(250, 250, 250);
     border-bottom: ridge;
+    border-top: ridge;
 }
 
 .logo_check {
@@ -54,19 +54,22 @@ main {
     margin-left: 0.4rem;
 }
 
- .container {
-    border: 2px solid red;
-    height: 960px;
-    width: 1600px;
-    margin-top: 5rem;
+ .container-princ {
+    /*border: 2px solid red;*/
+    height: 880px;
+    width: 1150; /*1150*/
+    margin-top: 0px;
 }
 
 .container1 {
-    justify-content: center;
-    /*border: 2px solid black;*/
+    /*border: 2px solid green;*/
     height: 40px;
     width: 1150px;
     font-size: 1.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:5rem;
+    margin-bottom: 2rem;
 }
 
 .stepbar {
@@ -100,7 +103,7 @@ main {
     /*border: 2px solid aqua;*/
     height: 800px;
     width: 1150px;
-    margin-top: 3rem;
+    margin-top: 0px;
     flex-wrap: wrap;
 }
 
@@ -226,6 +229,7 @@ main {
     margin-left: 22rem;
     margin-top: 0.3rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .cvm {
@@ -236,6 +240,7 @@ main {
     border-radius: 5px;
     border: none;
     background: #e6e6e6;
+    text-align: center;
 }
 
 .checkbox-save-dice {
@@ -271,7 +276,7 @@ main {
     width: 40%;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .adress-collection .adress span {
@@ -295,6 +300,7 @@ main {
     margin-left: 15rem;
     text-decoration: underline;
 }
+
 
 
 

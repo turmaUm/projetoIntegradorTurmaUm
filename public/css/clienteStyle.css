@@ -1,29 +1,137 @@
-.corpoCliente {
-    display: inline-block;
-    background-color: red;
-    width: 100%;    
+.containerMain {
+	background-color: #EFF2F6;
+	padding: 50px 150px 200px 150px;
+	display: grid;
+	gap: 10px;
+	grid-template-areas:
+		'header header header header header header'
+		'centroPessoal cliente cliente cliente cliente servico'
+		'centroPessoal pedidos pedidos pedidos pedidos desejos'
+		'nome pedidos pedidos pedidos pedidos none'
+		'footer footer footer footer footer footer'
 }
 
 .centroPessoal {
-    background-color: orange;
-    display: inline-block;
+	background-color: white;
+	/* border: 1px solid black; */
+	grid-area: centroPessoal;
+	padding: 20px 15px;
 }
 
-.perfilEPedidos {
-    background-color: purple;
+.centroPessoal h2 {
+	padding-bottom: 10px;
 }
 
-#perfil {
-    background-color: orange;
-    width: 50%;
+.centroPessoal h1 {
+	padding-bottom: 20px;
 }
 
-#pedidos {
-    background-color: orange;
-    width: 50%;
+.cliente {
+	background-color: white;
+	/* border: 1px solid black; */
+	grid-area: cliente;
+	padding: 20px 15px;
 }
 
-.servicoEDesejo{
-    display: inline-block;
-    background-color: orange;
+.cliente h1 {
+	padding-bottom: 20px;
+}
+
+.cliente a {
+	/* border: 1px solid black; */
+	width: 50px;
+	padding: 5px;
+}
+
+.cliente img {
+	display: inline-block;
+	width: 50px;
+}
+
+.servicoContainer img {
+	display: inline-block;
+	width: 50px;
+}
+
+.pedidosContainer img {
+	display: inline-block;
+	width: 50px;
+}
+
+.clienteContainer {
+	display: flex;
+	/* background-color: purple; */
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.pedidos {
+	background-color: white;
+	/* border: 1px solid black; */
+	grid-area: pedidos;
+	padding: 20px 15px;
+}
+
+.pedidos a {
+	/* border: 1px solid black; */
+	width: 50px;
+	padding: 10px;
+}
+
+.pedidosContainer {
+	display: flex;
+	/* background-color: purple; */
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.pedidos h1 {
+	padding-bottom: 20px;
+}
+
+.servico {
+	background-color: white;
+	/* border: 1px solid black; */
+	grid-area: servico;
+	padding: 20px 15px;
+}
+
+.servico a {
+	/* border: 1px solid black; */
+	width: 50px;
+	padding: 10px;
+}
+
+.servicoContainer {
+	display: flex;
+	/* background-color: purple; */
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.servico h1 {
+	padding-bottom: 20px;
+}
+
+.desejos {
+	background-color: white;
+	/* border: 1px solid black; */
+	grid-area: desejos;
+	padding: 20px 15px;
+}
+
+#desejosImg {
+	display: flex;
+	justify-content: center;
+}
+
+.desejos img {
+	display: inline-block;
+	width: 50px;
+	/* border: 1px solid black; */
+	justify-content: center;
+}
+
+.desejos h1 {
+	padding-bottom: 20px;
 }

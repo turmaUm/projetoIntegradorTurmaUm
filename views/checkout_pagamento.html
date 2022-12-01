@@ -4,10 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/css/geral.css">
+    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/pagamentoStyle.css">
     <title>Document</title>
 </head>
 <body>
+
+    <header>
+
+        <link rel="stylesheet" href="/css/headerStyle.css">
+        <div class="containerHeader" id="containerHeader">
+            <a href="">BRACKISH</a>
+            <nav>
+                <a href="/feminino">Ajuda</a>
+                |
+                <a href="/feminino">Cadastro</a>
+                |
+                <a href="/feminino">Login</a>
+            </nav>
+
+        </div>
+
+        <div class="menu">
+            <a href="" id="logo2">
+                <img src="img/earth.png" alt="logo2">
+            </a>
+            <nav>
+                <a href="/feminino">Feminino</a>
+                <a href="/masculino">Masculino</a>
+                <a href="/infantil">Infantil</a>
+                <a href="/lancamentos">Lançamentos</a>
+                <a href="/lancamentos">Black Friday</a>
+                <a href="/lancamentos">Mais Vendidos</a>
+                <a href="/lancamentos">Promoções</a>
+            </nav>
+
+            <div class="pesquisar" id="pesquisar">
+                <input type="text" placeholder="Buscar">
+                <button type="submit">
+                    <a href="/resultado_busca.html">
+                    <img src="/img/loupe.png" alt="">
+                    </a>
+                </button>
+            </div>
+            <a href="/carrinho" id="carrinho">
+                <img src="img/carrinho.png" alt="carrinho">
+                <span>0</span>
+            </a>
+        </div>
+    </header>
 
     <div class="pagamentoSeguro">
 
@@ -18,38 +63,34 @@
 
     </div>  
     
-    
+    <div class="container1">
+        <ol class="ol">
+            <li>
+                <span>1 Entrega</span>
+                <div class="stepbar"></div>
+            </li>
+
+            <li>
+                <span><strong>2 Pagamento</strong></span>
+                <div class="stepbar"></div>
+            </li>
+
+            <li>
+                <span>3 resumo</span>
+                <div class="stepbar-res"></div>
+            </li>
+        </ol>
+    </div>
+
     <main>
-
-        <link rel="stylesheet" href="/public/css/pagamentoStyle.css">
-
-        <div class="container">
-            <div class="container1">
-                <ol class="ol">
-                    <li>
-                        <span>1 Entrega</span>
-                        <div class="stepbar"></div>
-                    </li>
-
-                    <li>
-                        <span><strong>2 Pagamento</strong></span>
-                        <div class="stepbar"></div>
-                    </li>
-
-                    <li>
-                        <span>3 resumo</span>
-                        <div class="stepbar-res"></div>
-                    </li>
-                </ol>
-            </div>
-
+        <div class="container-princ">
             <div class="container2">
                     <span class="span-form">Escolha a forma de pagamento</span>
 
                     <div class="container3">
-                        <article class="paypal"><img src="/public/img/paypal.png" alt=""></article>
-                        <article class="boleto"><img src="/public/img/Boleto .jpg" alt=""></article>
-                        <article class="card"><img src="/public/img/iconecard2.png" alt="">Cartão de crédito ou débito</article>
+                        <article class="paypal"><img src="/img/paypal.png" alt=""></article>
+                        <article class="boleto"><img src="/img/Boleto .jpg" alt=""></article>
+                        <article class="card"><img src="/img/iconecard2.png" alt="">Cartão de crédito ou débito</article>
                     </div>
                 
 
@@ -104,7 +145,7 @@
 
                     </div>
             </div>
-            
+        </div>          
     </main>
 
 
