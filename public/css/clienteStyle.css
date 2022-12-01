@@ -23,7 +23,21 @@
 }
 
 .centroPessoal h1 {
-	padding-bottom: 20px;
+	padding-bottom: 35px;
+}
+
+.clienteContainer {
+	display: flex;
+	/* background-color: purple; */
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.clienteContainer span {
+	/* border: 1px solid black; */
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
 }
 
 .cliente {
@@ -34,35 +48,38 @@
 }
 
 .cliente h1 {
-	padding-bottom: 20px;
+	padding-bottom: 35px;
 }
 
 .cliente a {
 	/* border: 1px solid black; */
-	width: 50px;
+	width: 100px;
 	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+	color: black;
 }
 
 .cliente img {
+	padding-bottom: 15px;
 	display: inline-block;
-	width: 50px;
+	width: 50px;	
 }
 
-.servicoContainer img {
-	display: inline-block;
-	width: 50px;
-}
-
-.pedidosContainer img {
-	display: inline-block;
-	width: 50px;
-}
-
-.clienteContainer {
+.pedidosContainer {
 	display: flex;
 	/* background-color: purple; */
 	justify-content: space-between;
 	margin-top: 10px;
+}
+
+.pedidos img {
+	/* border: 1px solid black; */
+	display: flex;
+	width: 50px;
+	padding-bottom: 15px;
+	padding-left: 25px;
 }
 
 .pedidos {
@@ -76,17 +93,27 @@
 	/* border: 1px solid black; */
 	width: 50px;
 	padding: 10px;
+	text-decoration: none;
+	color: black;
+	width: 100px;
+	text-align: center;
 }
 
-.pedidosContainer {
+.pedidos h1 {
+	padding-bottom: 35px;
+}
+
+.servicoContainer {
 	display: flex;
 	/* background-color: purple; */
 	justify-content: space-between;
 	margin-top: 10px;
+
 }
 
-.pedidos h1 {
-	padding-bottom: 20px;
+.servicoContainer img {
+	display: inline-block;
+	width: 50px;
 }
 
 .servico {
@@ -98,19 +125,19 @@
 
 .servico a {
 	/* border: 1px solid black; */
-	width: 50px;
+	width: 100px;
 	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
 }
 
-.servicoContainer {
-	display: flex;
-	/* background-color: purple; */
-	justify-content: space-between;
-	margin-top: 10px;
+.servico img {
+	padding-bottom: 15px;
 }
 
 .servico h1 {
-	padding-bottom: 20px;
+	padding-bottom: 35px;
 }
 
 .desejos {
@@ -120,18 +147,19 @@
 	padding: 20px 15px;
 }
 
-#desejosImg {
-	display: flex;
-	justify-content: center;
+.desejosContainer {
+	/* border: 1px solid black; */
+	display: block;
+	text-align: center;
 }
 
 .desejos img {
 	display: inline-block;
 	width: 50px;
 	/* border: 1px solid black; */
-	justify-content: center;
+	padding-bottom: 15px;
 }
 
 .desejos h1 {
-	padding-bottom: 20px;
+	padding-bottom: 35px;
 }
