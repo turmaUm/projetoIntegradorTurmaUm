@@ -14,7 +14,7 @@
 #paginaLogin {
     width: 100vw;
     height: 100vh;
-    background-color: #222;
+    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -28,7 +28,7 @@
     background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
-    border: 1.5px solid #999
+    /* border: 1.5px solid #999 */
 }
 
 .cadastro {
@@ -38,7 +38,7 @@
     background-color: #EFF2F6;
     padding: 50px;
     margin: 100px;
-    border: 1.5px solid #999
+    /* border: 1.5px solid #999 */
 }
 
 article h1{
