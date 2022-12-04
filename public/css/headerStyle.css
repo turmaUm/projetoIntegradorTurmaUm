@@ -1,3 +1,12 @@
+header {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+ }
+
  #logo {
     display: flex;
     position: relative;
@@ -126,7 +135,6 @@
     padding-right: 30px;
     display: flex;
     align-items: center;
-    /* background-color: rgb(227, 227, 227); */
     background-color: black;
     color: white;
     justify-content: space-between;
@@ -142,4 +150,8 @@
 
 .containerHeader a:hover {
     color: rgb(151, 151, 151);
+}
+
+main {
+    margin-top: 130px;
 }
