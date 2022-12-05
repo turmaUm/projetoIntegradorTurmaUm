@@ -25,7 +25,7 @@
     box-sizing: border-box;
     max-width: 450px;
     max-height: 480px;
-    background-color: #EFF2F6;
+    background-color: rgb(240, 240, 240);
     padding: 50px;
     margin: 100px;
     /* border: 1.5px solid #999 */
@@ -35,7 +35,7 @@
     box-sizing: border-box;
     max-width: 450px;
     max-height: 480px;
-    background-color: #EFF2F6;
+    background-color: rgb(240, 240, 240);
     padding: 50px;
     margin: 100px;
     /* border: 1.5px solid #999 */

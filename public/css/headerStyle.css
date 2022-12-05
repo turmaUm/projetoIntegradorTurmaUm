@@ -88,7 +88,7 @@ header {
     height: 40px;
     width: 40px;
     display: inline-block;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(240, 240, 240);
     top: 0;
     right: 0px;
     color: white;
@@ -101,7 +101,7 @@ header {
 }
 
 .pesquisar button:hover {
-    background-color: rgb(121, 121, 121);
+    background-color: rgb(196, 196, 196);
 }
 
 .pesquisar input::placeholder {
@@ -120,7 +120,7 @@ header {
     height: 40px;
     border-radius: 25px;
     border: none;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(240, 240, 240);
 }
 
 .container {
