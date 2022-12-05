@@ -46,14 +46,15 @@ main{
 .img-prod{
     
     display:grid;
-    grid-template-columns: 220px 220px;
-    gap: 15px;
-
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    
 }
 
 .img-prod img{
     width: 220px;
     height: 250px;
+    border: 1px solid #333;
    
 }
 .box-cores h5{
