@@ -45,15 +45,16 @@ main{
 }
 .img-prod{
     
+    width:40%;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
+   
     
 }
 
 .img-prod img{
-    width: 220px;
-    height: 250px;
+    width: 90%;
+    height: 90%;
     border: 1px solid #333;
    
 }
@@ -152,24 +153,27 @@ main{
     .container-main{
         display:flex;
         flex-direction: column;
-        border: 3px solid #000;
+        /* border: 3px solid #000; */
+        align-items: center;
         
     }
     .img-prod{
     
         display:grid;
-        grid-template-columns: 220px;
+        grid-template-columns: 100%;
         gap: 15px;
         
-        justify-content: center;
+        
     
     }
-  
+ 
     .name-prod{
+        
         text-align: center;
     }
     .box-description {
         width: 100%;
+        text-align: center;
     }
 
 }
