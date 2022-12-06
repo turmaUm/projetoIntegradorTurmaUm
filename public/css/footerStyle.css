@@ -54,7 +54,7 @@
 .email{
     height:36px;
     width:318px;
-    
+    border-radius: 5px;
 }
 
 .botao{
@@ -63,7 +63,12 @@
     color: white;
     background-color: black;
     box-shadow: none;
+    border-radius: 5px;
     
+}
+.botao:hover{
+    background-color: #333;
+    color: #fff;
 }
 
 /* .col-md{

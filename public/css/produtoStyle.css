@@ -77,6 +77,9 @@ main{
     display: flex;
     justify-content: space-around;
 }
+.cores div:hover{
+    border: red solid 2px;
+}
 .cor1{
     width:30px;
     height:30px;
@@ -92,11 +95,21 @@ main{
     border: 1px solid black;
     border-radius: 50%;
 }
+
 .tamanhos{
    
     display:flex;
     gap: 5px;
     
+    
+}
+
+.tamanhos div{
+    border-radius: 5px;
+}
+.tamanhos div:hover{
+    background-color: #333;
+    color: #fff;
 }
 .tam1{
     width:30px;
@@ -121,12 +134,14 @@ main{
     height:40px;
     background-color: #0D0D0D;
     color:white;
+    border-radius: 5px;
 }
 
 
 .select-prod div{
     display: flex;
     border: 1px solid #333;
+    border-radius: 5px;
     
 }
 .select-prod div:last-child{
@@ -140,10 +155,11 @@ main{
     text-align: center;
     
 }
-.select-prod div button:hover{
+.select-prod button:hover{
     background-color: #333;
     color: #fff;
 }
+
 .select-prod div input{
     text-align: center;
     width:40px;
