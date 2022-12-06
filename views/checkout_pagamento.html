@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/headerStyle.css">
     <link rel="stylesheet" href="/css/mainStyle.css">
     <link rel="stylesheet" href="/css/geral.css">
     <link rel="stylesheet" href="/css/footerStyle.css">
@@ -101,14 +100,23 @@
                         <article class="card"><img src="/img/iconecard2.png" alt="">Cartão de crédito ou débito</article>
                     </div>
                 
-
-                    <div class="opcao-de-pagamento">
-                        <input type="text" name="" id="" placeholder="1x de R$ 3.919,00 sem juros">
+                    <div class="formParcelas">
+                    <form action="" method="GET">
+                        <label for="parcela">Selecione o número de parcelas:</label>
+                        <br>
+                            <select name="parcela">
+                            <option value="1">1x de R$ 3.919,00 sem juros</option>
+                            <option value="2">2x de R$ 1.959,50 sem juros</option>
+                            <option value="3">3x de R$ 1.306,33 sem juros</option>
+                            <option value="4">4x de R$ 979,75 sem juros</option>
+                            <option value="5">5x de R$ 783,80 sem juros</option>
+                            </select>
+                        </form>
                     </div>
 
-                    <span class="information">Pagamento em até 12x com parcela mínima de R$ 5 </span>
+                    <span class="information">Pagamento em até 5x com parcela mínima de R$ 5 </span>
 
-                    <p style="margin-top: 2rem; font-size: 17px;" >DADOS DO CARTÃO</p>
+                    <p style="margin-top: 2rem; font-size: 17px; margin-bottom: 1rem;" >DADOS DO CARTÃO</p>
 
                     <div class="div-inform-card">
                         <form action="/registro">
@@ -148,12 +156,37 @@
 
                         <div class="country">
                             <span>Brasil</span>
-                            <span class="editar"><strong>editar</strong></span>
+                            <span class="editar"><a href=""><strong>editar</strong></span></a>
                         </div>
 
                     </div>
             </div>
-        </div>          
+        </div>
+        
+        <div class="resumo">
+            <div class="resumo1">
+                <img src="img/jaqueta-fem-1.png" alt="jaqueta1">
+                <span>valor<br><br> R$ 3.919,00</span>
+            </div>
+
+            <span class="resumoEntrega">
+                Entrega
+            </span>
+
+            <span class="freteValor">R$ 0,00</span>
+
+            <div class="valorTotal">
+                <span><strong>Total </strong></span>
+                <span style="margin-left: 1rem;">R$ 3.919,00</span>
+            </div>
+
+            <div class="codPromo">
+                <p>Insira seu Código promocional</p>
+                <input type="text" name="codpromo" id="codpromo" placeholder="Insira o Código promocional">
+            </div>
+
+            <button class="btSave">Salvar e Continuar</button>
+        </div>
     </main>
 
     <footer>
