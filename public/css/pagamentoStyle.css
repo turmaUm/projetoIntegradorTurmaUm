@@ -226,6 +226,7 @@ main {
     margin-top: 0.3rem;
     margin-left: 0.1rem;
     text-align: center;
+    z-index: -1;
 }
 
 .input-num-valid {
@@ -364,7 +365,6 @@ main {
     align-items: center;
     display: flex;
     font-size: 20px;
-    /*border: 2px solid black;*/
     position: absolute;
     margin-top: 13rem;
     width: 18rem;
@@ -374,7 +374,6 @@ main {
 .codPromo {
     position: absolute;
     display: flex;
-    /*border: 2px solid purple;*/
     width: 18rem;
     margin-top: 18rem;
     height: 7rem;
