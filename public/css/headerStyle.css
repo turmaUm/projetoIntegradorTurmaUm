@@ -148,10 +148,14 @@ header {
     transition: all 0.5s;
 }
 
-.containerHeader a:hover {
+.containerHeader nav > a:hover {
     color: rgb(151, 151, 151);
 }
 
 main {
     margin-top: 130px;
+}
+
+menu nav ul {
+    position: absolute;
 }

@@ -201,6 +201,7 @@ main {
     /*border: 2px solid red;*/
     height: 40%;
     width: 50%;
+    /* background-color: orange; */
 }
 
 .input-nome {
@@ -221,6 +222,7 @@ main {
     border-radius: 5px;
     margin-top: 0.3rem;
     margin-left: 0.1rem;
+    text-align: center;
 }
 
 .input-num-valid {
