@@ -55,6 +55,7 @@
     height:36px;
     width:318px;
     border-radius: 5px;
+    
 }
 
 .botao{
@@ -129,8 +130,7 @@
 }
 
 .midias-sociais img {
-    height: 32px;
-    width: 32px;
+    height: 45px;
     padding-top: 10px;
     padding-right: 20px;
 }
