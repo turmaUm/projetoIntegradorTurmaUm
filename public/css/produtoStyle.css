@@ -48,15 +48,15 @@ main{
     width:40%;
     display:grid;
     grid-template-columns: 1fr 1fr;
-   
+
     
 }
 
 .img-prod img{
     width: 90%;
     height: 90%;
-    border: 1px solid #333;
-   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.274);
+    border-radius: 20px;
 }
 .box-cores h5{
     font-size: 12px;
