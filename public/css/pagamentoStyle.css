@@ -170,25 +170,26 @@ main {
     margin-right: 1rem;
 }
 
-.opcao-de-pagamento {
+.formParcelas {
+    margin-top: 1.8rem;
     display: flex;
+    /*border: 2px solid red;*/
+    width: 760px;
+}
+
+.formParcelas select {
+    margin-top: 10px;
+    font-size: 20px;
     border-radius: 5px;
     border: 1px solid black;
     border: groove;
-    width: 65%;
+    width: 760px;
     height: 3.7rem;
-    margin-top: 1.8rem;
-    align-items: center;
+    color: black;
+    padding-left: 10px;
+    
 }
 
-.opcao-de-pagamento > input {
-    border: none;
-    width: 90%;
-    margin-left: 1rem;
-    color: black;
-    background-color: rgb(250, 250, 250);
-    font-size: 20px;
-}
 
 .information {
     display: flex;

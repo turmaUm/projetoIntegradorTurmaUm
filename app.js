@@ -6,12 +6,12 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Criando rota para página checkout endereço
-app.get("/checkout-endereco", (req,res)=>{
+app.get("/checkout_endereco", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_endereco.html'))
 });
 
 //Criando rota para página checkout pagamento
-app.get("/checkout-pagamento", (req,res)=>{
+app.get("/checkout_pagamento", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_pagamento.html'))
 });
 
