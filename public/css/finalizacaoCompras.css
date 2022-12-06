@@ -26,12 +26,20 @@ main .primeira-section {
 
 }
 
+.primeira-section p {
+    margin-top: 10px;
+}
+
 main .segunda-section {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: space-between;
+}
+
+.segunda-section p {
+    margin-top: 10px;
 }
 
 main .terceira-section {
@@ -65,9 +73,12 @@ h3 .titulo-h3 {
     cursor: pointer;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    transition: 0.25s;
 }
 
 .sacola-de-compra {
+    margin-top: 10px;
     display: flex;
     width: 100px;
 }
@@ -82,6 +93,10 @@ button:hover, .link-pedido:hover {
     color: black;
 }
 
+.link-inicio:hover {
+    color: white;
+}
+
 .link-pedido{
     display: flex;
     font-size: 1.0rem;
@@ -92,6 +107,8 @@ button:hover, .link-pedido:hover {
     text-decoration: none;
     background-color: rgba(0,0,0,0.1);
     color: black;
+    margin-top: 10px;
+    transition: 0.25s;
 }
 
 /*A partir daqui código somente da keyframe para h1*/

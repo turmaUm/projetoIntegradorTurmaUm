@@ -57,10 +57,16 @@ li {
     text-decoration: none;
     color: black;
     font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.link-mais-detalhes:hover {
+    color: rgb(53, 53, 53);
 }
 
 .bt-mais-detalhes:hover{
     background-color: rgba(0,0,0,0.4);
+    cursor: pointer;
 }
 
 .bt-mais-detalhes {
@@ -68,6 +74,7 @@ li {
     color: aliceblue;
     padding: 10px;
     border-radius: 9px;
+    margin-top: 10px;
 }
 
 main {
