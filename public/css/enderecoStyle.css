@@ -60,7 +60,7 @@ main {
 .container1 {
     display: flex;
     /*border: 2px solid red;*/
-    width: 45rem;
+    width: 50rem;
     background-color: rgb(240, 240, 240);
     flex-wrap: wrap;
     margin-left: auto;
@@ -99,6 +99,7 @@ main {
     display: flex;
     background-color: black;
     color: white;
+    border-radius: 5px;
 }
 
 .container2 {
@@ -108,15 +109,17 @@ main {
     display: flex;
     /*border: 2px solid red;*/
     flex-wrap: wrap;
-    width: 45rem;
+    width: 50rem;
     row-gap: 1.8rem;
 }
 
 .linha1 {
-    /*border: 2px solid green;*/
+    
     display: flex;
+    align-items: center;
     height: 3.5rem;
     width: 100rem;
+    
 }
 
 .linha1 .cep {
@@ -124,8 +127,7 @@ main {
     /*background-color: aqua;*/
     display: flex;
     width: 13rem;
-    height: 2.5rem;
-    margin-top: auto;
+    height: 3.2rem;
     border: 3px solid rgb(247, 247, 247);
     border-style: groove;
     border-radius: 5px;
@@ -235,6 +237,7 @@ main {
     background-color: black;
     color: white;
     margin-left: 8%;
+    border-radius: 5px;
 }
 
 .salvar {
@@ -247,4 +250,5 @@ main {
     background-color: black;
     color: white;
     margin-left: 8%;
+    border-radius: 5px;
 }
