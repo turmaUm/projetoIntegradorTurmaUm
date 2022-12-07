@@ -1,5 +1,5 @@
-html {
-    /*border: 2px solid green;*/
+*{
+    
     box-sizing: border-box;
 
 }
@@ -7,6 +7,8 @@ html {
 body {
     font-family: 'Public Sans', 'sans-serif';
     background-color: rgb(250, 250, 250);
+    
+
 }
 
 main {
@@ -14,6 +16,8 @@ main {
     justify-content: center;
     padding: 0;
     margin-top: 1rem;
+    /* background-color: green; */
+    
 }
 
 .pagamentoSeguro {
@@ -177,6 +181,7 @@ main {
     display: flex;
     /*border: 2px solid red;*/
     width: 760px;
+    
 }
 
 .formParcelas select {
@@ -294,19 +299,17 @@ main {
 
 .country {
     display: flex;
-    /*border: 2px solid red;*/
     height: 100%;
-    width: 21rem;
+    width: 20rem;
     align-items: center;
-    justify-content: flex-start;
     font-size: 20px;
 }
 
-.country .editar {
+.editar {
     display: flex;
-    position: absolute;
-    margin-left: 15rem;
-    text-decoration: underline;
+    margin-left: 12rem;
+    text-decoration: none;
+    color: #000;
 }
 
 .editar a {
@@ -332,6 +335,7 @@ main {
    /* border: 2px solid green;*/
     width: 100%;
     height: 8rem;
+    z-index: -1;
 }
 
 .resumo1 span {
@@ -340,6 +344,7 @@ main {
     margin-left: auto;
     font-size: 20px;
     width: 100%;
+    z-index: -1;
 }
 
 .resumoEntrega {
@@ -350,6 +355,7 @@ main {
     margin-top: 10rem;
     margin-left: 1rem;
     font-size: 20px;
+    z-index: -1;
 }
 
 .freteValor {
@@ -358,6 +364,7 @@ main {
     margin-top: 10rem;
     margin-left: 12rem;
     font-size: 20px;
+    z-index: -1;
 }
 
 .valorTotal {
@@ -369,6 +376,7 @@ main {
     margin-top: 13rem;
     width: 18rem;
     height: 5rem;
+    z-index: -1;
 }
 
 .codPromo {
@@ -380,6 +388,7 @@ main {
     background-color: rgb(209, 209, 209);
     padding: 5px;
     justify-content: center;
+    z-index: -1;
 }
 
 .codPromo p {
@@ -390,6 +399,7 @@ main {
     margin-top: 1rem;
     font-size: 18px;
     justify-content: center;
+    z-index: -1;
 }
 
 .codPromo input {
@@ -418,6 +428,7 @@ main {
     background-color: black;
     font-size: 20px;
     border-radius: 5px;
+    z-index: -1;
 }
 
 
