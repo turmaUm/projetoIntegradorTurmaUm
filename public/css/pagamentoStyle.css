@@ -14,9 +14,10 @@ body {
 main {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 0;
     margin-top: 1rem;
-    /* background-color: green; */
+    border: 1px solid black;
     
 }
 
@@ -61,15 +62,15 @@ main {
 }
 
  .container-princ {
-    /*border: 2px solid red;*/
+    border: 2px solid red;
     height: 880px;
-    width: 1150; /*1150*/
+    width: 60%; /*1150*/
     margin-top: 0px;
-    margin-left: 19rem;
+    /* margin-left: 19rem; */
 }
 
 .container1 {
-    /*border: 2px solid green;*/
+    /* border: 2px solid green; */
     height: 40px;
     width: 1150px;
     font-size: 1.3rem;
@@ -107,7 +108,7 @@ main {
 }
 
 .container2 {
-    /*border: 2px solid aqua;*/
+    /* border: 2px solid aqua; */
     height: 800px;
     width: 1150px;
     margin-top: 0px;
@@ -285,7 +286,7 @@ main {
 .adress-collection .adress {
     display: flex;
     height: 100%;
-    /*border: 2px solid red;*/
+    /* border: 2px solid red; */
     width: 40%;
     justify-content: center;
     flex-direction: column;
@@ -318,7 +319,7 @@ main {
 
 .resumo {
     display: flex;
-    /*border: 2px solid red;*/
+    border: 2px solid red;
     width: 18rem;
     height: 32rem;
     margin-left: 1rem;
