@@ -17,7 +17,7 @@ main {
     flex-wrap: wrap;
     padding: 0;
     margin-top: 1rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     
 }
 
@@ -62,7 +62,7 @@ main {
 }
 
  .container-princ {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 880px;
     width: 60%; /*1150*/
     margin-top: 0px;
@@ -319,7 +319,7 @@ main {
 
 .resumo {
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 18rem;
     height: 32rem;
     margin-left: 1rem;
