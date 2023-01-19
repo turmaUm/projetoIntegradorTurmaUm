@@ -1,5 +1,5 @@
-*{
-    
+html {
+    /*border: 2px solid green;*/
     box-sizing: border-box;
 
 }
@@ -7,8 +7,6 @@
 body {
     font-family: 'Public Sans', 'sans-serif';
     background-color: rgb(250, 250, 250);
-    
-
 }
 
 main {
@@ -16,8 +14,6 @@ main {
     justify-content: center;
     padding: 0;
     margin-top: 1rem;
-    /* background-color: green; */
-    
 }
 
 .pagamentoSeguro {
@@ -181,7 +177,6 @@ main {
     display: flex;
     /*border: 2px solid red;*/
     width: 760px;
-    
 }
 
 .formParcelas select {
@@ -209,7 +204,6 @@ main {
     /*border: 2px solid red;*/
     height: 40%;
     width: 50%;
-    /* background-color: orange; */
 }
 
 .input-nome {
@@ -230,8 +224,6 @@ main {
     border-radius: 5px;
     margin-top: 0.3rem;
     margin-left: 0.1rem;
-    text-align: center;
-    z-index: -1;
 }
 
 .input-num-valid {
@@ -299,17 +291,19 @@ main {
 
 .country {
     display: flex;
+    /*border: 2px solid red;*/
     height: 100%;
-    width: 20rem;
+    width: 21rem;
     align-items: center;
+    justify-content: flex-start;
     font-size: 20px;
 }
 
-.editar {
+.country .editar {
     display: flex;
-    margin-left: 12rem;
-    text-decoration: none;
-    color: #000;
+    position: absolute;
+    margin-left: 15rem;
+    text-decoration: underline;
 }
 
 .editar a {
@@ -335,7 +329,6 @@ main {
    /* border: 2px solid green;*/
     width: 100%;
     height: 8rem;
-    z-index: -1;
 }
 
 .resumo1 span {
@@ -344,7 +337,6 @@ main {
     margin-left: auto;
     font-size: 20px;
     width: 100%;
-    z-index: -1;
 }
 
 .resumoEntrega {
@@ -355,7 +347,6 @@ main {
     margin-top: 10rem;
     margin-left: 1rem;
     font-size: 20px;
-    z-index: -1;
 }
 
 .freteValor {
@@ -364,7 +355,6 @@ main {
     margin-top: 10rem;
     margin-left: 12rem;
     font-size: 20px;
-    z-index: -1;
 }
 
 .valorTotal {
@@ -372,23 +362,23 @@ main {
     align-items: center;
     display: flex;
     font-size: 20px;
+    /*border: 2px solid black;*/
     position: absolute;
     margin-top: 13rem;
     width: 18rem;
     height: 5rem;
-    z-index: -1;
 }
 
 .codPromo {
     position: absolute;
     display: flex;
+    /*border: 2px solid purple;*/
     width: 18rem;
     margin-top: 18rem;
     height: 7rem;
     background-color: rgb(209, 209, 209);
     padding: 5px;
     justify-content: center;
-    z-index: -1;
 }
 
 .codPromo p {
@@ -399,7 +389,6 @@ main {
     margin-top: 1rem;
     font-size: 18px;
     justify-content: center;
-    z-index: -1;
 }
 
 .codPromo input {
@@ -428,7 +417,6 @@ main {
     background-color: black;
     font-size: 20px;
     border-radius: 5px;
-    z-index: -1;
 }
 
 

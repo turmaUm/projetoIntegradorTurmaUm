@@ -1,7 +1,3 @@
-body {
-    font-family: 'Public Sans', 'sans-serif';
-}
-
 .pagamentoSeguro {
     height: 3rem;   
     display: flex;
@@ -42,213 +38,308 @@ body {
     margin-left: 0.4rem;
 }
 
-main {
-    box-sizing: border-box;
+#mainEnd {
+    /*border: 2px solid red;*/
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     display: flex;
-    margin: 0px;
-    padding: 0px;
     justify-content: center;
-    height: 1000px;
-    background-color:rgb(250, 250, 250);
 }
 
-.mainn {
-    margin-top: 4rem;
-    height: 600px;
+.mainDiv {
+    /*border: 2px solid black;*/
+    display: flex;
+    width: 90rem;
+    height: 55rem;
+    margin-left: 10rem;
+    flex-wrap: wrap;
 }
 
-.container1 {
+#mainResume {
+    display: flex;
+    /*border: 2px solid aqua;*/
+    width: 65rem;
+    height: 3rem;
+}
+
+.stepbar {
+    width: 100%;
+    height: 0.28rem;
+    background: #222;
+    border-radius: 100rem;
+    margin-top: 0.7rem;
+}
+
+.stepbar-pag {
+    width: 100%;
+    height: 0.3rem;
+    background: rgb(187, 187, 187);
+    border-radius: 100rem;
+    margin-top: 0.7rem;
+}
+
+.stepbar-res {
+    width: 100%;
+    height: 0.3rem;
+    background: rgb(187, 187, 187);
+    border-radius: 100rem;
+    margin-top: 0.7rem;
+}
+
+.ol {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0,1fr);
+    grid-gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.divSize {
     display: flex;
     /*border: 2px solid red;*/
-    width: 50rem;
-    background-color: rgb(240, 240, 240);
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2.5rem;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 50px 30px 50px 30px;
+    width: 65rem;
+    height: 65rem;
+    align-items: flex-end;
 }
 
-.select {
-    display: flex;
-    font-size: 20px;
-    text-decoration: underline;
-    text-underline-position: under;
+.divInterna {
+    /*border: 2px solid green;*/
+    height: 99%;
+    width: 70%;
 }
 
-.container1 .enderecoCadastrado {
-    display: flex;
-    width: 30rem;
-    height: 2.5rem;
-    margin-top: 2rem;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-
-}
-
-.container1 .save {
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    width: 20rem;
-    height: 3rem;
-    margin-top: 2rem;
-    display: flex;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-}
-
-.container2 {
-    padding: 55px 50px 80px 50px;
-    border-radius: 5px;
-    background-color: rgb(240, 240, 240);
-    display: flex;
+#editEndP {
+    width: 100%;
     /*border: 2px solid red;*/
-    flex-wrap: wrap;
-    width: 50rem;
-    row-gap: 1.8rem;
+    height: 3em;
 }
 
-.linha1 {
-    
+.editEnd {
+    font-size: 17px;
+    /*border: 2px solid red;*/
+}
+
+.camposObg {
+    font-size: 13px;
+    margin-top: 4px;
+    /*border: 2px solid black;*/
+}
+
+.inputName {
+    margin-top: 10px;
     display: flex;
-    align-items: center;
-    height: 3.5rem;
-    width: 100rem;
-    
+    /*border: 2px solid black;*/
+    width: 100%;
+    height: 70px;
 }
 
-.linha1 .cep {
-    padding-left: 10px;
-    /*background-color: aqua;*/
-    display: flex;
-    width: 13rem;
-    height: 3.2rem;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    
+.divSizeName {
+    /*border: 2px solid yellow;*/
+    width: 50%;
+}
+.inputName  input {
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    border: 1px solid ridge;
 }
 
-.linha1 .estado {
-    /*background-color: aqua;*/
-    display: flex;
-    width: 28rem;
-    margin-left: auto;
-    height: 3.2rem;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
-    
+
+.divSizeSobr {
+    /*border: 2px solid yellow;*/
+    width: 50%;
 }
 
-.linha2 {
+.divSizeSobr label, .divSizeSobr input {
+    margin-left: 20px;
+}
+
+.paisRegiao {
+    position: relative;
     /*border: 2px solid green;*/
-    display: flex;
-    height: 3.5rem;
-    width: 100rem;
+    margin-top: 15px;
 }
 
-.linha2 .cidade {
-    /*background-color: crimson;*/
-    display: flex;
-    width: 20rem;
-    height: 3.2rem;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
+.imgBr {
+    height: 40px;
 }
 
-.linha2 .bairro {
-    /*background-color: crimson;*/
-    display: flex;
-    width: 21rem;
-    height: 3.2rem;
-    margin-left: auto;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
+.spanPR {
+    position: absolute;
+    margin-top: inherit;
 }
 
-.linha3 {
-    /*border: 2px solid green;*/
-    display: flex;
-    height: 3.5rem;
-    width: 100rem;
+.cpf {
+    /*border: 2px solid red;*/
+    margin-top: 15px;
 }
 
-.linha3 .tipo {
-    /*background-color: darkorange;*/
-    display: flex;
-    width: 12rem;
-    height: 3.2rem;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
+.cpf input {
+    width: 47%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid ridge;
 }
 
-.linha3 .logradouro {
-    /*background-color: darkorange;*/
+.cepEvalidacao {
     display: flex;
-    width: 28rem;
-    height: 3.2rem;
-    margin-left: auto;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
+    margin-top: 15px;
+    /*border: 2px solid red;*/
+    width: 100%;
+    height: 70px;
 }
 
-.linha4 {
-    /*background-color: lightslategray;*/
-    display: flex;
-    width: 12rem;
-    height: 3.0rem;
-    border: none;
-    border: 3px solid rgb(247, 247, 247);
-    border-style: groove;
-    border-radius: 5px;
-    padding-left: 10px;
-    
+.cep {
+    width: 50%;
+    height: 100%;
 }
 
-.spanEndereco {
-    display: flex;
-    font-size: 20px;
-    text-decoration: underline;
-    text-underline-position: under;
+.cepEvalidacao input {
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    border: 1px solid ridge;
 }
 
-.back {
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    width: 12rem;
-    height: 3rem;
-    display: flex;
-    background-color: black;
+.validacao {
+    width: 50%;  
+}
+
+.validacao label {
+    width: 50%;  
     color: white;
-    margin-left: 8%;
-    border-radius: 5px;
 }
 
-.salvar {
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    width: 12rem;
-    height: 3rem;
-    display: flex;
-    background-color: black;
+.btValidacao {
+    border: 1px solid #222;
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    background-color: #222;
     color: white;
-    margin-left: 8%;
-    border-radius: 5px;
+    font-size: 15px;
 }
+
+
+
+
+.endereco {
+    /*border: 2px solid black;*/
+    margin-top: 15px;
+}
+
+.endereco input {
+    background-color:#f5f5f5;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid ridge;
+}
+
+.numeroEcomplemento {
+    display: flex;
+    margin-top: 15px;
+    /*border: 2px solid red;*/
+    width: 100%;
+    height: 70px;
+}
+
+.numeroEnd {
+    width: 50%;
+    height: 100%;
+}
+
+.numeroEcomplemento input {
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    border: 1px solid ridge;
+}
+
+.complementoEnd {
+    width: 50%;
+}
+
+.complementoEnd label, .complementoEnd input {
+    margin-left: 20px;
+}
+
+.bairro {
+    margin-top: 15px;
+}
+
+.bairro input {
+    width: 47%;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid ridge;
+    background-color:#f5f5f5
+}
+
+.estadoEcidade {
+    display: flex;
+    margin-top: 15px;
+    /*border: 2px solid red;*/
+    width: 100%;
+    height: 70px;
+}
+
+.estado {
+    width: 50%;
+    height: 100%;
+}
+
+.estadoEcidade input {
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    border: 1px solid ridge;
+}
+
+.cidade {
+    width: 50%;
+}
+
+.cidade label, .cidade input {
+    margin-left: 20px;
+}
+
+.dddEtelefone {
+    display: flex;
+    margin-top: 15px;
+    /*border: 2px solid red;*/
+    width: 100%;
+    height: 70px;
+}
+
+.ddd {
+    width: 50%;
+    height: 100%;
+}
+
+.dddEtelefone input {
+    width: 95%;
+    height: 60%;
+    margin-top: 5px;
+    border: 1px solid ridge;
+}
+
+.numeroTelefone {
+    width: 50%;
+}
+
+.numeroTelefone label, .numeroTelefone input {
+    margin-left: 20px;
+}
+
+
+
+
+
+

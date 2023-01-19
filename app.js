@@ -10,6 +10,12 @@ app.get("/checkout_endereco", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_endereco.html'))
 });
 
+
+//Criando rota para página checkout pagamento teste
+app.get("/checkout_pagamento_test", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'checkout_pagamento_test.html'))
+});
+
 //Criando rota para página checkout pagamento
 app.get("/checkout_pagamento", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_pagamento.html'))
