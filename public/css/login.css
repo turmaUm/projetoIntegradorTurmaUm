@@ -16,28 +16,31 @@
     height: 100vh;
     background-color: white;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    /* align-items: center; */
+    padding-top: 80px;
+    /* padding-left: 100px; */
     font-size: 15px;
+    gap: 130px;
 }
 
 .login{
     box-sizing: border-box;
     max-width: 450px;
-    max-height: 480px;
+    max-height: 400px;
     background-color: rgb(240, 240, 240);
     padding: 50px;
-    margin: 100px;
+    /* margin: 100px; */
     /* border: 1.5px solid #999 */
 }
 
 .cadastro {
     box-sizing: border-box;
     max-width: 450px;
-    max-height: 480px;
+    max-height: 450px;
     background-color: rgb(240, 240, 240);
     padding: 50px;
-    margin: 100px;
+    /* margin: 100px; */
     /* border: 1.5px solid #999 */
 }
 

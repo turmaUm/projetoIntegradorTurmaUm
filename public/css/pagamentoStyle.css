@@ -12,6 +12,7 @@ body {
 main {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 0;
     margin-top: 1rem;
 }
@@ -57,17 +58,17 @@ main {
 }
 
  .container-princ {
-    /*border: 2px solid red;*/
+    /* border: 2px solid red; */
     height: 880px;
-    width: 1150; /*1150*/
+    width: 60%; /*1150*/
     margin-top: 0px;
-    margin-left: 19rem;
+    /* margin-left: 19rem; */
 }
 
 .container1 {
-    /*border: 2px solid green;*/
+    /* border: 2px solid green; */
     height: 40px;
-    width: 1150px;
+    width: 60%;
     font-size: 1.3rem;
     margin-left: auto;
     margin-right: auto;
@@ -103,9 +104,9 @@ main {
 }
 
 .container2 {
-    /*border: 2px solid aqua;*/
+    /* border: 2px solid aqua; */
     height: 800px;
-    width: 1150px;
+    width: 100%;
     margin-top: 0px;
     flex-wrap: wrap;
 }
@@ -121,7 +122,7 @@ main {
     display: flex;
     /*border: 2px solid purple;*/
     height: 80px;
-    width: 1150px;
+    width: 100%;
 }
 
 .paypal {
@@ -129,7 +130,7 @@ main {
     border: 2px solid black;
     border: groove;
     border-radius: 5px;
-    width: 35rem;
+    width: 30%;
     justify-content: center;
     align-items: center;
 }
@@ -139,7 +140,7 @@ main {
     border:solid black;
     border: groove;
     border-radius: 5px;
-    width: 35rem;
+    width: 30%;
     margin-left: 1.3rem;
     justify-content: center;
     align-items: center;
@@ -150,7 +151,7 @@ main {
     border: 2px solid black;
     border: groove;
     border-radius: 5px;
-    width: 35rem;
+    width: 30%;
     margin-left: 1.3rem;
     justify-content: center;
     align-items: center;
@@ -185,7 +186,7 @@ main {
     border-radius: 5px;
     border: 1px solid black;
     border: groove;
-    width: 760px;
+    width: 140%;
     height: 3.7rem;
     color: black;
     padding-left: 10px;
@@ -208,7 +209,7 @@ main {
 
 .input-nome {
     display: flex;
-    width: 35rem;
+    width: 80%;
     margin-top: 0.3rem;
     margin-left: 0.1rem;
     margin-bottom: 1.5rem;
@@ -219,7 +220,7 @@ main {
 .input-num-card {
     position: absolute;
     display: flex;
-    width: 20rem;
+    width: 20%;
     height: 2.5rem;
     border-radius: 5px;
     margin-top: 0.3rem;
@@ -231,7 +232,7 @@ main {
     width: 12rem;
     height: 2.5rem;
     border-radius: 5px;
-    margin-left: 22rem;
+    margin-left: 25rem;
     margin-top: 0.3rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -254,10 +255,11 @@ main {
 
 .adress-collection {
     display: flex;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
-    border: groove;
+    /* border: groove; */
     height: 10rem;
+    
 }
 
 .adress-collection .name {
@@ -277,7 +279,7 @@ main {
 .adress-collection .adress {
     display: flex;
     height: 100%;
-    /*border: 2px solid red;*/
+    /* border: 2px solid red; */
     width: 40%;
     justify-content: center;
     flex-direction: column;
@@ -312,7 +314,7 @@ main {
 
 .resumo {
     display: flex;
-    /*border: 2px solid red;*/
+    /* border: 2px solid red; */
     width: 18rem;
     height: 32rem;
     margin-left: 1rem;
