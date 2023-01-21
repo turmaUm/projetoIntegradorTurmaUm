@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <link rel="stylesheet" href="/css/geral.css">
     <link rel="stylesheet" href="/css/headerStyle.css">
@@ -89,6 +89,62 @@
 
          <div class="divSize">
             <div class="divInterna">
+                <p class="editFormPag"><strong>Escolha a forma de pagamento</strong></p>
+
+                <div class="divFormPag">
+                    <div class="labelPaypal">
+                        <label for="paypal"><img src="/img/paypal.png" alt=""></label>
+                    </div>
+
+                    <div class="labelBoleto">
+                        <label for="boleto"><img src="/img/Boleto .jpg" alt=""></label>
+                    </div>
+
+                    <div class="labelCartao">
+                        <label for="cartao"><img src="/img/iconecard2.png" alt=""></label>
+                        Cartão
+                    </div>
+                </div>
+
+                <div class="formParcelas">
+                    <form action method="get">
+                        <label for="parcela">Selecione o número de parcelas:</label><br>
+                        <select name="parcela" id="">
+                            <option value="1">1x de R$ 3.919,00 sem juros</option>
+                            <option value="2">2x de R$ 1.959,50 sem juros</option>
+                            <option value="3">3x de R$ 1.306,33 sem juros</option>
+                            <option value="4">4x de R$ 979,75 sem juros</option>
+                            <option value="5">5x de R$ 783,80 sem juros</option>
+                        </select>
+                    </form>
+                </div>
+                <span class="information">Pagamento em até 5x com parcela mínima de R$ 5</span>
+
+                <p style="margin-top: 30px; font-size: 15px; margin-bottom: 20px;">DADOS DO CARTÃO</p>
+
+                <div class="inforCartao">
+                    <form action="/registro">
+                        <label for="nome">Nome do titular do cartão</label>
+                        <input class="input-nome" type="text" name="nome" id="">
+                        <label for="numeroCartao">Número do cartão</label>
+                        <input class="inputNumeroCartao" type="number" name="cartao" id="">
+                        <label style="margin-left: 330px;" for="validade">Data de validade</label>
+                        <input class="inputDataValidade" type="number" name="validade" id="" placeholder="MM/AA">
+                        <label for="cvm">Código de segurança</label>
+                        <input class="cvm" type="text" name="cvm">
+                        <input class="checkboxSalvarDados" type="checkbox" name="salvarDados">
+                        <label for="salvarDados">Salvar dados do pagamento</label>
+                    </form>
+                </div>
+
+                <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+
+
+
+
+
+
+
 
             </div>
          </div>

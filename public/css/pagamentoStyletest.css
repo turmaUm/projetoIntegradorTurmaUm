@@ -49,17 +49,17 @@
 }
 
 .mainDiv {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     display: flex;
     width: 90rem;
-    height: 70rem;
+    height: 55rem;
     margin-left: 10rem;
     flex-wrap: wrap;
 }
 
 #mainResume {
     display: flex;
-    border: 2px solid aqua;
+    /*border: 2px solid aqua;*/
     width: 65rem;
     height: 3rem;
 }
@@ -102,16 +102,129 @@
 
 .divSize {
     display: flex;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     width: 65rem;
     height: 65rem;
     align-items: flex-end;
 }
 
 .divInterna {
-    flex-wrap: wrap;
-    display: flex;
-    border: 2px solid green;
-    height: 95%;
+    /*border: 2px solid green;*/
+    height: 99%;
     width: 70%;
 }
+
+.editFormPag {
+    font-size: 17px;
+}
+
+.divFormPag {
+    display: flex;
+    /*border: 2px solid red;*/
+    height: 80px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.labelPaypal {
+    display: flex;
+    width: 230px;
+    height: 100%;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.divFormPag img {
+    height: 3rem;
+    
+}
+
+.labelBoleto {
+    display: flex;
+    width: 230px;
+    height: 100%;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelCartao {
+    display: flex;
+    width: 230px;
+    height: 100%;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelCartao img {
+    margin-right: 10px;
+}
+
+.formParcelas {
+    margin-top: 1.8rem;
+    display: flex;
+}
+
+.formParcelas select {
+    margin-top: 10px;
+    width: 400px;
+    color: black;
+    padding-left: 10px;
+    font-size: 15px;
+    height: 50px;
+}
+
+.information {
+    display: flex;
+    margin-top: 10px; 
+}
+
+.informCartao {
+    display: flex;
+    width: 50%;
+    border: 2px solid red;
+}
+
+.input-nome {
+    display: flex;
+    margin-top: 5px;
+    width: 60%;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.inputNumeroCartao {
+    display: flex;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.inputDataValidade {
+    display: flex;
+    height: 30px;
+    margin-left: 440px;
+    margin-top: 5px;
+    border: 1px solid groove;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cvm {
+    display: flex;
+    margin-top: 5px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #e6e6e6;
+    text-align: center;
+}
+
+.checkboxSalvarDados {
+    margin-top: 12px;
+    margin-left: 2px;
+}
+
