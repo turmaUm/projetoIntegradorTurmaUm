@@ -152,4 +152,33 @@ button:hover, .link-pedido:hover {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     }
-  
+
+    
+@media (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    *{
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+ }
+
+ @media (max-width: 1279px) {
+    *{
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+ }

@@ -73,3 +73,120 @@ article h1{
     margin-left: 40px;
 }
 
+@media (max-width: 480px) {
+    * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #paginaLogin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-between; */
+        font-size: 0.8rem;
+    }
+
+    .login a{
+        margin-left: 20px;
+    }
+
+    .tituloLogin, .tituloCadastro {
+        text-align: center;
+    }
+
+    .login{
+        box-sizing: border-box;
+        max-width: 300px;
+        max-height: 250px;
+        background-color: rgb(240, 240, 240);
+        padding: 20px;
+        align-items: center;
+        /* margin: 100px; */
+        /* border: 1.5px solid #999 */
+    }
+
+    .cadastro {
+        box-sizing: border-box;
+        max-width: 300px;
+        max-height: 250px;
+        background-color: rgb(240, 240, 240);
+        padding: 20px;
+        align-items: center;
+        /* margin: 100px; */
+        /* border: 1.5px solid #999 */
+    }
+
+    .estiloBotao {
+        color: grey;
+        width: 150px;
+        height: 20px;
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid grey;
+        cursor: pointer;
+    }
+
+    .btEnviar{
+        background-color: black;
+        font-size: 15px;
+        color: azure;
+        margin: 35px;
+        padding: 10px;
+        width: 150px;
+        cursor: pointer;
+    }
+    
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    *{
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #paginaLogin {
+        display: block;
+        padding: 15px;
+        margin: 5px;
+        }
+    
+        .login a{
+            margin-left: 20px;
+        }
+    
+        .tituloLogin, .tituloCadastro {
+            text-align: center;
+        }
+ }
+
+ @media (max-width: 1279px) {
+    *{
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    #paginaLogin {
+        display: block;
+        align-content: center;
+        margin-right: 100px;
+        padding-top: 80px;
+       justify-content: space-between;
+        margin: 20px;
+        }
+    
+        .login a{
+            margin-left: 20px;
+        }
+    
+        .tituloLogin, .tituloCadastro {
+            text-align: center;
+        }
+ }
+
