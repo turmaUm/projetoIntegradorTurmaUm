@@ -50,10 +50,27 @@ app.get("/produto", (req,res)=>{
 app.get("/login-adm", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'login-adm.html'))
 });
+
+//Criando rota para página de clientes ADM
+app.get("/clientes-adm", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'clientes-adm.html'))
+});
+
+//Criando rota para página de produtos ADM
+app.get("/produtos-adm", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'produtos-adm.html'))
+});
+
+//Criando rota para página de pedidos ADM
+app.get("/pedidos-adm", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'pedidos-adm.html'))
+});
+
 //Criando rota para página de resultado de busca
 app.get("/busca", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'resultado_busca.html'))
 });
+
 
 //Colocar o servidor no modo "escuta"
 app.listen(3000);
