@@ -46,6 +46,10 @@ app.get("/produto", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'produto.html'))
 });
 
+//Criando rota para página de login ADM
+app.get("/login-adm", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'login-adm.html'))
+});
 //Criando rota para página de resultado de busca
 app.get("/busca", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'resultado_busca.html'))

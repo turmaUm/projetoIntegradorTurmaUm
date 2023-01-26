@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/css/geral.css"> -->
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/login-adm.css">
     <link rel="stylesheet" href="/css/footerStyle.css">
     <link rel="stylesheet" href="/css/headerStyle.css">
     <title>BRACKISH LOGIN ADM</title>
 </head>
 <body>
-
     <header>
         <div class="containerHeader" id="containerHeader">
             <a href="">BRACKISH</a>
@@ -22,9 +21,9 @@
                 |
                 <a href="/feminino">Login</a>
             </nav>
-
+    
         </div>
-
+    
         <div class="menu">
             <a href="" id="logo2">
                 <img src="img/earth.png" alt="logo2">
@@ -38,7 +37,7 @@
                 <a href="/lancamentos">Mais Vendidos</a>
                 <a href="/lancamentos">Promoções</a>
             </nav>
-
+    
             <div class="pesquisar" id="pesquisar">
                 <input type="text" placeholder="Buscar">
                 <button type="submit">
@@ -53,50 +52,36 @@
             </a>
         </div>
     </header>
+    
+    <main class="login-adm">
+        <form method="POST" action="">
+            <div class="parte-um-login-adm">
+               <h1 class="titulo-login-adm">ADMINISTRADOR</h1>
+               <br>
+               <p class="subtitulo-login-adm">Login Adiminstrador</p>
 
-    <main>
-        
-        <section id="paginaLogin">
-
-            <article class="login">
-                <h1 class="tituloLogin">login</h1>
+                <label for="email-adm">
+                <input class="estilo-input-adm-login" type="email" name="email-adm" id="email-adm" placeholder="E-mail administrador" required value="email@adm.com">
+                </label>
                 <br>
-                <p class="paragrafoParaLogin">Login com seu e-mail</p>
-                <label for="email"></label>
-                <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                <label for="senha-adm">
+                <input class="estilo-input-adm-login" type="password" name="senha-adm" id="senha-adm" placeholder="Senha" required>
+                </label>
                 <br>
-                <label for="senha"></label>
-                <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
+                <label for="lembrar-adm">
+                <input class="input-checkbox-login-adm" type="checkbox" name="lembrar-adm" id="lembrar-adm">
+                Lembrar de mim</label>
+                <a href="redefiniçãoDeSenha">Redefinir senha</a>
                 <br>
-                <br>
-                <input type="checkbox" name="lembrar" id="lembrar">
-                <label for="lembrar">Lembrar de mim</label>
-                <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
-                <br>
-                <input class="btEnviar" type="submit" name="enviar" id="envair" placeholder="ENVIAR">
-            </article>
-        
-            <article class="cadastro">
-                <h1 class="tituloCadastro">cadastre-se</Cadastre-se></h1>
-                <br>
-                <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
-                <label for="nomeCadastro"></label>
-                <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo">
-                <br>
-                <label for="emailCadastro"></label>
-                <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail">
-                <br>
-                <label for="senhaCadastro"></label>
-                <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha">
-                <br>
-                <label for="confirmeSenha"></label>
-                <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
-                <br>
-                <input class="btEnviar" type="submit" name="enviarCadastro" id="enviarCadastro">
-            </article>
-        
-        </section>
+                <input class="btEnviar-adm" type="submit" name="entrar" id="entrar" value="ENTRAR">
+           
+            </div>
+        </form>
+        <div class="parte-dois-login-adm">
+            <img src="/img/engrena.jpg" alt="engrenagens">
+        </div>
     </main>
+
     <footer >
         <div class="container-total">
             <div class ="row">
@@ -154,5 +139,5 @@
             </div>
         </div>        
     </footer>
+
 </body>
-</html>

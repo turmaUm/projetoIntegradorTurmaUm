@@ -9,6 +9,7 @@
 
 .paragrafoParaLogin {
     color: #222;
+    margin-bottom: 10px;
 }
 
 #paginaLogin {
@@ -72,6 +73,3 @@ article h1{
     margin-left: 40px;
 }
 
-.paragrafoParaLogin{
-    margin-bottom: 10px;
-}

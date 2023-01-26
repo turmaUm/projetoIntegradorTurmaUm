@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    font-size: 15px;
+    gap: 130px;
+}
+
+.btEnviar-adm {
+    background-color: black;
+    font-size: 15px;
+    color: azure;
+    margin: 35px;
+    padding: 10px;
+    width: 260px;
+    cursor: pointer;
+}
+
+.login-adm a {
+    margin-left: 70px;
+}
+
+.titulo-login-adm{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/**/
+
+.subtitulo-login-adm {
+    color: #222;
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.estilo-input-adm-login{
+    color: grey;
+    width: 300px;
+    height: 25px;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid grey;
+    cursor: pointer;
+}
+
+.parte-um-login-adm {
+    box-sizing: border-box;
+    max-width: 450px;
+    max-height: 400px;
+    background-color: rgb(240, 240, 240);
+    padding: 50px;
+}
+
+.parte-dois-login-adm {
+    box-sizing: border-box;
+    max-width: 450px;
+    max-height: 450px;
+}
