@@ -130,9 +130,9 @@
     display: flex;
     width: 230px;
     height: 100%;
-    border: 1px solid;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .divFormPag img {
@@ -144,18 +144,18 @@
     display: flex;
     width: 230px;
     height: 100%;
-    border: 1px solid;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .labelCartao {
     display: flex;
     width: 230px;
     height: 100%;
-    border: 1px solid;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .labelCartao img {
@@ -227,4 +227,27 @@
     margin-top: 12px;
     margin-left: 2px;
 }
+
+.divFormPag button {
+    background: none;
+    border: 1px solid;
+    transition: 0.3s;
+}
+
+.divFormPag button:hover {
+    background-color: gainsboro;
+}
+
+.divFormPag img {
+    text-indent: -9999px;
+}
+
+.tabContent {
+    display: none;
+}
+
+
+
+
+
 
