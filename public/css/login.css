@@ -120,6 +120,7 @@ article h1{
         align-items: center;
         /* justify-content: space-between; */
         font-size: 0.8rem;
+        margin: 50px 0px 50px 0px;
     }
 
     .login a{
@@ -132,8 +133,8 @@ article h1{
 
     .login{
         box-sizing: border-box;
-        max-width: 300px;
-        max-height: 250px;
+        max-width: 380px;
+        max-height: 380px;
         background-color: rgb(240, 240, 240);
         padding: 20px;
         align-items: center;
@@ -143,8 +144,8 @@ article h1{
 
     .cadastro {
         box-sizing: border-box;
-        max-width: 300px;
-        max-height: 250px;
+        max-width: 380px;
+        max-height: 380px;
         background-color: rgb(240, 240, 240);
         padding: 20px;
         align-items: center;
