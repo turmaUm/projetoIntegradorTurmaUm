@@ -69,3 +69,108 @@ main {
     max-width: 450px;
     max-height: 450px;
 }
+
+@media (max-width: 1279px) {
+  
+    /* #paginaLogin {
+        display: block;
+        align-content: center;
+        margin-right: 100px;
+        padding-top: 80px;
+       justify-content: space-between;
+        margin: 20px;
+        } */
+    
+        .parte-um-login-adm a{
+            margin-left: 20px;
+        }
+    
+        .titulo-login-adm {
+            text-align: center;
+        }
+ }
+
+ @media (max-width: 768px) {
+ 
+        .login-adm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        margin: 150px 0px 100px 0px;
+        }
+    
+        .parte-um-login-adm a{
+            margin-left: 50px;
+        }
+    
+        .parte-dois-login-adm {
+            display: none;
+        }
+
+        .titulo-login-adm {
+            text-align: center;
+        }
+
+ }
+
+ @media (max-width: 480px) {
+   
+        .login-adm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-between; */
+        font-size: 0.8rem;
+        margin: 100px 0px 100px 0px;
+    }
+
+    .parte-um-login-adm a{
+        margin: 5px;
+    }
+
+    .titulo-login-adm {
+        text-align: center;
+    }
+
+    .parte-um-login-adm{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        max-height: 350px;
+        background-color: rgb(240, 240, 240);
+        padding: 15px;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        /* margin: 100px; */
+        /* border: 1.5px solid #999 */
+    }
+
+    .parte-dois-login-adm {
+        display: none;
+    }
+
+    .estilo-input-adm-login {
+        color: grey;
+        width: 150px;
+        height: 30px;
+        margin: 5px;
+        padding: 10px;
+        border: 2px solid grey;
+        cursor: pointer;
+    }
+
+    .btEnviar-adm {
+        background-color: black;
+        font-size: 15px;
+        color: azure;
+        margin: 35px;
+        padding: 10px;
+        width: 150px;
+        cursor: pointer;
+    }
+    
+}
