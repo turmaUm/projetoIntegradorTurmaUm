@@ -1,22 +1,3 @@
-html {
-    /*border: 2px solid green;*/
-    box-sizing: border-box;
-
-}
-
-body {
-    font-family: 'Public Sans', 'sans-serif';
-    background-color: rgb(250, 250, 250);
-}
-
-main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    margin-top: 1rem;
-}
-
 .pagamentoSeguro {
     height: 3rem;   
     display: flex;
@@ -57,28 +38,43 @@ main {
     margin-left: 0.4rem;
 }
 
- .container-princ {
-    /* border: 2px solid red; */
-    height: 880px;
-    width: 60%; /*1150*/
-    margin-top: 0px;
-    /* margin-left: 19rem; */
+#mainEnd {
+    /*border: 2px solid red;*/
+    margin: 0;
+    padding: 0;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
-.container1 {
-    /* border: 2px solid green; */
-    height: 40px;
-    width: 60%;
-    font-size: 1.3rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:5rem;
-    margin-bottom: 2rem;
+.mainDiv {
+    /*border: 2px solid black;*/
+    display: flex;
+    width: 90rem;
+    height: 55rem;
+    margin-left: 10rem;
+    flex-wrap: wrap;
+}
+
+#mainResume {
+    display: flex;
+    /*border: 2px solid aqua;*/
+    width: 65rem;
+    height: 3rem;
 }
 
 .stepbar {
     width: 100%;
     height: 0.28rem;
+    background: #222;
+    border-radius: 100rem;
+    margin-top: 0.7rem;
+}
+
+.stepbar-pag {
+    width: 100%;
+    height: 0.3rem;
     background: #222;
     border-radius: 100rem;
     margin-top: 0.7rem;
@@ -103,324 +99,156 @@ main {
     width: 100%;
 }
 
-.container2 {
-    /* border: 2px solid aqua; */
-    height: 800px;
-    width: 100%;
-    margin-top: 0px;
-    flex-wrap: wrap;
-}
 
-.span-form {
-    font-size: 1.4rem;
-    height: 10px;
-    margin-top: 5rem;
-}
-
-.container3 {
-    margin-top: 1.5rem;
+.divSize {
     display: flex;
-    /*border: 2px solid purple;*/
+    /*border: 2px solid red;*/
+    width: 65rem;
+    height: 65rem;
+    align-items: flex-end;
+}
+
+.divInterna {
+    /*border: 2px solid green;*/
+    height: 99%;
+    width: 70%;
+}
+
+.editFormPag {
+    font-size: 17px;
+}
+
+.divFormPag {
+    display: flex;
+    /*border: 2px solid red;*/
     height: 80px;
-    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
-.paypal {
+.labelPaypal {
     display: flex;
-    border: 2px solid black;
-    border: groove;
-    border-radius: 5px;
-    width: 30%;
+    width: 230px;
+    height: 100%;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.boleto {
-    display: flex;
-    border:solid black;
-    border: groove;
-    border-radius: 5px;
-    width: 30%;
-    margin-left: 1.3rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-    display: flex;
-    border: 2px solid black;
-    border: groove;
-    border-radius: 5px;
-    width: 30%;
-    margin-left: 1.3rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.paypal > img {
-    display: flex;
+.divFormPag img {
     height: 3rem;
+    
 }
 
-.boleto > img {
+.labelBoleto {
     display: flex;
-    height: 2.5rem;
+    width: 230px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.card > img {
+.labelCartao {
     display: flex;
-    height: 2.5rem;
-    margin-right: 1rem;
+    width: 230px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.labelCartao img {
+    margin-right: 10px;
 }
 
 .formParcelas {
     margin-top: 1.8rem;
     display: flex;
-    /*border: 2px solid red;*/
-    width: 760px;
 }
 
 .formParcelas select {
     margin-top: 10px;
-    font-size: 20px;
-    border-radius: 5px;
-    border: 1px solid black;
-    border: groove;
-    width: 140%;
-    height: 3.7rem;
+    width: 400px;
     color: black;
     padding-left: 10px;
-    
+    font-size: 15px;
+    height: 50px;
 }
-
 
 .information {
     display: flex;
-    margin-top: 0.7rem;
-    margin-left: 0.1rem;
+    margin-top: 10px; 
 }
 
-.div-inform-card {
+.informCartao {
     display: flex;
-    /*border: 2px solid red;*/
-    height: 40%;
     width: 50%;
+    border: 2px solid red;
 }
 
 .input-nome {
     display: flex;
-    width: 80%;
-    margin-top: 0.3rem;
-    margin-left: 0.1rem;
-    margin-bottom: 1.5rem;
-    height: 2.5rem;
-    border-radius: 5px;
+    margin-top: 5px;
+    width: 60%;
+    height: 30px;
+    margin-bottom: 30px;
 }
 
-.input-num-card {
+.inputNumeroCartao {
+    display: flex;
     position: absolute;
-    display: flex;
-    width: 20%;
-    height: 2.5rem;
-    border-radius: 5px;
-    margin-top: 0.3rem;
-    margin-left: 0.1rem;
+    width: 400px;
+    height: 30px;
+    margin-top: 5px;
 }
 
-.input-num-valid {
+.inputDataValidade {
     display: flex;
-    width: 12rem;
-    height: 2.5rem;
-    border-radius: 5px;
-    margin-left: 25rem;
-    margin-top: 0.3rem;
-    margin-bottom: 1.5rem;
+    height: 30px;
+    margin-left: 440px;
+    margin-top: 5px;
+    border: 1px solid groove;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .cvm {
     display: flex;
-    margin-top: 0.3rem;
-    width: 12rem;
-    height: 2.5rem;
-    border-radius: 5px;
+    margin-top: 5px;
+    height: 30px;
     border: none;
+    border-radius: 5px;
     background: #e6e6e6;
     text-align: center;
 }
 
-.checkbox-save-dice {
-    margin-top: 0.9rem;
+.checkboxSalvarDados {
+    margin-top: 12px;
+    margin-left: 2px;
 }
 
-.adress-collection {
-    display: flex;
-    /* border: 1px solid black; */
-    border-radius: 5px;
-    /* border: groove; */
-    height: 10rem;
-    
+.divFormPag button {
+    background: none;
+    border: 1px solid;
+    transition: 0.3s;
 }
 
-.adress-collection .name {
-    display: flex;
-    height: 100%;
-    /*border: 2px solid red;*/
-    width: 30%;
-    justify-content: center;
+.divFormPag button.ativo {
+    border: 3px solid black
 }
 
-.adress-collection .name span {
-    display: flex;
-    font-size: 20px;
-    align-items: center;
+.divFormPag button:hover {
+    background-color: gainsboro;
 }
 
-.adress-collection .adress {
-    display: flex;
-    height: 100%;
-    /* border: 2px solid red; */
-    width: 40%;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
+.divFormPag img {
+    text-indent: -9999px;
 }
 
-.adress-collection .adress span {
-    display: flex;
-    font-size: 20px;
+.tabcontent {
+    display: none;
 }
-
-.country {
-    display: flex;
-    /*border: 2px solid red;*/
-    height: 100%;
-    width: 21rem;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 20px;
-}
-
-.country .editar {
-    display: flex;
-    position: absolute;
-    margin-left: 15rem;
-    text-decoration: underline;
-}
-
-.editar a {
-    color: #222;
-}
-
-.resumo {
-    display: flex;
-    /* border: 2px solid red; */
-    width: 18rem;
-    height: 32rem;
-    margin-left: 1rem;
-}
-
-
-
-.resumo img {
-    width: 8em;
-}
-
-.resumo1 {
-    display: flex;
-   /* border: 2px solid green;*/
-    width: 100%;
-    height: 8rem;
-}
-
-.resumo1 span {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    font-size: 20px;
-    width: 100%;
-}
-
-.resumoEntrega {
-    display: flex;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    margin-top: 10rem;
-    margin-left: 1rem;
-    font-size: 20px;
-}
-
-.freteValor {
-    display: flex;
-    position: absolute;
-    margin-top: 10rem;
-    margin-left: 12rem;
-    font-size: 20px;
-}
-
-.valorTotal {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 20px;
-    /*border: 2px solid black;*/
-    position: absolute;
-    margin-top: 13rem;
-    width: 18rem;
-    height: 5rem;
-}
-
-.codPromo {
-    position: absolute;
-    display: flex;
-    /*border: 2px solid purple;*/
-    width: 18rem;
-    margin-top: 18rem;
-    height: 7rem;
-    background-color: rgb(209, 209, 209);
-    padding: 5px;
-    justify-content: center;
-}
-
-.codPromo p {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    height: 20px;
-    margin-top: 1rem;
-    font-size: 18px;
-    justify-content: center;
-}
-
-.codPromo input {
-    position: absolute;
-    display: flex;
-    height: 3rem;
-    margin-top: 3rem;
-    width: 15rem;
-    padding: 5px;
-    align-items: center;
-    font-size: 15px;
-    border-radius: 5px;
-    border: groove;
-    border: 1px solid black;
-}
-
-.btSave {
-    display: flex;
-    position: absolute;
-    margin-top: 27rem;
-    align-items: center;
-    width: 18rem;
-    height: 4rem;
-    color: white;
-    justify-content: center;
-    background-color: black;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
 
 
 

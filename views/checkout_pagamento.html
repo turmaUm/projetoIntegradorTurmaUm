@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="/css/mainStyle.css">
+
     <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/headerStyle.css">
+    <link rel="stylesheet" href="/css/pagamentoStyle.css">
     <link rel="stylesheet" href="/css/footerStyle.css">
-    <link rel="stylesheet" href="/css/clienteStyle.css">
-    <title>Document</title>
+
+    <title>Pagamento</title>
+
 </head>
+
 <body>
-
     <header>
-
-        <link rel="stylesheet" href="/css/headerStyle.css">
         <div class="containerHeader" id="containerHeader">
             <a href="">BRACKISH</a>
             <nav>
@@ -54,140 +55,117 @@
                 <span>0</span>
             </a>
         </div>
+
     </header>
 
     <div class="pagamentoSeguro">
-        <link rel="stylesheet" href="/css/pagamentoStyle.css">
         <span class="logo_check">BRACKISH</span>
         <span class="barra">/</span>
         <img src="/img/cadeado3.png" alt="">
         <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
 
-    </div>  
-    
-    <div class="container1">
-
-        <link rel="stylesheet" href="/css/pagamentoStyle.css">
-        <ol class="ol">
-            <li>
-                <span>1 Entrega</span>
-                <div class="stepbar"></div>
-            </li>
-
-            <li>
-                <span><strong>2 Pagamento</strong></span>
-                <div class="stepbar"></div>
-            </li>
-
-            <li>
-                <span>3 resumo</span>
-                <div class="stepbar-res"></div>
-            </li>
-        </ol>
     </div>
 
-    <main>
-
-        <link rel="stylesheet" href="/css/pagamentoStyle.css">
+    <main id="mainEnd">
+        <div class="mainDiv">
+            <div id="mainResume">
+                <ol class="ol">
+                    <li>
+                        <span>1 Entrega</span>
+                        <div class="stepbar"></div>
+                    </li>
         
-        <div class="container-princ">
-            <div class="container2">
-                    <span class="span-form">Escolha a forma de pagamento</span>
+                    <li>
+                        <span><strong>2 Pagamento</strong></span>
+                        <div class="stepbar-pag"></div>
+                    </li>
+        
+                    <li>
+                        <span>3 resumo</span>
+                        <div class="stepbar-res"></div>
+                    </li>
+                </ol>
+            </div>
 
-                    <div class="container3">
-                        <article class="paypal"><img src="/img/paypal.png" alt=""></article>
-                        <article class="boleto"><img src="/img/Boleto .jpg" alt=""></article>
-                        <article class="card"><img src="/img/iconecard2.png" alt="">Cartão </article>
-                    </div>
-                
+         <div class="divSize">
+            <div class="divInterna">
+                <p class="editFormPag"><strong>Escolha a forma de pagamento</strong></p>
+
+                <div class="divFormPag">
+                    <button id="tabPadrao" class="labelPaypal tab-button" onclick="abrirTab(event, 'paypal')">
+                        <img src="/img/paypal.png" alt="">
+                    </button>
+
+                    <button class="labelBoleto tab-button" onclick="abrirTab(event, 'boleto')">
+                        <img src="/img/Boleto .jpg" alt="">
+                    </button>
+
+                    <button onclick="abrirTab(event, 'cartao')" class="labelCartao tab-button">
+                        <img src="/img/iconecard2.png" alt="">
+                        Cartão
+                    </button>
+                </div>
+
+                <div id="paypal" class="tabcontent">
+                    <h4 style="margin-bottom: 20px; margin-top: 30px;">Pagamento Parcelado</h4>
+                    <p>Clique em "Salvar e Continuar" para seguir com pagamento via PayPal</p>
+                </div>
+
+                <div id="boleto" class="tabcontent">
+                    <p style="margin-top: 30px;">Clique em "Salvar e Continuar" para seguir com pagamento via PayPal</p>
+                </div>
+
+                <div id="cartao" class="tabcontent">
                     <div class="formParcelas">
-                        <form action="" method="GET">
-                            <label for="parcela">Selecione o número de parcelas:</label>
-                            <br>
-                            <select name="parcela">
-                            <option value="1">1x de R$ 3.919,00 sem juros</option>
-                            <option value="2">2x de R$ 1.959,50 sem juros</option>
-                            <option value="3">3x de R$ 1.306,33 sem juros</option>
-                            <option value="4">4x de R$ 979,75 sem juros</option>
-                            <option value="5">5x de R$ 783,80 sem juros</option>
+                        <form action method="get">
+                            <label for="parcela">Selecione o número de parcelas:</label><br>
+                            <select name="parcela" id="">
+                                <option value="1">1x de R$ 3.919,00 sem juros</option>
+                                <option value="2">2x de R$ 1.959,50 sem juros</option>
+                                <option value="3">3x de R$ 1.306,33 sem juros</option>
+                                <option value="4">4x de R$ 979,75 sem juros</option>
+                                <option value="5">5x de R$ 783,80 sem juros</option>
                             </select>
                         </form>
                     </div>
+                    <span class="information">Pagamento em até 5x com parcela mínima de R$ 5</span>
 
-                    <span class="information">Pagamento em até 5x com parcela mínima de R$ 5 </span>
+                    <p style="margin-top: 30px; font-size: 15px; margin-bottom: 20px;">DADOS DO CARTÃO</p>
 
-                    <p style="margin-top: 2rem; font-size: 17px; margin-bottom: 1rem;" >DADOS DO CARTÃO</p>
-
-                    <div class="div-inform-card">
+                    <div class="inforCartao">
                         <form action="/registro">
                             <label for="nome">Nome do titular do cartão</label>
-                            <input class="input-nome" type="text" name="nome">
-
-                            <label for="numero">Número do cartão</label>
-                            <input class="input-num-card" type="text" name="numero">
-
-                            <label style="margin-left: 18.8rem" for="valid">Data de Validade</label>
-                            <input placeholder="MM/AA" class="input-num-valid" type="number" name="Data">
-
+                            <input class="input-nome" type="text" name="nome" id="">
+                            <label for="numeroCartao">Número do cartão</label>
+                            <input class="inputNumeroCartao" type="number" name="cartao" id="">
+                            <label style="margin-left: 330px;" for="validade">Data de validade</label>
+                            <input class="inputDataValidade" type="number" name="validade" id="" placeholder="MM/AA">
                             <label for="cvm">Código de segurança</label>
                             <input class="cvm" type="text" name="cvm">
-
-                            <input class="checkbox-save-dice" type="checkbox" name="save-dice">
-                            <label for="save-dice">Salvar dados do pagamento</label>
-                            
+                            <input class="checkboxSalvarDados" type="checkbox" name="salvarDados">
+                            <label for="salvarDados">Salvar dados do pagamento</label>
                         </form>
-
                     </div>
+                </div>
+                <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
 
-                    <p>ENDEREÇO DE COBRANÇA</p>
 
-                    <div class="adress-collection">
 
-                        <div class="name">
-                            <span>João Paulo Araújo fontes</span>
-                        </div>
 
-                        <div class="adress">
-                            <span>Rua das rosas</span>
-                            <span>196</span>
-                            <span>Curitiba</span>
-                            <span>Praça da espanha, 89345-354</span>
-                        </div>
 
-                        <div class="country">
-                            <span>Brasil</span>
-                            <span class="editar"><a href=""><strong>editar</strong></span></a>
-                        </div>
 
-                    </div>
+
+
             </div>
+         </div>
+   
+
         </div>
+
+        <script src="/js/pagamento.js"></script>
         
-        <div class="resumo">
-            <div class="resumo1">
-                <img src="img/jaqueta-fem-1.png" alt="jaqueta1">
-                <span>valor<br><br> R$ 3.919,00</span>
-            </div>
-
-            <span class="resumoEntrega">
-                Entrega
-            </span>
-
-            <span class="freteValor">R$ 0,00</span>
-
-            <div class="valorTotal">
-                <span><strong>Total </strong></span>
-                <span style="margin-left: 1rem;">R$ 3.919,00</span>
-            </div>
-
-            <div class="codPromo">
-                <p>Insira seu Código promocional</p>
-                <input type="text" name="codpromo" id="codpromo" placeholder="Insira o Código promocional">
-            </div>
-
-            <button class="btSave">Salvar e Continuar</button>
-        </div>
     </main>
+
 
     <footer>
         <div class="container-total">
@@ -248,4 +226,5 @@
     </footer>
 
 </body>
+
 </html>

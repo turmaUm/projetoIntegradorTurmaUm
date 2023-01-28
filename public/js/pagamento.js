@@ -1,13 +1,16 @@
-function openPag(evt, FormPag){
-    var i, tabContent, tablinks;
-    tabContent = document.getElementsByClassName("tabContent");
-    for (i = 0, i < tabContent.length; i++;) {
-        tabContent[i].style.display = "none";
+document.getElementById('tabPadrao').click();
+
+function abrirTab(event, idtab){
+    var conteudos = document.getElementsByClassName('tabcontent');
+    for (var i = 0; i < conteudos.length; i++){
+        conteudos[i].style.display = 'none'
     }
-    tablinks = document.getElementsByClassName("tablinks")
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    var tabs = document.getElementsByClassName('tab-button');
+    for (var i = 0; i < tabs.length; i++){
+        tabs[i].className = tabs[i].className.replace('ativo', '')
     }
-    document.getElementById(FormPag).style.display = "block";
-    evt.EventTarget.className += " active"
+
+    document.getElementById(idtab).style.display = 'block'
+    event.currentTarget.className += ' ativo'
 }
