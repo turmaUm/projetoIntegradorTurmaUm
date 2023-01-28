@@ -32,6 +32,7 @@ function checkInputs () {
         errorValidation(email, 'Preencha esse campo')
     } else {
         //Adicionar a classe 'success'
+        successValidation(email);
     }
 }
 
@@ -45,4 +46,12 @@ function errorValidation(input, message) {
     small.innerText = message;
 
     formControl.className = 'form-control error'
-}
+};
+
+function successValidation () {
+    const formControl = input.parentElement;
+
+    formControl.className = 'form-control success'
+}  
+
+//Realizar o mesmo passo a passo para todas ás const 
