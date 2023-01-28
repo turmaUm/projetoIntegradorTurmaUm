@@ -49,6 +49,10 @@ aside{
     letter-spacing: 0.05rem;
     
 }
+.ul a div:hover{
+    background-color:white;
+    color: black;
+}
 .fullcontainer{
     width: 90%;
 }
@@ -170,6 +174,28 @@ table{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #444;
+    background-color: #333;
     color: white;
-  }
+}
+.acao{
+    display: flex;
+    justify-content: space-around;
+}
+.acao div:nth-child(1){
+    background-color:rgb(108, 110, 139);
+    padding:  1% 5%;
+    border-radius: 10%;
+    color: white;
+}
+.acao div:nth-child(1):hover{
+    background-color: #333;
+}
+.acao div:nth-child(2){
+    background-color:red;
+    padding:  1% 6%;
+    border-radius: 50%;
+    color: white;
+}
+.acao div:nth-child(2):hover{
+    background-color: rgb(179, 43, 43)
+}
