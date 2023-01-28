@@ -199,3 +199,18 @@ table{
 .acao div:nth-child(2):hover{
     background-color: rgb(179, 43, 43)
 }
+
+.showresults ul{
+    display: flex;
+    justify-content: center;
+}
+.showresults ul li{
+    list-style-type: none;
+    margin-right: 1%;
+    
+}
+.showresults ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
