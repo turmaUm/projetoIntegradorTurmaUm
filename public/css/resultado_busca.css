@@ -15,7 +15,8 @@ main {
 main .products-container{
     display: flex;
     flex-wrap: wrap;
-    padding-left: 100px;
+    align-content: center;
+    /* padding-left: 100px; */
     font-size: 1.0rem;
 }
 
@@ -98,11 +99,12 @@ main {
        
        .products-container{
         margin-left: 10px;
+        padding-left: 75px;
        }
 
        .img-produto-detalhado {
-        width: 200px;
-        height: 250px;
+        width: 250px;
+        height: 300px;
        }
 }
 
@@ -119,7 +121,7 @@ main {
    }
 
    .products-container{
-    margin-right: 100px;
+    margin-right: 50px;
     align-content: center;
     align-items: center;
    }
