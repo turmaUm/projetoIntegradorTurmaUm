@@ -22,21 +22,22 @@ section{
     display:flex;
     background-color: white;
     text-align: center;
-    height:80px;
+    height:4vh;
     width: 70%;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin:20px;
+    margin:3vh;
 }
 .item2 a{
     background-color: black;
-    border-radius: 30px;
-    padding: 15px;
+    border-radius: 2rem;
+    padding: 1%;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    margin: 0px 50px;
+    margin: 0px 8%;
+    
     
     
 }
@@ -52,21 +53,23 @@ section{
     display:flex;
     background-color:#fff;
     text-align: center;
-    height:80px;
+    height:4vh;
     width: 70%;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin:20px;
+    margin:3vh;
+    
 }
 .item31 a{
     background-color: black;
-    border-radius: 30px;
-    padding: 15px;
+    border-radius: 2rem;
+    padding: 1%;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    margin: 0px 50px;
+    margin: 0 8%;
+    
     
     
 }
@@ -81,7 +84,7 @@ section{
         "item42 item44 item44 item47"
 
     ;
-    gap:10px;
+    gap:0.9%;
     width:70%;
     
     
@@ -98,29 +101,30 @@ section{
     /* width: 40%;
     height: 40%;
     object-fit: cover; */
-    width:200px;
-    height:200px;
+    width:80%;
+    height:60%;
 }
+
 
 .item411{
     display:flex;
     background-color: white;
     text-align: center;
-    height:80px;
+    height:4vh;
     width: 70%;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin:20px;
+    margin:3vh;
 }
 .item411 a{
     background-color: black;
-    border-radius: 30px;
-    padding: 15px;
+    border-radius: 2rem;
+    padding: 1%;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    margin: 0px 50px;
+    margin: 0 8%;
     
     
 }
@@ -154,8 +158,8 @@ section{
     /* width: 30%;
     height: 30%;
     object-fit: cover; */
-    width: 200px;
-    height:200px
+    height:80%;
+    width:40%;
 }
 .item45{
     grid-area: item45;
@@ -226,6 +230,65 @@ section{
 
     
 }
+
+@media(max-width:600px){
+    main{
+        font-size:0.8rem;
+    }
+    .item41 img{
+        /* width: 40%;
+        height: 40%;
+        object-fit: cover; */
+        height:50%;
+        width: 60%;
+    }
+    .item44 img{
+        width:50%;
+    }
+
+    .item4{
+        display:grid;
+        /* grid-template-columns: 1fr 1fr 2fr 1fr; */
+        
+        grid-template-areas:
+            "item41 item43"
+            "item41 item43"
+            "item42 item44"
+            "item42 item44"
+    
+        ;
+        gap:0.9%;
+        width:95%;
+        
+        
+    }
+    .item45, .item46, .item47{
+        display:none;
+    }
+
+
+    .item1 img{
+        width:95%;
+    }
+    .item2{
+        width: 95%;
+    }
+    .item3 img{
+        width:95%;   
+    }
+    .spacer{
+        width:95%;
+    }
+    .item5{
+        width:95%;
+    }
+    .item6{
+        width:95%;
+    }
+
+}
+
+
 /* .grid-template-areas-1 {
     display:grid;
 	grid-template-areas:
