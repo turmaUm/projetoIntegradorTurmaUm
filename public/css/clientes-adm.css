@@ -1,27 +1,37 @@
-body{
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+main{
     display: flex;
     justify-content: center;
-    height: 100vh;
-    
+    /* height: 100vh; */
 }
 
-
 aside{
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.98);
     width: 10%;
     
 }
-.fullcontainer{
-    background-color: rgb(250, 250, 250);
+
+.asidebloco1{
+    width:100%;
 }
 /* #logo2{
     margin-left: 4vh;
 } */
-.titulo-img{
+.titulo-img{ 
     margin-top:1.5vh;
-    margin-bottom:1.5vh;
+    margin-bottom:1.5vh; 
+}
+.mobile{
+    display: none;
 }
 
+.fullcontainer{
+    background-color: white;
+}
 .titulo-img span{
     display: block;
     text-align: center;
@@ -67,11 +77,11 @@ aside{
 .user{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 25%;
+    justify-content: flex-start;
+    width: 50%;
 }
 .user div{
-    width: 6vh;
+    width: 3vw;
     height: 6vh;
     border-radius: 50%;
 }
@@ -119,9 +129,9 @@ aside{
     font-size: 3vh;
 }
 .table{
-    border-bottom: 0.3vh solid #000;
+    /* border-bottom: 0.3vh solid #000; */
     margin: 0 1% 0 1%;
-    height: 70vh;
+    /* height: 70vh; */
     
     
 }
@@ -163,7 +173,7 @@ table{
 }
 #customers td, #customers th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 0.5rem;
 }
   
 #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -171,8 +181,8 @@ table{
 #customers tr:hover {background-color: #ddd;}
   
 #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: left;
     background-color: #333;
     color: white;
@@ -199,7 +209,10 @@ table{
 .acao div:nth-child(2):hover{
     background-color: rgb(179, 43, 43)
 }
-
+.showresults{
+    padding-top: 5vh;
+    padding-bottom: 9.7vh;
+}
 .showresults ul{
     display: flex;
     justify-content: center;
@@ -213,4 +226,64 @@ table{
     text-decoration: none;
     color: black;
     font-weight: 400;
+}
+@media (max-width: 912px){
+    /* .mobile{
+    width:1%;
+    display:none;
+    align-items:center;
+    justify-content: center;
+    color: white;
+    border: 1px solid black;
+    background-color: #333;
+    
+} */
+    aside{
+        /* display: block; */
+        display: none;
+        /* background-color: rgba(172, 28, 28, 0.2)#333; */
+        position: fixed;
+        left: 0;
+        width: 20%;
+        height: 100vh;
+    }
+    .mobile{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3%;
+        border: 1px solid black;
+        background-color: #333;
+        height: 100vh;
+        /* position: fixed;
+        left: 20%; */
+        
+    }
+    .mobile div{
+        color: white;
+        font-size: 1.5rem;
+    }
+    .titulo-img, .ul{
+        display: block;
+        
+    }
+    .fullcontainer{
+        /* background-color: green; */
+        width: 100%;
+    }
+    .user div{
+        display: none;
+    }
+}
+
+@media (max-width:480px){
+    /* main{
+        height: 100vh;
+
+    } */
+    
+    /* .acao{
+        display: none;
+    } */
 }
