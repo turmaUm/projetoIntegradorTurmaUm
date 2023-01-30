@@ -153,24 +153,26 @@ button:hover, .link-pedido:hover {
     animation-fill-mode: both;
     }
 
-@media (max-width: 1279px) {
+@media (min-width: 1279px) {
     main {
         font-size: 1.0rem;
-        margin: 50px 15px 100px 15px;
+     
     }
 }
 
 @media (max-width: 768px) {
     main {
-        font-size: 1.0rem;
-        margin: 50px 15px 100px 15px;
+        font-size: 0.8rem;
+        padding: 40px;
     }
 }
     
 @media (max-width: 480px) {
     main {
-        font-size: 1.0rem;
-        margin-right: 80px;
+        font-size: 0.6rem;
+        /* margin-right: 80px; */
+        text-align: center;
+        padding: 35px;
     }
 }
 
