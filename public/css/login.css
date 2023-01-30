@@ -73,6 +73,68 @@ article h1{
     margin-left: 40px;
 }
 
+/* .form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #828CAD;
+}
+
+.form-control input {
+    border: 2px solid #3E445B;
+    border-radius: 5px;
+    outline: 0;
+
+    display: block;
+
+    font-size: 14px;
+
+    width: 100%;
+    padding: 15px;
+}
+
+.form-control.success input {
+    border: 3px solid #4ECA64;
+}
+
+.form-control.error input {
+    border: 3px solid #DB545A;
+}
+
+.form-control.success i .img-success {
+    visibility: visible;
+}
+
+.form-control.error i .img-error {
+    visibility: visible;
+}
+
+.form-control.error small{
+    color: #DB5A5A;
+    visibility: visible;
+}
+
+.form-control i {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 5px;
+    font-size: 14px;
+
+} */
+
+
 @media (max-width: 1279px) {
   
     /* #paginaLogin {
@@ -83,6 +145,19 @@ article h1{
        justify-content: space-between;
         margin: 20px;
         } */
+        #paginaLogin {
+            margin-bottom: 450px;
+        }
+
+        .login{
+            margin-bottom: 50px;
+        }
+
+        .cadastro {
+            max-width: 600px;
+            max-height: 650px;
+            margin-bottom: 50px;
+        }
     
         .login a{
             margin-left: 20px;
@@ -105,6 +180,10 @@ article h1{
     
         .login a{
             margin-left: 50px;
+        }
+
+        .login{
+            margin-bottom: 50px;
         }
     
         .tituloLogin, .tituloCadastro {
@@ -138,7 +217,8 @@ article h1{
         max-width: 400px;
         max-height: 380px;
         background-color: rgb(240, 240, 240);
-        padding: 15px;
+        padding: 20px;
+        margin-bottom: 50px;
         text-align: center;
         align-items: center;
         align-content: center;
@@ -154,7 +234,7 @@ article h1{
         max-width: 400px;
         max-height: 450px;
         background-color: rgb(240, 240, 240);
-        padding: 20px;
+        padding:20px;
         align-items: center;
         align-content: center;
         /* margin: 100px; */

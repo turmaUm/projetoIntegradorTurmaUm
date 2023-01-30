@@ -10,7 +10,6 @@ app.get("/checkout_endereco", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_endereco.html'))
 });
 
-
 //Criando rota para página checkout pagamento teste
 app.get("/checkout_pagamento_test", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'checkout_pagamento_test.html'))
@@ -44,6 +43,11 @@ app.get("/login", (req,res)=>{
 //Criando rota para página de produto
 app.get("/produto", (req,res)=>{
     res.sendFile(path.join(__dirname, 'views', 'produto.html'))
+});
+
+//Criando rota para página resultado de busca
+app.get("/resultado", (req,res)=>{
+    res.sendFile(path.join(__dirname, 'views', 'resultado_busca.html'))
 });
 
 //Criando rota para página de login ADM
