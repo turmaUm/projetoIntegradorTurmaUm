@@ -160,3 +160,37 @@ menu nav ul {
     position: absolute;
 }
 
+@media(max-width:1200px){
+    .menu nav a:nth-child(6){
+        display: none;
+    }
+    .menu nav a:nth-child(7){
+        display: none;
+    }
+}
+
+@media(max-width:960px){
+    .menu nav a:nth-child(4){
+        display: none;
+    }
+    .menu nav a:nth-child(5){
+        display: none;
+    }
+}
+@media(max-width:680px){
+    .menu nav a:nth-child(1){
+        display: none;
+    }
+    .menu nav a:nth-child(2){
+        display: none;
+    }
+    .menu nav a:nth-child(3){
+        display: none;
+    }
+    .pesquisar {
+        width: 80%;
+    }
+    .pesquisar input{
+        width: 100%;
+    }
+}
