@@ -66,11 +66,11 @@ main {
 
 .parte-dois-login-adm {
     box-sizing: border-box;
-    max-width: 450px;
-    max-height: 450px;
+    max-width: 300px;
+    max-height: 200px;
 }
 
-@media (max-width: 1279px) {
+@media (min-width: 1279px) {
   
     /* #paginaLogin {
         display: block;
@@ -82,7 +82,12 @@ main {
         } */
     
         .parte-um-login-adm a{
-            margin-left: 20px;
+            margin-left: 70px;
+        }
+
+        .parte-dois-login-adm {
+            max-width: 300px;
+            max-height: 200px;
         }
     
         .titulo-login-adm {
@@ -98,6 +103,11 @@ main {
         align-items: center;
         padding: 15px;
         margin: 150px 0px 100px 0px;
+        gap: 0px;
+        }
+
+        .input-checkbox-login-adm {
+            margin-right: 15px;
         }
     
         .parte-um-login-adm a{
@@ -137,16 +147,16 @@ main {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        max-width: 400px;
-        max-height: 350px;
+        width: 80vw;
+        /* max-width: 400px; */
+        max-height: 480px;
         background-color: rgb(240, 240, 240);
-        padding: 15px;
+        padding: 20px;
+        margin-bottom: 50px;
         text-align: center;
         align-items: center;
         align-content: center;
         align-self: center;
-        /* margin: 100px; */
-        /* border: 1.5px solid #999 */
     }
 
     .parte-dois-login-adm {
@@ -155,10 +165,11 @@ main {
 
     .estilo-input-adm-login {
         color: grey;
-        width: 150px;
+        width: 60vw;
+        /* width: 150px; */
         height: 30px;
         margin: 5px;
-        padding: 10px;
+        padding: 15px;
         border: 2px solid grey;
         cursor: pointer;
     }

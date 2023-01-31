@@ -17,10 +17,10 @@
     height: 100vh;
     background-color: white;
     display: flex;
+    margin: 400px 0px 280px 0px;
     justify-content: center;
-    /* align-items: center; */
-    padding-top: 80px;
-    /* padding-left: 100px; */
+    align-content: center;
+    align-items: center;
     font-size: 15px;
     gap: 130px;
 }
@@ -31,17 +31,17 @@
     max-height: 400px;
     background-color: rgb(240, 240, 240);
     padding: 50px;
-    /* margin: 100px; */
+    margin: 100px;
     /* border: 1.5px solid #999 */
 }
 
 .cadastro {
     box-sizing: border-box;
     max-width: 450px;
-    max-height: 450px;
+    max-height: 500px;
     background-color: rgb(240, 240, 240);
     padding: 50px;
-    /* margin: 100px; */
+    margin: 100px;
     /* border: 1.5px solid #999 */
 }
 
@@ -135,26 +135,21 @@ article h1{
 } */
 
 
-@media (max-width: 1279px) {
+@media (min-width: 1279px) {
   
-    /* #paginaLogin {
-        display: block;
-        align-content: center;
-        margin-right: 100px;
-        padding-top: 80px;
-       justify-content: space-between;
-        margin: 20px;
-        } */
+      
         #paginaLogin {
+            margin-top: 400px;
             margin-bottom: 450px;
-        }
+        } 
 
         .login{
             margin-bottom: 50px;
+            max-width: 500px;
         }
 
         .cadastro {
-            max-width: 600px;
+            max-width: 500px;
             max-height: 650px;
             margin-bottom: 50px;
         }
@@ -165,7 +160,7 @@ article h1{
     
         .tituloLogin, .tituloCadastro {
             text-align: center;
-        }
+        } 
  }
 
  @media (max-width: 768px) {
@@ -214,8 +209,9 @@ article h1{
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        max-width: 400px;
-        max-height: 380px;
+        width: 80vw;
+        /* max-width: 400px; */
+        max-height: 480px;
         background-color: rgb(240, 240, 240);
         padding: 20px;
         margin-bottom: 50px;
@@ -231,7 +227,8 @@ article h1{
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        max-width: 400px;
+        /* max-width: 400px; */
+        width: 80vw;
         max-height: 450px;
         background-color: rgb(240, 240, 240);
         padding:20px;
@@ -243,10 +240,10 @@ article h1{
 
     .estiloBotao {
         color: grey;
-        width: 150px;
+        width: 60vw;
         height: 20px;
         margin: 5px;
-        padding: 5px;
+        padding: 10px;
         border: 2px solid grey;
         cursor: pointer;
     }
