@@ -55,82 +55,80 @@
             </a>
         </div>
     </header>
-
     <main>
-        
         <section id="paginaLogin">
-            <form class="form" id="form" method="POST" action="">
-            <article class="login">
-                <h1 class="tituloLogin">login</h1>
-                <br>
-                <p class="paragrafoParaLogin">Login com seu e-mail</p>
-                    <div class="form-control">
-                        <label for="email"></label>
-                        <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i>
-                        <small>Error Message</small> -->
-                    </div>
-                <br>
-                    <div class="form-control">
-                        <label for="senha"></label>
-                        <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i>
-                        <small>Error Message</small> -->
-                    </div>
-                <br>
-                <br>
-                <input type="checkbox" name="lembrar" id="lembrar">
-                <label for="lembrar">Lembrar de mim</label>
-                <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
-                <br>
-                <input class="btEnviar" type="submit" name="enviar" id="envair" placeholder="ENVIAR">
-            </article>
-                        
-            <article class="cadastro">
-                <h1 class="tituloCadastro">cadastre-se</Cadastre-se></h1>
-                <br>
-                <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
-                    <div class="form-control">
-                        <label for="nomeCadastro"></label>
-                        <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i>
-                        <small>Error Message</small> -->
-                    </div>
-                <br>
-                    <div class="form-control">
-                        <label for="emailCadastro"></label>
-                        <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i> -->
-                        <!-- <small>Error Message</small> -->
-                    </div>    
-                <br>
-                    <div class="form-control">
-                        <label for="senhaCadastro"></label>
-                        <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i> -->
-                        <!-- <small>Error Message</small> -->
-                    </div>
-                <br>
-                    <div class="form-control">
-                        <label for="confirmeSenha"></label>
-                        <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha" required>
-                        <!-- <i><img class="img-success" src="/img/icon-sucesso-form.jpg" alt=""></i>
-                        <i><img class="img-error" src="/img/icon-fail-form.png" alt=""></i> -->
-                        <!-- <small>Error Message</small> -->
-                    </div>
-                <br>
-                <input class="btEnviar" type="submit" name="enviarCadastro" id="enviarCadastro">
-            </article>
+            <form class="formLogin" id="formLogin" method="POST" action="">
+                <article class="login">
+                        <h1 class="tituloLogin">login</h1>
+                    <br>
+                        <p class="paragrafoParaLogin">Login com seu e-mail</p>
+                        <div class="form-control">
+                            <label for="email"></label>
+                            <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>
+                    <!-- <br> -->
+                        <div class="form-control">
+                            <label for="senha"></label>
+                            <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>
+                    <!-- <br> -->
+                        <div class="div-button">
+                            <input type="checkbox" name="lembrar" id="lembrar">
+                            <label for="lembrar">Lembrar de mim</label>
+                            <a href="redefiniçãoDeSenha">Esqueceu a senha?</a>
+                    <!-- <br> -->
+                            <button class="btEnviar" name="enviar" id="envairLogin">ENVIAR</button> 
+                        </div>
+                           
+                </article>
+            </form>
+            <form class="formCadastro" id="formCadastro" method="POST" action="">
+                <article class="cadastro">
+                        <h1 class="tituloCadastro">cadastre-se</Cadastre-se></h1>
+                    <br>
+                        <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
+                        <div class="form-control">
+                            <label for="nomeCadastro"></label>
+                            <input class="estiloBotao" type="text" name="nomeCadastro" id="nomeCadastro" placeholder="Nome Completo">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>
+                    <!-- <br> -->
+                        <div class="form-control">
+                            <label for="emailCadastro"></label>
+                            <input class="estiloBotao" type="email" name="emailCadastro" id="emailCadastro" placeholder="Seu e-mail">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>    
+                    <!-- <br> -->
+                        <div class="form-control">
+                            <label for="senhaCadastro"></label>
+                            <input class="estiloBotao" type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Digita sua senha">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>
+                    <!-- <br> -->
+                        <div class="form-control">
+                            <label for="confirmeSenha"></label>
+                            <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
+                            <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
+                            <i><img class="img-error" src="/img/icon-fail-form.svg" alt=""></i>
+                            <small>Error Message</small>
+                        </div>
+                    <!-- <br> -->
+                            <button class="btEnviar" name="enviar" id="envairCadastro">ENVIAR</button> 
+                </article>
             </form>
         </section>
-
-        <script src="/js/index.js"></script>
-
     </main>
     <footer >
         <div class="container-total">
@@ -189,6 +187,6 @@
             </div>
         </div>        
     </footer>
-
+<script src="/js/index.js"></script>
 </body>
 </html>
