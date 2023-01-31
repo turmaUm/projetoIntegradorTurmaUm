@@ -13,19 +13,17 @@
     /* max-height: 800px; */
 }
 .row{
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
     justify-content: space-around;
-    height:400px;
     padding:45px 0px ;
 
 }
-.container-part{
-    /* background-color: blue; */
+/* .container-part{
+    
     margin: 0px 145px;
-    /* border: 1px solid black; */
+    
 
-}
+} */
 
 .container-part h3{
     /* background-color: yellow; */
@@ -47,13 +45,13 @@
     /* background-color: yellow; */
     margin: 41px 0px;
     height: 50px;
-    width: 470px;
+    width: 100%;
  
 }
 
 .email{
     height:36px;
-    width:318px;
+    width:70%;
     border-radius: 5px;
     
 }
@@ -128,6 +126,9 @@
     top: 25%;
     text-align: center;
 }
+.divcol-md{
+    display: flex;
+}
 
 .midias-sociais img {
     height: 45px;
@@ -135,3 +136,40 @@
     padding-right: 20px;
 }
 
+@media (max-width:1200px){
+    .row{
+        display: block;
+        
+    }
+    .container-part {
+        text-align: center;
+    }
+    .form-group{
+        margin: 2% auto;
+    }
+    .divcol-md{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .email{
+        
+        width:40%;
+    }
+}
+@media (max-width:600px){
+
+    .table1{
+        /* background-color: aqua; */
+        border: 1px solid black;
+    }
+    .table1 li{
+        border-bottom: 1px solid black
+    }
+    .table1{
+        display: none;
+    }
+
+
+
+}
