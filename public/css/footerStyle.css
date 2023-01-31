@@ -13,19 +13,17 @@
     /* max-height: 800px; */
 }
 .row{
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
     justify-content: space-around;
-    height:400px;
     padding:45px 0px ;
 
 }
-.container-part{
-    /* background-color: blue; */
+/* .container-part{
+    
     margin: 0px 145px;
-    /* border: 1px solid black; */
+    
 
-}
+} */
 
 .container-part h3{
     /* background-color: yellow; */
@@ -47,13 +45,13 @@
     /* background-color: yellow; */
     margin: 41px 0px;
     height: 50px;
-    width: 470px;
+    width: 100%;
  
 }
 
 .email{
     height:36px;
-    width:318px;
+    width:70%;
     border-radius: 5px;
     
 }
@@ -108,7 +106,7 @@
 
 .col-md ul li a {
     text-decoration: none;
-    color: rgba(0,0,0,0.5)
+    /* color: rgba(0,0,0,0.5) */
 }
 
 .container-part div a {
@@ -128,10 +126,108 @@
     top: 25%;
     text-align: center;
 }
+.divcol-md{
+    display: flex;
+}
 
 .midias-sociais img {
     height: 45px;
     padding-top: 10px;
     padding-right: 20px;
 }
+.table1, .table2,.table3{
+    display: block;
+}
 
+@media (max-width:1200px){
+    .row{
+        display: block;
+        
+    }
+    .container-part {
+        text-align: center;
+    }
+    .form-group{
+        margin: 2% auto;
+    }
+    .divcol-md{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .email{
+        
+        width:40%;
+    }
+    .table1, .table2,.table3{
+        display: block;
+    }
+}
+@media (max-width:600px){
+
+    /* .table1{
+        
+        border: 1px solid black;
+    } */
+    /* .table1 li{
+        border-bottom: 1px solid black
+    } */
+    .table1, .table2,.table3{
+        display: none;
+    }
+
+    .col-md h4{
+        border: 1px solid black;
+        border-radius: 2rem;
+        margin-right: 5px;
+        background-color: #111111;
+        color: #fff;
+        cursor:pointer;
+    }
+    .table1, .table2, .table3{
+        margin-top: 5%;
+        
+        
+    }
+    .table1 li{
+        border: 2px solid #111111;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem;
+        width: 80%;
+        background-color:#111111;
+        cursor:pointer;
+    }
+    .table1 li a{
+        color: rgba(255,255,255,0.8)
+    }
+    .table1 li:hover{
+        background-color: blue;
+    }
+    .table2 li{
+        border: 1px solid #111111;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem;
+        width: 80%;
+        background-color:#111111
+    }
+    .table2 li a{
+        color: rgba(255,255,255,0.8)
+    }
+    .table2 li:hover{
+        background-color: blue;
+    }
+    .table3 li{
+        border: 1px solid #111111;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem;
+        width: 80%;
+        background-color:#111111
+    }
+    .table3 li a{
+        color: rgba(255,255,255,0.8)
+    }
+    .table3 li:hover{
+        background-color: blue;
+    }
+
+}
