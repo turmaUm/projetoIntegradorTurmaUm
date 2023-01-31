@@ -12,36 +12,44 @@
     margin-bottom: 10px;
 }
 
+
+.tituloLogin, .tituloCadastro {
+    text-align: center;
+} 
+
 #paginaLogin {
     width: 100vw;
     height: 100vh;
     background-color: white;
     display: flex;
-    margin: 400px 0px 280px 0px;
+    margin-top: 200px;
     justify-content: center;
     align-content: center;
-    align-items: center;
     font-size: 15px;
     gap: 130px;
 }
 
-.login{
+.login {
     box-sizing: border-box;
-    max-width: 450px;
-    max-height: 400px;
+    display: flex;
+    max-width: 400px;
+    max-height: 450px;
+    flex-direction: column;
+    align-content: center;
     background-color: rgb(240, 240, 240);
-    padding: 50px;
-    margin: 100px;
+    padding: 30px;
+    margin-top: 0px;
     /* border: 1.5px solid #999 */
 }
 
 .cadastro {
     box-sizing: border-box;
-    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
     max-height: 500px;
     background-color: rgb(240, 240, 240);
-    padding: 50px;
-    margin: 100px;
+    padding: 30px;
     /* border: 1.5px solid #999 */
 }
 
@@ -70,32 +78,34 @@ article h1{
 }
 
 .login a{
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
-/* .form-control {
+.div-button {
+    display: block;
+    max-width: 400px;
+}
+
+.formLogin, .formCadastro {
+    padding: 0 40px 30px;
+}
+
+.form-control {
+    margin-top: 5px;
     margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
+    padding-bottom: 10px;
+    position: relative; 
 }
 
 .form-control label {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: #828CAD;
+    margin: auto;
 }
 
 .form-control input {
     border: 2px solid #3E445B;
-    border-radius: 5px;
     outline: 0;
-
+    border-radius: 5px;
     display: block;
-
-    font-size: 14px;
-
-    width: 100%;
-    padding: 15px;
 }
 
 .form-control.success input {
@@ -108,10 +118,14 @@ article h1{
 
 .form-control.success i .img-success {
     visibility: visible;
+    width: 15px;
+    height: 15px;
 }
 
 .form-control.error i .img-error {
     visibility: visible;
+    width: 15px;
+    height: 15px;
 }
 
 .form-control.error small{
@@ -131,21 +145,18 @@ article h1{
     position: absolute;
     margin-top: 5px;
     font-size: 14px;
+}
 
-} */
-
-
-@media (min-width: 1279px) {
+@media (min-width: 1280px) {
   
       
         #paginaLogin {
-            margin-top: 400px;
-            margin-bottom: 450px;
+            margin-top: 200px;
         } 
 
         .login{
             margin-bottom: 50px;
-            max-width: 500px;
+            max-width: 400px;
         }
 
         .cadastro {
@@ -153,9 +164,14 @@ article h1{
             max-height: 650px;
             margin-bottom: 50px;
         }
-    
+
+        .div-button {
+            display: block;
+            max-width: 400px;
+        }
+            
         .login a{
-            margin-left: 20px;
+            margin-left: 55px;
         }
     
         .tituloLogin, .tituloCadastro {
@@ -177,9 +193,9 @@ article h1{
             margin-left: 50px;
         }
 
-        .login{
+        /* .login{
             margin-bottom: 50px;
-        }
+        } */
     
         .tituloLogin, .tituloCadastro {
             text-align: center;
@@ -194,11 +210,11 @@ article h1{
         align-items: center;
         /* justify-content: space-between; */
         font-size: 0.8rem;
-        margin: 300px 0px 250px 0px;
+        margin: 350px 0px 250px 0px;
     }
 
     .login a{
-        margin: 5px;
+        margin-left: 35px;
     }
 
     .tituloLogin, .tituloCadastro {
@@ -214,7 +230,6 @@ article h1{
         max-height: 480px;
         background-color: rgb(240, 240, 240);
         padding: 20px;
-        margin-bottom: 50px;
         text-align: center;
         align-items: center;
         align-content: center;
@@ -229,7 +244,7 @@ article h1{
         flex-direction: column;
         /* max-width: 400px; */
         width: 80vw;
-        max-height: 450px;
+        max-height: 500px;
         background-color: rgb(240, 240, 240);
         padding:20px;
         align-items: center;
