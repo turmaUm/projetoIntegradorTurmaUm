@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/footerStyle.css">
     <link rel="stylesheet" href="/css/promocaoStyle.css">
     <script src="js/footer.js"></script>
+    <script src="js/homeSlider.js"></script>
     <title>BRACKISH</title>
 </head>
 
@@ -66,9 +67,46 @@
     </header>
 
     <main>
+        <div class="slider">
+    
+            <div class="slides">
+                <!-- radio buttons     -->
+                <input type="radio" nome="radio-btn" id="radio1">
+                <input type="radio" nome="radio-btn" id="radio2">
+                <input type="radio" nome="radio-btn" id="radio3">
+    
+                <!-- slide imagens -->
+                <div class="slide first">
+                    <img class="img" src="/img/jeans-foto.png" alt="Imagem 1">
+                </div>
+                <div class="slide">
+                    <img class="img"src="/img/imagem-roupa.jpg" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <img class="img" src="/img/jeans-foto.png" alt="Imagem 3">
+                </div>
+            </div>
+    
+              <!-- navigation auto -->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+    
+            </div>
+    
+        </div>
+        
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+
         <section class="flex">
 
-            <a href="" class="item1"><img src="/img/jeans-foto.png" alt=""></a>
+            <!-- <a href="" class="item1"><img src="/img/jeans-foto.png" alt=""></a> -->
+           
             <div class="item2">
                 <a href="">Ver Ofertas</a>
                 <a href="">Novas Ofertas</a>
