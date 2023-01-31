@@ -250,6 +250,106 @@
     display: none;
 }
 
+@media screen and (max-width: 480px){
+    body {
+        width: 100vh;
+    }
+
+    main {
+        width: 100vh;
+    }
+
+    .mainDiv {
+        display: flex;
+        width: 100%;
+    }
+
+    .divSize{
+        width: 100vh;
+    }
+
+    .divInterna{
+        width: 100%;
+    }
+
+    .editFormPag{
+        font-size: 25px;
+        margin-top: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    #paypal h4 {
+        font-size: 25px;
+    }
+
+    #paypal p {
+        font-size: 20px;
+    }
+
+    #boleto p {
+        font-size: 20px;
+    }
+
+    .formParcelas label {
+        font-size: 25px;
+    }
+
+    .formParcelas select {
+        margin-top: 25px;
+        font-size: 23px;
+    }
+
+    .information {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .inforCartao {
+        font-size: 20px;
+    }
+
+    .input-nome {
+        margin-top: 10px;
+    }
+
+    /* ALTERANDO PAGAMENTO SEGURO -------------- */
+    .pagamentoSeguro {
+        width: 117vh;
+    }
+
+    .pagamentoSeguro span {
+        font-size: 25px;
+        align-items: flex-end;
+    }
+
+    .pagamentoSeguro img {
+        height: 25px;
+        margin-top: 13px;
+    }
+
+    .logo_check {
+        margin-left: auto;
+    }
+
+    .letras_checkoutSeguro {
+        margin-right: auto;
+    }
+
+    /* ------------------------------------------ */
+
+    #mainResume {
+        width: 40em;
+        font-size: 25px;
+    }
+
+    .ol {
+        grid-gap: 30px;
+    }
+}
+    
+
+
 
 
 
