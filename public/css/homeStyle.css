@@ -5,7 +5,7 @@ main{
 }
 
 .slider{
-    background-color:blue;
+    /* background-color:blue; */
     width: 70%;
     margin: 0 auto;
     overflow: hidden;
@@ -28,7 +28,7 @@ main{
 }
 .manual-navigation{
     position: absolute;
-    width: 100%;
+    width: 70%;
     margin-top: -40px;
     display: flex;
     justify-content: center;
@@ -61,12 +61,6 @@ main{
     margin-left: -50%
 }
 
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
 .navigation-auto div{
     border: 2px solid #20a6ff;
     padding: 5px;
@@ -77,13 +71,14 @@ section{
 .navigation-auto{
     position: absolute;
     width: 70%;
-    margin-top: -40px;
+    margin-top: 400px;
     display: flex;
     justify-content: center;
 }
 .navigation-auto div:not(:last-child){
     margin-right: 40px;
 }
+
 #radio1:checked ~ .navigation-auto .auto-btn1{
     background-color:#FFF;
 }
@@ -94,6 +89,15 @@ section{
 #radio3:checked ~ .navigation-auto .auto-btn3{
     background-color: #FFF;
 }
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
 
 
 /* .item1{
