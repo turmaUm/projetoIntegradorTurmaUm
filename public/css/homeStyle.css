@@ -29,13 +29,13 @@ main{
 .manual-navigation{
     position: absolute;
     width: 70%;
-    margin-top: -40px;
+    margin-top: -2%;
     display: flex;
     justify-content: center;
 }
 .manual-btn{
     border: 2px solid #fff;
-    padding: 5px;
+    padding: 0.5%;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
@@ -43,10 +43,10 @@ main{
 }
 
 .manual-btn:not(:last-child){
-    margin-right: 40px;
+    margin-right: 3.25%;
 }
 .manual-btn:hover{
-    background-color:white
+    background-color:black;
 }
 
 #radio1:checked ~ .first{
@@ -61,8 +61,8 @@ main{
     margin-left: -50%
 }
 
-.navigation-auto div{
-    border: 2px solid #20a6ff;
+/* .navigation-auto div{
+    border: 1px solid  white;
     padding: 5px;
     border-radius:10px;
     cursor: pointer;
@@ -71,12 +71,13 @@ main{
 .navigation-auto{
     position: absolute;
     width: 70%;
-    margin-top: 400px;
+    margin-top: 26.5%;
     display: flex;
     justify-content: center;
+    
 }
 .navigation-auto div:not(:last-child){
-    margin-right: 40px;
+    margin-right: 3.6%;
 }
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
@@ -88,7 +89,7 @@ main{
 }
 #radio3:checked ~ .navigation-auto .auto-btn3{
     background-color: #FFF;
-}
+} */
 
 
 section{
@@ -375,6 +376,12 @@ section{
     }
     .item6{
         width:95%;
+    }
+    .slider{
+        width: 95%;
+    }
+    .manual-btn {
+        display: none;
     }
 
 }
