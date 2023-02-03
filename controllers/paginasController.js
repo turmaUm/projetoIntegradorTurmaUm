@@ -2,16 +2,16 @@ const path = require('path')
 
 const paginasController = {
     showEndereco: (req, res) => {
-        return res.sendFile(path.resolve("./views/checkout_endereco.html"))
+        res.render('checkout_endereco')
     },
     showPagamento: (req, res) => {
-        return res.sendFile(path.resolve("./views/checkout_pagamento.html"))
+        res.render('checkout_pagamento')
     },
     showCliente: (req, res) => {
-        return res.sendFile(path.resolve("./views/cliente.html"))
+        res.render('cliente')
     },
     showFinalizacao: (req, res) => {
-        return res.sendFile(path.resolve("./views/finalizacaoCompras.html"))
+        res.render('finalizacaoCompras')
     },
     showHome: (req, res) => {
         res.render('home')
@@ -32,7 +32,7 @@ const paginasController = {
         return res.sendFile(path.resolve("./views/clientes-adm.html"))
     },
     showProdutosAdm: (req, res) => {
-        return res.sendFile(path.resolve("./views/produtos-adm.html"))
+        res.render('produtos-adm')
     },
     showPedidosAdm: (req, res) => {
         return res.sendFile(path.resolve("./views/pedidos-adm.html"))
