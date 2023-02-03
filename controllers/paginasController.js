@@ -22,23 +22,20 @@ const paginasController = {
     showProduto: (req, res) => {
         res.render('produto')
     },
-    showResultado: (req, res) => {
-        return res.sendFile(path.resolve("./views/resultado_busca.html"))
+    showResultadoBusca: (req, res) => {
+        res.render('resultado_busca')
     },
     showLoginAdm: (req, res) => {
-        return res.sendFile(path.resolve("./views/login-adm.html"))
+        res.render('login-adm')
     },
     showClientesAdm: (req, res) => {
-        return res.sendFile(path.resolve("./views/clientes-adm.html"))
+        res.render('clientes-adm')
     },
     showProdutosAdm: (req, res) => {
         res.render('produtos-adm')
     },
     showPedidosAdm: (req, res) => {
-        return res.sendFile(path.resolve("./views/pedidos-adm.html"))
-    },
-    showBusca: (req, res) => {
-        return res.sendFile(path.resolve("./views/resultado_busca.html"))
+        res.render('pedidos-adm')
     }
 }
 
