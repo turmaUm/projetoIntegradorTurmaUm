@@ -14,7 +14,7 @@ const paginasController = {
         return res.sendFile(path.resolve("./views/finalizacaoCompras.html"))
     },
     showHome: (req, res) => {
-        return res.sendFile(path.resolve("./views/home.html"))
+        res.render('home')
     },
     showLogin: (req, res) => {
         return res.sendFile(path.resolve("./views/login.html"))
