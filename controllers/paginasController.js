@@ -17,10 +17,10 @@ const paginasController = {
         res.render('home')
     },
     showLogin: (req, res) => {
-        return res.sendFile(path.resolve("./views/login.html"))
+        res.render('login')
     },
     showProduto: (req, res) => {
-        return res.sendFile(path.resolve("./views/produto.html"))
+        res.render('produto')
     },
     showResultado: (req, res) => {
         return res.sendFile(path.resolve("./views/resultado_busca.html"))
