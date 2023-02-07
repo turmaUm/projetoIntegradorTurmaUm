@@ -4,8 +4,8 @@ const paginasController = require('./controllers/paginasController')
 
 const router = express.Router()
 
-router.get('/checkout-endereco', paginasController.showEndereco)
-router.get('/checkout-pagamento', paginasController.showPagamento)
+router.get('/checkout_endereco', paginasController.showEndereco)
+router.get('/checkout_pagamento', paginasController.showPagamento)
 router.get('/cliente', paginasController.showCliente)
 router.get('/finalizacao', paginasController.showFinalizacao)
 router.get('/home', paginasController.showHome)

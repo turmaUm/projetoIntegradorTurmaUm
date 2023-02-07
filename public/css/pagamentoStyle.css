@@ -250,9 +250,9 @@
     display: none;
 }
 
-@media screen and (max-width: 600px){
+@media (max-width: 600px){
     body {
-        width: 100vh;
+        width: max-content;
     }
 
     main {
@@ -347,7 +347,20 @@
         grid-gap: 30px;
     }
 }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
