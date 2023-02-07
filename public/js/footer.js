@@ -1,7 +1,6 @@
 window.addEventListener('load', function() {
 
-
-
+    
 //     document.body.onresize = function(){
 //         if(document.body.clientWidth <= 600){
 //             let table = document.querySelector('.table1');
