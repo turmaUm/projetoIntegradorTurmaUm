@@ -4,6 +4,8 @@ const app = express();
 const router =  require('./router.js')
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname + '/views'));
+
 
 //Define a pasta public como sendo a pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
@@ -11,6 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Usa roteador para controladores
 app.use(router);
 
-//Colocar o servidor no modo "escuta"
-app.listen(3000);
+// exportando aplicação
+module.exports = app;
+
 
