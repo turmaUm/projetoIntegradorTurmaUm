@@ -42,8 +42,8 @@
     /*border: 2px solid red;*/
     margin: 0;
     padding: 0;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
     display: flex;
     justify-content: center;
 }
@@ -51,16 +51,16 @@
 .mainDiv {
     /*border: 2px solid black;*/
     display: flex;
-    width: 90rem;
-    height: 55rem;
-    margin-left: 10rem;
+    width: 90%;
+    height: 50%;
+    margin-left: 20%;
     flex-wrap: wrap;
 }
 
 #mainResume {
     display: flex;
     /*border: 2px solid aqua;*/
-    width: 65rem;
+    width: 70%;
     height: 3rem;
 }
 
@@ -103,9 +103,9 @@
 .divSize {
     display: flex;
     /*border: 2px solid red;*/
-    width: 65rem;
-    height: 65rem;
+    width: 100%;
     align-items: flex-end;
+    height: 100%;
 }
 
 .divInterna {
@@ -121,14 +121,14 @@
 .divFormPag {
     display: flex;
     /*border: 2px solid red;*/
-    height: 80px;
-    margin-top: 20px;
+    height: 4em;
+    margin-top: 3%;
     justify-content: space-between;
 }
 
 .labelPaypal {
     display: flex;
-    width: 230px;
+    width: 30%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@
 
 .labelBoleto {
     display: flex;
-    width: 230px;
+    width: 30%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -151,7 +151,7 @@
 
 .labelCartao {
     display: flex;
-    width: 230px;
+    width: 30%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -163,15 +163,20 @@
 }
 
 .formParcelas {
-    margin-top: 1.8rem;
+    margin-top: 3%;
     display: flex;
+    width: 100%;
+}
+
+.formOptions {
+    width: 100%;
 }
 
 .formParcelas select {
-    margin-top: 10px;
-    width: 400px;
+    margin-top: 2%;
+    width: 60%;
     color: black;
-    padding-left: 10px;
+    padding-left: 2%;
     font-size: 15px;
     height: 50px;
 }
@@ -192,15 +197,18 @@
     margin-top: 5px;
     width: 60%;
     height: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 5%;
 }
 
 .inputNumeroCartao {
     display: flex;
-    position: absolute;
-    width: 400px;
+    width: 100%;
     height: 30px;
-    margin-top: 5px;
+    margin-top: 3%;
+}
+
+#inputNumero {
+    width: 100%;
 }
 
 .inputDataValidade {

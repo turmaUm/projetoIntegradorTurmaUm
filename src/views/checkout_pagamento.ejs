@@ -67,7 +67,7 @@
                 </div>
 
                 <div id="paypal" class="tabcontent">
-                    <h4 style="margin-bottom: 20px; margin-top: 30px;">Pagamento Parcelado</h4>
+                    <h4 style="margin-bottom: 5%; margin-top: 5%;">Pagamento Parcelado</h4>
                     <p>Clique em "Salvar e Continuar" para seguir com pagamento via PayPal</p>
                 </div>
 
@@ -77,7 +77,7 @@
 
                 <div id="cartao" class="tabcontent">
                     <div class="formParcelas">
-                        <form action method="get">
+                        <form action method="get" class="formOptions">
                             <label for="parcela">Selecione o número de parcelas:</label><br>
                             <select name="parcela" id="">
                                 <option value="1">1x de R$ 3.919,00 sem juros</option>
@@ -90,16 +90,19 @@
                     </div>
                     <span class="information">Pagamento em até 5x com parcela mínima de R$ 5</span>
 
-                    <p style="margin-top: 30px; font-size: 20px; margin-bottom: 20px;">DADOS DO CARTÃO</p>
+                    <p style="margin-top: 3%; font-size: 1em; margin-bottom: 3%;">DADOS DO CARTÃO</p>
 
                     <div class="inforCartao">
                         <form action="/registro">
                             <label for="nome">Nome do titular do cartão</label>
                             <input class="input-nome" type="text" name="nome" id="">
-                            <label for="numeroCartao">Número do cartão</label>
-                            <input class="inputNumeroCartao" type="number" name="cartao" id="">
-                            <label style="margin-left: 330px;" for="validade">Data de validade</label>
-                            <input class="inputDataValidade" type="number" name="validade" id="" placeholder="MM/AA">
+                            <div class="inputNumeroCartao">
+                                
+                                <label for="numeroCartao">Número do cartão</label> 
+                                <div id="inputNumero"><input type="number" name="cartao" id=""></div>
+                                <label for="validade"></label>
+                            </div>
+                            
                             <label for="cvm">Código de segurança</label>
                             <input class="cvm" type="text" name="cvm">
                             <input class="checkboxSalvarDados" type="checkbox" name="salvarDados">
