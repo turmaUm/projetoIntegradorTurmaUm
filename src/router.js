@@ -16,6 +16,7 @@ router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showClientesAdm)
 router.get('/produtos-adm', paginasController.showProdutosAdm)
 router.get('/pedidos-adm', paginasController.showPedidosAdm)
+router.get('/carrinho', paginasController.showCarrinho)
 
 
 module.exports = router

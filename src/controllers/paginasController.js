@@ -36,6 +36,9 @@ const paginasController = {
     },
     showPedidosAdm: (req, res) => {
         res.render('pedidos-adm')
+    },
+    showCarrinho: (req, res) => {
+        res.render('carrinho')
     }
 }
 
