@@ -12,8 +12,10 @@
     font-weight: bold;
 }
 
+/* ----------------- CSS DADOS DO PRODUTO --------------- */
+
 .sectionSpan {
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     width: 70%;
     min-width: 599px;
     max-width: 900px;
@@ -25,28 +27,138 @@
     margin-top: 2%;
 }
 
+.span {
+    text-align: center;
+}
+
 .sectionDados {
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     width: 70%;
     min-width: 599px;
     max-width: 900px;
     margin: 0 auto;
+    display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     column-gap: 2%;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .sectionDados img {
-    height: 10vh;
+    height: 8.5vh;
 }
 
-/* -------- RESPONSIVIDADE - 600PX --------------- */
+.ImagemEdescricao {
+    display: flex;
+}
 
-@media (max-width: 1024px){
+.spanDescricaoDoProduto {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vh;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+/* -------- MOD. BOTÃO DE QUANTIDADE */
+
+.sectionQuantidadeProdutos {
+    display: flex;
+    border: 1px solid #333;
+    border-radius: 5px;
+    height: 5vh;
+    width: 50%;
+    margin-left: 22%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.quantidade {
+    width: 50%;
+    text-align: center;
+    border: none;
+}
+
+.sectionQuantidadeProdutos button {
+    background-color: transparent;
+    border: none;
+    width: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sectionQuantidadeProdutos button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* ------------------------------ */
+
+.valor {
+    text-align: center;
+    margin: auto auto;
+}
+
+.valorTotal {
+    text-align: center;
+    margin: auto auto;
+    font-weight: bold;
+}
+
+.delete {
+    margin: auto auto;
+    height: 2vw;
+    width: 5vh;
+    background: none;
+    margin-left: 40%;
+    border: none;
+}
+
+.delete img {
+    height: 1.5vw;
+}
+
+.delete:hover {
+    border: 1px ;
+    background-color: rgb(211, 211, 211);
+    border-radius: 30px;
+}
+
+
+/* --------- DIV SUB TOTAL --------------------- */
+
+.divSubtotal {
+    width: 70%;
+    margin: 0 auto;
+    min-width: 599px;
+    max-width: 900px;
+    margin-top: 2%;
+    background-color: #eeecec;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 40px;
+}
+
+.subtotal {
+    display: grid;
+    grid-column-start: 3;
+    text-align: center;
+    margin: auto auto;
+}
+
+.total {
+    text-align: center;
+    margin: auto auto;
+}
+
+/* -------- RESPONSIVIDADE 900 PX --------------- */
+
+@media (max-width: 900px){
 
     .sacola {
-        margin: 0 auto;
+        text-align: center;
         width: 100%;
         min-width: 0px;
         max-width: 1018px;
@@ -63,6 +175,10 @@
     }
 
     .sectionDados {
+        display: none;
+    }
+
+    .divSubtotal {
         display: none;
     }
 

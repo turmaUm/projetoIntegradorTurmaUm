@@ -20,23 +20,56 @@
 
                     <!--Spans-->
                     <span class="spanProdutos">Produtos</span>
-                    <span class="spanQuantidade">Quantidade</span>
-                    <span class="spanValorUnitario">Valor Unitário</span>
-                    <span class="spanValorTotal">Valor Total</span>
+                    <span class="span">Quantidade</span>
+                    <span class="span">Valor Unitário</span>
+                    <span class="span">Valor Total</span>
 
                 </section>
 
 
-                <!-- SESSÃO DE INFORMAÇÕES SOBRE O PRODUTO-->
+                <!-- SESSÃO DE DADOS SOBRE O PRODUTO-->
                 <section class="sectionDados">
 
                     <div class="ImagemEdescricao">
+
                         <img src="/img/blusa.webp" alt="imagem1">
+
+                            <div class="spanDescricaoDoProduto">
+
+                                <span>Descrição do produto</span>
+
+                                <span>Cor do produto</span>
+
+                                <span>Tamanho do produto</span>
+
+                            </div>  
+
                     </div>
+
+
+                    <section class="sectionQuantidadeProdutos">
+                            <button class="btRemove">-</button>
+                            <input class="quantidade" step="1" min="0" max="100" value="1">
+                            <button class="btAdd">+</button>
+
+                    </section>
+
+
+                    <span class="valor">$VALOR</span>
+
+                    <span class="valorTotal">$VALOR TOTAL</span>
+
+                    <button class="delete"><img src="/img/lixeira.png" alt=""></button>
 
                 </section>
 
                 
+                <!-- DIV SUBTOTAL -->
+                <div class="divSubtotal">
+                    <span class="subtotal">SUBTOTAL:</span>
+                    <span class="total">$VALOR TOTAL</span>
+                </div>
+
             </main>
 
         <%- include('partials/footer') %>
