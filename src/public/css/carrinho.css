@@ -134,7 +134,7 @@
     min-width: 599px;
     max-width: 900px;
     margin-top: 2%;
-    background-color: #eeecec;
+    background-color: #f8f8f8;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -152,6 +152,74 @@
     text-align: center;
     margin: auto auto;
 }
+
+
+/* ----------- Ultimo resumo ------------- */
+.divDescricaoCarrinho {
+    /*border: 2px solid red;*/
+    width: 70%;
+    margin: 0 auto;
+    min-width: 599px;
+    max-width: 900px;
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    font-size: 20px;
+}
+
+.divPrincipalFinal {
+    /*border: 2px solid red;*/
+    width: 70%;
+    margin: 0 auto;
+    min-width: 599px;
+    max-width: 900px;
+    margin-top: 1.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.divInputPrazoEntrega {
+    display: flex;
+    width: 75%;
+    border-radius: 22px;
+    border: 1px solid black;
+    height: 5vh;
+    align-items: center;
+}
+
+.inputPrazo {
+    height: 4vh;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+}
+
+.inputPrazo:focus {
+    border: none;
+}
+
+.divInputPrazoEntrega button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 40%;
+    height: 3.5vh;
+    cursor: pointer;
+}
+
+.PrazoDeEntrega a {
+    display: flex;
+    color: black;
+    margin: 1.5vh auto  ;
+    
+}
+
+
 
 /* -------- RESPONSIVIDADE 900 PX --------------- */
 
@@ -179,6 +247,18 @@
     }
 
     .divSubtotal {
+        display: none;
+    }
+
+    .divDescricaoCarrinho {
+        display: none;
+    }
+
+    .divPrincipalFinal {
+        display: none;
+    }
+
+    .PrazoDeEntrega {
         display: none;
     }
 
