@@ -37,6 +37,21 @@ const paginasController = {
     showPedidosAdm: (req, res) => {
         res.render('pedidos-adm')
     },
+    showCadastrarProdutosAdm:(req,res) => {
+        // res.send("aqui esta o formulario")
+        res.render("form-add-produto.ejs")
+    },
+    showSalvarProdutosAdm:(req,res)=>{
+        let produto = {
+            nome: req.body.nome,
+            categoria: req.body.categoria,
+            fornecedor: req.body.fornecedor,
+            preco: req.body.preco
+        }
+
+        res.send(produto)
+        
+    },
     showCarrinho: (req, res) => {
         res.render('carrinho')
     }
