@@ -9,7 +9,8 @@ app.set('views', path.join(__dirname + '/views'));
 
 //Define a pasta public como sendo a pasta de arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 //Usa roteador para controladores
 app.use(router);
 
