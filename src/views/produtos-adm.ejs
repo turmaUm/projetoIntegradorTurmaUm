@@ -88,135 +88,25 @@
                         <th>Ações</th>
                         
                     </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-                            </div>
-                        </td>
-                    </tr>
+                        <% for( let produto of produtos ) { %>
+                            <tr>
+
+                                <td><%= produto.id %>-<%= produto.nome %></td>
+                                <td><%= produto.categoria %></td>
+                                <td><%= produto.fornecedor %></td>
+                                <td><%= produto.preco %></td>
+                                <td>
+                                    <div class="acao">
+                                        <div>editar</div>
+                                        <div>x</div>
+            
+                                    </div>
+                                </td>
+                            
+                            </tr>
+                        <% } %>
+                       
+           
                     <tr>
                         <td><input type="text" placeholder="Procurar Razão Social"></td>
                         <td><input type="text" placeholder="Procurar Nome Fantasia"></td>

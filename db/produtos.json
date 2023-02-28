@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "nome": "Bateria Moura",
+        "categoria": "veiculos",
+        "fornecedor": "highlander",
+        "preco": "500",
+        "id": 1
+    },
+    {
+        "nome": "Batedeira",
+        "categoria": "Construção",
+        "fornecedor": "Flicker ltda",
+        "preco": "2000",
+        "id": 2
+    },
+    {
+        "nome": "Fritadeira",
+        "categoria": "Cozinha",
+        "fornecedor": "Flicker ltda",
+        "preco": "300",
+        "id": 3
+    },
+    {
+        "nome": "buguer",
+        "categoria": "Cozinha",
+        "fornecedor": "Flicker ltda",
+        "preco": "300",
+        "id": 4
+    },
+    {
+        "nome": "buguer",
+        "categoria": "Cozinha",
+        "fornecedor": "Flicker ltda",
+        "preco": "300",
+        "id": 5
+    },
+    {
+        "nome": "Pente",
+        "categoria": "Cosmeticos ",
+        "fornecedor": "Spa Belaza ltda",
+        "preco": "20.00",
+        "id": 6
+    }
+]

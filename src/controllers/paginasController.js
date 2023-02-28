@@ -1,4 +1,5 @@
-const path = require('path')
+let arraydb = require('../../db/produtos.json')
+const { avaliandoId, addProduto } = require('../functions/functionsWrite')
 
 const paginasController = {
     showEndereco: (req, res) => {
@@ -32,7 +33,8 @@ const paginasController = {
         res.render('clientes-adm')
     },
     showProdutosAdm: (req, res) => {
-        res.render('produtos-adm')
+        let produtos = arraydb
+        res.render('produtos-adm', {produtos})
     },
     showPedidosAdm: (req, res) => {
         res.render('pedidos-adm')
@@ -48,9 +50,12 @@ const paginasController = {
             fornecedor: req.body.fornecedor,
             preco: req.body.preco
         }
-
-        res.send(produto)
-        
+        //acrescentando id ao produto (lixo: // produto.id = 1;)
+        avaliandoId(produto, arraydb)
+        // Adicionando o Produto        
+        addProduto(arraydb, produto)
+        //redirecionar pagina (lixo: // res.send(arraydb)  // Exibindo o arquivo json )
+        res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {
         res.render('carrinho')
