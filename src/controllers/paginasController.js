@@ -52,7 +52,7 @@ const paginasController = {
             preco: req.body.preco
         }
         //acrescentando id ao produto (lixo: // produto.id = 1;)
-        avaliandoId(produto, arraydb)
+        avaliandoId(arraydb, produto)
         // Adicionando o Produto        
         addProduto(arraydb, produto)
         //redirecionar pagina (lixo: // res.send(arraydb)  // Exibindo o arquivo json )
