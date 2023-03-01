@@ -63,14 +63,17 @@
                 <div>
                     <div class="tableBusca">
                         <div class="tableselect">
-                            
-                            <select name="select" id="">
-                                <option value="10">10</option>
-                                <option value="20">20</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                            <label for="select">Resultados por busca</label>
+                            <form action="/select-value" method="get">
+                                <select name="select" id="" >
+                                    <option value="10" >10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <input type="submit" value="submit">
+                                <label for="select">Resultados por busca</label>
+
+                            </form>
                             
             
                         </div>
@@ -94,7 +97,7 @@
                                 <td><%= produto.id %>-<%= produto.nome %></td>
                                 <td><%= produto.categoria %></td>
                                 <td><%= produto.fornecedor %></td>
-                                <td><%= produto.preco %></td>
+                                <td><%= produto.preco %> + <%= value %> </td>
                                 <td>
                                     <div class="acao">
                                         <div>editar</div>

@@ -40,5 +40,61 @@
         "fornecedor": "Spa Belaza ltda",
         "preco": "20.00",
         "id": 6
+    },
+    {
+        "nome": "Mamadeira",
+        "categoria": "Saude",
+        "fornecedor": "Saude SA",
+        "preco": "20",
+        "id": 7
+    },
+    {
+        "nome": "Alexandre Assis Rezende Santos ",
+        "categoria": "veiculos",
+        "fornecedor": "highlander",
+        "preco": "300",
+        "id": 8
+    },
+    {
+        "nome": "dasdas",
+        "categoria": "Cozinha",
+        "fornecedor": "Flicker ltda",
+        "preco": "2000",
+        "id": 9
+    },
+    {
+        "nome": "Jacy Teodoro de Rezende ",
+        "categoria": "Cosmeticos ",
+        "fornecedor": "Spa Belaza ltda",
+        "preco": "300",
+        "id": 10
+    },
+    {
+        "nome": "dasda",
+        "categoria": "dasdas",
+        "fornecedor": "dasda",
+        "preco": "sdasdasd",
+        "id": 11
+    },
+    {
+        "nome": "ccxzxc",
+        "categoria": "cxzcxc",
+        "fornecedor": "xzczx",
+        "preco": "zxczxc",
+        "id": 12
+    },
+    {
+        "nome": "czxczx",
+        "categoria": "zxczxc",
+        "fornecedor": "zxczxc",
+        "preco": "zxczxczx",
+        "id": 13
+    },
+    {
+        "nome": "czxczxc",
+        "categoria": "zxczxczx",
+        "fornecedor": "zxczxczxc",
+        "preco": "zxczxczx",
+        "id": 14
     }
 ]

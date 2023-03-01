@@ -23,5 +23,6 @@ router.get('/pedidos-adm', paginasController.showPedidosAdm)
 router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)
 router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
 
+router.get('/select-value', paginasController.select)
 
 module.exports = router

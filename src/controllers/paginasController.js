@@ -34,7 +34,8 @@ const paginasController = {
     },
     showProdutosAdm: (req, res) => {
         let produtos = arraydb
-        res.render('produtos-adm', {produtos})
+        let value = req.query.value
+        res.render('produtos-adm', {produtos, value})
     },
     showPedidosAdm: (req, res) => {
         res.render('pedidos-adm')
@@ -59,6 +60,11 @@ const paginasController = {
     },
     showCarrinho: (req, res) => {
         res.render('carrinho')
+    },
+    select: (req,res) => {
+        let value = req.query.select
+        let produtos = arraydb
+        res.render('produtos-adm', {value, produtos})
     }
 }
 
