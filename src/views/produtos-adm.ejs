@@ -70,7 +70,6 @@
                                     <option value="50">50</option>
                                     <option value="100">100</option>
                                 </select>
-                                <input type="submit" value="submit">
                                 <label for="select">Resultados por busca</label>
 
                             </form>
@@ -97,10 +96,14 @@
                                 <td><%= produto.id %>-<%= produto.nome %></td>
                                 <td><%= produto.categoria %></td>
                                 <td><%= produto.fornecedor %></td>
-                                <td><%= produto.preco %> + <%= value %> </td>
+                                <td><%= produto.preco %> </td>
                                 <td>
                                     <div class="acao">
-                                        <div>editar</div>
+                                        <div>
+                                            <form action="/editar/<%= produto.id %>" method="get">
+                                                <button type="submit">Editar</button>
+                                            </form>
+                                        </div>
                                         <div>x</div>
             
                                     </div>

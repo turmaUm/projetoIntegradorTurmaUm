@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-function avaliandoId(produto, array){
+function avaliandoId(array, produto){
     if(array.length == 0){
         produto.id = 1
     }else{
@@ -25,6 +25,7 @@ function addProduto(array, produto){
 let produtoServices= {
     avaliandoId,
     addProduto,
+    salvaJson,
 }
 
 module.exports = produtoServices;

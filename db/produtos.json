@@ -3,21 +3,21 @@
         "nome": "Bateria Moura",
         "categoria": "veiculos",
         "fornecedor": "highlander",
-        "preco": "500",
+        "preco": "0",
         "id": 1
     },
     {
         "nome": "Batedeira",
         "categoria": "Construção",
         "fornecedor": "Flicker ltda",
-        "preco": "2000",
+        "preco": "500000",
         "id": 2
     },
     {
         "nome": "Fritadeira",
         "categoria": "Cozinha",
         "fornecedor": "Flicker ltda",
-        "preco": "300",
+        "preco": "5000",
         "id": 3
     },
     {

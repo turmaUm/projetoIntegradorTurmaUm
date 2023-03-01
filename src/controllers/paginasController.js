@@ -1,5 +1,5 @@
 let arraydb = require('../../db/produtos.json')
-const { avaliandoId, addProduto } = require('../functions/functionsWrite')
+const { avaliandoId, addProduto, salvaJson } = require('../functions/functionsWrite')
 
 const paginasController = {
     showEndereco: (req, res) => {
@@ -60,6 +60,26 @@ const paginasController = {
     },
     showCarrinho: (req, res) => {
         res.render('carrinho')
+    },
+    editarProduto: (req, res) => {
+        let {id} = req.params
+        let produto = arraydb.find(p=> p.id == id)
+        res.render('form-edit-produto.ejs', {prod: produto})
+    },
+    atualizarProduto:(req,res) => {
+        // res.send('Produto atualizado')
+        let {id} = req.params
+        let produto=arraydb.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
+        
+        produto.nome = req.body.nome;
+        produto.categoria = req.body.categoria;
+        produto.fornecedor = req.body.fornecedor;
+        produto.preco = req.body.preco;
+        
+        salvaJson(arraydb)
+        
+        // res.send(arraydb[id-1]);
+        res.redirect('/produtos-adm')
     },
     select: (req,res) => {
         let value = req.query.select

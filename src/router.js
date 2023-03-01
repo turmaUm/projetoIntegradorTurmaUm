@@ -19,10 +19,16 @@ router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showClientesAdm)
 router.get('/produtos-adm', paginasController.showProdutosAdm)
 router.get('/pedidos-adm', paginasController.showPedidosAdm)
-
+//Rotas adm cadastrar produto
 router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)
 router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
+//Rotas adm para editar produto 
+router.get('/editar/:id?', paginasController.editarProduto)
+router.put('/atualizar/:id?', paginasController.atualizarProduto)
 
-router.get('/select-value', paginasController.select)
+
+
+
+// router.get('/select-value', paginasController.select)
 
 module.exports = router
