@@ -1,54 +1,5 @@
 [
     {
-        "nome": "Bateria Moura",
-        "categoria": "veiculos",
-        "fornecedor": "highlander",
-        "preco": "0",
-        "id": 1
-    },
-    {
-        "nome": "Batedeira",
-        "categoria": "Construção",
-        "fornecedor": "Flicker ltda",
-        "preco": "500000",
-        "id": 2
-    },
-    {
-        "nome": "Fritadeira",
-        "categoria": "Cozinha",
-        "fornecedor": "Flicker ltda",
-        "preco": "5000",
-        "id": 3
-    },
-    {
-        "nome": "buguer",
-        "categoria": "Cozinha",
-        "fornecedor": "Flicker ltda",
-        "preco": "300",
-        "id": 4
-    },
-    {
-        "nome": "buguer",
-        "categoria": "Cozinha",
-        "fornecedor": "Flicker ltda",
-        "preco": "300",
-        "id": 5
-    },
-    {
-        "nome": "Pente",
-        "categoria": "Cosmeticos ",
-        "fornecedor": "Spa Belaza ltda",
-        "preco": "20.00",
-        "id": 6
-    },
-    {
-        "nome": "Mamadeira",
-        "categoria": "Saude",
-        "fornecedor": "Saude SA",
-        "preco": "20",
-        "id": 7
-    },
-    {
         "nome": "Alexandre Assis Rezende Santos ",
         "categoria": "veiculos",
         "fornecedor": "highlander",
@@ -68,33 +19,5 @@
         "fornecedor": "Spa Belaza ltda",
         "preco": "300",
         "id": 10
-    },
-    {
-        "nome": "dasda",
-        "categoria": "dasdas",
-        "fornecedor": "dasda",
-        "preco": "sdasdasd",
-        "id": 11
-    },
-    {
-        "nome": "ccxzxc",
-        "categoria": "cxzcxc",
-        "fornecedor": "xzczx",
-        "preco": "zxczxc",
-        "id": 12
-    },
-    {
-        "nome": "czxczx",
-        "categoria": "zxczxc",
-        "fornecedor": "zxczxc",
-        "preco": "zxczxczx",
-        "id": 13
-    },
-    {
-        "nome": "czxczxc",
-        "categoria": "zxczxczx",
-        "fornecedor": "zxczxczxc",
-        "preco": "zxczxczx",
-        "id": 14
     }
 ]

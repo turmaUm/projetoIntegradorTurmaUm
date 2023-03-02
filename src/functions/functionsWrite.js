@@ -20,11 +20,35 @@ function addProduto(array, produto){
     salvaJson(array)
 }
 
+function editProduto (id, array, reqbody){
+    let produto=array.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
+    
+    if(produto == undefined){
+        throw new Error("Pizza inexistente");
+    }
+
+    produto.nome = reqbody.nome;
+    produto.categoria = reqbody.categoria;
+    produto.fornecedor = reqbody.fornecedor;
+    produto.preco = reqbody.preco;
+        
+    salvaJson(array)
+}
+ function delProduto(id, array){
+    let posicao = array.findIndex(p => p.id == id);
+    if(posicao == -1){
+        throw new Error("Pizza inexistente");
+    }
+    array.splice(posicao, 1)
+    salvaJson(array)
+ }
 
 
 let produtoServices= {
     avaliandoId,
     addProduto,
+    editProduto,
+    delProduto,
     salvaJson,
 }
 

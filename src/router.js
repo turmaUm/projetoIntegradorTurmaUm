@@ -26,8 +26,8 @@ router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
 router.get('/editar/:id?', paginasController.editarProduto)
 router.put('/atualizar/:id?', paginasController.atualizarProduto)
 
-
-
+//Rotas adn para deletar um produto
+router.delete('/delete/:id?', paginasController.delete)
 
 // router.get('/select-value', paginasController.select)
 

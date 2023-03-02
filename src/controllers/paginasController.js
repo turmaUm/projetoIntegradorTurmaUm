@@ -1,5 +1,5 @@
 let arraydb = require('../../db/produtos.json')
-const { avaliandoId, addProduto, salvaJson } = require('../functions/functionsWrite')
+const { avaliandoId, addProduto, salvaJson, editProduto, delProduto } = require('../functions/functionsWrite')
 
 const paginasController = {
     showEndereco: (req, res) => {
@@ -68,21 +68,32 @@ const paginasController = {
     },
     atualizarProduto:(req,res) => {
         // res.send('Produto atualizado')
+        // let produto=arraydb.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
+        // produto.nome = req.body.nome;
+        // produto.categoria = req.body.categoria;
+        // produto.fornecedor = req.body.fornecedor;
+        // produto.preco = req.body.preco;
+        // salvaJson(arraydb)
         let {id} = req.params
-        let produto=arraydb.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
-        
-        produto.nome = req.body.nome;
-        produto.categoria = req.body.categoria;
-        produto.fornecedor = req.body.fornecedor;
-        produto.preco = req.body.preco;
-        
-        salvaJson(arraydb)
-        
+        let reqb = req.body // requisicao que vc recebe do body
+        editProduto(id, arraydb, reqb)
+
         // res.send(arraydb[id-1]);
         res.redirect('/produtos-adm')
     },
+    delete:(req,res) =>{
+        
+        // let posicao = arraydb.findIndex(p => p.id == id);
+        // // console.log(posicao)
+        // arraydb.splice(posicao, 1)
+        // salvaJson(arraydb)
+        let {id} = req.params
+        delProduto(id,arraydb)
+        res.redirect('/produtos-adm')
+    },
     select: (req,res) => {
-        let value = req.query.select
+        
+        let value = req.query.select || 10
         let produtos = arraydb
         res.render('produtos-adm', {value, produtos})
     }
