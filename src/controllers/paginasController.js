@@ -1,5 +1,6 @@
 let arraydb = require('../../db/produtos.json')
 const { avaliandoId, addProduto, salvaJson, editProduto, delProduto } = require('../functions/functionsWrite')
+const produtosCliente = require('../../db/produtosCliente.json')
 
 const paginasController = {
     showEndereco: (req, res) => {
@@ -24,7 +25,19 @@ const paginasController = {
         res.render('produto')
     },
     showResultadoBusca: (req, res) => {
-        res.render('resultado_busca')
+        let array = []
+        for(let value in req.query){
+              array.push(value) 
+        }
+        let prodClient = produtosCliente.filter(function analisa(produto) {
+            for(let categoria of array){
+                if(produto.categoria == categoria){
+                    return produto
+                }
+            }
+        })
+        console.log(prodClient)
+        res.render('resultado_busca', {produtos: prodClient})
     },
     showLoginAdm: (req, res) => {
         res.render('login-adm')

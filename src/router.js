@@ -4,6 +4,8 @@ const paginasController = require('./controllers/paginasController')
 
 const router = express.Router()
 
+//Rotas cliente
+
 router.get('/checkout-endereco', paginasController.showEndereco)
 router.get('/checkout-pagamento', paginasController.showPagamento)
 router.get('/cliente', paginasController.showCliente)

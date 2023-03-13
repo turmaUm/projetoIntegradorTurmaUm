@@ -1,0 +1,128 @@
+[
+    {
+        "nome": "Bermuda Água Osklen",
+        "preco": 159.9,
+        "endereco": "/img/roupas/bermuda-agua-osklen.png",
+        "categoria": "praia"
+    },
+    {
+        "nome": "Bermuda Sarja Gap",
+        "preco": 129.9,
+        "endereco": "/img/roupas/bermuda-sarja-gap.png",
+        "categoria": "calca"
+    },
+    {
+        "nome": "Blazer Masculino",
+        "preco": 329.9,
+        "endereco": "/img/roupas/blazer-masculino.png",
+        "categoria": "geek"
+    },
+    {
+        "nome": "Blusa Moletom Flanelada",
+        "preco": 199.9,
+        "endereco": "/img/roupas/blusa-moletom-flanelada.png",
+        "categoria": "novasofertas"
+    },
+    {
+        "nome": "Blusa",
+        "preco": 79.9,
+        "endereco": "/img/roupas/blusa.webp",
+        "categoria": "favoritos"
+    },
+    {
+        "nome": "Calça Jeans John John",
+        "preco": 249.9,
+        "endereco": "/img/roupas/calca-jeans-john-john.png",
+        "categoria": "jeans"
+    },
+    {
+        "nome": "Calça Moletom Adidas",
+        "preco": 179.9,
+        "endereco": "/img/roupas/calca-moletom-adidas.png",
+        "categoria": "rolling"
+    },
+    {
+        "nome": "Calça Sarja Colcci Jogger",
+        "preco": 219.9,
+        "endereco": "/img/roupas/calca-sarja-colcci-jogger.png",
+        "categoria": "calca"
+    },
+    {
+        "nome": "Calça",
+        "preco": 129.9,
+        "endereco": "/img/roupas/calca.jpg",
+        "categoria": "leve2pague1"
+    },
+    {
+        "nome": "Camisa Calvin Klein",
+        "preco": 199.9,
+        "endereco": "/img/roupas/camisa-calvin-klein.png",
+        "categoria": "privera"
+    },
+    {
+        "nome": "Camisa Feminina",
+        "preco": 99.9,
+        "endereco": "/img/roupas/camisa-feminina.jpg",
+        "categoria": "novasofertas"
+    },
+    {
+        "nome": "Camisa Polo Ralph",
+        "preco": 239.9,
+        "endereco": "/img/roupas/camisa-polo-ralph.png",
+        "categoria": "privera"
+    },
+    {
+        "nome": "Cueca",
+        "preco": 39.9,
+        "endereco": "/img/roupas/cueca.webp",
+        "categoria": "intima"
+    },
+    {
+        "nome": "Jaqueta Bomber Adidas",
+        "preco": 349.9,
+        "endereco": "/img/roupas/jaqueta-bomber-adidas.png",
+        "categoria": "rolling"
+    },
+    {
+        "nome": "Jaqueta Corta-Vento Adidas",
+        "preco": 399.99,
+        "endereco": "/img/roupas/jaqueta-corta-vento.png",
+        "categoria": "novasofertas"
+    },
+    {
+        "nome": "Jaqueta Polo Ralph Lauren",
+        "preco": 499.99,
+        "endereco": "/img/roupas/jaqueta-polo-ralph.png",
+        "categoria": "rolling"
+    },
+    {
+        "nome": "Moletom Masculino John John",
+        "preco": 359.99,
+        "endereco": "/img/roupas/moletom-john-john.png",
+        "categoria": "privera"
+    },
+    {
+        "nome": "Regata Mizuno Spark",
+        "preco": 79.99,
+        "endereco": "/img/roupas/regata-mizuno-spark.png",
+        "categoria": "leve2pague1"
+    },
+    {
+        "nome": "Short Praia Premium",
+        "preco": 119.99,
+        "endereco": "/img/roupas/short-praia-premiun.png",
+        "categoria": "praia"
+    },
+    {
+        "nome": "Shorts Feminino Adidas",
+        "preco": 129.99,
+        "endereco": "/img/roupas/shorts.jpg",
+        "categoria": "ofertas"
+    },
+    {
+        "nome": "Tênis Nike Air Max 270",
+        "preco": 699.99,
+        "endereco": "/img/roupas/tenis_nike.png",
+        "categoria": "geek"
+    }
+]
