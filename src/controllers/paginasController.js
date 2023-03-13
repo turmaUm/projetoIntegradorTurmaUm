@@ -22,7 +22,9 @@ const paginasController = {
         res.render('login')
     },
     showProduto: (req, res) => {
-        res.render('produto')
+        let {id} = req.query
+        let produto = produtosCliente.find(p=>p.id==id)
+        res.render('produto',{produto: produto})
     },
     showResultadoBusca: (req, res) => {
         let array = []

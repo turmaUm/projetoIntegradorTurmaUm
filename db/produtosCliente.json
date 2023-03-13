@@ -1,128 +1,170 @@
 [
     {
+        "id": 1,
         "nome": "Bermuda Água Osklen",
         "preco": 159.9,
         "endereco": "/img/roupas/bermuda-agua-osklen.png",
-        "categoria": "praia"
+        "categoria": "praia",
+        "descricao": "Bermuda Água Osklen, produzida em material de alta qualidade e resistência, ideal para ser usada em atividades físicas ou em momentos de lazer na praia. Com um design moderno e confortável, possui elástico na cintura e cordão de ajuste para um caimento perfeito. Possui também bolsos laterais e traseiros."
     },
     {
+        "id": 2,
         "nome": "Bermuda Sarja Gap",
         "preco": 129.9,
         "endereco": "/img/roupas/bermuda-sarja-gap.png",
-        "categoria": "calca"
+        "categoria": "calca",
+        "descricao": "Bermuda Sarja Gap, peça versátil e elegante para compor looks casuais. Confeccionada em tecido de sarja resistente, proporcionando conforto e durabilidade. Possui corte clássico e fechamento com zíper e botão. Conta ainda com bolsos laterais e traseiros."
     },
     {
+        "id": 3,
         "nome": "Blazer Masculino",
         "preco": 329.9,
         "endereco": "/img/roupas/blazer-masculino.png",
-        "categoria": "geek"
+        "categoria": "geek",
+        "descricao": "Blazer Masculino, peça clássica e sofisticada, perfeita para compor looks elegantes e formais. Confeccionado em tecido de alta qualidade e acabamento refinado, apresenta modelagem slim fit, com fechamento frontal em dois botões e bolsos laterais. Um item indispensável no guarda-roupa masculino."
     },
     {
+        "id": 4,
         "nome": "Blusa Moletom Flanelada",
         "preco": 199.9,
         "endereco": "/img/roupas/blusa-moletom-flanelada.png",
-        "categoria": "novasofertas"
+        "categoria": "novasofertas",
+        "descricao": "Blusa Moletom Flanelada, peça ideal para dias frios e looks despojados. Confeccionada em tecido macio e aconchegante, possui acabamento flanelado que garante maior proteção contra o frio. Conta com capuz, bolso canguru e estampa frontal com visual moderno e descontraído."
     },
     {
+        "id": 5,
         "nome": "Blusa",
         "preco": 79.9,
         "endereco": "/img/roupas/blusa.webp",
-        "categoria": "favoritos"
+        "categoria": "favoritos",
+        "descricao": "Blusa feminina confeccionada em tecido leve e confortável, perfeita para compor looks casuais. Com decote redondo e modelagem soltinha, é uma peça versátil e fácil de combinar. A blusa ainda conta com detalhes em renda na parte frontal, proporcionando um toque delicado e charmoso ao visual."
     },
     {
+        "id": 6,
         "nome": "Calça Jeans John John",
         "preco": 249.9,
         "endereco": "/img/roupas/calca-jeans-john-john.png",
-        "categoria": "jeans"
+        "categoria": "jeans",
+        "descricao": "Calça jeans masculina da marca John John, com corte moderno e ajuste perfeito ao corpo. Ideal para compor um visual despojado e urbano."
     },
     {
+        "id": 7,
         "nome": "Calça Moletom Adidas",
         "preco": 179.9,
         "endereco": "/img/roupas/calca-moletom-adidas.png",
-        "categoria": "rolling"
+        "categoria": "rolling",
+        "descricao": "Calça de moletom Adidas, perfeita para prática de esportes ou para um visual mais casual. Confeccionada com tecido de alta qualidade e conforto."
     },
     {
+        "id": 8,
         "nome": "Calça Sarja Colcci Jogger",
         "preco": 219.9,
         "endereco": "/img/roupas/calca-sarja-colcci-jogger.png",
-        "categoria": "calca"
+        "categoria": "calca",
+        "descricao": "Calça masculina jogger de sarja da marca Colcci, com modelagem moderna e estilo despojado. Ideal para compor um visual casual e confortável."
     },
     {
+        "id": 9,
         "nome": "Calça",
         "preco": 129.9,
         "endereco": "/img/roupas/calca.jpg",
-        "categoria": "leve2pague1"
+        "categoria": "leve2pague1",
+        "descricao": "Calça masculina casual e versátil, confeccionada com tecido de alta qualidade e conforto. Ideal para compor looks despojados e confortáveis."
     },
     {
+        "id": 10,
         "nome": "Camisa Calvin Klein",
         "preco": 199.9,
         "endereco": "/img/roupas/camisa-calvin-klein.png",
-        "categoria": "privera"
+        "categoria": "privera",
+        "descricao": "Camisa masculina da marca Calvin Klein, confeccionada com tecido de alta qualidade e acabamento impecável. Perfeita para ocasiões formais ou para um visual mais sofisticado."
     },
     {
+        "id": 11,
         "nome": "Camisa Feminina",
         "preco": 99.9,
         "endereco": "/img/roupas/camisa-feminina.jpg",
-        "categoria": "novasofertas"
+        "categoria": "novasofertas",
+        "descricao": "Camisa feminina confortável e elegante, ideal para diversas ocasiões. Possui modelagem moderna e delicada, com acabamento de alta qualidade e ótimo caimento."
     },
     {
+        "id": 12,
         "nome": "Camisa Polo Ralph",
         "preco": 239.9,
         "endereco": "/img/roupas/camisa-polo-ralph.png",
-        "categoria": "privera"
+        "categoria": "privera",
+        "descricao": "Camisa Polo Ralph Lauren de alta qualidade, confeccionada com tecido macio e durável. Possui corte clássico, botões na gola e logo bordado no peito."
     },
     {
+        "id": 13,
         "nome": "Cueca",
         "preco": 39.9,
         "endereco": "/img/roupas/cueca.webp",
-        "categoria": "intima"
+        "categoria": "intima",
+        "descricao": "Cueca confortável e anatômica, confeccionada em tecido macio e resistente. Possui elástico personalizado, ajuste perfeito e ótima durabilidade."
     },
     {
+        "id": 15,
         "nome": "Jaqueta Bomber Adidas",
         "preco": 349.9,
         "endereco": "/img/roupas/jaqueta-bomber-adidas.png",
-        "categoria": "rolling"
+        "categoria": "rolling",
+        "descricao": "Jaqueta bomber Adidas moderna e estilosa, ideal para complementar o seu visual. Confeccionada com materiais de alta qualidade, possui acabamento impecável, corte ajustado e detalhes que fazem toda a diferença."
     },
     {
+        "id": 16,
         "nome": "Jaqueta Corta-Vento Adidas",
         "preco": 399.99,
         "endereco": "/img/roupas/jaqueta-corta-vento.png",
-        "categoria": "novasofertas"
+        "categoria": "novasofertas",
+        "descricao": "Jaqueta corta-vento Adidas resistente e versátil, perfeita para atividades físicas ou para compor um look casual. Possui tecnologia que garante proteção contra o vento e a chuva, além de acabamento de alta qualidade e design moderno."
     },
     {
+        "id": 17,
         "nome": "Jaqueta Polo Ralph Lauren",
         "preco": 499.99,
         "endereco": "/img/roupas/jaqueta-polo-ralph.png",
-        "categoria": "rolling"
+        "categoria": "rolling",
+        "descricao": "Jaqueta de alta qualidade da marca Polo Ralph Lauren, com acabamento refinado e sofisticado. Ideal para aqueles que buscam elegância e conforto em um único produto."
     },
     {
+        "id": 18,
         "nome": "Moletom Masculino John John",
         "preco": 359.99,
         "endereco": "/img/roupas/moletom-john-john.png",
-        "categoria": "privera"
+        "categoria": "privera",
+        "descricao": "Moletom masculino da marca John John, perfeito para dias mais frios. Confeccionado com material de alta qualidade, proporcionando conforto e durabilidade."
     },
     {
+        "id": 19,
         "nome": "Regata Mizuno Spark",
         "preco": 79.99,
         "endereco": "/img/roupas/regata-mizuno-spark.png",
-        "categoria": "leve2pague1"
+        "categoria": "leve2pague1",
+        "descricao": "Regata masculina da marca Mizuno, modelo Spark. Ideal para práticas esportivas e atividades físicas em geral, com tecido leve e respirável."
     },
     {
+        "id": 20,
         "nome": "Short Praia Premium",
         "preco": 119.99,
         "endereco": "/img/roupas/short-praia-premiun.png",
-        "categoria": "praia"
+        "categoria": "praia",
+        "descricao": "Short masculino para praia, modelo Premium. Confeccionado com material de alta qualidade, proporcionando conforto e durabilidade. Possui design moderno e elegante."
     },
     {
+        "id": 21,
         "nome": "Shorts Feminino Adidas",
         "preco": 129.99,
         "endereco": "/img/roupas/shorts.jpg",
-        "categoria": "ofertas"
+        "categoria": "ofertas",
+        "descricao": "Shorts feminino da marca Adidas, modelo leve e confortável. Ideal para a prática de atividades físicas ou para uso casual em dias quentes."
     },
     {
+        "id": 22,
         "nome": "Tênis Nike Air Max 270",
         "preco": 699.99,
         "endereco": "/img/roupas/tenis_nike.png",
-        "categoria": "geek"
+        "categoria": "geek",
+        "descricao": "Tênis da marca Nike, modelo Air Max 270. Possui tecnologia de amortecimento em sua sola, garantindo conforto e estabilidade em cada passo. Design moderno e inovador, ideal para os amantes de tecnologia e moda."
     }
 ]
