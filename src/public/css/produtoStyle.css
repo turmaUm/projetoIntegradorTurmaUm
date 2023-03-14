@@ -78,12 +78,102 @@ main{
 
 }
 .cores{
-    width: 80px;
+    
     display: flex;
-    justify-content: space-around;
+    gap: 5px;
+    /* justify-content: space-around; */
 }
 .cores div:hover{
-    border: red solid 2px;
+    border: black solid 2px;
+}
+.azul{
+    background-color: blue;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.verde{
+    background-color:green;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.cinza{
+    background-color:gray;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.preto{
+    background-color:black;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.bege{
+    background-color: wheat;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.branco{
+    background-color:white;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.vermelho{
+    background-color:red;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.marrom{
+    background-color:brown;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
+.amarela{
+    background-color: yellow;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.rosa{
+    background-color:pink;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.laranja{
+    background-color:orange;
+    border: 1px solid black;
+    width:30px;
+    height:30px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 .cor1{
     width:30px;

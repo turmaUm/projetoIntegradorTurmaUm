@@ -31,19 +31,18 @@
                     <div class="box-cores">
                         <h5>Cor</h5>
                         <div class="cores">
-                            <div class="cor1"></div>
-                            <div class="cor2"></div>
+                            <% for( let prod of produto.cor) { %>
+                                <div class= <%= prod %>></div>
+                            <% } %>
+
                         </div>
                     </div>
                     <div class="box-tamanhos">
                         <h5>Tamanho</h5>
                         <div class="tamanhos">
-                            <div class="tam1">PP</div>
-                            <div class="tam1">P</div>
-                            <div class="tam1">M</div>
-                            <div class="tam1">G</div>
-                            <div class="tam1">GG</div>
-                            <div class="tam1">XG</div>
+                            <% for( let prod of produto.tamanho ) { %>
+                                <div class="tam1"><%= prod %></div>
+                            <% } %>
                         </div>
                     </div>
 
