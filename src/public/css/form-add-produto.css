@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+main{
+    display:flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    filter: blur(0.5);
+    width: 50%;
+}
+label{
+    display: block;
+    margin-top: 3%;
+}
+label input {
+    display: block;
+    width: 100%;
+}
+label img{
+    width: 100%;
+}

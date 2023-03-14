@@ -52,7 +52,7 @@
                 <div class="cabecalhoInter">
                     <h3>Produtos</h3>
                     <div class="add">
-                        <button class="adicionar" type="button"> + </button>
+                        <a class = "btn" href="/cadastrar-produto-adm">+</a>
                         <span>
                             Adicionar
                         </span>
@@ -63,14 +63,17 @@
                 <div>
                     <div class="tableBusca">
                         <div class="tableselect">
-                            
-                            <select name="select" id="">
-                                <option value="10">10</option>
-                                <option value="20">20</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                            <label for="select">Resultados por busca</label>
+                            <form action="/select-value" method="get">
+                                <select name="select" id="" >
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                
+                                <label for="select">Resultados por busca</label>
+
+                            </form>
                             
             
                         </div>
@@ -88,135 +91,33 @@
                         <th>Ações</th>
                         
                     </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>xxxx-xxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxxxxx</td>
-                        <td>xxxx</td>
-                        <td>
-                            <div class="acao">
-                                <div>editar</div>
-                                <div>x</div>
-                            </div>
-                        </td>
-                    </tr>
+                        <% for( let produto of produtos ) { %>
+                            <tr>
+
+                                <td><%= produto.id %>-<%= produto.nome %></td>
+                                <td><%= produto.categoria %></td>
+                                <td><%= produto.fornecedor %></td>
+                                <td><%= produto.preco %> </td>
+                                <td>
+                                    <div class="acao">
+                                        <div>
+                                            <form action="/editar/<%= produto.id %>" method="get">
+                                                <button type="submit">Editar</button>
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <form action="/delete/<%= produto.id %>?_method=DELETE" method="post">
+                                                <button type="submit">Del</button>
+                                            </form>
+                                        </div>
+            
+                                    </div>
+                                </td>
+                            
+                            </tr>
+                        <% } %>
+                       
+           
                     <tr>
                         <td><input type="text" placeholder="Procurar Razão Social"></td>
                         <td><input type="text" placeholder="Procurar Nome Fantasia"></td>

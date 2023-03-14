@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Alexandre Assis Rezende Santos ",
+        "categoria": "veiculos",
+        "fornecedor": "highlander",
+        "preco": "300",
+        "id": 8
+    },
+    {
+        "nome": "dasdas",
+        "categoria": "Cozinha",
+        "fornecedor": "Flicker ltda",
+        "preco": "2000",
+        "id": 9
+    },
+    {
+        "nome": "Jacy Teodoro de Rezende ",
+        "categoria": "Cosmeticos ",
+        "fornecedor": "Spa Belaza ltda",
+        "preco": "300",
+        "id": 10
+    }
+]

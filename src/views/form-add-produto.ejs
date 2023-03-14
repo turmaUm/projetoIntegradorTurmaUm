@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head',  {css: ['geral.css', 'form-add-produto.css']}) %>
+<body>
+    <main>
+        <form action="/salvar-produto-adm" method="post">
+    
+            <label>
+                Nome:
+                <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
+            </label>
+    
+            <label>
+                Categoria:
+                <input type="text" name="categoria" id="categoria" placeholder="coloque aqui a categoria do produto" />
+            </label>
+    
+            <label>
+                Fornecedor:
+                <input type="text" name="fornecedor" id="fornecedor" placeholder="coloque aqui o nome do fornecedor/empresa fornecedora" />
+            </label>
+    
+            <label>
+                Preço:
+                <input type="text" name="preco" id="preco" placeholder="coloque aqui o preço do produto" />
+            </label>
+    
+            <label>
+                Foto:
+                <img src="" alt="foto do produto">
+                <div>Clique para selecione nova imagem</div>
+                <input type="file" name="img" id="img">
+            </label>
+    
+            <button type="submit">Salvar</button>
+    
+        </form>
+
+    </main>
+</body>
+</html>

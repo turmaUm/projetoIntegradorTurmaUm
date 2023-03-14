@@ -123,6 +123,7 @@
     /*border: 2px solid red;*/
     height: 4em;
     margin-top: 3%;
+    margin-bottom: 3%;
     justify-content: space-between;
 }
 
@@ -197,18 +198,21 @@
     margin-top: 5px;
     width: 60%;
     height: 30px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .inputNumeroCartao {
     display: flex;
-    width: 100%;
-    height: 30px;
-    margin-top: 3%;
+    width: 30%;
+    height: 10vh;
+    flex-direction: column;
+    margin-bottom: 1%;
 }
 
 #inputNumero {
     width: 100%;
+    margin-top: 0.5%;
+    height: 30px;
 }
 
 .inputDataValidade {
@@ -258,22 +262,26 @@
     display: none;
 }
 
-@media (max-width: 600px){
-    body {
-        width: max-content;
-    }
+@media (max-width: 750px){
 
-    main {
-        width: 100vh;
+ #mainResume ol span {
+    display: none;
+ }
+
+ main {
+        width: 100%;
     }
 
     .mainDiv {
         display: flex;
         width: 100%;
+        margin: 0 auto;
+        padding: 3%;
+        min-width: 0px;
     }
 
     .divSize{
-        width: 100vh;
+        
     }
 
     .divInterna{
@@ -281,40 +289,10 @@
     }
 
     .editFormPag{
-        font-size: 25px;
-        margin-top: 40px;
+        font-size: 20px;
+        margin-top: 10px;
         text-align: center;
         margin-bottom: 40px;
-    }
-
-    #paypal h4 {
-        font-size: 25px;
-    }
-
-    #paypal p {
-        font-size: 20px;
-    }
-
-    #boleto p {
-        font-size: 20px;
-    }
-
-    .formParcelas label {
-        font-size: 25px;
-    }
-
-    .formParcelas select {
-        margin-top: 25px;
-        font-size: 23px;
-    }
-
-    .information {
-        margin-top: 20px;
-        font-size: 20px;
-    }
-
-    .inforCartao {
-        font-size: 20px;
     }
 
     .input-nome {
@@ -323,7 +301,7 @@
 
     /* ALTERANDO PAGAMENTO SEGURO -------------- */
     .pagamentoSeguro {
-        width: 117vh;
+        width: 100%;
     }
 
     .pagamentoSeguro span {
@@ -347,13 +325,88 @@
     /* ------------------------------------------ */
 
     #mainResume {
-        width: 40em;
-        font-size: 25px;
+        width: 100vw;
+        font-size: 15px;
     }
 
     .ol {
         grid-gap: 30px;
     }
+
+     #mainResume ol span {
+    display: none;
+    }
+
+    /* -------------- alterando a div de forma de pagamentos ----------- */
+
+    .divFormPag {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .labelPaypal {
+        width: 100%;
+    }
+
+    .paypalH4 {
+        margin-top: 25vh;
+        font-size: 22px;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    #paypal p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .labelBoleto {
+        width: 100%;
+    }
+
+    #boleto p {
+        font-size: 20px;
+        margin-top: 25vh;
+    }
+
+    .labelCartao {
+        width: 100%;
+    }
+
+    .formParcelas label {
+        font-size: 20px;
+    }
+
+    .formParcelas select {
+        margin-top: 4vh;
+        font-size: 16px;
+        width: 80%;
+    }
+
+    #cartao {
+        margin-top: 25vh;
+    }
+
+    .information {
+        margin-top: 2vh;
+        font-size: 14px;
+    }
+
+    .formParcelas p {
+        font-size: 10px;
+    }
+
+    .inforCartao {
+        font-size: 16px;
+    }
+
+    #inputNumero {
+        width: 70%;
+    }
+
+
+
+
 }
 
 
