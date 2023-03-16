@@ -2,65 +2,77 @@
 <html lang="en">
 
 <%- include('partials/head', {css: ['headerStyle.css', 'mainStyle.css', 'geral.css', 'footerStyle.css', 'produtoStyle.css']}) %>
-
+<script src="/js/produto.js" defer></script>
 <body>
     <%- include('partials/header') %>
-    
-    <main>
-            <div class="container-main">
-                <div class="img-prod">
-                    <img src=<%= produto.endereco %> alt="jaqueta1">
-                    <img src=<%= produto.endereco %> alt="jaqueta2">
-                    <img src=<%= produto.endereco %> alt="jaqueta3">
-                    <img src=<%= produto.endereco %> alt="jaqueta4">
-                </div>
-                <div class="container-main-2">
-                    <div class="name-prod">
-                        <h3><%= produto.nome %></h3>
-                        <span>R$<%= produto.preco %></span>
-                    </div>
-                    <div class="box-description">
-                        <div class="description">
-                            <p>
-                                <%= produto.descricao %>
-                                
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <div class="box-cores">
-                        <h5>Cor</h5>
-                        <div class="cores">
-                            <% for( let prod of produto.cor) { %>
-                                <div class= <%= prod %>></div>
-                            <% } %>
 
-                        </div>
-                    </div>
-                    <div class="box-tamanhos">
-                        <h5>Tamanho</h5>
-                        <div class="tamanhos">
-                            <% for( let prod of produto.tamanho ) { %>
-                                <div class="tam1"><%= prod %></div>
-                            <% } %>
-                        </div>
-                    </div>
-
-                    <div class="select-prod">
-                        <button class="comprar"> Adicionar ao carinho </button>
-                            <div>
-                                <button class="remove" type="button"> - </button>
-                                <input class ="qtd-camisa"  step="1" min="0" max="100" value="1">
-                                <button class="add" type="button"> + </button>
-               
-                            </div>
-                        
-                    </div>
-    
-                </div>
+        <% if (produto == undefined) { %>
+            <div class = 'paginaNaoEncontrada'>
+                <h1>Produto não encontrada</h1>
             </div>
-    </main>
+ 
+        <% }else{ %>
+        
+            <main>
+                    <div class="container-main">
+                        <div class="img-prod">
+                            <img src=<%= produto.endereco %> alt="jaqueta1">
+                            <img src=<%= produto.endereco %> alt="jaqueta2">
+                            <img src=<%= produto.endereco %> alt="jaqueta3">
+                            <img src=<%= produto.endereco %> alt="jaqueta4">
+                        </div>
+                        <div class="container-main-2">
+                            <div class="name-prod">
+                                <h3><%= produto.nome %></h3>
+                                <span>R$<%= produto.preco %></span>
+                            </div>
+                            <div class="box-description">
+                                <div class="description">
+                                    <p>
+                                        <%= produto.descricao %>
+                                        
+                                    </p>
+                                    
+                                </div>
+                            </div>
+
+                            <form action="/addcar" method="get">
+                                    <div class="box-cores">
+                                        <h5>Cor</h5>
+                                        <div class="cores">
+                                            <% for(let prod of produto.cor) { %>
+                                                <input class="<%= prod %>" type="button" name="cor" value="<%= prod %>">
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="box-tamanhos">
+                                        <h5>Tamanho</h5>
+                                        <div class="tamanhos">
+                                            <% for(let prod of produto.tamanho) { %>
+                                                <input class="tam1" type="button" name="tamanho" value="<%= prod %>">
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="select-prod">
+                                        <button type="submit" class="comprar"> Adicionar ao carrinho </button>
+                                        <div>
+                                            <button class="remove" type="button"> - </button>
+                                            <input class="qtd-camisa" step="1" min="0" max="100" value="1" name="quantidade">
+                                            <button class="add" type="button"> + </button>
+                                        </div>
+                                        <input type="hidden" id="cor-selecionada" name="cor" value="">
+                                        <input type="hidden" id="tamanho-selecionado" name="tamanho" value="">
+                                    </div>
+                                
+                                    
+                            </form>
+            
+                        </div>
+                    </div>
+            </main>
+        <% } %>
     <%- include('partials/footer') %>
 
 </body>
+
 </html>

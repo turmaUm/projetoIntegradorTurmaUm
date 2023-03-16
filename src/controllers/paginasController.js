@@ -25,21 +25,27 @@ const paginasController = {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
         res.render('produto',{produto: produto})
+ 
     },
     showResultadoBusca: (req, res) => {
         let array = []
         for(let value in req.query){
               array.push(value) 
         }
-        let prodClient = produtosCliente.filter(function analisa(produto) {
-            for(let categoria of array){
-                if(produto.categoria == categoria){
-                    return produto
+        if(array.length != 0){
+            let prodClient = produtosCliente.filter(function analisa(produto) {
+                for(let categoria of array){
+                    if(produto.categoria == categoria){
+                        return produto
+                    }
                 }
-            }
-        })
-        console.log(prodClient)
-        res.render('resultado_busca', {produtos: prodClient})
+            })
+            console.log(prodClient)
+            res.render('resultado_busca', {produtos: prodClient})
+
+        }else{
+            res.render('resultado_busca', {produtos: produtosCliente})
+        }
     },
     showLoginAdm: (req, res) => {
         res.render('login-adm')
@@ -111,6 +117,14 @@ const paginasController = {
         let value = req.query.select || 10
         let produtos = arraydb
         res.render('produtos-adm', {value, produtos})
+    },
+    teste:(req,res)=>{
+        res.render('teste.ejs')
+    },
+    addcar:(req,res)=>{
+        let value = req.query
+        console.log(value)
+        res.send(value)
     }
 }
 
