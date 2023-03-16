@@ -2,6 +2,9 @@ const cores = document.querySelectorAll('.cores input[type="button"]');
 const tamanhos = document.querySelectorAll('.tamanhos input[type="button"]');
 const corSelecionada = document.getElementById("cor-selecionada");
 const tamanhoSelecionado = document.getElementById("tamanho-selecionado");
+// const teste = document.getElementById('teste')
+
+// teste.value = 300
 
 cores.forEach((cor) => {
   cor.addEventListener('click', () => {
@@ -13,7 +16,7 @@ cores.forEach((cor) => {
     // Adiciona a classe "corselecionado" ao botão que foi clicado
     cor.classList.add('corselecionado');
     cor.style.border = '2px solid #333';
-    corSelecionada.value = cor.value;
+    corSelecionada.value = cor.value;   //Porque o input tipo hidden ele é enviado no query 
   });
 });
 

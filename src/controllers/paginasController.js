@@ -1,6 +1,9 @@
 let arraydb = require('../../db/produtos.json')
 const { avaliandoId, addProduto, salvaJson, editProduto, delProduto } = require('../functions/functionsWrite')
 const produtosCliente = require('../../db/produtosCliente.json')
+const produtosCarrinho = require('../../db/carrinho.json')
+const fs = require('fs')
+const path = require('path')
 
 const paginasController = {
     showEndereco: (req, res) => {
@@ -24,6 +27,7 @@ const paginasController = {
     showProduto: (req, res) => {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
+        console.log(produto)
         res.render('produto',{produto: produto})
  
     },
@@ -82,6 +86,19 @@ const paginasController = {
     showCarrinho: (req, res) => {
         res.render('carrinho')
     },
+    addCarrinho:(req,res)=>{
+        let value = req.query
+        let addCarrinho = produtosCliente.find(p=>p.id == value.id)
+        addCarrinho.quantidade = value.quantidade
+        addCarrinho.corescolha = value.cor
+        addCarrinho.tamanhoescolha = value.tamanho
+        // delete addCarrinho['descricao']
+        // fs.appendFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(addCarrinho,null,4))
+        produtosCarrinho.push(addCarrinho)
+        fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
+        // res.send(value)
+        res.redirect(`/produto?id=${value.id}`)
+    },
     editarProduto: (req, res) => {
         let {id} = req.params
         let produto = arraydb.find(p=> p.id == id)
@@ -120,11 +137,6 @@ const paginasController = {
     },
     teste:(req,res)=>{
         res.render('teste.ejs')
-    },
-    addcar:(req,res)=>{
-        let value = req.query
-        console.log(value)
-        res.send(value)
     }
 }
 

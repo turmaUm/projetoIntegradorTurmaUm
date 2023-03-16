@@ -142,7 +142,7 @@ main{
     height:30px;
     border-radius: 50%;
 }
-.preto{
+.preto, .preta{
     background-color:black;
     color:black;
     border: 1px solid black;
@@ -158,7 +158,7 @@ main{
     height:30px;
     border-radius: 50%;
 }
-.branco{
+.branco, .branca{
     background-color:white;
     color:white;
     border: 1px solid black;
@@ -166,7 +166,7 @@ main{
     height:30px;
     border-radius: 50%;
 }
-.vermelho{
+.vermelho, .vermelha{
     background-color:red;
     color:red;
     border: 1px solid black;
@@ -183,7 +183,7 @@ main{
     border-radius: 50%;
     
 }
-.amarelo{
+.amarelo, .amarela{
     background-color: yellow;
     color: yellow;
     border: 1px solid black;

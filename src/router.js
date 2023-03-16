@@ -18,7 +18,7 @@ router.get('/carrinho', paginasController.showCarrinho)
 
 
 router.get('/teste', paginasController.teste)
-router.get('/addcar', paginasController.addcar )
+router.get('/addCarrinho', paginasController.addCarrinho )
 //Rotas adm
 router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showClientesAdm)
