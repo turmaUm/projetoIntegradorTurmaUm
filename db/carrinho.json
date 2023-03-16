@@ -1,3 +1,49 @@
 [
-    
+    {
+        "id": 8,
+        "nome": "Calça Sarja Colcci Jogger",
+        "preco": 219.9,
+        "endereco": "/img/roupas/calca-sarja-colcci-jogger.png",
+        "categoria": "calca",
+        "descricao": "Calça masculina jogger de sarja da marca Colcci, com modelagem moderna e estilo despojado. Ideal para compor um visual casual e confortável.",
+        "tamanho": [
+            "P",
+            "M",
+            "G",
+            "GG"
+        ],
+        "cor": [
+            "verde",
+            "bege",
+            "azul"
+        ],
+        "quantidade": "2",
+        "corescolha": "verde",
+        "tamanhoescolha": "P"
+    },
+    {
+        "id": 17,
+        "nome": "Jaqueta Polo Ralph Lauren",
+        "preco": 499.99,
+        "endereco": "/img/roupas/jaqueta-polo-ralph.png",
+        "categoria": "rolling",
+        "descricao": "Jaqueta de alta qualidade da marca Polo Ralph Lauren, com acabamento refinado e sofisticado. Ideal para aqueles que buscam elegância e conforto em um único produto.",
+        "tamanho": [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "XGG"
+        ],
+        "cor": [
+            "Azul",
+            "Preto",
+            "Verde",
+            "Marrom",
+            "Branco"
+        ],
+        "quantidade": "1",
+        "corescolha": "Azul",
+        "tamanhoescolha": "P"
+    }
 ]

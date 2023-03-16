@@ -14,11 +14,11 @@ router.get('/home', paginasController.showHome)
 router.get('/login', paginasController.showLogin)
 router.get('/produto', paginasController.showProduto)
 router.get('/resultado-busca', paginasController.showResultadoBusca)
+router.get('/addCarrinho', paginasController.addCarrinho )
 router.get('/carrinho', paginasController.showCarrinho)
 
 
 router.get('/teste', paginasController.teste)
-router.get('/addCarrinho', paginasController.addCarrinho )
 //Rotas adm
 router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showClientesAdm)

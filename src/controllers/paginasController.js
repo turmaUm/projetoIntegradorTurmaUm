@@ -84,7 +84,8 @@ const paginasController = {
         res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {
-        res.render('carrinho')
+
+        res.render('carrinho', {produtos: produtosCarrinho})
     },
     addCarrinho:(req,res)=>{
         let value = req.query
