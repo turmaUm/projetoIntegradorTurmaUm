@@ -93,10 +93,8 @@ const paginasController = {
         addCarrinho.corescolha = value.cor
         addCarrinho.tamanhoescolha = value.tamanho
         // delete addCarrinho['descricao']
-        // fs.appendFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(addCarrinho,null,4))
         produtosCarrinho.push(addCarrinho)
         fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
-        // res.send(value)
         res.redirect(`/produto?id=${value.id}`)
     },
     editarProduto: (req, res) => {
