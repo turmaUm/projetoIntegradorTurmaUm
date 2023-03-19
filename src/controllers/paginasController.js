@@ -27,7 +27,7 @@ const paginasController = {
     showProduto: (req, res) => {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
-        console.log(produto)
+        // console.log(produto)
         res.render('produto',{produto: produto})
  
     },
@@ -44,7 +44,7 @@ const paginasController = {
                     }
                 }
             })
-            console.log(prodClient)
+            // console.log(prodClient)
             res.render('resultado_busca', {produtos: prodClient})
 
         }else{
@@ -84,19 +84,40 @@ const paginasController = {
         res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {
-
-        res.render('carrinho', {produtos: produtosCarrinho})
+        // console.log(req.session.carrinho)
+        res.render('carrinho', {produtos: req.session.carrinho})
     },
     addCarrinho:(req,res)=>{
-        let value = req.query
-        let addCarrinho = produtosCliente.find(p=>p.id == value.id)
-        addCarrinho.quantidade = value.quantidade
-        addCarrinho.corescolha = value.cor
-        addCarrinho.tamanhoescolha = value.tamanho
-        // delete addCarrinho['descricao']
-        produtosCarrinho.push(addCarrinho)
-        fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
-        res.redirect(`/produto?id=${value.id}`)
+        
+        let addCarrinho = produtosCliente.find(p=>p.id == req.query.id)
+        addCarrinho.quantidade = req.query.quantidade
+        addCarrinho.corescolha = req.query.cor
+        addCarrinho.tamanhoescolha = req.query.tamanho
+        
+        if(!req.session.carrinho){
+            req.session.carrinho =[]
+        }
+
+        if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id 
+            && p.tamanhoescolha == addCarrinho.tamanhoescolha 
+            && p.corescolha == addCarrinho.corescolha) != -1)){
+                let obj = req.session.carrinho.find(p=> p.id = addCarrinho.id)
+                let cal = Number(obj.quantidade) + Number(addCarrinho.quantidade)
+                obj.quantidade = cal.toString();
+                // console.log('funcionou')
+
+        }else{
+            req.session.carrinho.push(addCarrinho)
+        }
+        // console.log('<><><><><><><><><><><><><><><><>')
+        console.log(req.session.carrinho)
+        res.redirect(`/produto?id=${req.query.id}`)
+        
+        // if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id ))
+        // && (req.session.carrinho.findIndex(p=>p.tamanhoescolha == addCarrinho.tamanhoescolha))
+        // && (req.session.carrinho.findIndex(p=>p.corescolha == addCarrinho.corescolha))){
+        //     console.log('funcionou')}
+        // console.log('<><><><><><><><><><><><><><><><>')// console.log(req.session.carrinho)// delete addCarrinho['descricao']// produtosCarrinho.push(addCarrinho)// fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
     },
     editarProduto: (req, res) => {
         let {id} = req.params
