@@ -84,8 +84,8 @@ const paginasController = {
         res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {
-        // console.log(req.session.carrinho)
         res.render('carrinho', {produtos: req.session.carrinho})
+        // console.log(req.session.carrinho)
     },
     addCarrinho:(req,res)=>{
         
@@ -101,7 +101,7 @@ const paginasController = {
         if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id 
             && p.tamanhoescolha == addCarrinho.tamanhoescolha 
             && p.corescolha == addCarrinho.corescolha) != -1)){
-                let obj = req.session.carrinho.find(p=> p.id = addCarrinho.id)
+                let obj = req.session.carrinho.find(p=> p.id == addCarrinho.id)
                 let cal = Number(obj.quantidade) + Number(addCarrinho.quantidade)
                 obj.quantidade = cal.toString();
                 // console.log('funcionou')

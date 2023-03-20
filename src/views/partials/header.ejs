@@ -44,7 +44,14 @@
         </div>
         <a href="/carrinho" id="carrinho">
             <img src="img/carrinho.png" alt="carrinho">
-            <span>0</span>
+            <% if (locals.carrinho == undefined) { %>
+                <span>0</span>
+            <% }else { %>
+                <span><%= carrinho.length %></span>
+            <% } %>
+            
+
+
         </a>
     </div>
 </header>
