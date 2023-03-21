@@ -9,9 +9,6 @@ const paginasController = {
     showPagamento: (req, res) => {
         res.render('checkout_pagamento')
     },
-    showCliente: (req, res) => {
-        res.render('cliente')
-    },
     showFinalizacao: (req, res) => {
         res.render('finalizacaoCompras')
     },

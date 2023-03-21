@@ -2,13 +2,13 @@ const express = require('express')
 const path = require('path')
 const paginasController = require('./controllers/paginasController')
 const loginController = require('./controllers/loginController')
+const userPanelController = require('./controllers/userPanelController')
 
 const router = express.Router()
 
 //Rotas cliente
 router.get('/checkout-endereco', paginasController.showEndereco)
 router.get('/checkout-pagamento', paginasController.showPagamento)
-router.get('/cliente', paginasController.showCliente)
 router.get('/finalizacao', paginasController.showFinalizacao)
 router.get('/home', paginasController.showHome)
 router.get('/produto', paginasController.showProduto)
@@ -33,8 +33,10 @@ router.put('/atualizar/:id?', paginasController.atualizarProduto)
 router.delete('/delete/:id?', paginasController.delete)
 
 // router.get('/select-value', paginasController.select)
-
 router.get('/login', loginController.showLogin)
 router.post('/cadastro', loginController.userRegister)
+
+router.get('/cliente', userPanelController.showCliente)
+
 
 module.exports = router
