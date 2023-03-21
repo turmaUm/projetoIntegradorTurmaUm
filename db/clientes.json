@@ -1,12 +1,14 @@
 [
     {
-        "nome": "teste3",
-        "email": "teste3@email.com",
-        "senha": "123456"
+        "id": 1,
+        "nome": "teste",
+        "email": "teste@email.com",
+        "senha": "$2b$10$WlpOycJbtfpNDdXHrfT1Ne5Y2IeNj/n0Y7Gwhq5lTixloCFSX0oNu"
     },
     {
-        "nome": "teste3",
-        "email": "teste3@email.com",
-        "senha": "123456"
+        "id": 2,
+        "nome": "teste2",
+        "email": "teste2@email.com",
+        "senha": "$2b$10$D/UQmBn3sHjnqiXJHT2hYusrXnZo3VAVsO/RsFo9pRu4xYZytfC42"
     }
 ]
