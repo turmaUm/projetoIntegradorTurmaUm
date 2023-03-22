@@ -16,6 +16,7 @@ router.get('/produto', paginasController.showProduto)
 router.get('/resultado-busca', paginasController.showResultadoBusca)
 router.get('/addCarrinho', paginasController.addCarrinho )
 router.get('/carrinho', paginasController.showCarrinho)
+router.get('/deleteCarrinho/:id/:tamanho/:cor', paginasController.deleteCarrinho)
 
 
 router.get('/teste', paginasController.teste)

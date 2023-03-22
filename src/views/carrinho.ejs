@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <%- include('partials/head', {css: ['headerStyle.css', 'carrinho.css', 'geral.css', 'footerStyle.css']}) %>
-    
+<script src="js/carrinho.js" defer></script>
     <body>
         
         <%- include('partials/header') %>
@@ -30,7 +30,7 @@
                 <!-- SESSÃO DE DADOS SOBRE O PRODUTO-->
                 
                     <% for( let prod of produtos ) { %>
-                       <form action="" method="get">
+            
 
                            <section class="sectionDados">
            
@@ -52,9 +52,10 @@
            
            
                                <section class="sectionQuantidadeProdutos">
-                                       <button class="btRemove">-</button>
+                                       <button class="btRemove" type="button">-</button>
                                        <input class="quantidade" step="1" min="0" max="100" value=<%= prod.quantidade %>>
-                                       <button class="btAdd">+</button>
+                                       <button class="btAdd" type="button">+</button>
+                                       <input type="hidden" name="prod" value= <%= prod.id %>>
            
                                </section>
            
@@ -62,11 +63,13 @@
                                <span class="valor"><%= prod.preco %></span>
            
                                <span class="valorTotal"><%= prod.preco*prod.quantidade %></span>
-           
-                               <button class="delete"><img src="/img/lixeira.png" alt=""></button>
+                               
+                               <form action="/deleteCarrinho/<%= prod.id %>/<%= prod.tamanhoescolha %>/<%= prod.corescolha %>" method="get">
+                                   <button class="delete" type="submit"><img src="/img/lixeira.png" alt=""></button>
+                               </form>
            
                            </section>
-                       </form>
+                       
                     <% } %>
                      
 
@@ -109,6 +112,7 @@
             </main>
 
         <%- include('partials/footer') %>
+         
         <script src="js/footer.js"></script>
 
     </body>
