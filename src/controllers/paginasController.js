@@ -84,6 +84,7 @@ const paginasController = {
         res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {
+        
         res.render('carrinho', {produtos: req.session.carrinho})
         // console.log(req.session.carrinho)
     },
@@ -121,13 +122,11 @@ const paginasController = {
     },deleteCarrinho: (req,res)=>{
         let{id, tamanho, cor} = req.params
         let posicao = req.session.carrinho.findIndex(p => p.id == id && p.tamanhoescolha == tamanho && p.corescolha == cor);
-        if(posicao == -1){
-            throw new Error("Pizza inexistente");
-        }
         req.session.carrinho.splice(posicao, 1)
-        // res.send(req.session.carrinho)
         res.redirect('/carrinho')
     
+    },finalizarCompra: (req,res)=>{
+        res.send(req.query)
     },
     editarProduto: (req, res) => {
         let {id} = req.params
