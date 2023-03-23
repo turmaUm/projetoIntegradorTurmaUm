@@ -1,3 +1,5 @@
+/* ------------------------------REGRAS DO CORPO-------------------------  */
+
 .containerMain {
 	background-color: white;
 	padding: 50px 150px 200px 150px;
@@ -13,7 +15,6 @@
 
 .centroPessoal {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: centroPessoal;
 	padding: 20px 15px;
 }
@@ -28,13 +29,11 @@
 
 .clienteContainer {
 	display: flex;
-	/* background-color: purple; */
 	justify-content: space-between;
 	margin-top: 10px;
 }
 
 .clienteContainer span {
-	/* border: 1px solid black; */
 	display: flex;
 	justify-content: center;
 	padding-top: 5px;
@@ -42,17 +41,16 @@
 
 .cliente {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: cliente;
 	padding: 20px 15px;
 }
 
 .cliente h1 {
 	padding-bottom: 35px;
+	text-align: center;
 }
 
 .cliente a {
-	/* border: 1px solid black; */
 	width: 100px;
 	padding: 5px;
 	margin: 0 auto;
@@ -67,109 +65,61 @@
 	width: 50px;	
 }
 
-.pedidosContainer {
-	display: flex;
-	/* background-color: purple; */
-	justify-content: space-between;
-	margin-top: 10px;
-}
 
-.pedidos img {
-	/* border: 1px solid black; */
-	display: flex;
-	width: 50px;
-	padding-bottom: 15px;
-	padding-left: 25px;
-}
 
-.pedidos {
-	background-color: white;
-	/* border: 1px solid black; */
-	grid-area: pedidos;
-	padding: 20px 15px;
-}
+/* -------------------REGRAS DO FORMULÁRIO------------------------ */
 
-.pedidos a {
-	/* border: 1px solid black; */
-	width: 50px;
-	padding: 10px;
-	text-decoration: none;
-	color: black;
-	width: 100px;
-	text-align: center;
-}
+  
+.clienteContainer {
+	margin: 0;
+	padding: 0;
+  }
 
-.pedidos h1 {
-	padding-bottom: 35px;
-}
-
-.servicoContainer {
-	display: flex;
-	/* background-color: purple; */
-	justify-content: space-between;
-	margin-top: 10px;
-
-}
-
-.servicoContainer img {
-	display: inline-block;
-	width: 50px;
-}
-
-.servico {
-	background-color: white;
-	/* border: 1px solid black; */
-	grid-area: servico;
-	padding: 20px 15px;
-}
-
-.servico a {
-	/* border: 1px solid black; */
-	width: 100px;
-	padding: 10px;
-	text-align: center;
-	text-decoration: none;
-	color: black;
-}
-
-.servico img {
-	padding-bottom: 15px;
-}
-
-.servico h1 {
-	padding-bottom: 35px;
-}
-
-.desejos {
-	background-color: white;
-	/* border: 1px solid black; */
-	grid-area: desejos;
-	padding: 20px 15px;
-}
-
-.desejosContainer {
-	/* border: 1px solid black; */
+.form {
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 0;
+	/* border: 1px solid #ccc; */
+	border-radius: 5px;
+  }
+  
+  /* .form-group {
+	margin-bottom: 20px;
+  } */
+  
+  label {
 	display: block;
-	text-align: center;
-}
-
-.desejos img {
+	font-weight: bold;
+  }
+  
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  button[type="submit"],
+  button[type="button"] {
 	display: inline-block;
-	width: 50px;
-	/* border: 1px solid black; */
-	padding-bottom: 15px;
-}
-
-.desejos h1 {
-	padding-bottom: 35px;
-}
-
-#btnSalvar {
-    background-color: black;
-    font-size: 15px;
-    color: azure;
-    margin: 35px;
-    padding: 10px;
-    width: 260px;
-    cursor: pointer;
-}
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .btn-primary {
+	background-color: black;
+	color: #fff;
+  }
+  
+  .btn-danger {
+	background-color: white;
+	color: black;
+  }
