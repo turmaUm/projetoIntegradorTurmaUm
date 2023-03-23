@@ -28,40 +28,50 @@
 
 
                 <!-- SESSÃO DE DADOS SOBRE O PRODUTO-->
-                <section class="sectionDados">
+                
+                    <% for( let prod of produtos ) { %>
+                       <form action="" method="get">
 
-                    <div class="ImagemEdescricao">
+                           <section class="sectionDados">
+           
+                               <div class="ImagemEdescricao">
+           
+                                   <img src=<%= prod.endereco %> alt="imagem1">
+           
+                                       <div class="spanDescricaoDoProduto">
+           
+                                           <span><%= prod.nome %></span>
+           
+                                           <span><%= prod.corescolha %></span>
+           
+                                           <span><%= prod.tamanhoescolha %></span>
+           
+                                       </div>  
+           
+                               </div>
+           
+           
+                               <section class="sectionQuantidadeProdutos">
+                                       <button class="btRemove">-</button>
+                                       <input class="quantidade" step="1" min="0" max="100" value=<%= prod.quantidade %>>
+                                       <button class="btAdd">+</button>
+           
+                               </section>
+           
+           
+                               <span class="valor"><%= prod.preco %></span>
+           
+                               <span class="valorTotal"><%= prod.preco*prod.quantidade %></span>
+           
+                               <button class="delete"><img src="/img/lixeira.png" alt=""></button>
+           
+                           </section>
+                       </form>
+                    <% } %>
+                     
 
-                        <img src="/img/blusa.webp" alt="imagem1">
-
-                            <div class="spanDescricaoDoProduto">
-
-                                <span>Descrição do produto</span>
-
-                                <span>Cor do produto</span>
-
-                                <span>Tamanho do produto</span>
-
-                            </div>  
-
-                    </div>
-
-
-                    <section class="sectionQuantidadeProdutos">
-                            <button class="btRemove">-</button>
-                            <input class="quantidade" step="1" min="0" max="100" value="1">
-                            <button class="btAdd">+</button>
-
-                    </section>
-
-
-                    <span class="valor">$VALOR</span>
-
-                    <span class="valorTotal">$VALOR TOTAL</span>
-
-                    <button class="delete"><img src="/img/lixeira.png" alt=""></button>
-
-                </section>
+                    
+             
 
                 
                 <!-- DIV SUBTOTAL -->
