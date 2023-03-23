@@ -22,12 +22,6 @@
 	padding-bottom: 10px;
 }
 
-.centroPessoal h2 a {
-	text-decoration: none;
-	color: black;
-}
-
-
 .centroPessoal h1 {
 	padding-bottom: 35px;
 }
@@ -168,4 +162,14 @@
 
 .desejos h1 {
 	padding-bottom: 35px;
+}
+
+#btnSalvar {
+    background-color: black;
+    font-size: 15px;
+    color: azure;
+    margin: 35px;
+    padding: 10px;
+    width: 260px;
+    cursor: pointer;
 }

@@ -15,6 +15,9 @@ const paginasController = {
     showCliente: (req, res) => {
         res.render('cliente')
     },
+    showEditarPerfil: (req, res) => {
+        res.render('editar-perfil')
+    },
     showFinalizacao: (req, res) => {
         res.render('finalizacaoCompras')
     },
