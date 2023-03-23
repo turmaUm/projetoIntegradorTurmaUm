@@ -25,3 +25,32 @@
          }
      });
  });
+
+
+// //enviando as informações adicionais
+// const quantidades = document.querySelectorAll('.quantidade');
+// const quantidadesHidden = document.querySelectorAll('.quantidadeHidden')
+// quantidades.forEach((quantidade, index) => {
+//     quantidadesHidden.value(index) = quantidade.value;
+// })
+
+const quantidades = document.querySelectorAll('.quantidade');
+const quantidadesHidden = document.querySelectorAll('.quantidadeHidden');
+const valoresTotal = document.querySelectorAll('.valorTotalH');
+const valoresTotalHidden = document.querySelectorAll('.valorTotalHidden');
+
+
+for (let i = 0; i < quantidades.length; i++) {
+  quantidadesHidden[i].value = quantidades[i].value;
+  valoresTotalHidden[i].value = valoresTotal[i].value;
+}
+
+// // seleciona todos os inputs de quantidade
+// const inputsQuantidade = document.querySelectorAll('.quantidade');
+
+// // percorre cada input de quantidade e adiciona o valor em um input hidden correspondente
+// inputsQuantidade.forEach((input, index) => {
+//   const valor = input.value;
+//   const inputHidden = document.querySelectorAll('.quantidadeHidden')[index];
+//   inputHidden.value = valor;
+// });
