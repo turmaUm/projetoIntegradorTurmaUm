@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <%- include('partials/head', {css: ['headerStyle.css', 'carrinho.css', 'geral.css', 'footerStyle.css']}) %>
-    
+<script src="js/carrinho.js" defer></script>
     <body>
         
         <%- include('partials/header') %>
@@ -29,86 +29,88 @@
 
                 <!-- SESSÃO DE DADOS SOBRE O PRODUTO-->
                 
+                    <% count =0 %>
                     <% for( let prod of produtos ) { %>
-                       <form action="" method="get">
-
-                           <section class="sectionDados">
-           
-                               <div class="ImagemEdescricao">
-           
-                                   <img src=<%= prod.endereco %> alt="imagem1">
-           
-                                       <div class="spanDescricaoDoProduto">
-           
-                                           <span><%= prod.nome %></span>
-           
-                                           <span><%= prod.corescolha %></span>
-           
-                                           <span><%= prod.tamanhoescolha %></span>
-           
-                                       </div>  
-           
-                               </div>
-           
-           
-                               <section class="sectionQuantidadeProdutos">
-                                       <button class="btRemove">-</button>
-                                       <input class="quantidade" step="1" min="0" max="100" value=<%= prod.quantidade %>>
-                                       <button class="btAdd">+</button>
-           
-                               </section>
-           
-           
-                               <span class="valor"><%= prod.preco %></span>
-           
-                               <span class="valorTotal"><%= prod.preco*prod.quantidade %></span>
-           
-                               <button class="delete"><img src="/img/lixeira.png" alt=""></button>
-           
-                           </section>
-                       </form>
-                    <% } %>
-                     
-
                     
-             
-
-                
-                <!-- DIV SUBTOTAL -->
-                <div class="divSubtotal">
-                    <span class="subtotal">SUBTOTAL:</span>
-                    <span class="total">$VALOR TOTAL</span>
-                </div>
-
-                <!---->
-                <div class="divDescricaoCarrinho">
-                    <span>Prazo de entrega</span>
-                    <span>Cupom de desconto</span>
-                    <span>Resumo</span>
-                </div>
-
-                <div class="divPrincipalFinal">
-
-                    <div class="PrazoDeEntrega">
-
-                        <div class="divInputPrazoEntrega">
-                            <form action="#" method="post" name="inputRecebeCep">
-                                <input class="inputPrazo" type="text" name="inputRecebeCep" placeholder="00000-000" maxlength="9">
-                                <button type="submit" class="">Calcular</button>
-                            </form>
-                        </div>
                         
-                    <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a>
+                        <section class="sectionDados">
+                            <div class="ImagemEdescricao">
+                                <img src=<%= prod.endereco %> alt="imagem1">
+                                    <div class="spanDescricaoDoProduto">
+                                            <span><%= prod.nome %></span>
+                                            <span><%= prod.corescolha %></span>
+                                            <span><%= prod.tamanhoescolha %></span>
+                                    </div>  
+                            </div>
+                                
 
+                            <section class="sectionQuantidadeProdutos">
+                                    <!-- <span><%= prod.quantidade %></span> -->
+                                    <button class="btRemove" type="button">-</button>
+                                    <input class="quantidade" step= 1 min="0" max="100" id="quantidade" name="quantidade" value=<%= prod.quantidade %>>
+                                    <button class="btAdd" type="button">+</button>
+                                    
+                                    
+                            </section>
+                                    
+                                    <span class="valor" name="precoun"><%= prod.preco %></span>
+                                    <span class="valorTotal" name="precoquantidade" ><%= prod.preco*prod.quantidade %></span>
+                                    <input type="hidden" class="valorTotalH" name="valorTotalH" value=<%= prod.preco*prod.quantidade %>>
 
-
-                    </div>
-
-                </div>
-
+                                    <form action="/deleteCarrinho/<%= prod.id %>/<%= prod.tamanhoescolha %>/<%= prod.corescolha %>" method="get">
+                                        <button class="delete" type="submit"><img src="/img/lixeira.png" alt=""></button>
+                                    </form>    
+                        </section>
+                        <% count += prod.preco*prod.quantidade%>
+                    <% } %> 
+                    
+                    
+                                <!-- DIV SUBTOTAL -->
+                                <div class="divSubtotal">
+                                    <span class="subtotal">SUBTOTAL:</span>
+                                    <span class="total">$<%= count %></span>
+                                </div>
+                                
+                                <!---->
+                                <div class="divDescricaoCarrinho">
+                                    <!-- <span>Prazo de entrega</span> -->
+                                    <span>Cupom de desconto</span>
+                                    
+                                    <form action="/finalizarCompra" method="get">
+                        
+                                        <% for( let prod of produtos ) { %>
+                                            <input type="hidden" class="quantidadeHidden" name='quantidade'>
+                                            <input type="hidden" class='valorTotalHidden' name="valorTotal">
+                                        <% } %>
+                                            <input type="hidden" name="valorTotalTotal" value=<%= count %>>
+                                        <button class="inputPrazo" type="submit">Finalizar</button>
+                                </form>
+                                    <span>Resumo: $<%= count %></span>
+                                </div>
+                                
+                                <!-- <div class="divPrincipalFinal">
+                                    
+                                    <div class="PrazoDeEntrega">
+                                        
+                                        <div class="divInputPrazoEntrega">
+                                            <form action="#" method="post" name="inputRecebeCep">
+                                                <input class="inputPrazo" type="text" name="inputRecebeCep" placeholder="00000-000" maxlength="9">
+                                                <button type="submit" class="">Calcular</button>
+                                            </form>
+                                        </div>
+                                        
+                                        <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">Não sei meu CEP</a>
+                                        
+                                        
+                                        
+                                    </div>
+                                    
+                                </div> -->
+                
             </main>
-
+                            
         <%- include('partials/footer') %>
+         
         <script src="js/footer.js"></script>
 
     </body>
