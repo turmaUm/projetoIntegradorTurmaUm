@@ -14,7 +14,14 @@
                 </div>
 
 
-                <!-- SESSÃO DE SPANS-->
+               
+
+                <% if (produtos == undefined) { %>
+                    <div class="carrinhoVazio">
+                        <h1>Carinho Vazio</h1>
+                    </div>
+                <% } else{ %>
+                     <!-- SESSÃO DE SPANS-->
                 <section class="sectionSpan">
 
 
@@ -25,10 +32,8 @@
                     <span class="span">Valor Total</span>
 
                 </section>
-
-
                 <!-- SESSÃO DE DADOS SOBRE O PRODUTO-->
-                
+                    
                     <% count =0 %>
                     <% for( let prod of produtos ) { %>
                     
@@ -106,7 +111,7 @@
                                     </div>
                                     
                                 </div> -->
-                
+                        <% } %>        
             </main>
                             
         <%- include('partials/footer') %>
