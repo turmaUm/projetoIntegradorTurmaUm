@@ -1,0 +1,125 @@
+/* ------------------------------REGRAS DO CORPO-------------------------  */
+
+.containerMain {
+	background-color: white;
+	padding: 50px 150px 200px 150px;
+	display: grid;
+	gap: 10px;
+	grid-template-areas:
+		'header header header header header header'
+		'centroPessoal cliente cliente cliente cliente servico'
+		'centroPessoal pedidos pedidos pedidos pedidos desejos'
+		'nome pedidos pedidos pedidos pedidos none'
+		'footer footer footer footer footer footer'
+}
+
+.centroPessoal {
+	background-color: white;
+	grid-area: centroPessoal;
+	padding: 20px 15px;
+}
+
+.centroPessoal h2 {
+	padding-bottom: 10px;
+}
+
+.centroPessoal h1 {
+	padding-bottom: 35px;
+}
+
+.clienteContainer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.clienteContainer span {
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
+}
+
+.cliente {
+	background-color: white;
+	grid-area: cliente;
+	padding: 20px 15px;
+}
+
+.cliente h1 {
+	padding-bottom: 35px;
+	text-align: center;
+}
+
+.cliente a {
+	width: 100px;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+}
+
+.cliente img {
+	padding-bottom: 15px;
+	display: inline-block;
+	width: 50px;	
+}
+
+
+
+/* -------------------REGRAS DO FORMULÁRIO------------------------ */
+
+  
+.clienteContainer {
+	margin: 0;
+	padding: 0;
+  }
+
+.form {
+	max-width: 500px;
+	margin: 0 auto;
+	margin-top: 0;
+	/* border: 1px solid #ccc; */
+	border-radius: 5px;
+  }
+  
+  /* .form-group {
+	margin-bottom: 20px;
+  } */
+  
+  label {
+	display: block;
+	font-weight: bold;
+  }
+  
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+  }
+  
+  button[type="submit"],
+  button[type="button"] {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .btn-primary {
+	background-color: black;
+	color: #fff;
+  }
+  
+  .btn-danger {
+	background-color: white;
+	color: black;
+  }
