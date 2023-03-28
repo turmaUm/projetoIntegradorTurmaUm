@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(methodOverride('_method'))
 app.use(session({secret:"oshkosh", resave: true,  saveUninitialized: true}))
 app.use(count) // para contagem do produto no carrinho
+app.use(function carrinhoLocal(req,res,next){
+    res.locals.carrinhoSession = req.session.carrinho
+    next()
+})
 
 //Usa roteador para controladores
 app.use(router);
