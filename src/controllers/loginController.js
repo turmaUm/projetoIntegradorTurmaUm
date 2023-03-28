@@ -30,6 +30,8 @@ const loginController = {
 
         const newUser = { 
             id: novoId,
+            telefone: '',
+            enderecos: [],
             nome: nome,
             email: email,
             senha: senhaCriptografada

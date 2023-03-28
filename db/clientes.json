@@ -10,5 +10,13 @@
         "nome": "teste2",
         "email": "teste2@email.com",
         "senha": "$2b$10$D/UQmBn3sHjnqiXJHT2hYusrXnZo3VAVsO/RsFo9pRu4xYZytfC42"
+    },
+    {
+        "id": 3,
+        "telefone": "",
+        "enderecos": [],
+        "nome": "Erick",
+        "email": "erick@email.com",
+        "senha": "$2b$10$eQME4fV9jrp.DRIduFHPCuPpOBAxqG3gYYK8wZ8YLiMhmlSuZKFcO"
     }
 ]

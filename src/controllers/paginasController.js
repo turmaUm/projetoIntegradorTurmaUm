@@ -12,9 +12,6 @@ const paginasController = {
     showPagamento: (req, res) => {
         res.render('checkout_pagamento')
     },
-    showEditarPerfil: (req, res) => {
-        res.render('editar-perfil')
-    },
     showFinalizacao: (req, res) => {
         res.render('finalizacaoCompras')
     },
