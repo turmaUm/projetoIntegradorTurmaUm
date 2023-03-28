@@ -9,11 +9,7 @@ const router = express.Router()
 //Rotas cliente
 router.get('/checkout-endereco', paginasController.showEndereco)
 router.get('/checkout-pagamento', paginasController.showPagamento)
-<<<<<<< HEAD
-=======
-router.get('/cliente', paginasController.showCliente)
 router.get('/cliente/editar', paginasController.showEditarPerfil)
->>>>>>> 809530d713dc107234e3483c27310c506a53cf6a
 router.get('/finalizacao', paginasController.showFinalizacao)
 router.get('/home', paginasController.showHome)
 router.get('/produto', paginasController.showProduto)

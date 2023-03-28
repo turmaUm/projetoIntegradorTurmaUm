@@ -12,15 +12,9 @@ const paginasController = {
     showPagamento: (req, res) => {
         res.render('checkout_pagamento')
     },
-<<<<<<< HEAD
-=======
-    showCliente: (req, res) => {
-        res.render('cliente')
-    },
     showEditarPerfil: (req, res) => {
         res.render('editar-perfil')
     },
->>>>>>> 809530d713dc107234e3483c27310c506a53cf6a
     showFinalizacao: (req, res) => {
         res.render('finalizacaoCompras')
     },
