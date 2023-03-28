@@ -13,7 +13,12 @@
 }
 
 /* ----------------- CSS DADOS DO PRODUTO --------------- */
+.carrinhoVazio{
+    display: flex;
+    justify-content: center;
+    padding: 10%;
 
+}
 .sectionSpan {
     /*border: 2px solid red;*/
     width: 70%;

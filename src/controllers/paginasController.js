@@ -21,6 +21,9 @@ const paginasController = {
     showHome: (req, res) => {
         res.render('home')
     },
+    showLogin: (req, res) => {
+        res.render('login')
+    },
     showProduto: (req, res) => {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
