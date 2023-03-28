@@ -10,6 +10,7 @@
          // Obtendo o valor atual da quantidade e incrementando em 1
          const valorAtual = parseInt(quantidade.value);
          quantidade.value = valorAtual + 1;
+         console.log(carrinhoSession)
      });
  });
  
@@ -27,12 +28,7 @@
  });
 
 
-// //enviando as informações adicionais
-// const quantidades = document.querySelectorAll('.quantidade');
-// const quantidadesHidden = document.querySelectorAll('.quantidadeHidden')
-// quantidades.forEach((quantidade, index) => {
-//     quantidadesHidden.value(index) = quantidade.value;
-// })
+// Hiddens inputs
 
 const quantidades = document.querySelectorAll('.quantidade');
 const quantidadesHidden = document.querySelectorAll('.quantidadeHidden');
@@ -45,12 +41,4 @@ for (let i = 0; i < quantidades.length; i++) {
   valoresTotalHidden[i].value = valoresTotal[i].value;
 }
 
-// // seleciona todos os inputs de quantidade
-// const inputsQuantidade = document.querySelectorAll('.quantidade');
 
-// // percorre cada input de quantidade e adiciona o valor em um input hidden correspondente
-// inputsQuantidade.forEach((input, index) => {
-//   const valor = input.value;
-//   const inputHidden = document.querySelectorAll('.quantidadeHidden')[index];
-//   inputHidden.value = valor;
-// });
