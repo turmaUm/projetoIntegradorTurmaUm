@@ -51,6 +51,9 @@ const paginasController = {
             res.render('resultado_busca', {produtos: produtosCliente})
         }
     },
+    showPolitica: (req, res) => {
+        res.render('politica')
+    },
     showLoginAdm: (req, res) => {
         res.render('login-adm')
     },
@@ -119,13 +122,15 @@ const paginasController = {
         // && (req.session.carrinho.findIndex(p=>p.corescolha == addCarrinho.corescolha))){
         //     console.log('funcionou')}
         // console.log('<><><><><><><><><><><><><><><><>')// console.log(req.session.carrinho)// delete addCarrinho['descricao']// produtosCarrinho.push(addCarrinho)// fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
-    },deleteCarrinho: (req,res)=>{
+    },
+    deleteCarrinho: (req,res)=>{
         let{id, tamanho, cor} = req.params
         let posicao = req.session.carrinho.findIndex(p => p.id == id && p.tamanhoescolha == tamanho && p.corescolha == cor);
         req.session.carrinho.splice(posicao, 1)
         res.redirect('/carrinho')
     
-    },finalizarCompra: (req,res)=>{
+    },
+    finalizarCompra: (req,res)=>{
         res.send(req.query)
     },
     editarProduto: (req, res) => {
