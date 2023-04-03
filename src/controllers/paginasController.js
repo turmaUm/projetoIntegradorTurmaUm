@@ -9,6 +9,9 @@ const paginasController = {
     showEndereco: (req, res) => {
         res.render('checkout_endereco')
     },
+    showPedidos: (req, res) => {
+        res.render('pedidos')
+    },
     showPagamento: (req, res) => {
         res.render('checkout_pagamento')
     },
