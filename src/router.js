@@ -43,5 +43,6 @@ router.post('/cadastro', loginController.userRegister)
 
 router.get('/cliente', userPanelController.showCliente)
 router.get('/cliente/editar/:id', userPanelController.showEditarPerfil)
+router.post('/cliente/editar/:id', userPanelController.atualizarPerfil)
 
 module.exports = router;

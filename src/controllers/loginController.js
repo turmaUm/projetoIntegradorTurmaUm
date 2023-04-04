@@ -16,11 +16,6 @@ const loginController = {
         //Segunda forma, usando desestruturação: forma curta
         const { nome, email, senha } = req.body
         
-        //Dúvidas para o próximo colearning:
-        //Entra id na const newUser?
-        //Como transformar o campo senha em senhaCriptografada sem alterar o nome 'senha' na desestruturação
-        //Duvida para preencher os parametros do campo bcrypt
-        
         let senhaCriptografada = bcrypt.hashSync(senha, 10); //Para criptografar a senha
         let novoId = 1;
         
