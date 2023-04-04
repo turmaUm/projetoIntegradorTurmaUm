@@ -6,6 +6,8 @@ const fs = require('fs')
 const path = require('path')
 
 const paginasController = {
+
+    // ------------------------------------GET--------------------------------------
     showEndereco: (req, res) => {
         res.render('compra/checkout-endereco')
     },
@@ -88,9 +90,12 @@ const paginasController = {
     },
     showCarrinho: (req, res) => {
         
-        res.render('adm/carrinho', {produtos: req.session.carrinho})
+        res.render('compra/carrinho', {produtos: req.session.carrinho})
         // console.log(req.session.carrinho)
     },
+
+    
+    // ------------------------------------POST--------------------------------------
     addCarrinho:(req,res)=>{
         
         let addCarrinho = produtosCliente.find(p=>p.id == req.query.id)
