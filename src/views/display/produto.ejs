@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', {css: ['headerStyle.css', 'mainStyle.css', 'geral.css', 'footerStyle.css', 'produtoStyle.css']}) %>
+<%- include('../partials/head', {css: ['headerStyle.css', 'mainStyle.css', 'geral.css', 'footerStyle.css', 'produtoStyle.css']}) %>
 <script src="/js/produto.js" defer></script>
 <body>
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
         <% if (produto == undefined) { %>
             <div class = 'paginaNaoEncontrada'>
@@ -73,7 +73,7 @@
                     </div>
             </main>
         <% } %>
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 

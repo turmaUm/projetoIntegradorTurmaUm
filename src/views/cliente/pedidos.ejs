@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<%- include('partials/head', {css: ['geral.css', 'headerStyle.css', 'mainStyle.css', 'footerStyle.css', 'clienteStyle.css', 'pedidosStyle.css']}) %>
+<%- include('../partials/head', {css: ['geral.css', 'headerStyle.css', 'mainStyle.css', 'footerStyle.css', 'clienteStyle.css', 'pedidosStyle.css']}) %>
 
 <body>
 
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
       <section class="containerMain">
         
-        <%- include('partials/centroPessoal') %>
+        <%- include('../partials/centro-pessoal') %>
 
             <div class="cliente">
                 <h1>MEUS PEDIDOS</h1>
@@ -30,7 +30,7 @@
         </section>
     </main>
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 
 </body>
 

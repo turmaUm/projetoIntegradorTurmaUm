@@ -7,28 +7,28 @@ const path = require('path')
 
 const paginasController = {
     showEndereco: (req, res) => {
-        res.render('checkout_endereco')
+        res.render('compra/checkout-endereco')
     },
     showPedidos: (req, res) => {
-        res.render('pedidos')
+        res.render('cliente/pedidos')
     },
     showPagamento: (req, res) => {
-        res.render('checkout_pagamento')
+        res.render('compra/checkout-pagamento')
     },
     showFinalizacao: (req, res) => {
-        res.render('finalizacaoCompras')
+        res.render('carrinho/finalizacao-compra')
     },
     showHome: (req, res) => {
-        res.render('home')
+        res.render('display/home')
     },
     showLogin: (req, res) => {
-        res.render('login')
+        res.render('cliente/login')
     },
     showProduto: (req, res) => {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
         // console.log(produto)
-        res.render('produto',{produto: produto})
+        res.render('display/produto',{produto: produto})
  
     },
     showResultadoBusca: (req, res) => {
@@ -45,32 +45,32 @@ const paginasController = {
                 }
             })
             // console.log(prodClient)
-            res.render('resultado_busca', {produtos: prodClient})
+            res.render('display/resultado-busca', {produtos: prodClient})
 
         }else{
-            res.render('resultado_busca', {produtos: produtosCliente})
+            res.render('display/resultado-busca', {produtos: produtosCliente})
         }
     },
     showPolitica: (req, res) => {
-        res.render('politica')
+        res.render('cliente/politica')
     },
     showLoginAdm: (req, res) => {
-        res.render('login-adm')
+        res.render('adm/login-adm')
     },
     showClientesAdm: (req, res) => {
-        res.render('clientes-adm')
+        res.render('adm/clientes-adm')
     },
     showProdutosAdm: (req, res) => {
         let produtos = arraydb
         let value = req.query.value
-        res.render('produtos-adm', {produtos, value})
+        res.render('adm/produtos-adm', {produtos, value})
     },
     showPedidosAdm: (req, res) => {
-        res.render('pedidos-adm')
+        res.render('adm/pedidos-adm')
     },
     showCadastrarProdutosAdm:(req,res) => {
         // res.send("aqui esta o formulario")
-        res.render("form-add-produto.ejs")
+        res.render("adm/form-add-produto.ejs")
     },
     showSalvarProdutosAdm:(req,res)=>{
         let produto = {
@@ -88,7 +88,7 @@ const paginasController = {
     },
     showCarrinho: (req, res) => {
         
-        res.render('carrinho', {produtos: req.session.carrinho})
+        res.render('adm/carrinho', {produtos: req.session.carrinho})
         // console.log(req.session.carrinho)
     },
     addCarrinho:(req,res)=>{
@@ -136,7 +136,7 @@ const paginasController = {
     editarProduto: (req, res) => {
         let {id} = req.params
         let produto = arraydb.find(p=> p.id == id)
-        res.render('form-edit-produto.ejs', {prod: produto})
+        res.render('adm/form-edit-produto', {prod: produto})
     },
     atualizarProduto:(req,res) => {
         // res.send('Produto atualizado')
@@ -167,10 +167,10 @@ const paginasController = {
         
         let value = req.query.select || 10
         let produtos = arraydb
-        res.render('produtos-adm', {value, produtos})
+        res.render('adm/produtos-adm', {value, produtos})
     },
     teste:(req,res)=>{
-        res.render('teste.ejs')
+        res.render('display/teste.ejs')
     }
 }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head',  {css: ['geral.css', 'form-add-produto.css']}) %>
+    <%- include('../partials/head',  {css: ['geral.css', 'form-add-produto.css']}) %>
 <body>
     <main>
         <form action="/atualizar/<%= prod.id %>?_method=PUT" method="post">

@@ -2,7 +2,7 @@ const clientes = require('../../db/clientes.json');
 
 const userPanelController = {
     showCliente: (req, res) => {
-        res.render('cliente')
+        res.render('cliente/cliente')
     },
     showEditarPerfil: (req, res) => {
         // const id = req.params.id;
@@ -10,7 +10,7 @@ const userPanelController = {
         const user = clientes.find( user => user.id == id)
         // console.log(user);
 
-        res.render('editar-perfil', {user});
+        res.render('cliente/editar-perfil', {user});
     }
 }
 

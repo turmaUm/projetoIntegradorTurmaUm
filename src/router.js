@@ -18,7 +18,7 @@ router.get('/carrinho', paginasController.showCarrinho)
 router.get('/deleteCarrinho/:id/:tamanho/:cor', paginasController.deleteCarrinho)
 router.get('/finalizarCompra', paginasController.finalizarCompra)
 router.get('/teste', paginasController.teste)
-router.get('/pedidos', paginasController.showPedidos)
+router.get('/cliente/pedidos', paginasController.showPedidos)
 router.get('/politica', paginasController.showPolitica)
 
 //Rotas adm

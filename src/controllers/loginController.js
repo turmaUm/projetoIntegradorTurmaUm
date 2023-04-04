@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const loginController = {
     showLogin: (req, res) => {
-        res.render('login')
+        res.render('cliente/login')
     },
     userRegister: (req, res) => {
         //Primeira forma: forma longa
