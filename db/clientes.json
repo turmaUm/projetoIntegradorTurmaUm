@@ -1,10 +1,14 @@
 [
     {
         "id": 1,
-        "telefone": "",
-        "enderecos": [],
-        "nome": "Erick",
-        "email": "erick@email.com",
-        "senha": "$2b$10$eQME4fV9jrp.DRIduFHPCuPpOBAxqG3gYYK8wZ8YLiMhmlSuZKFcO"
+        "telefone": "19 9132656523",
+        "enderecos": [
+            "Nova Rua",
+            "Nova Rua",
+            "Rua Tste "
+        ],
+        "nome": "Antonio ",
+        "email": "email-ant@email.com",
+        "senha": "$2b$10$fV32AhcOnRm/nHmCqRkdQ.xwAaHI7Pslyb4Wuz6jeLyIyvtKGRUY2"
     }
 ]
