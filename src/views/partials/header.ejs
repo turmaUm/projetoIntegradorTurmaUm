@@ -9,8 +9,11 @@
             |
             <a href="/login">Cadastro</a>
             |
-            <a href="/login">Login</a>
-        </nav>
+            <% if(locals.userSession){  %>
+                <a href=""> Olá, <%= userSession %></a>    
+            <% } else { %>
+                <a href="/login">Login</a>
+            <% } %> 
 
     </div>
 

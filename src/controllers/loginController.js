@@ -35,6 +35,20 @@ const loginController = {
         clientes.push(newUser);
         fs.writeFileSync(path.join(__dirname, '..', '..', 'db', 'clientes.json'), JSON.stringify(clientes, null, 4))
         res.redirect('/home')
+    },
+    login: (req, res) => {
+        const { email, senha } = req.body
+        const user = clientes.find( user => user.email == email)
+        //Verificar se o usuário foi encontrado
+        if(user === undefined){
+            res.send('Falha no login')
+        }
+        const validaSenha = bcrypt.compareSync(senha, user.senha);
+        if(!validaSenha){
+            res.send('Falha no login')
+        }
+        req.session.user = user.nome
+        res.redirect('/home')
     }
 }
 
