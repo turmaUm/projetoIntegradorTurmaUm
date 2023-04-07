@@ -4,7 +4,7 @@ const Clientes = require('./Clientes')
 module.exports = (sequelize, DataTypes) => {
     const Enderecos = sequelize.define('Enderecos', {
         clientes_id: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         bairro: {
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         numero: {
             type: DataTypes.STRING(5),
-            allowNull: false
+            allowNull: true
         },
         cidade: {
             type: DataTypes.INTEGER,
@@ -25,10 +25,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         CEP: {
             type: DataTypes.STRING(8),
-            allowNull: false
+            allowNull: true
         }
     }, {
-        tableName: 'enderecos'
+        tableName: 'enderecos',
+        timestamps: false
     })
 
     Enderecos.associate(models => {

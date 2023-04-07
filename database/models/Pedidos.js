@@ -5,7 +5,7 @@ const FormasDePagamento = require('./FormasDePagamento')
 module.exports = (sequelize, DataTypes) => {
     const Pedidos = sequelize.define('Pedidos', {
         enderecos_id: {
-            type:DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         clientes_id: {
@@ -15,9 +15,18 @@ module.exports = (sequelize, DataTypes) => {
         formas_de_pagamento_id: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        pagoAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        entregueAt: {
+            type: DataTypes.DATE,
+            allowNull: true
         }
     }, {
         tableName: 'pedidos',
+        timestamps: true,
         paranoid: true
     })
 
@@ -43,5 +52,5 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
 
-        return Pedidos
+    return Pedidos
 }

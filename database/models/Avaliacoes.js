@@ -17,10 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         texto: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: true
         }
     }, {
         tableName: 'avaliacoes',
+        timestamps: true,
         paranoid: true
     })
 

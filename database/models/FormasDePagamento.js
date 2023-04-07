@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     }, {
-        tableName: 'formas_de_pagamento'
+        tableName: 'formas_de_pagamento',
+        timestamps: false
     })
 
     FormasDePagamento.associate(models => {

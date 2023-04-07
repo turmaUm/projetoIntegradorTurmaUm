@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         email: {
             type: DataTypes.STRING(45),
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         senha: {
             type: DataTypes.STRING(64),
@@ -18,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         tableName: 'clientes',
+        timestamps: true,
         paranoid: true
     })
 

@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         quantidade: {
-            type: DataTypes.DECIMAL(5,2),
+            type: DataTypes.DECIMAL(9,2),
             allowNull: false
         }
     }, {
         tableName: 'produtos_pedidos',
-        paranoid: true
+        timestamps: false
     })
 
     ProdutosPedidos.associate(models => {
