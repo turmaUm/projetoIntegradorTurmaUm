@@ -19,11 +19,6 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'produtos_pedidos',
         timestamps: false
     })
-
-    ProdutosPedidos.associate(models => {
-        
-    })
-
         return ProdutosPedidos
 }
 
