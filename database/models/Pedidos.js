@@ -22,17 +22,24 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Pedidos.associate = models => {
-        Produtos.belongsTo(models.Enderecos, {
+        Pedidos.belongsTo(models.Enderecos, {
             foreignKey: 'enderecos_id',
             as: 'enderecos'
         })
-        Produtos.belongsTo(models.Clientes, {
+        Pedidos.belongsTo(models.Clientes, {
             foreignKey: 'clientes_id',
             as: 'clientes'
         })
-        Produtos.belongsTo(models.FormasDePagamento, {
+        Pedidos.belongsTo(models.FormasDePagamento, {
             foreignKey: 'formas_de_pagamento_id',
             as: 'formas_de_pagamento'
+        })
+        Pedidos.belongsToMany(models.Produtos, {
+            as: 'produtos',
+            through: 'produtos_pedidos',
+            foreignKey: 'pedidos_id',
+            otherKey: 'produtos_id',
+            timestamps: false
         })
     }
 
