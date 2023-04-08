@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         paranoid: true
     })
 
-    Clientes.associate(models => {
+    Clientes.associate = models => {
         Clientes.hasMany(models.Pedidos, {
             foreignKey: 'clientes_id',
             as: 'pedidos'
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'clientes_id',
             as: 'avaliacoes'
         })
-    })
+    }
 
         return Clientes
 }

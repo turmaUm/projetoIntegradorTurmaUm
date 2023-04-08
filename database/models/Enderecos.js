@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     })
 
-    Enderecos.associate(models => {
+    Enderecos.associate = models => {
         Enderecos.hasMany(models.Pedidos, {
             foreignKey: 'enderecos_id',
             as: 'pedidos'
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'clientes_id',
             as: 'cliente'
         })
-    })
+    }
 
     return Enderecos
 }

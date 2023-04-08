@@ -1,4 +1,6 @@
 const Pedidos = require('./Pedidos')
+const Clientes = require('./Clientes')
+
 
 module.exports = (sequelize, DataTypes) => {
     const FormasDePagamento = sequelize.define('FormasDePagamento', {
@@ -9,13 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         tableName: 'formas_de_pagamento',
         timestamps: false
-    })
-
-    FormasDePagamento.associate(models => {
-        Clientes.hasMany(models.FormasDePagamento, {
-            foreignKey: 'formas_de_pagamento_id',
-            as: 'formas_de_pagamento'
-        })
     })
 
         return FormasDePagamento

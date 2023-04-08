@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         paranoid: true
     })
 
-    Avaliacoes.associate(models => {
+    Avaliacoes.associate = models => {
         Avaliacoes.belongsTo(models.Clientes, {
             foreignKey: 'clientes_id',
             as: 'cliente'
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'produtos_id',
             as: 'produto'
         })
-    })
+    }
 
     return Avaliacoes
 }
