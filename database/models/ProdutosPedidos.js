@@ -4,7 +4,7 @@ const Pedidos = require('./Pedidos')
 module.exports = (sequelize, DataTypes) => {
     const ProdutosPedidos = sequelize.define('ProdutosPedidos', {
         pedidos_id: {
-            type:DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         produtos_id: {

@@ -2,6 +2,12 @@ const Produtos = require('./Produtos')
 
 module.exports = (sequelize, DataTypes) => {
     const Imagens = sequelize.define('Imagens', {
+        imagens_id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
         produtos_id: {
             type: DataTypes.INTEGER,
             allowNull: false    
@@ -17,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Imagens.associate = models => {
         Imagens.belongsTo(models.Produtos, {
-            foreign_key: 'produtos_id',
+            foreignKey: 'produtos_id',
             as: 'produto'
         })
     }

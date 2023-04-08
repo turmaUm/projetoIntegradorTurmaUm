@@ -1,4 +1,4 @@
-const { Avaliacoes, Categorias, FormasDePagamento, Imagens, Ingredientes, Enderecos, Clientes, Produtos, Pedidos, ProdutosPedidos, sequelize } = require('../database/models');
+const { Avaliacoes, Categorias, FormasDePagamento, Imagens, Ingredientes, Enderecos, Clientes, Produtos, Pedidos, ProdutosPedidos, Administradores, sequelize } = require('../database/models');
 
 async function teste(){
     let clientes = await Clientes.findAll({include: "enderecos"});
@@ -7,19 +7,19 @@ async function teste(){
 }
 
 async function teste2(){
-    let clientes = await Clientes.findAll({include: "enderecos"});
-    for(let i in clientes) {
-        console.log(clientes[i].toJSON());
+    let produtos = await Produtos.findAll({include: "imagens"});
+    for(let i in produtos) {
+        console.log(produtos[i].toJSON());
     }
     sequelize.close();
 }
 
 async function teste3(){
-    let clientes = await Clientes.findAll({
-        raw:true
+    let produtosPedidos = await ProdutosPedidos.findAll({
+        raw: true
     });
-    console.log(clientes);
+    console.log(produtosPedidos);
 }
 
 
-teste2();
+teste3();

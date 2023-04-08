@@ -13,23 +13,24 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL(9, 2),
             allowNull: true
         },
-        categorias_id: {
+        categoriaId: {
             type: DataTypes.INTEGER,
             allownull: false
         }
     }, {
         tableName: 'produtos',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     })
 
     Produtos.associate = models => {
         Produtos.belongsTo(models.Categorias, {
-            foreignKey: 'categorias_id',
+            foreignKey: 'categoriaId',
             as: 'categorias'
         })
         Produtos.hasMany(models.Avaliacoes, {
             foreignKey: 'produtos_id',
-            as: 'produtos'
+            as: 'avaliacoes'
         })
         Produtos.hasMany(models.Imagens, {
             foreignKey: 'imagens_id',
