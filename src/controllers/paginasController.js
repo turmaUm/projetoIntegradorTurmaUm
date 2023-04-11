@@ -18,7 +18,7 @@ const paginasController = {
         res.render('compra/checkout-pagamento')
     },
     showFinalizacao: (req, res) => {
-        res.render('carrinho/finalizacao-compra')
+        res.render('compra/finalizacao-compra')
     },
     showHome: (req, res) => {
         res.render('display/home')

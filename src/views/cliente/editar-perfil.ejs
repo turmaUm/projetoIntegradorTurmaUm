@@ -16,8 +16,12 @@
                         <h1>GERENCIAR MINHA CONTA</h1>
                         <div class="clienteContainer">
 
-                            <form action="#" method="post" class="form">
+                            <form action="/cliente/editar/<%= user.id %>" method="post" class="form">
 
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" id="nome" name="nome" class="form-control" value="<%= user.nome%>" required>
+                                </div>
                                 <div class="form-group">
                                     <label for="email">E-mail:</label>
                                     <input type="email" id="email" name="email" class="form-control" value="<%= user.email%>" required>

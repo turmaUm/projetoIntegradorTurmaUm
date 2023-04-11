@@ -16,11 +16,6 @@ const loginController = {
         //Segunda forma, usando desestruturação: forma curta
         const { nome, email, senha } = req.body
         
-        //Dúvidas para o próximo colearning:
-        //Entra id na const newUser?
-        //Como transformar o campo senha em senhaCriptografada sem alterar o nome 'senha' na desestruturação
-        //Duvida para preencher os parametros do campo bcrypt
-        
         let senhaCriptografada = bcrypt.hashSync(senha, 10); //Para criptografar a senha
         let novoId = 1;
         
@@ -40,6 +35,24 @@ const loginController = {
         clientes.push(newUser);
         fs.writeFileSync(path.join(__dirname, '..', '..', 'db', 'clientes.json'), JSON.stringify(clientes, null, 4))
         res.redirect('/home')
+    },
+    login: (req, res) => {
+        const { email, senha } = req.body
+        const user = clientes.find( user => user.email == email)
+        //Verificar se o usuário foi encontrado
+        if(user === undefined){
+            res.send('Falha no login')
+        }
+        const validaSenha = bcrypt.compareSync(senha, user.senha);
+        if(!validaSenha){
+            res.send('Falha no login')
+        }
+        req.session.user = user.nome
+        res.redirect('/home')
+    },
+    logout: (req,res) => {
+        delete req.session.user
+        res.redirect('/home');
     }
 }
 
