@@ -39,12 +39,13 @@ router.put('/atualizar/:id?', paginasController.atualizarProduto)
 //Rotas adm para deletar um produto
 router.delete('/delete/:id?', paginasController.delete)
 
-router.get('/login', loginController.showLogin)
+router.get('/login', userSession, loginController.showLogin)
 router.post('/cadastro', loginController.userRegister)
 router.post('/login', loginController.login)
+router.get('/logout', loginController.logout)
 
-router.get('/cliente', userPanelController.showCliente)
-router.get('/cliente/editar/:id', userPanelController.showEditarPerfil)
-router.post('/cliente/editar/:id', userPanelController.atualizarPerfil)
+router.get('/cliente', userSession, userPanelController.showCliente)
+router.get('/cliente/editar/:id', userSession, userPanelController.showEditarPerfil)
+router.post('/cliente/editar/:id', userSession, userPanelController.atualizarPerfil)
 
 module.exports = router;

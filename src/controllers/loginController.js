@@ -49,6 +49,10 @@ const loginController = {
         }
         req.session.user = user.nome
         res.redirect('/home')
+    },
+    logout: (req,res) => {
+        delete req.session.user
+        res.redirect('/home');
     }
 }
 

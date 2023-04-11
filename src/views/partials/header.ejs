@@ -10,7 +10,9 @@
             <a href="/login">Cadastro</a>
             |
             <% if(locals.userSession){  %>
-                <a href=""> Olá, <%= userSession %></a>    
+                <a href=""> Olá, <%= userSession %></a>
+                |    
+                <a href="/logout">Sair</a>  
             <% } else { %>
                 <a href="/login">Login</a>
             <% } %> 
