@@ -4,6 +4,12 @@ const Avaliacoes = require('./Avaliacoes')
 
 module.exports = (sequelize, DataTypes) => {
     const Clientes = sequelize.define('Clientes', {
+        id: {
+            type:DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
         nome: {
             type:DataTypes.STRING(120),
             allowNull: false
