@@ -5,6 +5,9 @@ const loginController = require('./controllers/loginController')
 const userPanelController = require('./controllers/userPanelController')
 const userSession = require('./middlewares/userSession')
 
+
+
+
 const router = express.Router()
 
 //Rotas cliente

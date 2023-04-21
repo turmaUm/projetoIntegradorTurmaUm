@@ -33,8 +33,8 @@ create table produtos (
 	id INT not null auto_increment primary key,
     nome varchar(45) not null,
     preco decimal(9,2),
-    categoria_id INT not null,
-    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE
+    categoriaId INT not null,
+    FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 create table enderecos (
@@ -123,7 +123,7 @@ INSERT INTO formas_de_pagamento (nome) VALUES
     ('Transferência bancária'),
     ('Dinheiro');
 
-INSERT INTO produtos (nome, preco, categoria_id) VALUES 
+INSERT INTO produtos (nome, preco, categoriaId) VALUES 
     ('Produto1', 10.99, 1),
     ('Produto2', 29.99, 2),
     ('Produto3', 49.99, 3),

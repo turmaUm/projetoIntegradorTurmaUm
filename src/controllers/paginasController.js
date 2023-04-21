@@ -5,6 +5,8 @@ const produtosCarrinho = require('../../db/carrinho.json')
 const fs = require('fs')
 const path = require('path')
 
+const { Produtos, Categorias, sequelize } = require('../../database/models')
+
 const paginasController = {
 
     // ------------------------------------GET--------------------------------------
@@ -74,18 +76,16 @@ const paginasController = {
         // res.send("aqui esta o formulario")
         res.render("adm/form-add-produto.ejs")
     },
-    showSalvarProdutosAdm:(req,res)=>{
-        let produto = {
+    showSalvarProdutosAdm: async (req,res)=>{
+
+        let produto = await Produtos.create({
             nome: req.body.nome,
-            categoria: req.body.categoria,
-            fornecedor: req.body.fornecedor,
-            preco: req.body.preco
-        }
-        //acrescentando id ao produto (lixo: // produto.id = 1;)
-        avaliandoId(arraydb, produto)
-        // Adicionando o Produto        
-        addProduto(arraydb, produto)
-        //redirecionar pagina (lixo: // res.send(arraydb)  // Exibindo o arquivo json )
+            preco: req.body.preco,
+            categoriaId: req.body.categorias
+        })  
+
+        console.log(produto.toJSON())
+
         res.redirect('/produtos-adm')  
     },
     showCarrinho: (req, res) => {

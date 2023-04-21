@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { db, sequelize } = require('../../database/models')
 
 function avaliandoId(array, produto){
     if(array.length == 0){
