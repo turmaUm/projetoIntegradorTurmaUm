@@ -36,8 +36,8 @@ router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)
 router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
 
 //Rotas adm para editar produto 
-router.get('/editar/:id?', paginasController.editarProduto)
-router.put('/atualizar/:id?', paginasController.atualizarProduto)
+router.get('/editar/:id', paginasController.editarProduto)
+router.put('/atualizar/:id', paginasController.atualizarProduto)
 
 //Rotas adm para deletar um produto
 router.delete('/delete/:id?', paginasController.delete)

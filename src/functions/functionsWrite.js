@@ -10,17 +10,6 @@ function avaliandoId(array, produto){
     }
 }
 
-
-function salvaJson(array){
-    const caminho = path.resolve(__dirname + "../../../db/produtos.json");
-    fs.writeFileSync(caminho, JSON.stringify(array, null, 4));
-}
-
-function addProduto(array, produto){
-    array.push(produto)
-    salvaJson(array)
-}
-
 function editProduto (id, array, reqbody){
     let produto=array.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
     
@@ -47,10 +36,8 @@ function editProduto (id, array, reqbody){
 
 let produtoServices= {
     avaliandoId,
-    addProduto,
     editProduto,
-    delProduto,
-    salvaJson,
+    delProduto
 }
 
 module.exports = produtoServices;

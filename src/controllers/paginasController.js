@@ -138,24 +138,30 @@ const paginasController = {
     finalizarCompra: (req,res)=>{
         res.send(req.query)
     },
-    editarProduto: (req, res) => {
+    editarProduto: async (req, res) => {
         let {id} = req.params
-        let produto = arraydb.find(p=> p.id == id)
+
+        let produto = await Produtos.findAll({
+            where: {
+                id: id
+            }
+        })
+
+        produto = produto[0].toJSON()
+
         res.render('adm/form-edit-produto', {prod: produto})
     },
-    atualizarProduto:(req,res) => {
-        // res.send('Produto atualizado')
-        // let produto=arraydb.find(p=> p.id == id) // vc pega o valor do json que vc que modificar
-        // produto.nome = req.body.nome;
-        // produto.categoria = req.body.categoria;
-        // produto.fornecedor = req.body.fornecedor;
-        // produto.preco = req.body.preco;
-        // salvaJson(arraydb)
-        let {id} = req.params
-        let reqb = req.body // requisicao que vc recebe do body
-        editProduto(id, arraydb, reqb)
+    atualizarProduto: async (req,res) => {
 
-        // res.send(arraydb[id-1]);
+        let id = req.params.id
+
+        await Produtos.update({
+            nome: req.body.nome,
+            preco: req.body.preco,
+            categoriaId: req.body.categorias
+        },
+            { where: { id: id } });
+
         res.redirect('/produtos-adm')
     },
     delete:(req,res) =>{
