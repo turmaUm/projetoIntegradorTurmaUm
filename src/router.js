@@ -30,6 +30,7 @@ router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showClientesAdm)
 router.get('/produtos-adm', paginasController.showProdutosAdm)
 router.get('/pedidos-adm', paginasController.showPedidosAdm)
+router.get('/resultado-clientes-adm', paginasController.showResultadoClientesAdm)
 
 //Rotas adm cadastrar produto
 router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)

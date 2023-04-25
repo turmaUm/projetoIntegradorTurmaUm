@@ -42,63 +42,58 @@
           </div>
         </section>
 
-        <section class="table">
-          <div>
-            <div class="tableBusca">
+        <table class="table table-borderless">
+        
+          <div class="tableBusca">
+
+
+            <form class="tablepesquisar" action="/resultado-clientes-adm" method="GET">
+
               <div class="tableselect">
-                <select name="select" id="">
-                  <option value="10">10</option>
+                <select name="resPorBusca" id="resPorBusca">
+                  <option value="1">10</option>
                   <option value="20">20</option>
                   <option value="50">50</option>
                   <option value="100">100</option>
                 </select>
-                <label for="select">Resultados por busca</label>
+                <label for="resPorBusca">Resultados por busca</label>
               </div>
-              <div class="tablepesquisar">
-                <input
-                  type="text"
-                  name="pesquisar"
-                  id="pesquisar"
-                  placeholder="Pesquisar"
-                />
-              </div>
-            </div>
 
-            <table id="customers">
+              <input
+                type="text"
+                name="pesquisar"
+                id="pesquisar"
+                placeholder="Pesquisar">
+              <button type="submit"></button>
+            </form>
 
-              <tr>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Ações</th>
-              </tr>
-
-            <% clientes.forEach(user => { %>
-              
-              <tr>
-                <td><%= user.nome %></td>
-                <td><%= user.telefone %></td>
-                <td><%= user.email %></td>
-                <td>
-                  <div class="acao">
-                    <div>Editar</div>
-                    <div>x</div>
-                  </div>
-                </td>
-              </tr>
-
-            <% }) %>
-
-
-
-              <!-- <tr>
-                <td><input type="text" placeholder="Pesquisar nome" /></td>
-                <td><input type="text" placeholder="Pesquisar telefone" /></td>
-                <td><input type="text" placeholder="Pesquisar e-mail" /></td>
-              </tr> -->
-            </table>
-            <div></div>
           </div>
+            
+          <tr id="cabecalhotable">
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+
+          <% clientes.forEach(user => { %>
+            
+            <tr>
+              <td><%= user.nome %></td>
+              <td><%= user.telefone %></td>
+              <td><%= user.email %></td>
+              <td>
+                <div class="acao">
+                  <div>Editar</div>
+                  <div>x</div>
+                </div>
+              </td>
+            </tr>
+
+          <% }) %>
+
+          </table>
+          
           <div class="showresults">
             <ul>
               <li><button><</button></li>
@@ -116,3 +111,5 @@
     </main>
   </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

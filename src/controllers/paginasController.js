@@ -4,6 +4,7 @@ const produtosCliente = require('../../db/produtosCliente.json')
 const produtosCarrinho = require('../../db/carrinho.json')
 const fs = require('fs')
 const path = require('path')
+const {Op} = require('sequelize')
 
 const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, sequelize } = require('../../database/models')
 
@@ -90,6 +91,18 @@ const paginasController = {
         })
 
         res.render('adm/pedidos-adm', {pedidos})
+    },
+    showResultadoClientesAdm: async (req, res) => {
+        let consulta = req.query.pesquisar
+
+        let clientes = await Clientes.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: Number(req.query.resPorBusca)
+        })
+
+        res.render('adm/clientes-adm', {consulta, clientes})
     },
     showCadastrarProdutosAdm:(req,res) => {
         // res.send("aqui esta o formulario")

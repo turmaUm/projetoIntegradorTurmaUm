@@ -149,13 +149,18 @@ aside {
 }
 
 .table {
-  margin: 0 1% 0 1%;
+  border: none;
 }
 
 .tableBusca {
   display: flex;
   justify-content: space-between;
   margin: 1% 0 1% 1%;
+}
+
+#cabecalhotable {
+  text-align: center;
+  border-bottom: 1px solid black;
 }
 
 label {
