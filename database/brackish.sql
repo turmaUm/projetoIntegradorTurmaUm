@@ -12,6 +12,7 @@ create table administradores (
 create table clientes (
 	id INT not null auto_increment primary key,
     nome varchar(120) not null,
+    telefone bigint not null unique,
     email varchar(45) unique not null,
     senha varchar(64) not null,
     createdAt timestamp not null,
@@ -102,12 +103,12 @@ INSERT INTO administradores (nome, email, senha) VALUES
     ('Admin4', 'admin4@example.com', 'senha101'),
     ('Admin5', 'admin5@example.com', 'senha112');
 
-INSERT INTO clientes (nome, email, senha, createdAt) VALUES 
-    ('Cliente1', 'cliente1@example.com', 'senha123', NOW()),
-    ('Cliente2', 'cliente2@example.com', 'senha456', NOW()),
-    ('Cliente3', 'cliente3@example.com', 'senha789', NOW()),
-    ('Cliente4', 'cliente4@example.com', 'senha101', NOW()),
-    ('Cliente5', 'cliente5@example.com', 'senha112', NOW());
+INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES 
+    ('Cliente1', '11910706382', 'cliente1@example.com', 'senha123', NOW()),
+    ('Cliente2', '11910706383', 'cliente2@example.com', 'senha456', NOW()),
+    ('Cliente3', '11910706384', 'cliente3@example.com', 'senha789', NOW()),
+    ('Cliente4', '11910706385', 'cliente4@example.com', 'senha101', NOW()),
+    ('Cliente5', '11910706386', 'cliente5@example.com', 'senha112', NOW());
 
 INSERT INTO categorias (nome) VALUES 
     ('Categoria1'),

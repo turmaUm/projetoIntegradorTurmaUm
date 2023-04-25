@@ -10,7 +10,7 @@
             <span>BRACKISH</span>
           </div>
           <div class="ul">
-            <a href="/clientes-adm"><div>Clientes</div></a>
+            <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
             <a href="/produtos-adm"><div>Produtos</div></a>
             <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
           </div>
@@ -65,29 +65,37 @@
             </div>
 
             <table id="customers">
+
               <tr>
-                <th>Nome:</th>
-                <th>Telefone:</th>
-                <th>E-mail:</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
                 <th>Ações</th>
               </tr>
+
+            <% clientes.forEach(user => { %>
+              
               <tr>
-                <td>xxxxxxx</td>
-                <td>(xx) xxxxx-xxxx</td>
-                <td>xxxxx@xxxx.xxx</td>
+                <td><%= user.nome %></td>
+                <td><%= user.telefone %></td>
+                <td><%= user.email %></td>
                 <td>
                   <div class="acao">
-                    <div>editar</div>
+                    <div>Editar</div>
                     <div>x</div>
                   </div>
                 </td>
               </tr>
 
-              <tr>
+            <% }) %>
+
+
+
+              <!-- <tr>
                 <td><input type="text" placeholder="Pesquisar nome" /></td>
                 <td><input type="text" placeholder="Pesquisar telefone" /></td>
                 <td><input type="text" placeholder="Pesquisar e-mail" /></td>
-              </tr>
+              </tr> -->
             </table>
             <div></div>
           </div>

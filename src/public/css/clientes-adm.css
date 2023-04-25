@@ -69,12 +69,16 @@ aside {
 
 .ul div {
   padding: 5% 0 5% 0;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
 }
 
-.nth {
-  border-bottom: 1px solid white;
+#customers tr th {
+  text-align: center;
 }
+
+/* .nth {
+  border-bottom: 1px solid white;
+} */
 
 .ul a {
   text-decoration: none;
@@ -142,7 +146,7 @@ aside {
   align-items: center;
   justify-content: space-between;
   margin: 0 1% 1% 1%;
-  border-bottom: 0.3vh solid black;
+  /* border-bottom: 0.3vh solid black; */
 }
 
 .table {

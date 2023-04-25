@@ -5,7 +5,7 @@ const produtosCarrinho = require('../../db/carrinho.json')
 const fs = require('fs')
 const path = require('path')
 
-const { Produtos, Categorias, sequelize } = require('../../database/models')
+const { Produtos, Categorias, Clientes, sequelize } = require('../../database/models')
 
 const paginasController = {
 
@@ -61,8 +61,11 @@ const paginasController = {
     showLoginAdm: (req, res) => {
         res.render('adm/login-adm')
     },
-    showClientesAdm: (req, res) => {
-        res.render('adm/clientes-adm')
+    showClientesAdm: async (req, res) => {
+
+        let clientes = await Clientes.findAll()
+
+        res.render('adm/clientes-adm', {clientes})
     },
     showProdutosAdm: (req, res) => {
         let produtos = arraydb
