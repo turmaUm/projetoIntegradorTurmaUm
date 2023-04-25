@@ -84,7 +84,7 @@
             
                     <table id="customers">
                     <tr>
-                        <th>ID-produto</th>
+                        <th>Produto</th>
                         <th>Categoria</th>
                         <th>Fornecedor</th>
                         <th>Preço</th>
@@ -94,9 +94,9 @@
                         <% for( let produto of produtos ) { %>
                             <tr>
 
-                                <td><%= produto.id %>-<%= produto.nome %></td>
-                                <td><%= produto.categoria %></td>
-                                <td><%= produto.fornecedor %></td>
+                                <td><%= produto.id %> - <%= produto.nome %></td>
+                                <td><%= produto.categorias.nome %></td>
+                                <td><%= produto.fornecedores.nome %></td>
                                 <td><%= produto.preco %> </td>
                                 <td>
                                     <div class="acao">

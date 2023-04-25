@@ -146,13 +146,10 @@ aside {
   align-items: center;
   justify-content: space-between;
   margin: 0 1% 1% 1%;
-  /* border-bottom: 0.3vh solid black; */
 }
 
 .table {
-  /* border-bottom: 0.3vh solid #000; */
   margin: 0 1% 0 1%;
-  /* height: 70vh; */
 }
 
 .tableBusca {

@@ -9,6 +9,11 @@ create table administradores (
     senha varchar(64)
 );
 
+create table fornecedores (
+	id INT not null auto_increment primary key,
+    nome varchar(120) not null
+);
+
 create table clientes (
 	id INT not null auto_increment primary key,
     nome varchar(120) not null,
@@ -35,7 +40,9 @@ create table produtos (
     nome varchar(45) not null,
     preco decimal(9,2),
     categoriaId INT not null,
-    FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE
+    fornecedorId int not null,
+    FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (fornecedorId) REFERENCES fornecedores(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 create table enderecos (
@@ -124,12 +131,19 @@ INSERT INTO formas_de_pagamento (nome) VALUES
     ('Transferência bancária'),
     ('Dinheiro');
 
-INSERT INTO produtos (nome, preco, categoriaId) VALUES 
-    ('Produto1', 10.99, 1),
-    ('Produto2', 29.99, 2),
-    ('Produto3', 49.99, 3),
-    ('Produto4', 99.99, 4),
-    ('Produto5', 149.99, 5);
+INSERT INTO fornecedores (nome) VALUES 
+    ('Fornecedor 1'),
+    ('Fornecedor 2'),
+    ('Fornecedor 3'),
+    ('Fornecedor 4'),
+    ('Fornecedor 5');
+
+INSERT INTO produtos (nome, preco, categoriaId, fornecedorId) VALUES 
+    ('Produto1', 10.99, 1, 2),
+    ('Produto2', 29.99, 2, 4),
+    ('Produto3', 49.99, 3, 3),
+    ('Produto4', 99.99, 4, 3),
+    ('Produto5', 149.99, 5, 5);
 
 INSERT INTO enderecos (clientes_id, bairro, logradouro, numero, cidade, cep) VALUES 
     (1, 'Centro', 'Rua A', '123', 1, '12345-678'),

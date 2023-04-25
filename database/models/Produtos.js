@@ -2,6 +2,7 @@ const Categorias = require('./Categorias')
 const Avaliacoes = require('./Avaliacoes')
 const Imagens = require('./Imagens')
 const Pedidos = require('./Pedidos')
+const Fornecedores = require('./Fornecedores')
 
 module.exports = (sequelize, DataTypes) => {
     const Produtos = sequelize.define('Produtos', {
@@ -16,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
         categoriaId: {
             type: DataTypes.INTEGER,
             allownull: false
+        },
+        fornecedores_id: {
+            type: DataTypes.INTEGER,
+            allownull: false
         }
     }, {
         tableName: 'produtos',
@@ -27,9 +32,13 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'categoriaId',
             as: 'categorias'
         })
-        Produtos.hasMany(models.Avaliacoes, {
+        Produtos.hasOne(models.Avaliacoes, {
             foreignKey: 'produtos_id',
             as: 'avaliacoes'
+        })
+        Produtos.belongsTo(models.Fornecedores, {
+            foreignKey: 'fornecedores_id',
+            as: 'fornecedores'
         })
         Produtos.hasMany(models.Imagens, {
             foreignKey: 'imagens_id',
