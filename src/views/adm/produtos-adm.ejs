@@ -10,15 +10,12 @@
 
                 <div class="asidebloco1">
                     <div class="titulo-img">
-                        <!-- <a href="" id="logo2"><img src="img/earth.png" alt="logo2"></a> -->
                         <span>BRACKISH</span>
                     </div>
                     <div class="ul">
-                        <!-- <a href=""><div>Vendedores</div></a> -->
                         <a href="/clientes-adm"><div>Clientes</div></a>
                         <a href="/produtos-adm"><div>Produtos</div></a>
-                        <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
-                        <!-- <a href=""><div class="nth">Entregas</div></a> -->   
+                        <a href="/pedidos-adm"><div class="nth">Pedidos</div></a> 
                     </div>
                 </div>
                
@@ -34,12 +31,7 @@
             <section class="cabecalho">
                 <div class="userbar">
                     <div class="user">
-                        <div>
-                            <img src="" alt="" class="fotoUsuario">
-    
-                        </div>
-                        <span>Alexandre Assis Rezende Santos </span>
-    
+                        <span>Alexandre Assis Rezende Santos</span>
                     </div>
                     <nav>
 
@@ -52,10 +44,7 @@
                 <div class="cabecalhoInter">
                     <h3>Produtos</h3>
                     <div class="add">
-                        <a class = "btn" href="/cadastrar-produto-adm">+</a>
-                        <span>
-                            Adicionar
-                        </span>
+                        <button class="adicionar" type="button">Adicionar</button>
                     </div>
                 </div>
             </section>
@@ -98,33 +87,31 @@
                                 <td><%= produto.categorias.nome %></td>
                                 <td><%= produto.fornecedores.nome %></td>
                                 <td><%= produto.preco %> </td>
-                                <td>
-                                    <div class="acao">
+                                <!-- <td> -->
+                                    <!-- <div class="acao">
                                         <div>
-                                            <form action="/editar/<%= produto.id %>" method="get">
+                                            <form action="/editar/<% produto.id %>" method="get">
                                                 <button type="submit">Editar</button>
                                             </form>
                                         </div>
                                         <div>
-                                            <form action="/delete/<%= produto.id %>?_method=DELETE" method="post">
+                                            <form action="/delete/<% produto.id %>?_method=DELETE" method="post">
                                                 <button type="submit">Del</button>
                                             </form>
                                         </div>
             
-                                    </div>
+                                    </div> -->
+
+                                    <td>
+                                        <div class="acao">
+                                          <div>Editar</div>
+                                          <div>x</div>
+                                        </div>
+                                      </td>
                                 </td>
                             
                             </tr>
                         <% } %>
-                       
-           
-                    <tr>
-                        <td><input type="text" placeholder="Procurar Razão Social"></td>
-                        <td><input type="text" placeholder="Procurar Nome Fantasia"></td>
-                        <td><input type="text" placeholder="Procurar Telefone"></td>
-                        <td><input type="text" placeholder="Procurar Vendedor"></td>
-                        
-                    </tr>
                     </table>
                     <div>
         
