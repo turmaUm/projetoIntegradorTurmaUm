@@ -3,29 +3,33 @@
   <%- include('../partials/head', {css: ['clientes-adm.css']}) %>
 
   <body>
-    <main>
-      <aside>
-        <div class="asidebloco1">
-          <div class="titulo-img">
-            <span>BRACKISH</span>
-          </div>
-          <div class="ul">
-            <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
-            <a href="/produtos-adm"><div>Produtos</div></a>
-            <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
-          </div>
-        </div>
-      </aside>
 
-      <div class="mobile">
-        <div id="botao">|||</div>
+    <aside>
+
+      <div class="asidebloco">
+        <div class="titulo-img">
+          <span>BRACKISH</span>
+        </div>
+        <div class="ul">
+          <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
+          <a href="/produtos-adm"><div>Produtos</div></a>
+          <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
+        </div>
       </div>
 
+    </aside>
+    
+    <main>
+
+      <!-- <div class="mobile">
+        <div id="botao">|||</div>
+      </div> -->
+
       <section class="fullcontainer">
+
         <section class="cabecalho">
           <div class="userbar">
             <div class="user">
-
               <span>Alexandre Assis Rezende Santos</span>
             </div>
             <nav>
@@ -43,15 +47,14 @@
         </section>
 
         <table class="table table-borderless">
+
+          <form class="tablepesquisar" action="/resultado-clientes-adm" method="GET">
         
-          <div class="tableBusca">
+            <div class="filtros">
 
-
-            <form class="tablepesquisar" action="/resultado-clientes-adm" method="GET">
-
-              <div class="tableselect">
+              <div class="secaoFiltros">
                 <select name="resPorBusca" id="resPorBusca">
-                  <option value="1">10</option>
+                  <option value="10">10</option>
                   <option value="20">20</option>
                   <option value="50">50</option>
                   <option value="100">100</option>
@@ -59,15 +62,20 @@
                 <label for="resPorBusca">Resultados por busca</label>
               </div>
 
-              <input
-                type="text"
-                name="pesquisar"
-                id="pesquisar"
-                placeholder="Pesquisar">
-              <button type="submit"></button>
-            </form>
+              <div class="secaoPesquisa">
+                <input
+                  type="text"
+                  name="pesquisar"
+                  id="barraPesquisar"
+                  placeholder="Pesquisar">
+                <button type="submit"></button>
+              </div>
 
-          </div>
+            </div>
+            
+          </form>
+
+
             
           <tr id="cabecalhotable">
             <th>Nome</th>
@@ -92,21 +100,21 @@
 
           <% }) %>
 
-          </table>
+        </table>
           
           <div class="showresults">
             <ul>
               <li><button><</button></li>
-              <li><a href="">1</a></li>
-              <li><a href="">2</a></li>
-              <li><a href="">3</a></li>
-              <li><a href="">4</a></li>
-              <li><a href="">5</a></li>
-              <li><a href="">6</a></li>
+
+          <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
+            <li><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
+          <% } %>
+
               <li><button>></button></li>
+
             </ul>
           </div>
-        </section>
+
       </section>
     </main>
   </body>

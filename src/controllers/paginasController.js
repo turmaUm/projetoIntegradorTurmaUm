@@ -62,12 +62,6 @@ const paginasController = {
     showLoginAdm: (req, res) => {
         res.render('adm/login-adm')
     },
-    showClientesAdm: async (req, res) => {
-
-        let clientes = await Clientes.findAll()
-
-        res.render('adm/clientes-adm', {clientes})
-    },
     showProdutosAdm: async (req, res) => {
 
         let produtos = await Produtos.findAll({
@@ -93,16 +87,43 @@ const paginasController = {
         res.render('adm/pedidos-adm', {pedidos})
     },
     showResultadoClientesAdm: async (req, res) => {
-        let consulta = req.query.pesquisar
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
 
-        let clientes = await Clientes.findAll({
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numClientes = await Clientes.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numClientes/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const clientes = await Clientes.findAll({
             where: {
                 nome: {[Op.like]: `%${consulta}%`}
             },
-            limit: Number(req.query.resPorBusca)
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
         })
 
-        res.render('adm/clientes-adm', {consulta, clientes})
+        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
     },
     showCadastrarProdutosAdm:(req,res) => {
         // res.send("aqui esta o formulario")
