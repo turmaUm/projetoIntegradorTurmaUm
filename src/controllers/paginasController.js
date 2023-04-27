@@ -73,6 +73,53 @@ const paginasController = {
 
         res.render('adm/produtos-adm', {produtos})
     },
+    showResultadoProdutosAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numProdutos = await Produtos.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            include: [
+                {model: Categorias, as: 'categorias', attributes: ['nome']},
+                {model: Fornecedores, as: 'fornecedores', attributes: ['nome']}
+            ]
+        })
+
+        const totalDePaginas = Math.ceil(numProdutos/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const produtos = await Produtos.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            include: [
+                {model: Categorias, as: 'categorias', attributes: ['nome']},
+                {model: Fornecedores, as: 'fornecedores', attributes: ['nome']}
+            ],
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        })
+
+        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+    },
     showPedidosAdm: async (req, res) => {
 
         const pedidos = await Pedidos.findAll({
@@ -85,6 +132,44 @@ const paginasController = {
         })
 
         res.render('adm/pedidos-adm', {pedidos})
+    },
+    showResultadoPedidosAdm: async (req, res) => {
+         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const { count: numPedidos, rows: pedidos } = await Pedidos.findAndCountAll({
+            where: {
+                '$clientes.nome$': {[Op.like]: `%${consulta}%`}
+            }, 
+            include: [
+                {model: Enderecos, as: 'enderecos', attributes: ['logradouro', 'numero' ] },
+                {model: Produtos, as: 'produtos', through: 'produtos_pedidos', attributes: ['id', 'nome' ] },
+                {model: Clientes, as: 'clientes', attributes: ['nome' ] },
+                {model: FormasDePagamento, as: 'formas_de_pagamento', attributes: ['nome' ] }
+            ]
+        })
+
+        const totalDePaginas = Math.ceil(numPedidos/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        res.render('adm/pedidos-adm', {consulta, pedidos, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+
     },
     showResultadoClientesAdm: async (req, res) => {
         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar

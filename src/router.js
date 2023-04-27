@@ -28,9 +28,12 @@ router.get('/politica', userSession, paginasController.showPolitica)
 //Rotas adm
 router.get('/login-adm', paginasController.showLoginAdm)
 router.get('/clientes-adm', paginasController.showResultadoClientesAdm)
-router.get('/produtos-adm', paginasController.showProdutosAdm)
-router.get('/pedidos-adm', paginasController.showPedidosAdm)
+router.get('/produtos-adm', paginasController.showResultadoProdutosAdm)
+router.get('/pedidos-adm', paginasController.showResultadoPedidosAdm)
 router.get('/resultado-clientes-adm', paginasController.showResultadoClientesAdm)
+router.get('/resultado-produtos-adm', paginasController.showResultadoProdutosAdm)
+router.get('/resultado-pedidos-adm', paginasController.showResultadoPedidosAdm)
+
 
 //Rotas adm cadastrar produto
 router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)

@@ -1,4 +1,4 @@
-drop database if exists brackish;
+	drop database if exists brackish;
 	create database brackish;
 	use brackish;
 
@@ -40,9 +40,9 @@ create table produtos (
     nome varchar(45) not null,
     preco decimal(9,2),
     categoriaId INT not null,
-    fornecedorId int not null,
+    fornecedores_id int not null,
     FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (fornecedorId) REFERENCES fornecedores(id) ON DELETE RESTRICT ON UPDATE CASCADE
+    FOREIGN KEY (fornecedores_id) REFERENCES fornecedores(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 create table enderecos (
@@ -116,25 +116,25 @@ INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES
     ('Cliente3', '11910706384', 'cliente3@example.com', 'senha789', NOW()),
     ('Cliente4', '11910706385', 'cliente4@example.com', 'senha101', NOW()),
     ('Cliente5', '11910706386', 'cliente5@example.com', 'senha112', NOW()),
-    ('João Silva', '11998765432', 'joao.silva@example.com', 'senha123', NOW()),
-    ('Maria Souza', '11987654321', 'maria.souza@example.com', 'senha456', NOW()),
-    ('Pedro Santos', '11976543210', 'pedro.santos@example.com', 'senha789', NOW()),
-    ('Fernanda Oliveira', '11965432109', 'fernanda.oliveira@example.com', 'senha101', NOW()),
-    ('Ricardo Rocha', '11954321098', 'ricardo.rocha@example.com', 'senha112', NOW()),
-    ('Camila Almeida', '11943210987', 'camila.almeida@example.com', 'senha123', NOW()),
-    ('Lucas Ferreira', '11932109876', 'lucas.ferreira@example.com', 'senha456', NOW()),
-    ('Amanda Costa', '11921098765', 'amanda.costa@example.com', 'senha789', NOW()),
-    ('Gustavo Pereira', '11910987654', 'gustavo.pereira@example.com', 'senha101', NOW()),
-    ('Isabela Lima', '11909876543', 'isabela.lima@example.com', 'senha112', NOW()),
-    ('Renato Santos', '11998765432', 'renato.santos@example.com', 'senha123', NOW()),
-    ('Larissa Oliveira', '11987654321', 'larissa.oliveira@example.com', 'senha456', NOW()),
-    ('Felipe Oliveira', '11987654321', 'felipe.oliveira@example.com', 'senha123', NOW()),
-    ('Julia Santos', '11976543210', 'julia.santos@example.com', 'senha456', NOW()),
-    ('Roberto Silva', '11965432109', 'roberto.silva@example.com', 'senha789', NOW()),
-    ('Ana Clara Souza', '11954321098', 'anaclara.souza@example.com', 'senha101', NOW()),
-    ('Gabriel Pereira', '11943210987', 'gabriel.pereira@example.com', 'senha112', NOW()),
-    ('Mariana Almeida', '11932109876', 'mariana.almeida@example.com', 'senha123', NOW()),
-    ('Pedro Henrique Lima', '11921098765', 'pedrohenrique.lima@example.com', 'senha456', NOW());
+    ('João Silva', '11998765532', 'joao.silva@example.com', 'senha123', NOW()),
+    ('Maria Souza', '11987454321', 'maria.souza@example.com', 'senha456', NOW()),
+    ('Pedro Santos', '11976545210', 'pedro.santos@example.com', 'senha789', NOW()),
+    ('Fernanda Oliveira', '11962432109', 'fernanda.oliveira@example.com', 'senha101', NOW()),
+    ('Ricardo Rocha', '11954321198', 'ricardo.rocha@example.com', 'senha112', NOW()),
+    ('Camila Almeida', '11943219987', 'camila.almeida@example.com', 'senha123', NOW()),
+    ('Lucas Ferreira', '11932189876', 'lucas.ferreira@example.com', 'senha456', NOW()),
+    ('Amanda Costa', '11921498765', 'amanda.costa@example.com', 'senha789', NOW()),
+    ('Gustavo Pereira', '11918987654', 'gustavo.pereira@example.com', 'senha101', NOW()),
+    ('Isabela Lima', '11909871543', 'isabela.lima@example.com', 'senha112', NOW()),
+    ('Renato Santos', '11998365432', 'renato.santos@example.com', 'senha123', NOW()),
+    ('Larissa Oliveira', '11986654321', 'larissa.oliveira@example.com', 'senha456', NOW()),
+    ('Felipe Oliveira', '11987654329', 'felipe.oliveira@example.com', 'senha123', NOW()),
+    ('Julia Santos', '11976543215', 'julia.santos@example.com', 'senha456', NOW()),
+    ('Roberto Silva', '11965437109', 'roberto.silva@example.com', 'senha789', NOW()),
+    ('Ana Clara Souza', '11954323098', 'anaclara.souza@example.com', 'senha101', NOW()),
+    ('Gabriel Pereira', '11948210987', 'gabriel.pereira@example.com', 'senha112', NOW()),
+    ('Mariana Almeida', '11932108876', 'mariana.almeida@example.com', 'senha123', NOW()),
+    ('Pedro Henrique Lima', '11924098765', 'pedrohenrique.lima@example.com', 'senha456', NOW());
     
 
 INSERT INTO categorias (nome) VALUES 
@@ -158,7 +158,7 @@ INSERT INTO fornecedores (nome) VALUES
     ('Fornecedor 4'),
     ('Fornecedor 5');
 
-INSERT INTO produtos (nome, preco, categoriaId, fornecedorId) VALUES 
+INSERT INTO produtos (nome, preco, categoriaId, fornecedores_id) VALUES 
     ('Produto1', 10.99, 1, 2),
     ('Produto2', 29.99, 2, 4),
     ('Produto3', 49.99, 3, 3),
