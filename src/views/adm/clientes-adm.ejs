@@ -105,13 +105,13 @@
           
           <div class="showresults">
             <ul>
-              <li><button><</button></li>
+              <li><button> < </button></li>
 
           <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
-            <li><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
+            <li <%= i == pagina ? ' style=background-color:red ' : ''  %> ><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
           <% } %>
 
-              <li><button>></button></li>
+              <li><a href="/clientes-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>
 
             </ul>
           </div>
