@@ -36,7 +36,7 @@
             </nav>
           </div>
           <div class="cabecalhoInter">
-            <h3>Clientes</h3>
+            <h3>Categorias</h3>
             <div class="add">
               <button class="adicionar" type="button">Adicionar</button>
             </div>
@@ -60,13 +60,17 @@
               </div>
 
               <div class="secaoPesquisa">
+                
                 <input
                   type="text"
                   name="pesquisar"
                   id="barraPesquisar"
                   value="<%= consulta %>"
-                  placeholder="Pesquisar">
-                <button type="submit"></button>
+                  placeholder="Pesquisar"/>
+
+                <button type="submit">
+                    <img src="img/search.png" alt="">
+                </button>
               </div>
 
             </div>
@@ -76,18 +80,16 @@
 
             
           <tr id="cabecalhotable">
+            <th>ID</th>
             <th>Nome</th>
-            <th>Telefone</th>
-            <th>E-mail</th>
             <th>Ações</th>
           </tr>
 
-          <% clientes.forEach(user => { %>
+          <% categorias.forEach(categoria => { %>
             
             <tr>
-              <td><%= user.nome %></td>
-              <td><%= user.telefone %></td>
-              <td><%= user.email %></td>
+              <td><%= categoria.id %></td>
+              <td><%= categoria.nome %></td>
               <td>
                 <div class="acao">
                   <div>Editar</div>
@@ -102,13 +104,13 @@
           
           <div class="showresults">
             <ul>
-              <li><a href="/clientes-adm?pagina=<%= pagina - 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> < </a></li>
+              <li><a href="/categorias-adm?pagina=<%= pagina - 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> < </a></li>
 
           <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
             <li <%= i == pagina ? ' style=background-color:red ' : ''  %> ><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
           <% } %>
 
-              <li><a href="/clientes-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>
+              <li><a href="/categorias-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>
 
             </ul>
           </div>

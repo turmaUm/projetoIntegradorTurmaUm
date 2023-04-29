@@ -210,6 +210,45 @@ const paginasController = {
 
         res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
     },
+    showResultadoCategoriasAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numCategorias = await Clientes.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numCategorias/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const categorias = await Categorias.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        }) 
+
+        res.render('adm/categorias-adm', {consulta, categorias, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+    },
     showCadastrarProdutosAdm:(req,res) => {
         // res.send("aqui esta o formulario")
         res.render("adm/form-add-produto.ejs")

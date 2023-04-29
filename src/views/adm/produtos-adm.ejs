@@ -14,16 +14,13 @@
           <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
           <a href="/produtos-adm"><div>Produtos</div></a>
           <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
+          <a href="/categorias-adm"><div class="nth">Categorias</div></a>
         </div>
       </div>
 
     </aside>
     
     <main>
-
-      <!-- <div class="mobile">
-        <div id="botao">|||</div>
-      </div> -->
 
       <section class="fullcontainer">
 
@@ -122,18 +119,18 @@
 
         </table>
           
-          <div class="showresults">
-            <ul>
-              <li><button><</button></li>
+        <div class="showresults">
+          <ul>
+            <li><a href="/produtos-adm?pagina=<%= pagina - 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> < </a></li>
 
-          <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
-            <li><a href="/produtos-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
-          <% } %>
+        <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
+          <li <%= i == pagina ? ' style=background-color:red ' : ''  %> ><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
+        <% } %>
 
-              <li><button>></button></li>
+            <li><a href="/produtos-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>
 
-            </ul>
-          </div>
+          </ul>
+        </div>
 
       </section>
     </main>

@@ -27,6 +27,7 @@ router.get('/politica', userSession, paginasController.showPolitica)
 
 //Rotas adm
 router.get('/login-adm', paginasController.showLoginAdm)
+router.get('/categorias-adm', paginasController.showResultadoCategoriasAdm)
 router.get('/clientes-adm', paginasController.showResultadoClientesAdm)
 router.get('/produtos-adm', paginasController.showResultadoProdutosAdm)
 router.get('/pedidos-adm', paginasController.showResultadoPedidosAdm)
