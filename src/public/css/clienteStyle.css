@@ -169,3 +169,7 @@
 .desejos h1 {
 	padding-bottom: 35px;
 }
+
+.cliente, .pedidos, .servico, .desejos {
+	text-align: center;
+}

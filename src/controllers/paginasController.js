@@ -4,12 +4,14 @@ const produtosCliente = require('../../db/produtosCliente.json')
 const produtosCarrinho = require('../../db/carrinho.json')
 const fs = require('fs')
 const path = require('path')
+const {Op} = require('sequelize')
 
-const { Produtos, Categorias, sequelize } = require('../../database/models')
+const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, sequelize } = require('../../database/models')
 
 const paginasController = {
 
-    // ------------------------------------GET--------------------------------------
+    // ------------------------------------ GET/SHOW CLIENTE --------------------------------------
+
     showEndereco: (req, res) => {
         res.render('compra/checkout-endereco')
     },
@@ -58,23 +60,231 @@ const paginasController = {
     showPolitica: (req, res) => {
         res.render('cliente/politica')
     },
+    showCarrinho: (req, res) => {
+        
+        res.render('compra/carrinho', {produtos: req.session.carrinho})
+        // console.log(req.session.carrinho)
+    },
+
+    // ------------------------------------ GET/SHOW ADM --------------------------------
+
     showLoginAdm: (req, res) => {
         res.render('adm/login-adm')
     },
-    showClientesAdm: (req, res) => {
-        res.render('adm/clientes-adm')
+    showProdutosAdm: async (req, res) => {
+
+        let produtos = await Produtos.findAll({
+            include: [
+                {model: Categorias, as: 'categorias', attributes: ['nome']},
+                {model: Fornecedores, as: 'fornecedores', attributes: ['nome']}
+            ]
+        })
+
+        res.render('adm/produtos-adm', {produtos})
     },
-    showProdutosAdm: (req, res) => {
-        let produtos = arraydb
-        let value = req.query.value
-        res.render('adm/produtos-adm', {produtos, value})
+    showResultadoProdutosAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numProdutos = await Produtos.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            include: [
+                {model: Categorias, as: 'categorias', attributes: ['nome']},
+                {model: Fornecedores, as: 'fornecedores', attributes: ['nome']}
+            ]
+        })
+
+        const totalDePaginas = Math.ceil(numProdutos/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const produtos = await Produtos.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            include: [
+                {model: Categorias, as: 'categorias', attributes: ['nome']},
+                {model: Fornecedores, as: 'fornecedores', attributes: ['nome']}
+            ],
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        })
+
+        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
     },
-    showPedidosAdm: (req, res) => {
-        res.render('adm/pedidos-adm')
+    showPedidosAdm: async (req, res) => {
+
+        const pedidos = await Pedidos.findAll({
+            include: [
+                {model: Enderecos, as: 'enderecos', attributes: ['logradouro', 'numero' ] },
+                {model: Produtos, as: 'produtos', through: 'produtos_pedidos', attributes: ['id', 'nome' ] },
+                {model: Clientes, as: 'clientes', attributes: ['nome' ] },
+                {model: FormasDePagamento, as: 'formas_de_pagamento', attributes: ['nome' ] }
+            ]
+        })
+
+        res.render('adm/pedidos-adm', {pedidos})
+    },
+    showResultadoPedidosAdm: async (req, res) => {
+         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const { count: numPedidos, rows: pedidos } = await Pedidos.findAndCountAll({
+            where: {
+                '$clientes.nome$': {[Op.like]: `%${consulta}%`}
+            }, 
+            include: [
+                {model: Enderecos, as: 'enderecos', attributes: ['logradouro', 'numero' ] },
+                {model: Produtos, as: 'produtos', through: 'produtos_pedidos', attributes: ['id', 'nome' ] },
+                {model: Clientes, as: 'clientes', attributes: ['nome' ] },
+                {model: FormasDePagamento, as: 'formas_de_pagamento', attributes: ['nome' ] }
+            ]
+        })
+
+        const totalDePaginas = Math.ceil(numPedidos/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        res.render('adm/pedidos-adm', {consulta, pedidos, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+
+    },
+    showResultadoClientesAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numClientes = await Clientes.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numClientes/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const clientes = await Clientes.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        })
+
+        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+    },
+    showResultadoCategoriasAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numCategorias = await Clientes.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numCategorias/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const categorias = await Categorias.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        }) 
+
+        res.render('adm/categorias-adm', {consulta, categorias, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
     },
     showCadastrarProdutosAdm:(req,res) => {
-        // res.send("aqui esta o formulario")
-        res.render("adm/form-add-produto.ejs")
+        res.render("adm//forms/form-add-produto.ejs")
+    },
+    showCadastrarCategoriaAdm: async (req, res) => {
+        res.render("adm/forms/form-add-categoria")
+    },
+    showEditCategoriaAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-categoria")
+    },
+    showEditClienteAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-cliente")
+    },
+    showEditPedidoAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-pedido")
+    },
+    ShowEditProduto: async (req, res) => {
+        let {id} = req.params
+
+        let produto = await Produtos.findAll({
+            where: {
+                id: id
+            }
+        })
+
+        produto = produto[0].toJSON()
+
+        res.render('adm/forms/form-edit-produto', {prod: produto})
     },
     showSalvarProdutosAdm: async (req,res)=>{
 
@@ -88,14 +298,9 @@ const paginasController = {
 
         res.redirect('/produtos-adm')  
     },
-    showCarrinho: (req, res) => {
-        
-        res.render('compra/carrinho', {produtos: req.session.carrinho})
-        // console.log(req.session.carrinho)
-    },
 
+    // ------------------------------------ POST CLIENTE --------------------------------------
     
-    // ------------------------------------POST--------------------------------------
     addCarrinho:(req,res)=>{
         
         let addCarrinho = produtosCliente.find(p=>p.id == req.query.id)
@@ -138,19 +343,10 @@ const paginasController = {
     finalizarCompra: (req,res)=>{
         res.send(req.query)
     },
-    editarProduto: async (req, res) => {
-        let {id} = req.params
 
-        let produto = await Produtos.findAll({
-            where: {
-                id: id
-            }
-        })
 
-        produto = produto[0].toJSON()
+    // ------------------------------------ POST ADM ------------------------------------------
 
-        res.render('adm/form-edit-produto', {prod: produto})
-    },
     atualizarProduto: async (req,res) => {
 
         let id = req.params.id
