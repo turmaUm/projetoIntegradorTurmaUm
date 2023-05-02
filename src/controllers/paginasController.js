@@ -10,7 +10,8 @@ const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, Formas
 
 const paginasController = {
 
-    // ------------------------------------GET--------------------------------------
+    // ------------------------------------ GET/SHOW CLIENTE --------------------------------------
+
     showEndereco: (req, res) => {
         res.render('compra/checkout-endereco')
     },
@@ -59,6 +60,14 @@ const paginasController = {
     showPolitica: (req, res) => {
         res.render('cliente/politica')
     },
+    showCarrinho: (req, res) => {
+        
+        res.render('compra/carrinho', {produtos: req.session.carrinho})
+        // console.log(req.session.carrinho)
+    },
+
+    // ------------------------------------ GET/SHOW ADM --------------------------------
+
     showLoginAdm: (req, res) => {
         res.render('adm/login-adm')
     },
@@ -264,7 +273,7 @@ const paginasController = {
     showEditPedidoAdm: async (req, res) => {
         res.render("adm/forms/form-edit-pedido")
     },
-    editarProduto: async (req, res) => {
+    ShowEditProduto: async (req, res) => {
         let {id} = req.params
 
         let produto = await Produtos.findAll({
@@ -289,14 +298,9 @@ const paginasController = {
 
         res.redirect('/produtos-adm')  
     },
-    showCarrinho: (req, res) => {
-        
-        res.render('compra/carrinho', {produtos: req.session.carrinho})
-        // console.log(req.session.carrinho)
-    },
 
+    // ------------------------------------ POST CLIENTE --------------------------------------
     
-    // ------------------------------------POST--------------------------------------
     addCarrinho:(req,res)=>{
         
         let addCarrinho = produtosCliente.find(p=>p.id == req.query.id)
@@ -339,6 +343,10 @@ const paginasController = {
     finalizarCompra: (req,res)=>{
         res.send(req.query)
     },
+
+
+    // ------------------------------------ POST ADM ------------------------------------------
+
     atualizarProduto: async (req,res) => {
 
         let id = req.params.id

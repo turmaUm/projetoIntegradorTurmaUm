@@ -5,9 +5,6 @@ const loginController = require('./controllers/loginController')
 const userPanelController = require('./controllers/userPanelController')
 const userSession = require('./middlewares/userSession')
 
-
-
-
 const router = express.Router()
 
 //Rotas cliente
@@ -36,23 +33,23 @@ router.get('/resultado-produtos-adm', paginasController.showResultadoProdutosAdm
 router.get('/resultado-pedidos-adm', paginasController.showResultadoPedidosAdm)
 
 
-//Rotas adm cadastrar produto
+//Rotas adm cadastrar
 router.get("/adm/cadastrar-produto", paginasController.showCadastrarProdutosAdm)
 router.get("/adm/cadastrar-categoria", paginasController.showCadastrarCategoriaAdm)
 router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
 
-//Rotas adm para editar produto 
-router.get('/adm/produtos/editar/:id', paginasController.editarProduto)
+//Rotas adm para editar
+router.get('/adm/produtos/editar/:id', paginasController.ShowEditProduto)
 router.put('/adm/produtos/atualizar/:id', paginasController.atualizarProduto)
-
 router.get('/adm/categorias/editar/:id', paginasController.showEditCategoriaAdm)
 router.get('/adm/clientes/editar/:id', paginasController.showEditClienteAdm)
 router.get('/adm/pedidos/editar/:id', paginasController.showEditPedidoAdm)
 
-
-
-//Rotas adm para deletar um produto
+//Rotas adm para deletar
 router.delete('/delete/:id?', paginasController.delete)
+
+
+// ---------------------------------- EM PROGRESSO -------------------------------------
 
 router.get('/login', userSession, loginController.showLogin)
 router.post('/cadastro', loginController.userRegister)
