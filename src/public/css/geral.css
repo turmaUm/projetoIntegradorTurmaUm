@@ -6,3 +6,7 @@ body {
 * {
     box-sizing: border-box;
 }
+
+.listaElementos td:last-child, .listaElementos th:last-child {
+    width: 125px;
+}

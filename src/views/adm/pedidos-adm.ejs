@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', {css: ['clientes-adm.css']}) %>
+  <%- include('../partials/head', {css: ['geral.css', 'clientes-adm.css']}) %>
 
   <body>
 
@@ -43,40 +43,40 @@
           </div>
         </section>
 
-        <table class="table table-borderless">
-
-          <form class="tablepesquisar" action="/resultado-pedidos-adm" method="GET">
+        <form class="tablepesquisar" action="/resultado-pedidos-adm" method="GET">
         
-            <div class="filtros">
+          <div class="filtros">
 
-              <div class="secaoFiltros">
-                <select name="resPorBusca" id="resPorBusca">
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-                <label for="resPorBusca">Resultados por busca</label>
-              </div>
-
-              <div class="secaoPesquisa">
-                <input
-                  type="text"
-                  name="pesquisar"
-                  id="barraPesquisar"
-                  placeholder="Pesquisar">
-                <button type="submit"></button>
-              </div>
-
+            <div class="secaoFiltros">
+              <select name="resPorBusca" id="resPorBusca">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <label for="resPorBusca">Resultados por busca</label>
             </div>
-            
-          </form>
 
+            <div class="secaoPesquisa">
+              <input
+                type="text"
+                name="pesquisar"
+                id="barraPesquisar"
+                placeholder="Pesquisar">
+              <button type="submit">
+                <img src="img/search.png" alt="">
+              </button>
+            </div>
 
-            
+          </div>
+          
+        </form>
+
+        <table class="table table-borderless listaElementos">
+
           <tr id="cabecalhotable">
             <th>Cliente</th>
-            <th>ID-produto</th>
+            <th>Produto</th>
             <th>Endereço</th>
             <th>Forma de Pagamento</th>
             <th>Ações</th>
@@ -86,7 +86,13 @@
 
               <tr>
                 <td><%= pedido.clientes.nome %></td>
-                <td><%= pedido.produtos.nome %></td>
+
+                <td>
+                  <% pedido.produtos.forEach(produto => { %>
+                    #<%= produto.id %> - <%= produto.nome %> <br/>
+                  <% }) %>
+                </td>
+
                 <td>
                   <%= pedido.enderecos.logradouro %>, <%=
                   pedido.enderecos.numero %>

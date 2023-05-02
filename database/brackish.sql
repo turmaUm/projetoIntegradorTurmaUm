@@ -181,6 +181,8 @@ INSERT INTO pedidos (enderecos_id, clientes_id, formas_de_pagamento_id, createdA
 
 INSERT INTO produtos_pedidos (pedidos_id, produtos_id, quantidade) VALUES 
     (1, 1, 2),
+	(1, 3, 2),
+	(1, 2, 1),
     (2, 2, 1),
     (3, 3, 3),
     (4, 4, 1),

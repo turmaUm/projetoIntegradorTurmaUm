@@ -127,7 +127,7 @@ const paginasController = {
             offset: (pagina - 1) * resultadoPorBusca
         })
 
-        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
     },
     showPedidosAdm: async (req, res) => {
 
@@ -217,7 +217,7 @@ const paginasController = {
             offset: (pagina - 1) * resultadoPorBusca
         })
 
-        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
     },
     showResultadoCategoriasAdm: async (req, res) => {
         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', {css: ['clientes-adm.css']}) %>
+  <%- include('../partials/head', {css: ['geral.css', 'clientes-adm.css']}) %>
 
   <body>
 
@@ -8,7 +8,7 @@
 
       <div class="asidebloco">
         <div class="titulo-img">
-          <span>BRACISH</span>
+          <span>BRACKISH</span>
         </div>
         <div class="ul">
           <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
@@ -43,42 +43,40 @@
           </div>
         </section>
 
-        <table class="table table-borderless">
-
-          <form class="tablepesquisar" id="formPesquisar" action="/resultado-clientes-adm" method="GET">
+        <form class="tablepesquisar" id="formPesquisar" action="/resultado-clientes-adm" method="GET">
         
-            <div class="filtros">
+          <div class="filtros">
 
-              <div class="secaoFiltros">
-                <select name="resPorBusca" id="resPorBusca">
-                  <option value="10" <%= resultadoPorBusca==10 ? 'selected' : '' %>>10</option>
-                  <option value="20" <%= resultadoPorBusca==20 ? 'selected' : '' %>>20</option>
-                  <option value="50" <%= resultadoPorBusca==50 ? 'selected' : '' %>>50</option>
-                  <option value="100" <%= resultadoPorBusca==100 ? 'selected' : '' %>>100</option>
-                </select>
-                <label for="resPorBusca">Resultados por busca</label>
-              </div>
-
-              <div class="secaoPesquisa">
-                
-                <input
-                  type="text"
-                  name="pesquisar"
-                  id="barraPesquisar"
-                  value="<%= consulta %>"
-                  placeholder="Pesquisar"/>
-
-                <button type="submit">
-                    <img src="img/search.png" alt="">
-                </button>
-              </div>
-
+            <div class="secaoFiltros">
+              <select name="resPorBusca" id="resPorBusca">
+                <option value="10" <%= resultadoPorBusca==10 ? 'selected' : '' %>>10</option>
+                <option value="20" <%= resultadoPorBusca==20 ? 'selected' : '' %>>20</option>
+                <option value="50" <%= resultadoPorBusca==50 ? 'selected' : '' %>>50</option>
+                <option value="100" <%= resultadoPorBusca==100 ? 'selected' : '' %>>100</option>
+              </select>
+              <label for="resPorBusca">Resultados por busca</label>
             </div>
-            
-          </form>
 
+            <div class="secaoPesquisa">
+              
+              <input
+                type="text"
+                name="pesquisar"
+                id="barraPesquisar"
+                value="<%= consulta %>"
+                placeholder="Pesquisar"/>
 
-            
+              <button type="submit">
+                  <img src="img/search.png" alt="">
+              </button>
+            </div>
+
+          </div>
+          
+        </form>
+
+        <table class="table table-borderless listaElementos">
+
           <tr id="cabecalhotable">
             <th>ID</th>
             <th>Nome</th>
