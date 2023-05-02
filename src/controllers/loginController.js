@@ -2,7 +2,7 @@ const clientes = require('../../db/clientes.json');
 const bcrypt = require('bcrypt'); 
 const path = require('path')
 const fs = require('fs');
-const { Clientes } = require('../../database/models'); // Usado desestruturação para importar o model cliente.
+const { Clientes, Administradores } = require('../../database/models'); // Usado desestruturação para importar o model cliente.
 // Na linha 07, foi apresentado uma outra forma de importar o model 'cliente'
 // const Clientes = require('../../database/models/Clientes');
 
@@ -53,6 +53,31 @@ const loginController = {
     logout: (req,res) => {
         delete req.session.user
         res.redirect('/home');
+    },
+    showLoginAdm: (req, res) => {
+        res.render('adm/login-adm')
+    },
+    loginAdm: async (req, res) => {
+        const { email, senha } = req.body
+        const user = await Administradores.findAll({
+            where: {
+                email
+            }
+        })
+        //Verificar se o usuário foi encontrado
+        if(user.length <= 0){
+            // res.send('Nenhum usuario encontrado')
+            return res.render('adm/login-adm', {error: "Falha no login"})
+        }else{
+            const validaSenha = bcrypt.compareSync(senha, user[0].senha);
+            if(!validaSenha){
+               return res.render('adm/login-adm', {error: "Falha no login"}) 
+            }
+
+            req.session.admLogado = true;
+
+            res.redirect('/clientes-adm')
+        }
     }
 }
 

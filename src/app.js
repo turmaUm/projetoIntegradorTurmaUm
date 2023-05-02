@@ -21,6 +21,21 @@ app.use(function carrinhoLocal(req,res,next){
     next()
 })
 
+// middleware adm
+
+servidor.use(
+
+    (req, res, next) => {
+        if(req.session.admLogado){
+            console.log("Administrador logado....");
+        } else {
+            console.log("Visita qualquer... ");
+        }
+        next();
+    }
+
+)
+
 
 //Usa roteador para controladores
 app.use(router);

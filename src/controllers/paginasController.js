@@ -61,16 +61,12 @@ const paginasController = {
         res.render('cliente/politica')
     },
     showCarrinho: (req, res) => {
-        
         res.render('compra/carrinho', {produtos: req.session.carrinho})
         // console.log(req.session.carrinho)
     },
 
     // ------------------------------------ GET/SHOW ADM --------------------------------
 
-    showLoginAdm: (req, res) => {
-        res.render('adm/login-adm')
-    },
     showProdutosAdm: async (req, res) => {
 
         let produtos = await Produtos.findAll({
