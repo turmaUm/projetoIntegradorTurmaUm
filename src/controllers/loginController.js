@@ -30,12 +30,16 @@ const loginController = {
 
         res.redirect('/home')
     },
-    login: (req, res) => {
+    login: async (req, res) => {
         const { email, senha } = req.body
-        const user = clientes.find( user => user.email == email)
+        const user = await Clientes.findAll({
+            where: {
+                email
+            }
+        })
         //Verificar se o usuário foi encontrado
         if(user === undefined){
-            res.send('Falha no login')
+            res.render('/login', {error: "Falha no login"})
         }
         const validaSenha = bcrypt.compareSync(senha, user.senha);
         if(!validaSenha){
