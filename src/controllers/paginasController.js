@@ -6,7 +6,7 @@ const fs = require('fs')
 const path = require('path')
 const {Op} = require('sequelize')
 
-const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, sequelize } = require('../../database/models')
+const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, Administradores, sequelize } = require('../../database/models')
 
 const paginasController = {
 
@@ -219,6 +219,45 @@ const paginasController = {
 
         res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
     },
+    showResultadoAdminsAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numAdms = await Administradores.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numAdms/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const adms = await Administradores.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        })
+
+        res.render('adm/admins-adm', {consulta, adms, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
+    },
     showResultadoCategoriasAdm: async (req, res) => {
         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
 
@@ -264,6 +303,9 @@ const paginasController = {
     showCadastrarCategoriaAdm: async (req, res) => {
         res.render("adm/forms/form-add-categoria")
     },
+    showCadastrarAdminAdm: async (req, res) => {
+        res.render("adm/forms/form-add-adm")
+    },
     showEditCategoriaAdm: async (req, res) => {
         res.render("adm/forms/form-edit-categoria")
     },
@@ -272,6 +314,9 @@ const paginasController = {
     },
     showEditPedidoAdm: async (req, res) => {
         res.render("adm/forms/form-edit-pedido")
+    },
+    showEditAdminAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-adm")
     },
     ShowEditProduto: async (req, res) => {
         let {id} = req.params

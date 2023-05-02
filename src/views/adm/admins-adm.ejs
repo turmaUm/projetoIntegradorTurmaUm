@@ -37,9 +37,9 @@
             </nav>
           </div>
           <div class="cabecalhoInter">
-            <h3>Clientes</h3>
+            <h3>Administradores</h3>
             <div class="add">
-              <button class="adicionar" type="button">Adicionar</button>
+                <button class="adicionar" type="button"> <a href="/adm/cadastrar-adm">Adicionar</a></button>
             </div>
           </div>
         </section>
@@ -79,27 +79,25 @@
 
           <tr id="cabecalhotable">
             <th>Nome</th>
-            <th>Telefone</th>
             <th>E-mail</th>
             <th>Ações</th>
           </tr>
 
-          <% clientes.forEach(user => { %>
+          <% adms.forEach(adm => { %>
             
             <tr>
-              <td><%= user.nome %></td>
-              <td><%= user.telefone %></td>
-              <td><%= user.email %></td>
+              <td><%= adm.nome %></td>
+              <td><%= adm.email %></td>
               <td>
                 <div class ="acao">
                   <div>
-                    <form action="/adm/clientes/editar/<%= user.id %>" method="get">
+                    <form action="/adm/administradores/editar/<%= adm.id %>" method="get">
                       <button type="submit">Editar</button>
                     </form>
                   </div>
                     
                   <div>
-                    <form action="/delete/<%= user.id %>?_method=DELETE" method="post">
+                    <form action="/delete/<%= adm.id %>?_method=DELETE" method="post">
                       <button type="submit">X</button>
                     </form>
                   </div>

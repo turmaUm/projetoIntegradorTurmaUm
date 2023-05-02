@@ -21,6 +21,7 @@ app.use(function carrinhoLocal(req,res,next){
     next()
 })
 
+
 //Usa roteador para controladores
 app.use(router);
 
