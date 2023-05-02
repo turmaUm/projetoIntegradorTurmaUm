@@ -219,6 +219,14 @@ table {
   justify-content: space-around;
 }
 
+.acao button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0;
+  box-shadow: none;
+}
+
 .acao div:nth-child(1) {
   background-color: black;
   padding: 1% 5%;

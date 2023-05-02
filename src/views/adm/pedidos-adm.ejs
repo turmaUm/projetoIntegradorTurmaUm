@@ -93,10 +93,18 @@
                 </td>
                 <td><%= pedido.formas_de_pagamento.nome %></td>
                 <td>
-                  <div class="acao">
-                    <div>Editar</div>
-                    <div>x</div>
-                  </div>
+                  <div class ="acao">
+                    <div>
+                      <form action="/adm/pedidos/editar/<%= pedido.id %>" method="get">
+                        <button type="submit">Editar</button>
+                      </form>
+                    </div>
+                      
+                    <div>
+                      <form action="/delete/<%= pedido.id %>?_method=DELETE" method="post">
+                        <button type="submit">X</button>
+                      </form>
+                    </div>
                 </td>
               </tr>
 

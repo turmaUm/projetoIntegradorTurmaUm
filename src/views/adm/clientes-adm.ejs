@@ -89,10 +89,18 @@
               <td><%= user.telefone %></td>
               <td><%= user.email %></td>
               <td>
-                <div class="acao">
-                  <div>Editar</div>
-                  <div>x</div>
-                </div>
+                <div class ="acao">
+                  <div>
+                    <form action="/adm/clientes/editar/<%= user.id %>" method="get">
+                      <button type="submit">Editar</button>
+                    </form>
+                  </div>
+                    
+                  <div>
+                    <form action="/delete/<%= user.id %>?_method=DELETE" method="post">
+                      <button type="submit">X</button>
+                    </form>
+                  </div>
               </td>
             </tr>
 

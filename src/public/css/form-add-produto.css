@@ -43,7 +43,6 @@ form button {
     display: flex;
     /* background-color: plum; */
     flex-direction: column;
-    border-right: 1px solid black;
     padding-right: 20vh;
 }
 
@@ -51,6 +50,7 @@ form button {
     display: flex;
     /* background-color: purple; */
     flex-direction: column;
+    border-left: 1px solid black;
     padding-left: 20vh;
 }
 

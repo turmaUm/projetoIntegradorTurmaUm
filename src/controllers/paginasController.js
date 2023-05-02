@@ -250,8 +250,32 @@ const paginasController = {
         res.render('adm/categorias-adm', {consulta, categorias, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
     },
     showCadastrarProdutosAdm:(req,res) => {
-        // res.send("aqui esta o formulario")
-        res.render("adm/form-add-produto.ejs")
+        res.render("adm//forms/form-add-produto.ejs")
+    },
+    showCadastrarCategoriaAdm: async (req, res) => {
+        res.render("adm/forms/form-add-categoria")
+    },
+    showEditCategoriaAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-categoria")
+    },
+    showEditClienteAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-cliente")
+    },
+    showEditPedidoAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-pedido")
+    },
+    editarProduto: async (req, res) => {
+        let {id} = req.params
+
+        let produto = await Produtos.findAll({
+            where: {
+                id: id
+            }
+        })
+
+        produto = produto[0].toJSON()
+
+        res.render('adm/forms/form-edit-produto', {prod: produto})
     },
     showSalvarProdutosAdm: async (req,res)=>{
 
@@ -314,19 +338,6 @@ const paginasController = {
     },
     finalizarCompra: (req,res)=>{
         res.send(req.query)
-    },
-    editarProduto: async (req, res) => {
-        let {id} = req.params
-
-        let produto = await Produtos.findAll({
-            where: {
-                id: id
-            }
-        })
-
-        produto = produto[0].toJSON()
-
-        res.render('adm/form-edit-produto', {prod: produto})
     },
     atualizarProduto: async (req,res) => {
 
