@@ -90,57 +90,57 @@ article h1{
     padding: 0 40px 30px;
 }
 
-.form-control {
+.form-control-login {
     margin-top: 5px;
     margin-bottom: 10px;
     padding-bottom: 10px;
     position: relative; 
 }
 
-.form-control label {
+.form-control-login label {
     margin: auto;
 }
 
-.form-control input {
+.form-control-login input {
     border: 2px solid #3E445B;
     outline: 0;
     border-radius: 5px;
     display: block;
 }
 
-.form-control.success input {
+.form-control-login.success input {
     border: 3px solid #4ECA64;
 }
 
-.form-control.error input {
+.form-control-login.error input {
     border: 3px solid #DB545A;
 }
 
-.form-control.success i .img-success {
+.form-control-login.success i .img-success {
     visibility: visible;
     width: 15px;
     height: 15px;
 }
 
-.form-control.error i .img-error {
+.form-control-login.error i .img-error {
     visibility: visible;
     width: 15px;
     height: 15px;
 }
 
-.form-control.error small{
+.form-control-login.error small{
     color: #DB5A5A;
     visibility: visible;
 }
 
-.form-control i {
+.form-control-login i {
     position: absolute;
     top: 45px;
     right: 10px;
     visibility: hidden;
 }
 
-.form-control small {
+.form-control-login small {
     visibility: hidden;
     position: absolute;
     margin-top: 5px;

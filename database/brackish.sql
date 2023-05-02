@@ -17,7 +17,7 @@ create table fornecedores (
 create table clientes (
 	id INT not null auto_increment primary key,
     nome varchar(120) not null,
-    telefone bigint not null unique,
+    telefone bigint null unique,
     email varchar(45) unique not null,
     senha varchar(64) not null,
     createdAt timestamp not null,

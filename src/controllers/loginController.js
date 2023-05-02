@@ -38,15 +38,17 @@ const loginController = {
             }
         })
         //Verificar se o usuário foi encontrado
-        if(user === undefined){
-            res.render('/login', {error: "Falha no login"})
+        if(user.length <= 0){
+            // res.send('Nenhum usuario encontrado')
+            return res.render('cliente/login', {error: "Falha no login"})
+        }else{
+            const validaSenha = bcrypt.compareSync(senha, user[0].senha);
+            if(!validaSenha){
+               return res.render('cliente/login', {error: "Falha no login"}) 
+            }
+            req.session.user = user.nome
+            res.redirect('/home')
         }
-        const validaSenha = bcrypt.compareSync(senha, user.senha);
-        if(!validaSenha){
-            res.send('Falha no login')
-        }
-        req.session.user = user.nome
-        res.redirect('/home')
     },
     logout: (req,res) => {
         delete req.session.user

@@ -14,9 +14,12 @@
             <form class="formLogin" id="formLogin" method="POST" action="/login">
                 <article class="login">
                         <h1 class="tituloLogin">login</h1>
+                        <% if(locals.error){ %>
+                            <p><%= error %></p>
+                        <% }%>
                     <br>
                         <p class="paragrafoParaLogin">Login com seu e-mail</p>
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="email"></label>
                             <input class="estiloBotao" type="email" name="email" id="email" placeholder="Digite seu e-mail">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
@@ -24,7 +27,7 @@
                             <small>Error Message</small>
                         </div>
                     <!-- <br> -->
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="senha"></label>
                             <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Senha">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
@@ -47,7 +50,7 @@
                         <h1 class="tituloCadastro">cadastre-se</Cadastre-se></h1>
                     <br>
                         <p class="paragrafoParaLogin">Cadastre-se com seu e-mail e senha</p>
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="nomeCadastro"></label>
                             <input class="estiloBotao" type="text" name="nome" id="nome" placeholder="Nome Completo">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
@@ -55,7 +58,7 @@
                             <small>Error Message</small>
                         </div>
                     <!-- <br> -->
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="emailCadastro"></label>
                             <input class="estiloBotao" type="email" name="email" id="email" placeholder="Seu e-mail">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
@@ -63,7 +66,7 @@
                             <small>Error Message</small>
                         </div>    
                     <!-- <br> -->
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="senhaCadastro"></label>
                             <input class="estiloBotao" type="password" name="senha" id="senha" placeholder="Digita sua senha">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
@@ -71,7 +74,7 @@
                             <small>Error Message</small>
                         </div>
                     <!-- <br> -->
-                        <div class="form-control">
+                        <div class="form-control-login">
                             <label for="confirmeSenha"></label>
                             <input class="estiloBotao" type="password" name="confirmeSenha" id="confirmeSenha" placeholder="Confirme sua senha">
                             <i><img class="img-success" src="/img/icon-sucesso-form.svg" alt=""></i>
