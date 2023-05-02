@@ -37,7 +37,7 @@ router.get('/resultado-pedidos-adm', paginasController.showResultadoPedidosAdm)
 
 
 //Rotas adm cadastrar produto
-router.get("/cadastrar-produto-adm", paginasController.showCadastrarProdutosAdm)
+router.get("/adm/cadastrar-produto", paginasController.showCadastrarProdutosAdm)
 router.post("/salvar-produto-adm", paginasController.showSalvarProdutosAdm)
 
 //Rotas adm para editar produto 

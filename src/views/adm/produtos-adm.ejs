@@ -35,10 +35,11 @@
               <a href="">Sair</a>
             </nav>
           </div>
+
           <div class="cabecalhoInter">
             <h3>Produtos</h3>
             <div class="add">
-              <button class="adicionar" type="button">Adicionar</button>
+              <button class="adicionar" type="button"> <a href="/adm/cadastrar-produto">Adicionar</a></button>
             </div>
           </div>
         </section>
@@ -82,39 +83,35 @@
             <th>Ações</th>
           </tr>
                         
-                    </tr>
-                        <% for( let produto of produtos ) { %>
-                            <tr>
+          </tr>
 
-                                <td><%= produto.id %> - <%= produto.nome %></td>
-                                <td><%= produto.categorias.nome %></td>
-                                <td><%= produto.fornecedores.nome %></td>
-                                <td><%= produto.preco %> </td>
-                                <!-- <td> -->
-                                    <!-- <div class="acao">
-                                        <div>
-                                            <form action="/editar/<% produto.id %>" method="get">
-                                                <button type="submit">Editar</button>
-                                            </form>
-                                        </div>
-                                        <div>
-                                            <form action="/delete/<% produto.id %>?_method=DELETE" method="post">
-                                                <button type="submit">Del</button>
-                                            </form>
-                                        </div>
+          <% for( let produto of produtos ) { %>
+            <tr>
+
+              <td><%= produto.id %> - <%= produto.nome %></td>
+              <td><%= produto.categorias.nome %></td>
+              <td><%= produto.fornecedores.nome %></td>
+              <td><%= produto.preco %> </td>
+
+              <td>
+                <div class ="acao">
+                  <div>
+                    <form action="/editar/<%= produto.id %>" method="get">
+                      <button type="submit">Editar</button>
+                    </form>
+                  </div>
+                    
+                  <div>
+                    <form action="/delete/<%= produto.id %>?_method=DELETE" method="post">
+                      <button type="submit">Editar</button>
+                    </form>
+                  </div>
+                    
+                </div>
+              </td>
             
-                                    </div> -->
-
-                                    <td>
-                                        <div class="acao">
-                                          <div>Editar</div>
-                                          <div>x</div>
-                                        </div>
-                                      </td>
-                                </td>
-                            
-                            </tr>
-                        <% } %>
+            </tr>
+          <% } %>
 
 
         </table>
