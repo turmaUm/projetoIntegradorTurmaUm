@@ -6,71 +6,11 @@ const fs = require('fs')
 const path = require('path')
 const {Op} = require('sequelize')
 
-const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, sequelize } = require('../../database/models')
+const { Produtos, Categorias, Clientes, Fornecedores, Pedidos, Enderecos, FormasDePagamento, ProdutosPedidos, Administradores, sequelize } = require('../../database/models')
 
-const paginasController = {
+const admController = {
+    // ------------------------------------ GET/SHOW --------------------------------
 
-    // ------------------------------------ GET/SHOW CLIENTE --------------------------------------
-
-    showEndereco: (req, res) => {
-        res.render('compra/checkout-endereco')
-    },
-    showPedidos: (req, res) => {
-        res.render('cliente/pedidos')
-    },
-    showPagamento: (req, res) => {
-        res.render('compra/checkout-pagamento')
-    },
-    showFinalizacao: (req, res) => {
-        res.render('compra/finalizacao-compra')
-    },
-    showHome: (req, res) => {
-        res.render('display/home')
-    },
-    showLogin: (req, res) => {
-        res.render('cliente/login')
-    },
-    showProduto: (req, res) => {
-        let {id} = req.query
-        let produto = produtosCliente.find(p=>p.id==id)
-        // console.log(produto)
-        res.render('display/produto',{produto: produto})
- 
-    },
-    showResultadoBusca: (req, res) => {
-        let array = []
-        for(let value in req.query){
-              array.push(value) 
-        }
-        if(array.length != 0){
-            let prodClient = produtosCliente.filter(function analisa(produto) {
-                for(let categoria of array){
-                    if(produto.categoria == categoria){
-                        return produto
-                    }
-                }
-            })
-            // console.log(prodClient)
-            res.render('display/resultado-busca', {produtos: prodClient})
-
-        }else{
-            res.render('display/resultado-busca', {produtos: produtosCliente})
-        }
-    },
-    showPolitica: (req, res) => {
-        res.render('cliente/politica')
-    },
-    showCarrinho: (req, res) => {
-        
-        res.render('compra/carrinho', {produtos: req.session.carrinho})
-        // console.log(req.session.carrinho)
-    },
-
-    // ------------------------------------ GET/SHOW ADM --------------------------------
-
-    showLoginAdm: (req, res) => {
-        res.render('adm/login-adm')
-    },
     showProdutosAdm: async (req, res) => {
 
         let produtos = await Produtos.findAll({
@@ -127,7 +67,7 @@ const paginasController = {
             offset: (pagina - 1) * resultadoPorBusca
         })
 
-        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+        res.render('adm/produtos-adm', {produtos, consulta, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
     },
     showPedidosAdm: async (req, res) => {
 
@@ -217,7 +157,46 @@ const paginasController = {
             offset: (pagina - 1) * resultadoPorBusca
         })
 
-        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero})
+        res.render('adm/clientes-adm', {consulta, clientes, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
+    },
+    showResultadoAdminsAdm: async (req, res) => {
+        const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
+
+        const resultadoPorBusca = req.query.resPorBusca === undefined ? 10 : Number(req.query.resPorBusca)
+
+        const pagina = req.query.pagina === undefined ? 1 : Number(req.query.pagina)
+
+        const numAdms = await Administradores.count({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            }
+        })
+
+        const totalDePaginas = Math.ceil(numAdms/resultadoPorBusca)
+
+        const nMaxPaginas = 5
+
+        let primeiroNumero = pagina - Math.floor(nMaxPaginas / 2)
+
+        let ultimoNumero = pagina + Math.floor(nMaxPaginas / 2)
+
+        if (primeiroNumero < 1) {
+            primeiroNumero = 1
+        }
+
+        if (ultimoNumero > totalDePaginas) {
+            ultimoNumero = totalDePaginas
+        }
+
+        const adms = await Administradores.findAll({
+            where: {
+                nome: {[Op.like]: `%${consulta}%`}
+            },
+            limit: resultadoPorBusca,
+            offset: (pagina - 1) * resultadoPorBusca
+        })
+
+        res.render('adm/admins-adm', {consulta, adms, pagina, resultadoPorBusca, ultimoNumero, primeiroNumero, totalDePaginas})
     },
     showResultadoCategoriasAdm: async (req, res) => {
         const consulta = req.query.pesquisar === undefined ? '' : req.query.pesquisar
@@ -264,6 +243,9 @@ const paginasController = {
     showCadastrarCategoriaAdm: async (req, res) => {
         res.render("adm/forms/form-add-categoria")
     },
+    showCadastrarAdminAdm: async (req, res) => {
+        res.render("adm/forms/form-add-adm")
+    },
     showEditCategoriaAdm: async (req, res) => {
         res.render("adm/forms/form-edit-categoria")
     },
@@ -272,6 +254,9 @@ const paginasController = {
     },
     showEditPedidoAdm: async (req, res) => {
         res.render("adm/forms/form-edit-pedido")
+    },
+    showEditAdminAdm: async (req, res) => {
+        res.render("adm/forms/form-edit-adm")
     },
     ShowEditProduto: async (req, res) => {
         let {id} = req.params
@@ -299,55 +284,10 @@ const paginasController = {
         res.redirect('/produtos-adm')  
     },
 
-    // ------------------------------------ POST CLIENTE --------------------------------------
-    
-    addCarrinho:(req,res)=>{
-        
-        let addCarrinho = produtosCliente.find(p=>p.id == req.query.id)
-        addCarrinho.quantidade = req.query.quantidade
-        addCarrinho.corescolha = req.query.cor
-        addCarrinho.tamanhoescolha = req.query.tamanho
-        
-        if(!req.session.carrinho){
-            req.session.carrinho =[]
-        }
 
-        if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id 
-            && p.tamanhoescolha == addCarrinho.tamanhoescolha 
-            && p.corescolha == addCarrinho.corescolha) != -1)){
-                let obj = req.session.carrinho.find(p=> p.id == addCarrinho.id)
-                let cal = Number(obj.quantidade) + Number(addCarrinho.quantidade)
-                obj.quantidade = cal.toString();
-                // console.log('funcionou')
+     // ------------------------------------ POST/DELETE ------------------------------------------
 
-        }else{
-            req.session.carrinho.push(addCarrinho)
-        }
-        // console.log('<><><><><><><><><><><><><><><><>')
-        console.log(req.session.carrinho)
-        res.redirect(`/produto?id=${req.query.id}`)
-        
-        // if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id ))
-        // && (req.session.carrinho.findIndex(p=>p.tamanhoescolha == addCarrinho.tamanhoescolha))
-        // && (req.session.carrinho.findIndex(p=>p.corescolha == addCarrinho.corescolha))){
-        //     console.log('funcionou')}
-        // console.log('<><><><><><><><><><><><><><><><>')// console.log(req.session.carrinho)// delete addCarrinho['descricao']// produtosCarrinho.push(addCarrinho)// fs.writeFileSync(path.join(__dirname,"../../db/carrinho.json"), JSON.stringify(produtosCarrinho,null,4))
-    },
-    deleteCarrinho: (req,res)=>{
-        let{id, tamanho, cor} = req.params
-        let posicao = req.session.carrinho.findIndex(p => p.id == id && p.tamanhoescolha == tamanho && p.corescolha == cor);
-        req.session.carrinho.splice(posicao, 1)
-        res.redirect('/carrinho')
-    
-    },
-    finalizarCompra: (req,res)=>{
-        res.send(req.query)
-    },
-
-
-    // ------------------------------------ POST ADM ------------------------------------------
-
-    atualizarProduto: async (req,res) => {
+     atualizarProduto: async (req,res) => {
 
         let id = req.params.id
 
@@ -381,4 +321,4 @@ const paginasController = {
     }
 }
 
-module.exports = paginasController
+module.exports = admController

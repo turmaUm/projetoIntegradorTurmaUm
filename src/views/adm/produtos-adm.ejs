@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', {css: ['clientes-adm.css']}) %>
+  <%- include('../partials/head', {css: ['geral.css', 'clientes-adm.css']}) %>
 
   <body>
 
@@ -8,13 +8,14 @@
 
       <div class="asidebloco">
         <div class="titulo-img">
-          <span>BRACISH</span>
+          <span>BRACKISH</span>
         </div>
         <div class="ul">
           <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
           <a href="/produtos-adm"><div>Produtos</div></a>
           <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
           <a href="/categorias-adm"><div class="nth">Categorias</div></a>
+          <a href="/resultado-administradores-adm"><div class="nth">Administradores</div></a>
         </div>
       </div>
 
@@ -44,37 +45,37 @@
           </div>
         </section>
 
-        <table class="table table-borderless">
-
-          <form class="tablepesquisar" action="/resultado-produtos-adm" method="GET">
+        <form class="tablepesquisar" action="/resultado-produtos-adm" method="GET">
         
-            <div class="filtros">
+          <div class="filtros">
 
-              <div class="secaoFiltros">
-                <select name="resPorBusca" id="resPorBusca">
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-                <label for="resPorBusca">Resultados por busca</label>
-              </div>
-
-              <div class="secaoPesquisa">
-                <input
-                  type="text"
-                  name="pesquisar"
-                  id="barraPesquisar"
-                  placeholder="Pesquisar">
-                <button type="submit"></button>
-              </div>
-
+            <div class="secaoFiltros">
+              <select name="resPorBusca" id="resPorBusca">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <label for="resPorBusca">Resultados por busca</label>
             </div>
-            
-          </form>
 
+            <div class="secaoPesquisa">
+              <input
+                type="text"
+                name="pesquisar"
+                id="barraPesquisar"
+                placeholder="Pesquisar">
+              <button type="submit">
+                <img src="img/search.png" alt="">
+              </button>
+            </div>
 
-            
+          </div>
+          
+        </form>
+
+        <table class="table table-borderless listaElementos">
+  
           <tr id="cabecalhotable">
             <th>Produto</th>
             <th>Categoria</th>
