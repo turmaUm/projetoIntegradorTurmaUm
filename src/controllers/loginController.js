@@ -40,11 +40,11 @@ const loginController = {
         //Verificar se o usuário foi encontrado
         if(user.length <= 0){
             // res.send('Nenhum usuario encontrado')
-            return res.render('cliente/login', {error: "Falha no login"})
+            return res.render('cliente/login', {error: "Falha no login!"})
         }else{
             const validaSenha = bcrypt.compareSync(senha, user[0].senha);
             if(!validaSenha){
-               return res.render('cliente/login', {error: "Falha no login"}) 
+               return res.render('cliente/login', {error: "Falha no login!"}) 
             }
             req.session.user = user.nome
             res.redirect('/home')

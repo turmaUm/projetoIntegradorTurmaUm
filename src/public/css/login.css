@@ -53,6 +53,13 @@
     /* border: 1.5px solid #999 */
 }
 
+.error-login-acesso {
+    color: #DB545A;
+    background-color: rosybrown;
+    font-style: italic;
+    font-weight: bold;
+}
+
 article h1{
     text-transform:uppercase; 
 }
