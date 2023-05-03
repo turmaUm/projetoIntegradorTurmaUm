@@ -23,7 +23,7 @@ app.use(function carrinhoLocal(req,res,next){
 
 // middleware adm
 
-servidor.use(
+app.use(
 
     (req, res, next) => {
         if(req.session.admLogado){
