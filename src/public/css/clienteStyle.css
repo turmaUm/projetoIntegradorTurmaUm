@@ -1,8 +1,8 @@
 .containerMain {
 	background-color: white;
-	padding: 50px 150px 200px 150px;
+	padding: 50px 150px 130px 150px;
 	display: grid;
-	gap: 10px;
+	/* gap: 10px; */
 	grid-template-areas:
 		'header header header header header header'
 		'centroPessoal cliente cliente cliente cliente servico'
@@ -13,34 +13,31 @@
 
 .centroPessoal {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: centroPessoal;
 	padding: 20px 15px;
+	border-right: 1px solid black;
 }
 
 .centroPessoal h2 {
 	padding-bottom: 10px;
 }
 
-.centroPessoal h2 a {
+.centroPessoal h3 a {
 	text-decoration: none;
 	color: black;
 }
 
-
-.centroPessoal h1 {
+.centroPessoal h2 {
 	padding-bottom: 35px;
 }
 
 .clienteContainer {
 	display: flex;
-	/* background-color: purple; */
 	justify-content: space-between;
 	margin-top: 10px;
 }
 
 .clienteContainer span {
-	/* border: 1px solid black; */
 	display: flex;
 	justify-content: center;
 	padding-top: 5px;
@@ -48,17 +45,15 @@
 
 .cliente {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: cliente;
 	padding: 20px 15px;
 }
 
-.cliente h1 {
+.cliente h2 {
 	padding-bottom: 35px;
 }
 
 .cliente a {
-	/* border: 1px solid black; */
 	width: 100px;
 	padding: 5px;
 	margin: 0 auto;
@@ -75,13 +70,11 @@
 
 .pedidosContainer {
 	display: flex;
-	/* background-color: purple; */
 	justify-content: space-between;
 	margin-top: 10px;
 }
 
 .pedidos img {
-	/* border: 1px solid black; */
 	display: flex;
 	width: 50px;
 	padding-bottom: 15px;
@@ -90,13 +83,11 @@
 
 .pedidos {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: pedidos;
 	padding: 20px 15px;
 }
 
 .pedidos a {
-	/* border: 1px solid black; */
 	width: 50px;
 	padding: 10px;
 	text-decoration: none;
@@ -105,14 +96,17 @@
 	text-align: center;
 }
 
-.pedidos h1 {
+.pedidos h2 {
 	padding-bottom: 35px;
+}
+
+.cliente, .pedidos {
+	border-right: 1px solid black;
 }
 
 .servicoContainer {
 	display: flex;
-	/* background-color: purple; */
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 10px;
 
 }
@@ -124,13 +118,11 @@
 
 .servico {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: servico;
 	padding: 20px 15px;
 }
 
 .servico a {
-	/* border: 1px solid black; */
 	width: 100px;
 	padding: 10px;
 	text-align: center;
@@ -142,19 +134,17 @@
 	padding-bottom: 15px;
 }
 
-.servico h1 {
+.servico h2 {
 	padding-bottom: 35px;
 }
 
 .desejos {
 	background-color: white;
-	/* border: 1px solid black; */
 	grid-area: desejos;
 	padding: 20px 15px;
 }
 
 .desejosContainer {
-	/* border: 1px solid black; */
 	display: block;
 	text-align: center;
 }
@@ -162,11 +152,10 @@
 .desejos img {
 	display: inline-block;
 	width: 50px;
-	/* border: 1px solid black; */
 	padding-bottom: 15px;
 }
 
-.desejos h1 {
+.desejos h2 {
 	padding-bottom: 35px;
 }
 
