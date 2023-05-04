@@ -33,7 +33,6 @@ const clientController = {
     showProduto: (req, res) => {
         let {id} = req.query
         let produto = produtosCliente.find(p=>p.id==id)
-        // console.log(produto)
         res.render('display/produto',{produto: produto})
  
     },
@@ -50,7 +49,6 @@ const clientController = {
                     }
                 }
             })
-            // console.log(prodClient)
             res.render('display/resultado-busca', {produtos: prodClient})
 
         }else{
@@ -62,7 +60,6 @@ const clientController = {
     },
     showCarrinho: (req, res) => {
         res.render('compra/carrinho', {produtos: req.session.carrinho})
-        // console.log(req.session.carrinho)
     },
 
     // ------------------------------------ POST/DELETE --------------------------------------
