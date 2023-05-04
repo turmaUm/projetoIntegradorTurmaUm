@@ -39,10 +39,37 @@ create table produtos (
 	id INT not null auto_increment primary key,
     nome varchar(45) not null,
     preco decimal(9,2),
+    descricao text not null,
     categoriaId INT not null,
     fornecedores_id int not null,
     FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE,
     FOREIGN KEY (fornecedores_id) REFERENCES fornecedores(id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+CREATE TABLE tamanhos (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE cores (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE produto_tamanho (
+    produto_id INT NOT NULL,
+    tamanho_id INT NOT NULL,
+    PRIMARY KEY (produto_id, tamanho_id),
+    FOREIGN KEY (produto_id) REFERENCES produtos (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (tamanho_id) REFERENCES tamanhos (id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE produto_cor (
+    produto_id INT NOT NULL,
+    cor_id INT NOT NULL,
+    PRIMARY KEY (produto_id, cor_id),
+    FOREIGN KEY (produto_id) REFERENCES produtos (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (cor_id) REFERENCES cores (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 create table enderecos (
@@ -138,11 +165,19 @@ INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES
     
 
 INSERT INTO categorias (nome) VALUES 
-    ('Categoria1'),
-    ('Categoria2'),
-    ('Categoria3'),
-    ('Categoria4'),
-    ('Categoria5');
+    ('Praia'),
+    ('Homem'),
+    ('NovasOfertas'),
+    ('Favoritos'),
+    ('Calça'),
+	('Rolling'),
+    ('Mulher'),
+    ('Íntima'),
+    ('Primavera'),
+	('Ofertas'),
+	('Sapatos'),
+	('Geek'),
+    ('Leve2Pague1');
 
 INSERT INTO formas_de_pagamento (nome) VALUES 
     ('Cartão de crédito'),
@@ -156,14 +191,37 @@ INSERT INTO fornecedores (nome) VALUES
     ('Fornecedor 2'),
     ('Fornecedor 3'),
     ('Fornecedor 4'),
-    ('Fornecedor 5');
+    ('Fornecedor 5'),
+	('Fornecedor 6'),
+    ('Fornecedor 7'),
+    ('Fornecedor 8'),
+    ('Fornecedor 9'),
+    ('Fornecedor 10'),
+	('Fornecedor 11');
 
-INSERT INTO produtos (nome, preco, categoriaId, fornecedores_id) VALUES 
-    ('Produto1', 10.99, 1, 2),
-    ('Produto2', 29.99, 2, 4),
-    ('Produto3', 49.99, 3, 3),
-    ('Produto4', 99.99, 4, 3),
-    ('Produto5', 149.99, 5, 5);
+INSERT INTO produtos (nome, preco, descricao, categoriaId, fornecedores_id) VALUES
+    ('Bermuda Água Osklen', 159.9, 'Bermuda para uso em atividades aquáticas', 1, 1),
+    ('Bermuda Sarja Gap', 129.9, 'Bermuda casual de sarja', 2, 2),
+    ('Blazer Masculino', 329.9, 'Blazer elegante para uso formal', 2, 3),
+    ('Blusa Moletom Flanelada', 199.9, 'Blusa de moletom flanelado para uso casual', 3, 4),
+    ('Blusa', 79.9, 'Blusa básica para uso casual', 4, 5),
+    ('Calça Jeans John John', 249.9, 'Calça jeans masculina de alta qualidade', 5, 3),
+    ('Calça Moletom Adidas', 179.9, 'Calça de moletom adidas para uso casual', 6, 1),
+    ('Calça Sarja Colcci Jogger', 219.9, 'Calça jogger de sarja feminina da Colcci', 5, 6),
+    ('Calça', 129.9, 'Calça casual de tecido leve', 5, 2),
+    ('Camisa Calvin Klein', 199.9, 'Camisa social masculina da marca Calvin Klein', 2, 7),
+    ('Camisa Feminina', 99.9, 'Camisa feminina casual de tecido leve', 7, 8),
+    ('Camisa Polo Ralph', 239.9, 'Camisa polo masculina da marca Ralph Lauren', 2, 3),
+    ('Cueca', 39.9, 'Cueca masculina básica', 8, 5),
+    ('Jaqueta Bomber Adidas', 349.9, 'Jaqueta bomber da Adidas', 6, 1),
+    ('Jaqueta Corta-Vento Adidas', 399.99, 'Jaqueta corta-vento da Adidas para atividades esportivas', 3, 1),
+    ('Jaqueta Polo Ralph Lauren', 499.99, 'Jaqueta de couro masculina da marca Ralph Lauren', 6, 3),
+    ('Moletom Masculino John John', 359.99, 'Moletom masculino de alta qualidade da marca John John', 9, 3),
+    ('Regata Mizuno Spark', 79.99, 'Regata esportiva da marca Mizuno', 13, 9),
+    ('Short Praia Premium', 119.99, 'Short para uso em atividades aquáticas', 1, 10),
+    ('Shorts Feminino Adidas', 129.99, 'Shorts feminino da Adidas para uso casual', 10, 1),
+    ('Tênis Nike Air Max 270', 699.99, 'Tênis de corrida da Nike com tecnologia Air Max', 11, 11);
+
 
 INSERT INTO enderecos (clientes_id, bairro, logradouro, numero, cidade, cep) VALUES 
     (1, 'Centro', 'Rua A', '123', 1, '12345-678'),
@@ -208,3 +266,189 @@ INSERT INTO formas_de_pagamento (nome) VALUES
 ("Transferência bancária"),
 ("PayPal"),
 ("Dinheiro");
+
+INSERT INTO cores (nome) VALUES
+('azul'),
+('verde'),
+('cinza'),
+('preto'),
+('bege'),
+('branco'),
+('vermelho'),
+('marrom'),
+('amarelo'),
+('rosa'),
+('laranja');
+
+INSERT INTO tamanhos (nome) VALUES
+('PP'),
+('P'),
+('M'),
+('G'),
+('GG'),
+('XXL'),
+('34'),
+('36'),
+('38'),
+('40'),
+('42'),
+('44');
+
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('1', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('1', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('1', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('1', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('2', '5');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('2', '8');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('2', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('3', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('3', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('3', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('3', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('4', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('4', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('4', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('4', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('4', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('5', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('5', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('5', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('5', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('6', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('6', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('7', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('7', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('8', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('8', '5');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('8', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('9', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('9', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('9', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('9', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('10', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('10', '10');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('11', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('11', '9');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('11', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('11', '10');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('12', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('12', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('13', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('13', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('14', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('14', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('14', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('14', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('14', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('15', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('15', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('15', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('16', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('16', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('16', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('16', '8');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('17', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('17', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('17', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('17', '7');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('18', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('18', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('19', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('19', '2');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('19', '11');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('19', '9');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('20', '10');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('20', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('20', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('20', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('21', '4');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('21', '3');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('21', '1');
+INSERT INTO `brackish`.`produto_cor` (`produto_id`, `cor_id`) VALUES ('21', '7');
+
+
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('1', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('1', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('1', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('1', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('2', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('2', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('2', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('2', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('3', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('3', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('3', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('3', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('4', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('4', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('4', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('4', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('5', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('5', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('5', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('5', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('6', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('6', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('6', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('7', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('7', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('7', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('7', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('8', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('8', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('8', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('8', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('9', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('9', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('9', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('9', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('10', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('10', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('10', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('10', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('11', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('11', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('11', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('11', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('12', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('12', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('12', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('12', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('13', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('13', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('13', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('13', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('14', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('14', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('14', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('14', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('15', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('15', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('15', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('15', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('16', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('16', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('16', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('16', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('17', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('17', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('17', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('17', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('18', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('18', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('18', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('18', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('19', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('19', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('19', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('19', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('20', '1');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('20', '2');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('20', '3');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('20', '4');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '7');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '8');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '9');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '10');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '11');
+INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '12');
