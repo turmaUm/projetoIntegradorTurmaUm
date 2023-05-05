@@ -36,19 +36,41 @@ const clientController = {
         res.render('display/produto',{produto: produto})
  
     },
-    showResultadoBusca: (req, res) => {
+    showResultadoBusca: async (req, res) => {
         let array = []
+
         for(let value in req.query){
               array.push(value) 
         }
+
+        let produtosDb = await Produtos.findAll({
+            include: "categorias"
+        })
+
+        let arrayDb = []
+
+        for(let i in produtosDb) {
+            arrayDb.push(produtosDb[i].toJSON());
+        }
+
         if(array.length != 0){
-            let prodClient = produtosCliente.filter(function analisa(produto) {
+            let prodClient = arrayDb.filter(function analisa(produto) {
                 for(let categoria of array){
-                    if(produto.categoria == categoria){
+                    if(produto.categorias.nome == categoria){
                         return produto
                     }
                 }
             })
+
+        // if(array.length != 0){
+        //     let prodClient = produtosCliente.filter(function analisa(produto) {
+        //         for(let categoria of array){
+        //             if(produto.categoria == categoria){
+        //                 return produto
+        //             }
+        //         }
+        //     })
+
             res.render('display/resultado-busca', {produtos: prodClient})
 
         }else{
