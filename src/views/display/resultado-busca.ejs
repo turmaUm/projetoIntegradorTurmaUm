@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {css: ['geral.css', 'headerStyle.css', 'resultado_busca.css', 'footerStyle.css']}) %>
+<%- include('../partials/head', {css: ['filtrosCliente.css', 'geral.css', 'headerStyle.css', 'resultado_busca.css', 'footerStyle.css']}) %>
 
 <body>
 
@@ -13,17 +13,79 @@
             <h3 class="categoria-titulo">Categorias</h3>
 
             <ul>
-                <a href="/resultado-busca?mulher" class="categoria-link"><li>Mulher</li></a>
-                <a href="/resultado-busca?homem" class="categoria-link"><li>Homem</li></a>
-                <a href="/resultado-busca?infantil" class="categoria-link"><li>Infantil</li></a>
-                <a href="/resultado-busca?sapatos" class="categoria-link"><li>Sapatos</li></a>
-                <a href="/resultado-busca?acessorios" class="categoria-link"><li>Acessórios</li></a>
-                <a href="/resultado-busca?presentes" class="categoria-link"><li>Presentes</li></a>
-                <a href="/resultado-busca?promocoes" class="categoria-link"><li>Promoções</li></a>
+                <a href="/resultado-busca?categoria=7" class="categoria-link"><li>Mulher</li></a>
+                <a href="/resultado-busca?categoria=2" class="categoria-link"><li>Homem</li></a>
+                <a href="/resultado-busca?categoria=12" class="categoria-link"><li>Geek</li></a>
+                <a href="/resultado-busca?categoria=11" class="categoria-link"><li>Sapatos</li></a>
+                <a href="/resultado-busca?categoria=14" class="categoria-link"><li>Acessórios</li></a>
+                <a href="/resultado-busca?categoria=15" class="categoria-link"><li>Presentes</li></a>
+                <a href="/resultado-busca?categoria=16" class="categoria-link"><li>Promoções</li></a>
             </ul>
 
         </section>
+
         <div class="ppp">
+
+          <form>
+
+            <div class="filter-section">
+              <div class="color-filters">
+                <label for="color-red-filter">
+                  <input type="checkbox" id="color-red-filter" name="color-filter[]" value="red">
+                  <span class="color-box red"></span>
+                  Vermelho
+                </label>
+                <label for="color-blue-filter">
+                  <input type="checkbox" id="color-blue-filter" name="color-filter[]" value="blue">
+                  <span class="color-box blue"></span>
+                  Azul
+                </label>
+                <label for="color-green-filter">
+                  <input type="checkbox" id="color-black-filter" name="color-filter[]" value="green">
+                  <span class="color-box green"></span>
+                  Preto
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <div class="price-filters">
+                <label for="price-min-filter">Mínimo:</label>
+                <input type="number" id="price-min-filter" name="price-min-filter" min="0">
+                <label for="price-max-filter">Máximo:</label>
+                <input type="number" id="price-max-filter" name="price-max-filter" min="0">
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <div class="size-filters">
+                <label for="size-small-filter">
+                  <input type="checkbox" id="size-pp-filter" name="size-filter" value="PP">
+                  PP
+                </label>
+                <label for="size-small-filter">
+                  <input type="checkbox" id="size-p-filter" name="size-filter" value="P">
+                  P
+                </label>
+                <label for="size-medium-filter">
+                  <input type="checkbox" id="size-m-filter" name="size-filter" value="M">
+                  M
+                </label>
+                <label for="size-large-filter">
+                  <input type="checkbox" id="size-g-filter" name="size-filter" value="G">
+                  G
+                </label>
+                <label for="size-large-filter">
+                  <input type="checkbox" id="size-gg-filter" name="size-filter" value="GG">
+                  GG
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" id="filtrar">Filtrar</button>
+          </form>
+
+
             <section>
                 <div class="products-container">
                 <% if (produtos.length > 0) { %>

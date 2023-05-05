@@ -14,7 +14,7 @@ main {
 }
 
 .ppp {
-  padding-top: 50px;
+  margin-top: 35px;
   width: 100%;
 }
 
@@ -29,8 +29,12 @@ main .products-container {
 }
 
 .categoria-list {
+  /* position: fi xed; */
   display: flex;
   flex-direction: column;
+  /* background-color: red; */
+  margin-top: 35px;
+  background-color: white;
 }
 
 .categoria-list ul {
@@ -38,9 +42,9 @@ main .products-container {
   padding: 0;
 }
 
-.categoria-titulo {
+/* .categoria-titulo {
   padding-top: 35px;
-}
+} */
 
 .categoria-link {
   text-decoration: none;

@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  flex-direction: row;
+  /* position: fixed; */
+  /* background-color: green; */
+  margin-bottom: 35px;
+  padding: 0px 10vh 0px 10vh;
+}
+
+#filtrar {
+    width: 150px;
+}
+
