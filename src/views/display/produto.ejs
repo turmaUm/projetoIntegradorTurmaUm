@@ -52,14 +52,14 @@
                                                 <input class="tam1" type="button" name="tamanho" value="<%= prod %>"> <!--   tem que ter o mesmo nome ** -->
                                             <% } %>
                                         </div>
-                                    </div>
-                                    <div class="select-prod">
-                                        <button type="submit" class="comprar"> Adicionar ao carrinho </button>
-                                        <div>
+                                        <div id="numeracaoProdutos">
                                             <button class="remove" type="button"> - </button>
                                             <input class="qtd-camisa" step="1" min="0" max="100" value="1" name="quantidade">
                                             <button class="add" type="button"> + </button>
                                         </div>
+                                    </div>
+                                    <div class="select-prod">
+                                        <button type="submit" class="comprar"> Adicionar ao carrinho </button>
                                         <input type="hidden" id="cor-selecionada" name="cor" value=""> <!--   tem que ter o mesmo nome * -->
                                         <input type="hidden" id="tamanho-selecionado" name="tamanho" value=""> <!--   tem que ter o mesmo nome ** -->
                                         <input type="hidden" name="id" value=<%= produto.id %>>

@@ -15,6 +15,7 @@ const { Op } = require("sequelize");
 const {
   Produtos,
   Categorias,
+  Cores,
   Clientes,
   Fornecedores,
   Pedidos,
@@ -58,16 +59,35 @@ const clientController = {
 
     const where = {}
 
+    const precoMin = req.query['price-min-filter']
+
+    const precoMax = req.query['price-max-filter']
+
+    const cores = req.query['color-filter']
+
+    console.log(req.query)
+
     if(idCategoria != undefined) {
         where.categoriaId = idCategoria
     }
 
+    // if(cores != undefined) {
+    //     where.
+    // }
+
     let produtosDb = await Produtos.findAll({
-      include: "categorias",
-      where,
+        include: [
+            {model: Categorias, as: 'categorias'},
+            {model: Cores, as: 'cores', through: 'produto_cor', attributes: {
+                where: {
+                    id: {[Op.or]: cores}
+                }
+            } }
+        ]
     });
 
-    res.render("display/resultado-busca", { produtos: produtosDb });
+
+    res.render("display/resultado-busca", { produtos: produtosDb, idCategoria });
 
   },
   showPolitica: (req, res) => {
