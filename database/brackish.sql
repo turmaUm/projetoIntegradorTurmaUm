@@ -40,6 +40,7 @@ create table produtos (
     nome varchar(45) not null,
     preco decimal(9,2),
     descricao text not null,
+    endereco varchar(200),
     categoriaId INT not null,
     fornecedores_id int not null,
     FOREIGN KEY (categoriaId) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -165,19 +166,19 @@ INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES
     
 
 INSERT INTO categorias (nome) VALUES 
-    ('Praia'),
-    ('Homem'),
-    ('NovasOfertas'),
-    ('Favoritos'),
-    ('Calça'),
-	('Rolling'),
-    ('Mulher'),
-    ('Íntima'),
-    ('Primavera'),
-	('Ofertas'),
-	('Sapatos'),
-	('Geek'),
-    ('Leve2Pague1');
+    ('praia'),
+    ('homem'),
+    ('novasofertas'),
+    ('favoritos'),
+    ('calca'),
+	('rolling'),
+    ('mulher'),
+    ('intima'),
+    ('privera'),
+	('ofertas'),
+	('sapatos'),
+	('geek'),
+    ('leve2pague1');
 
 INSERT INTO formas_de_pagamento (nome) VALUES 
     ('Cartão de crédito'),
@@ -199,28 +200,28 @@ INSERT INTO fornecedores (nome) VALUES
     ('Fornecedor 10'),
 	('Fornecedor 11');
 
-INSERT INTO produtos (nome, preco, descricao, categoriaId, fornecedores_id) VALUES
-    ('Bermuda Água Osklen', 159.9, 'Bermuda para uso em atividades aquáticas', 1, 1),
-    ('Bermuda Sarja Gap', 129.9, 'Bermuda casual de sarja', 2, 2),
-    ('Blazer Masculino', 329.9, 'Blazer elegante para uso formal', 2, 3),
-    ('Blusa Moletom Flanelada', 199.9, 'Blusa de moletom flanelado para uso casual', 3, 4),
-    ('Blusa', 79.9, 'Blusa básica para uso casual', 4, 5),
-    ('Calça Jeans John John', 249.9, 'Calça jeans masculina de alta qualidade', 5, 3),
-    ('Calça Moletom Adidas', 179.9, 'Calça de moletom adidas para uso casual', 6, 1),
-    ('Calça Sarja Colcci Jogger', 219.9, 'Calça jogger de sarja feminina da Colcci', 5, 6),
-    ('Calça', 129.9, 'Calça casual de tecido leve', 5, 2),
-    ('Camisa Calvin Klein', 199.9, 'Camisa social masculina da marca Calvin Klein', 2, 7),
-    ('Camisa Feminina', 99.9, 'Camisa feminina casual de tecido leve', 7, 8),
-    ('Camisa Polo Ralph', 239.9, 'Camisa polo masculina da marca Ralph Lauren', 2, 3),
-    ('Cueca', 39.9, 'Cueca masculina básica', 8, 5),
-    ('Jaqueta Bomber Adidas', 349.9, 'Jaqueta bomber da Adidas', 6, 1),
-    ('Jaqueta Corta-Vento Adidas', 399.99, 'Jaqueta corta-vento da Adidas para atividades esportivas', 3, 1),
-    ('Jaqueta Polo Ralph Lauren', 499.99, 'Jaqueta de couro masculina da marca Ralph Lauren', 6, 3),
-    ('Moletom Masculino John John', 359.99, 'Moletom masculino de alta qualidade da marca John John', 9, 3),
-    ('Regata Mizuno Spark', 79.99, 'Regata esportiva da marca Mizuno', 13, 9),
-    ('Short Praia Premium', 119.99, 'Short para uso em atividades aquáticas', 1, 10),
-    ('Shorts Feminino Adidas', 129.99, 'Shorts feminino da Adidas para uso casual', 10, 1),
-    ('Tênis Nike Air Max 270', 699.99, 'Tênis de corrida da Nike com tecnologia Air Max', 11, 11);
+INSERT INTO produtos (nome, preco, descricao, endereco, categoriaId, fornecedores_id) VALUES
+    ('Bermuda Água Osklen', 159.9, 'Bermuda para uso em atividades aquáticas', '/img/roupas/bermuda-agua-osklen.png', 1, 1),
+    ('Bermuda Sarja Gap', 129.9, 'Bermuda casual de sarja', '/img/roupas/bermuda-sarja-gap.png', 2, 2),
+    ('Blazer Masculino', 329.9, 'Blazer elegante para uso formal', '/img/roupas/blazer-masculino.png', 2, 3),
+    ('Blusa Moletom Flanelada', 199.9, 'Blusa de moletom flanelado para uso casual', '/img/roupas/blusa-moletom-flanelada.png', 3, 4),
+    ('Blusa', 79.9, 'Blusa básica para uso casual', '/img/roupas/blusa.webp', 4, 5),
+    ('Calça Jeans John John', 249.9, 'Calça jeans masculina de alta qualidade', '/img/roupas/calca-jeans-john-john.png', 5, 3),
+    ('Calça Moletom Adidas', 179.9, 'Calça de moletom adidas para uso casual', '/img/roupas/calca-moletom-adidas.png', 6, 1),
+    ('Calça Sarja Colcci Jogger', 219.9, 'Calça jogger de sarja feminina da Colcci', '/img/roupas/calca-sarja-colcci-jogger.png', 5, 6),
+    ('Calça', 129.9, 'Calça casual de tecido leve', '/img/roupas/calca.jpg', 5, 2),
+    ('Camisa Calvin Klein', 199.9, 'Camisa social masculina da marca Calvin Klein', '/img/roupas/camisa-calvin-klein.png', 2, 7),
+    ('Camisa Feminina', 99.9, 'Camisa feminina casual de tecido leve', '/img/roupas/camisa-feminina.jpg', 7, 8),
+    ('Camisa Polo Ralph', 239.9, 'Camisa polo masculina da marca Ralph Lauren', '/img/roupas/camisa-polo-ralph.png', 2, 3),
+    ('Cueca', 39.9, 'Cueca masculina básica', '/img/roupas/cueca.webp', 8, 5),
+    ('Jaqueta Bomber Adidas', 349.9, 'Jaqueta bomber da Adidas', '/img/roupas/jaqueta-bomber-adidas.png', 6, 1),
+    ('Jaqueta Corta-Vento Adidas', 399.99, 'Jaqueta corta-vento da Adidas para atividades esportivas', '/img/roupas/jaqueta-corta-vento.png', 3, 1),
+    ('Jaqueta Polo Ralph Lauren', 499.99, 'Jaqueta de couro masculina da marca Ralph Lauren', '/img/roupas/jaqueta-polo-ralph.png', 6, 3),
+    ('Moletom Masculino John John', 359.99, 'Moletom masculino de alta qualidade da marca John John', '/img/roupas/moletom-john-john.png', 9, 3),
+    ('Regata Mizuno Spark', 79.99, 'Regata esportiva da marca Mizuno', '/img/roupas/regata-mizuno-spark.png', 13, 9),
+    ('Short Praia Premium', 119.99, 'Short para uso em atividades aquáticas', '/img/roupas/short-praia-premiun.png', 1, 10),
+    ('Shorts Feminino Adidas', 129.99, 'Shorts feminino da Adidas para uso casual', '/img/roupas/shorts.jpg', 10, 1),
+    ('Tênis Nike Air Max 270', 699.99, 'Tênis de corrida da Nike com tecnologia Air Max', '/img/roupas/tenis_nike.png', 11, 11);
 
 
 INSERT INTO enderecos (clientes_id, bairro, logradouro, numero, cidade, cep) VALUES 
@@ -452,3 +453,5 @@ INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('2
 INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '10');
 INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '11');
 INSERT INTO `brackish`.`produto_tamanho` (`produto_id`, `tamanho_id`) VALUES ('21', '12');
+
+

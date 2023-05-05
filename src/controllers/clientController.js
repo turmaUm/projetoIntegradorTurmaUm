@@ -32,9 +32,10 @@ const clientController = {
     },
     showProduto: (req, res) => {
         let {id} = req.query
+
         let produto = produtosCliente.find(p=>p.id==id)
+
         res.render('display/produto',{produto: produto})
- 
     },
     showResultadoBusca: async (req, res) => {
         let array = []

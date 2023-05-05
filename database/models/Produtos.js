@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: true
         },
+        endereco: {
+            type: DataTypes.STRING(200),
+            allowNull: true
+        },
         categoriaId: {
             type: DataTypes.INTEGER,
             allownull: false
