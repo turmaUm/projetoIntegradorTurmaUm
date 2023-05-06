@@ -71,21 +71,25 @@ const clientController = {
         where.categoriaId = idCategoria
     }
 
+    let produtosDb = await Produtos.findAll({
+      include: 'categorias',
+      where
+    });
+
     // if(cores != undefined) {
     //     where.
     // }
 
-    let produtosDb = await Produtos.findAll({
-        include: [
-            {model: Categorias, as: 'categorias'},
-            {model: Cores, as: 'cores', through: 'produto_cor', attributes: {
-                where: {
-                    id: {[Op.or]: cores}
-                }
-            } }
-        ]
-    });
-
+    // let produtosDb = await Produtos.findAll({
+    //     include: [
+    //         {model: Categorias, as: 'categorias'},
+    //         {model: Cores, as: 'cores', through: 'produto_cor', attributes: {
+    //             where: {
+    //                 id: {[Op.or]: cores}
+    //             }
+    //         } }
+    //     ]
+    // });
 
     res.render("display/resultado-busca", { produtos: produtosDb, idCategoria });
 
