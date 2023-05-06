@@ -55,8 +55,12 @@ const clientController = {
     res.render("display/produto", { produto: produto });
   },
   showResultadoBusca: async (req, res) => {
+    // definindo constantes
+
+    // puxando categoria inserida na query
     const idCategoria = req.query.categoria;
 
+    // declarando um objeto vazio para adicionar parâmetros
     const where = {}
 
     const precoMin = req.query['price-min-filter']
@@ -65,16 +69,22 @@ const clientController = {
 
     const cores = req.query['color-filter']
 
-    console.log(req.query)
+    // se existir algum valor no idCategoria, adiciona ele no where
 
     if(idCategoria != undefined) {
         where.categoriaId = idCategoria
     }
 
+    // puxando produtos do banco de dados com filtros, usando os parametros do where adicionados previamente
+
     let produtosDb = await Produtos.findAll({
       include: 'categorias',
-      where
+      where: where
     });
+
+    // --------------------------------------------------------------------
+
+    // tentativas de filtros falhas, caso queira usar de parâmetro para começar
 
     // if(cores != undefined) {
     //     where.
