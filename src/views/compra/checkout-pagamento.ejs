@@ -11,7 +11,6 @@
         <span class="barra">/</span>
         <img src="/img/cadeado3.png" alt="">
         <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
-
     </div>
 
     <main id="mainEnd">
@@ -19,17 +18,17 @@
             <div id="mainResume">
                 <ol class="ol">
                     <li>
-                        <span>1 Entrega</span>
+                        <span>1. Carrinho</span>
                         <div class="stepbar"></div>
                     </li>
         
                     <li>
-                        <span><strong>2 Pagamento</strong></span>
+                        <span><strong>2. Pagamento e endereço</strong></span>
                         <div class="stepbar-pag"></div>
                     </li>
         
                     <li>
-                        <span>3 resumo</span>
+                        <span>3. Finalização</span>
                         <div class="stepbar-res"></div>
                     </li>
                 </ol>
@@ -56,11 +55,11 @@
 
                 <div id="paypal" class="tabcontent">
                     <h4 class="paypalH4">Pagamento Parcelado</h4>
-                    <p>Clique em "Salvar e Continuar" para seguir com pagamento via PayPal</p>
+                    <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
                 </div>
 
                 <div id="boleto" class="tabcontent">
-                    <p>Clique em "Salvar e Continuar" para seguir com pagamento via PayPal</p>
+                    <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
                 </div>
 
                 <div id="cartao" class="tabcontent">
@@ -98,7 +97,21 @@
                         </form>
                     </div>
                 </div>
-                <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+
+                <div class="enderecosCobranca">
+                    <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+                    <div class="endereco">
+                        <select id="endereco-select">
+                          <option value="endereco1">Endereço 1</option>
+                          <option value="endereco2">Endereço 2</option>
+                          <option value="endereco3">Endereço 3</option>
+                        </select>
+                      </div>
+                      <div class="botoes">
+                        <button class="adicionar">Adicionar endereço</button>
+                        <button class="finalizar">Finalizar</button>
+                      </div>
+                </div>
             </div>
          </div>
    
