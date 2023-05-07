@@ -26,10 +26,12 @@ router.get('/politica', userSession, clientController.showPolitica)
 //Rotas adm
 router.get('/login-adm', loginController.showLoginAdm)
 router.post('/login-adm', loginController.loginAdm)
+
 router.get('/categorias-adm', admController.showResultadoCategoriasAdm)
 router.get('/clientes-adm', admController.showResultadoClientesAdm)
 router.get('/produtos-adm', admController.showResultadoProdutosAdm)
 router.get('/pedidos-adm', admController.showResultadoPedidosAdm)
+
 router.get('/resultado-clientes-adm', admController.showResultadoClientesAdm)
 router.get('/resultado-produtos-adm', admController.showResultadoProdutosAdm)
 router.get('/resultado-pedidos-adm', admController.showResultadoPedidosAdm)

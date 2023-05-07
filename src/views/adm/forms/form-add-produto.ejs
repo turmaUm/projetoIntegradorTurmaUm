@@ -51,20 +51,22 @@
                     <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
                 </label>
         
-                <label for="categorias">
+                <label for="categoriaId">
                     <h4>Categoria:</h4>
-                    <select name="categorias" id="categorias">
-                        <option value="1">Categoria 1</option>
-                        <option value="2">Categoria 2</option>
-                        <option value="3">Categoria 3</option>
-                        <option value="4">Categoria 4</option>
-                        <option value="5">Categoria 5</option>
+                    <select name="categoriaId" id="categoriaId">
+                      <% categoria.forEach(categoria => {  %>
+                        <option value="<%= categoria.id%>"><%= categoria.nome%></option> %></option>   
+                     <% }); %>
                       </select>
                 </label>
     
-                <label>
+                <label for="fornecedorId">
                     <h4>Fornecedor:</h4>
-                    <input type="text" name="fornecedor" id="fornecedor" placeholder="coloque aqui o nome do fornecedor/empresa fornecedora" />
+                    <select name="fornecedorId" id="fornecedorId">
+                      <% fornecedor.forEach(fornecedor => {  %>
+                        <option value="<%= fornecedor.id%>"><%= fornecedor.nome%></option> %></option>   
+                     <% }); %>
+                    </select>
                 </label>
             </section>
     

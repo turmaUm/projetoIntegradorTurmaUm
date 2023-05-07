@@ -330,8 +330,11 @@ const admController = {
       primeiroNumero,
     });
   },
-  showCadastrarProdutosAdm: (req, res) => {
-    res.render("adm//forms/form-add-produto.ejs");
+  showCadastrarProdutosAdm: async (req, res) => {
+
+    const fornecedor = await Fornecedores.findAll()
+    const categoria = await Categorias.findAll()
+    res.render("adm/forms/form-add-produto.ejs", {fornecedor,categoria});
   },
   showCadastrarCategoriaAdm: async (req, res) => {
     res.render("adm/forms/form-add-categoria");
@@ -371,10 +374,11 @@ const admController = {
     let produto = await Produtos.create({
       nome: req.body.nome,
       preco: req.body.preco,
-      categoriaId: req.body.categorias,
+      categoriaId: req.body.categoriaId,
+      fornecedores_id:req.body.fornecedorId
     });
 
-    console.log(produto.toJSON());
+    // console.log(produto.toJSON());
 
     res.redirect("/produtos-adm");
   },
