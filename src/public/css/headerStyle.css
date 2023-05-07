@@ -25,7 +25,6 @@ header {
 }
 
 #carrinho {
-    /* background-color: pink; */
     position: relative;
     padding: 3px;
     height: 30px;
@@ -33,7 +32,7 @@ header {
 
 #carrinho img {
     height: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 
 #carrinho span {
@@ -41,7 +40,8 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: orange;
+    background-color: black;
+    color: white;
     width: 16px;
     height: 16px;
     position: absolute;
@@ -80,8 +80,6 @@ header {
     height: 40px;
     border-radius: 15px;
     position: relative;
-    /* margin-left: auto; */
-    /* border: 2px solid black; */
 }
 
 
@@ -89,7 +87,7 @@ header {
     height: 40px;
     width: 40px;
     display: inline-block;
-    background-color: rgb(240, 240, 240);
+    background-color: transparent;
     top: 0;
     right: 0px;
     color: white;
@@ -99,10 +97,6 @@ header {
     border: none;
     align-items: center;
     transition: all 0.5s;
-}
-
-.pesquisar button:hover {
-    background-color: rgb(196, 196, 196);
 }
 
 .pesquisar input::placeholder {

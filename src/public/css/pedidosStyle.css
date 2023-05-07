@@ -1,0 +1,16 @@
+.cliente h2 {
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+.cliente h3 {
+    padding-bottom: 1px;
+}
+
+.cliente p {
+    padding: 0px;
+}
+
+.informacoes {
+    margin-bottom: 5vh;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../../partials/head',  {css: ['geral.css', 'form-add-produto.css', 'clientes-adm.css']}) %>
+  <body>
+
+    <aside>
+
+      <div class="asidebloco">
+        <div class="titulo-img">
+          <span>BRACKISH</span>
+        </div>
+        <div class="ul">
+          <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
+          <a href="/produtos-adm"><div>Produtos</div></a>
+          <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
+          <a href="/categorias-adm"><div class="nth">Categorias</div></a>
+          <a href="/resultado-administradores-adm"><div class="nth">Administradores</div></a>
+        </div>
+      </div>
+
+    </aside>
+    
+    <main>
+
+      <section class="fullcontainer">
+
+        <section class="cabecalho">
+          <div class="userbar">
+            <div class="user">
+              <span>Alexandre Assis Rezende Santos</span>
+            </div>
+            <nav>
+              <a href="">Perfil</a>
+              |
+              <a href="">Sair</a>
+            </nav>
+          </div>
+          <div class="cabecalhoInter">
+            <h3>Editar pedido</h3>
+            <div class="add">
+              <button class="adicionar" type="button">Adicionar</button>
+            </div>
+          </div>
+        </section>
+
+        <form action="/salvar-produto-adm" method="post" class="formEdit">
+            
+            <section class="bloco1">
+                <label>
+                    <h4>Nome:</h4>
+                    <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
+                </label>
+        
+                <label for="categorias">
+                    <h4>Categoria:</h4>
+                    <select name="categorias" id="categorias">
+                        <option value="1">Categoria 1</option>
+                        <option value="2">Categoria 2</option>
+                        <option value="3">Categoria 3</option>
+                        <option value="4">Categoria 4</option>
+                        <option value="5">Categoria 5</option>
+                      </select>
+                </label>
+    
+                <label>
+                    <h4>Fornecedor:</h4>
+                    <input type="text" name="fornecedor" id="fornecedor" placeholder="coloque aqui o nome do fornecedor/empresa fornecedora" />
+                </label>
+            </section>
+    
+            <section class="bloco2">
+                <label>
+                    <h4>Preço:</h4>
+                    <input type="text" name="preco" id="preco" placeholder="coloque aqui o preço do produto" />
+                </label>
+        
+                <label>
+                    <h4>Foto:</h4>
+                    <img src="" alt="foto do produto">
+                    <div>Clique para selecione nova imagem</div>
+                    <input type="file" name="img" id="img">
+                </label>
+                <button type="submit">Salvar</button>
+            </section>
+    
+
+    
+        </form>
+
+    </main>
+</body>
+</html>

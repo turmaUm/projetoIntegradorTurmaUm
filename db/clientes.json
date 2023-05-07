@@ -1,14 +1,22 @@
 [
     {
         "id": 1,
-        "nome": "teste",
-        "email": "teste@email.com",
-        "senha": "$2b$10$WlpOycJbtfpNDdXHrfT1Ne5Y2IeNj/n0Y7Gwhq5lTixloCFSX0oNu"
+        "telefone": "19 9132656523",
+        "enderecos": [
+            "Nova Rua",
+            "Nova Rua",
+            "Rua Tste "
+        ],
+        "nome": "Antonio ",
+        "email": "email-ant@email.com",
+        "senha": "$2b$10$fV32AhcOnRm/nHmCqRkdQ.xwAaHI7Pslyb4Wuz6jeLyIyvtKGRUY2"
     },
     {
         "id": 2,
-        "nome": "teste2",
-        "email": "teste2@email.com",
-        "senha": "$2b$10$D/UQmBn3sHjnqiXJHT2hYusrXnZo3VAVsO/RsFo9pRu4xYZytfC42"
+        "telefone": "",
+        "enderecos": [],
+        "nome": "Antonio",
+        "email": "antonioteste@email.com",
+        "senha": "$2b$10$T3mBli6AF51W58Wv2U8f6uKKM.1WviY9v9gIJOTMUKPnE.AmO9M2G"
     }
 ]

@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { db, sequelize } = require('../../database/models')
 
 function avaliandoId(array, produto){
     if(array.length == 0){
@@ -7,17 +8,6 @@ function avaliandoId(array, produto){
     }else{
         produto.id = array[array.length -1].id +1;
     }
-}
-
-
-function salvaJson(array){
-    const caminho = path.resolve(__dirname + "../../../db/produtos.json");
-    fs.writeFileSync(caminho, JSON.stringify(array, null, 4));
-}
-
-function addProduto(array, produto){
-    array.push(produto)
-    salvaJson(array)
 }
 
 function editProduto (id, array, reqbody){
@@ -46,10 +36,8 @@ function editProduto (id, array, reqbody){
 
 let produtoServices= {
     avaliandoId,
-    addProduto,
     editProduto,
-    delProduto,
-    salvaJson,
+    delProduto
 }
 
 module.exports = produtoServices;

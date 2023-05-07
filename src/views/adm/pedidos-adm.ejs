@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {css: ['geral.css', 'clientes-adm.css']}) %>
+
+  <body>
+
+    <aside>
+
+      <div class="asidebloco">
+        <div class="titulo-img">
+          <span>BRACKISH</span>
+        </div>
+        <div class="ul">
+          <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
+          <a href="/produtos-adm"><div>Produtos</div></a>
+          <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
+          <a href="/categorias-adm"><div class="nth">Categorias</div></a>
+          <a href="/resultado-administradores-adm"><div class="nth">Administradores</div></a>
+        </div>
+      </div>
+
+    </aside>
+    
+    <main>
+
+      <section class="fullcontainer">
+
+        <section class="cabecalho">
+          <div class="userbar">
+            <div class="user">
+              <span>Alexandre Assis Rezende Santos</span>
+            </div>
+            <nav>
+              <a href="">Perfil</a>
+              |
+              <a href="">Sair</a>
+            </nav>
+          </div>
+          <div class="cabecalhoInter">
+            <h3>Pedidos</h3>
+            <div class="add">
+              <button class="adicionar" type="button">Adicionar</button>
+            </div>
+          </div>
+        </section>
+
+        <form class="tablepesquisar" action="/resultado-pedidos-adm" method="GET">
+        
+          <div class="filtros">
+
+            <div class="secaoFiltros">
+              <select name="resPorBusca" id="resPorBusca">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <label for="resPorBusca">Resultados por busca</label>
+            </div>
+
+            <div class="secaoPesquisa">
+              <input
+                type="text"
+                name="pesquisar"
+                id="barraPesquisar"
+                placeholder="Pesquisar">
+              <button type="submit">
+                <img src="img/search.png" alt="">
+              </button>
+            </div>
+
+          </div>
+          
+        </form>
+
+        <table class="table table-borderless listaElementos">
+
+          <tr id="cabecalhotable">
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Endereço</th>
+            <th>Forma de Pagamento</th>
+            <th>Ações</th>
+          </tr>
+
+              <% pedidos.forEach(pedido => { %>
+
+              <tr>
+                <td><%= pedido.clientes.nome %></td>
+
+                <td>
+                  <% pedido.produtos.forEach(produto => { %>
+                    #<%= produto.id %> - <%= produto.nome %> <br/>
+                  <% }) %>
+                </td>
+
+                <td>
+                  <%= pedido.enderecos.logradouro %>, <%=
+                  pedido.enderecos.numero %>
+                </td>
+                <td><%= pedido.formas_de_pagamento.nome %></td>
+                <td>
+                  <div class ="acao">
+                    <div>
+                      <form action="/adm/pedidos/editar/<%= pedido.id %>" method="get">
+                        <button type="submit">Editar</button>
+                      </form>
+                    </div>
+                      
+                    <div>
+                      <form action="/delete/<%= pedido.id %>?_method=DELETE" method="post">
+                        <button type="submit">X</button>
+                      </form>
+                    </div>
+                </td>
+              </tr>
+
+              <% }) %>
+              
+            </table>
+
+            <div class="showresults">
+              <ul>
+                <li><a href="/pedidos-adm?pagina=<%= pagina - 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> < </a></li>
+    
+            <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
+              <li <%= i == pagina ? ' style=background-color:red ' : ''  %> ><a href="/clientes-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
+            <% } %>
+    
+                <li><a href="/pedidos-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>
+    
+              </ul>
+            </div>
+
+      </section>
+    </main>
+  </body>
+</html>

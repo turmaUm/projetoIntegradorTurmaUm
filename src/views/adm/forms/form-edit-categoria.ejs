@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../../partials/head',  {css: ['geral.css', 'form-add-produto.css', 'clientes-adm.css']}) %>
+  <body>
+
+    <aside>
+
+      <div class="asidebloco">
+        <div class="titulo-img">
+          <span>BRACKISH</span>
+        </div>
+        <div class="ul">
+          <a href="/clientes-adm"><div class="nth1">Clientes</div></a>
+          <a href="/produtos-adm"><div>Produtos</div></a>
+          <a href="/pedidos-adm"><div class="nth">Pedidos</div></a>
+          <a href="/categorias-adm"><div class="nth">Categorias</div></a>
+          <a href="/resultado-administradores-adm"><div class="nth">Administradores</div></a>
+        </div>
+      </div>
+
+    </aside>
+    
+    <main>
+
+      <section class="fullcontainer">
+
+        <section class="cabecalho">
+          <div class="userbar">
+            <div class="user">
+              <span>Alexandre Assis Rezende Santos</span>
+            </div>
+            <nav>
+              <a href="">Perfil</a>
+              |
+              <a href="">Sair</a>
+            </nav>
+          </div>
+          <div class="cabecalhoInter">
+            <h3>Editar categoria</h3>
+            <div class="add">
+              <button class="adicionar" type="button">Adicionar</button>
+            </div>
+          </div>
+        </section>
+
+        <form action="/salvar-produto-adm" method="post" class="formEdit">
+            
+            <section class="bloco1">
+                <label>
+                    <h4>Nome:</h4>
+                    <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
+                    <button type="submit">Salvar</button>
+                </label>
+        
+            </section>
+
+        </form>
+
+    </main>
+</body>
+</html>

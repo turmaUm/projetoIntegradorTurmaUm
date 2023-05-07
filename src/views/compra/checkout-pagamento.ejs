@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('../partials/head', {css: ['geral.css', 'headerStyle.css', 'pagamentoStyle.css', 'footerStyle.css']}) %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="pagamentoSeguro">
+        <span class="logo_check">BRACKISH</span>
+        <span class="barra">/</span>
+        <img src="/img/cadeado3.png" alt="">
+        <span class="letras_checkoutSeguro">CHECKOUT SEGURO</span>
+    </div>
+
+    <main id="mainEnd">
+        <div class="mainDiv">
+            <div id="mainResume">
+                <ol class="ol">
+                    <li>
+                        <span>1. Carrinho</span>
+                        <div class="stepbar"></div>
+                    </li>
+        
+                    <li>
+                        <span><strong>2. Pagamento e endereço</strong></span>
+                        <div class="stepbar-pag"></div>
+                    </li>
+        
+                    <li>
+                        <span>3. Finalização</span>
+                        <div class="stepbar-res"></div>
+                    </li>
+                </ol>
+            </div>
+
+         <div class="divSize">
+            <div class="divInterna">
+                <p class="editFormPag"><strong>Escolha a forma de pagamento</strong></p>
+
+                <div class="divFormPag">
+                    <button id="tabPadrao" class="labelPaypal tab-button" onclick="abrirTab(event, 'paypal')">
+                        <img src="/img/paypal.png" alt="">
+                    </button>
+
+                    <button class="labelBoleto tab-button" onclick="abrirTab(event, 'boleto')">
+                        <img src="/img/Boleto .jpg" alt="">
+                    </button>
+
+                    <button onclick="abrirTab(event, 'cartao')" class="labelCartao tab-button">
+                        <img src="/img/iconecard2.png" alt="">
+                        Cartão
+                    </button>
+                </div>
+
+                <div id="paypal" class="tabcontent">
+                    <h4 class="paypalH4">Pagamento Parcelado</h4>
+                    <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
+                </div>
+
+                <div id="boleto" class="tabcontent">
+                    <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
+                </div>
+
+                <div id="cartao" class="tabcontent">
+                    <div class="formParcelas">
+                        <form action method="get" class="formOptions">
+                            <label for="parcela">Selecione o número de parcelas:</label><br>
+                            <select name="parcela" id="">
+                                <option value="1">1x de R$ 3.919,00 sem juros</option>
+                                <option value="2">2x de R$ 1.959,50 sem juros</option>
+                                <option value="3">3x de R$ 1.306,33 sem juros</option>
+                                <option value="4">4x de R$ 979,75 sem juros</option>
+                                <option value="5">5x de R$ 783,80 sem juros</option>
+                            </select>
+                        </form>
+                    </div>
+                    <span class="information">Pagamento em até 5x com parcela mínima de R$ 5</span>
+
+                    <p style="margin-top: 3%; font-size: 1em; margin-bottom: 3%;">DADOS DO CARTÃO</p>
+
+                    <div class="inforCartao">
+                        <form action="/registro">
+                            <label for="nome">Nome do titular do cartão</label>
+                            <input class="input-nome" type="text" name="nome" id="">
+                            <div class="inputNumeroCartao">
+                                
+                                <label for="numeroCartao">Número do cartão</label> 
+                                <div ><input type="number" name="cartao" id="inputNumero"></div>
+                                <label for="validade"></label>
+                            </div>
+                            
+                            <label for="cvm">Código de segurança</label>
+                            <input class="cvm" type="text" name="cvm">
+                            <input class="checkboxSalvarDados" type="checkbox" name="salvarDados">
+                            <label for="salvarDados">Salvar dados do pagamento</label>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="enderecosCobranca">
+                    <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+                    <div class="endereco">
+                        <select id="endereco-select">
+                          <option value="endereco1">Endereço 1</option>
+                          <option value="endereco2">Endereço 2</option>
+                          <option value="endereco3">Endereço 3</option>
+                        </select>
+                      </div>
+                      <div class="botoes">
+                        <button class="adicionar">Adicionar endereço</button>
+                        <button class="finalizar">Finalizar</button>
+                      </div>
+                </div>
+            </div>
+         </div>
+   
+
+        </div>
+
+        <script src="/js/pagamento.js"></script>
+        
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+</html>

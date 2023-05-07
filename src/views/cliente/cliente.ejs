@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('../partials/head', {css: ['geral.css', 'headerStyle.css', 'footerStyle.css', 'clienteStyle.css']}) %>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="containerMain">
+            
+            <%- include('../partials/centro-pessoal') %>
+
+            <div class="cliente">
+                <h2>Cliente</h2>
+                <div class="clienteContainer">
+                    <a href="">
+                        <span>
+                            <h2>2</h2>
+                        </span>
+                        Cupons
+                    </a>
+                    <a href="">
+                        <img src="img/dollar.png" alt="">
+                        Pontos
+                    </a>
+                    <a href="">
+                        <img src="img/wallet.png" alt="">
+                        Carteira
+                    </a>
+                    <a href="">
+                        <img src="img/gift.png" alt="">
+                        Cartão de presente
+                    </a>
+                </div>
+            </div>
+
+            <div class="pedidos">
+                <h2>Meus pedidos</h2>
+                <div class="pedidosContainer">
+                    <a href="">
+                        <img src="img/empty-box.png" alt="">
+                        Não pago
+                    </a>
+                    <a href="">
+                        <img src="img/supplies.png" alt="">
+                        Processando
+                    </a>
+                    <a href="">
+                        <img src="img/delivery.png" alt="">
+                        Enviado
+                    </a>
+                    <a href="">
+                        <img src="img/exchange.png" alt="">
+                        Devolução
+                    </a>
+                </div>
+            </div>
+
+            <div class="servico">
+                <h2>Serviço ao cliente</h2>
+                <div class="servicoContainer">
+                    <a href="">
+                        <img src="img/email.png" alt="">
+                        Minhas mensagens
+                    </a>
+                    <a href="">
+                        <img src="img/spreadsheet.png" alt="">
+                        Serviço registros
+                    </a>
+                </div>
+            </div>
+
+            <div class="desejos">
+                <h2>Lista de desejos</h2>
+                <div class="desejosContainer">
+                    <div id="desejosImg">
+                        <img src="img/heart.png" alt="">
+                    </div>
+                    Você ainda não salvou nada recentemente
+                </div>
+            </div>
+            </div>
+
+        </section>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+</body>
+
+
+</html>

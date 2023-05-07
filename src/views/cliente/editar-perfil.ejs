@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('../partials/head', {css: ['geral.css', 'headerStyle.css' , 'footerStyle.css' , 'editarPerfilStyle.css', 'clienteStyle.css' ]}) %>
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <section class="containerMain">
+
+                <%- include('../partials/centro-pessoal') %>
+
+                    <div class="cliente">
+                        <h2>EDITAR PERFIL</h2>
+                        <div class="clienteContainer">
+
+                            <form action="/salvar-produto-adm" method="post" class="formEdit">
+            
+                                <section class="bloco1">
+                                    <label>
+                                        <h4>Nome:</h4>
+                                        <input type="text" name="nome" id="nome" />
+                                    </label>
+
+                                    <label>
+                                        <h4>E-mail:</h4>
+                                        <input type="email" name="email" id="email"/>
+                                    </label>
+                        
+                                    <label>
+                                        <h4>Telefone:</h4>
+                                        <input type="text" name="telefone" id="telefone"/>
+                                    </label>
+                                </section>
+                        
+                                <section class="bloco2">
+                                    <label>
+                                        <h4>Senha atual:</h4>
+                                        <input type="password" name="password" id="password"/>
+                                    </label>
+
+                                    <label>
+                                        <h4> Nova senha:</h4>
+                                        <input type="password" name="password" id="password"/>
+                                    </label>
+
+                                    <label>
+                                        <h4>Repita nova senha:</h4>
+                                        <input type="password" name="password" id="password"/>
+                                    </label>
+                          
+                                    <button type="submit" id="salvar">Salvar</button>
+                                </section>
+                        
+                    
+                        
+                            </form>
+
+                        </div>
+                    </div>
+
+                </section>
+                </div>
+            </main>
+
+            <%- include('../partials/footer') %>
+
+    </body>
+
+
+</html>

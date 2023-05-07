@@ -106,6 +106,7 @@
     width: 100%;
     align-items: flex-end;
     height: 100%;
+    margin-top:10px;
 }
 
 .divInterna {
@@ -262,6 +263,70 @@
     display: none;
 }
 
+
+.endereco {
+    margin-bottom: 20px;
+    /* background-color: red; */
+  }
+
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .endereco select {
+    display: block;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* background-color: red; */
+  }
+
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7vh;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  }
+  
+  .adicionar,
+  .finalizar {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .adicionar:hover,
+  .finalizar:hover {
+    background-color: rgb(99, 99, 99);;
+  }
+  
+
+
+
+
+
+
+
 @media (max-width: 750px){
 
  #mainResume ol span {
@@ -278,10 +343,6 @@
         margin: 0 auto;
         padding: 3%;
         min-width: 0px;
-    }
-
-    .divSize{
-        
     }
 
     .divInterna{

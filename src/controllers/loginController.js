@@ -2,12 +2,15 @@ const clientes = require('../../db/clientes.json');
 const bcrypt = require('bcrypt'); 
 const path = require('path')
 const fs = require('fs');
+const { Clientes, Administradores } = require('../../database/models'); // Usado desestruturação para importar o model cliente.
+// Na linha 07, foi apresentado uma outra forma de importar o model 'cliente'
+// const Clientes = require('../../database/models/Clientes');
 
 const loginController = {
     showLogin: (req, res) => {
-        res.render('login')
+        res.render('cliente/login')
     },
-    userRegister: (req, res) => {
+    userRegister: async (req, res) => {
         //Primeira forma: forma longa
         // const nome = req.body.nome
         // const email = req.body.email
@@ -16,28 +19,65 @@ const loginController = {
         //Segunda forma, usando desestruturação: forma curta
         const { nome, email, senha } = req.body
         
-        //Dúvidas para o próximo colearning:
-        //Entra id na const newUser?
-        //Como transformar o campo senha em senhaCriptografada sem alterar o nome 'senha' na desestruturação
-        //Duvida para preencher os parametros do campo bcrypt
-        
         let senhaCriptografada = bcrypt.hashSync(senha, 10); //Para criptografar a senha
-        let novoId = 1;
         
-        if(clientes.length > 0){
-            novoId = clientes[clientes.length -1].id + 1;
-        }
+        const newUser = await Clientes.create(
+            { 
+                nome,
+                email,
+                senha: senhaCriptografada
+            }); 
 
-        const newUser = { 
-            id: novoId,
-            nome: nome,
-            email: email,
-            senha: senhaCriptografada
-        }
-
-        clientes.push(newUser);
-        fs.writeFileSync(path.join(__dirname, '..', '..', 'db', 'clientes.json'), JSON.stringify(clientes, null, 4))
         res.redirect('/home')
+    },
+    login: async (req, res) => {
+        const { email, senha } = req.body
+        const user = await Clientes.findAll({
+            where: {
+                email
+            }
+        })
+        //Verificar se o usuário foi encontrado
+        if(user.length <= 0){
+            // res.send('Nenhum usuario encontrado')
+            return res.render('cliente/login', {error: "Falha no login!"})
+        }else{
+            const validaSenha = bcrypt.compareSync(senha, user[0].senha);
+            if(!validaSenha){
+               return res.render('cliente/login', {error: "Falha no login!"}) 
+            }
+            req.session.user = user.nome
+            res.redirect('/home')
+        }
+    },
+    logout: (req,res) => {
+        delete req.session.user
+        res.redirect('/home');
+    },
+    showLoginAdm: (req, res) => {
+        res.render('adm/login-adm')
+    },
+    loginAdm: async (req, res) => {
+        const { email, senha } = req.body
+        const user = await Administradores.findAll({
+            where: {
+                email
+            }
+        })
+        //Verificar se o usuário foi encontrado
+        if(user.length <= 0){
+            // res.send('Nenhum usuario encontrado')
+            return res.render('adm/login-adm', {error: "Falha no login"})
+        }else{
+            const validaSenha = bcrypt.compareSync(senha, user[0].senha);
+            if(!validaSenha){
+               return res.render('adm/login-adm', {error: "Falha no login"}) 
+            }
+
+            req.session.admLogado = true;
+
+            res.redirect('/clientes-adm')
+        }
     }
 }
 

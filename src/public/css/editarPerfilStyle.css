@@ -94,7 +94,7 @@
   
   input[type="email"],
   input[type="tel"],
-  input[type="text"],
+  #nome, #telefone,
   input[type="password"] {
 	display: block;
 	width: 100%;
@@ -104,7 +104,7 @@
 	border-radius: 5px;
   }
   
-  button[type="submit"],
+  #salvar,
   button[type="button"] {
 	display: inline-block;
 	padding: 10px 20px;
@@ -123,3 +123,187 @@
 	background-color: white;
 	color: black;
   }
+
+  #politicaTexto {
+	text-align: center;
+  }
+
+/* ------------------NOVAS REGRAS------------------------ */
+
+form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 5vh;
+}
+
+label input {
+    display: block;
+    width: 50vh;
+}
+
+label img {
+    width: 100%;
+    display: none;
+}
+
+label div {
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+}
+
+form {
+    justify-content: center;
+    
+}
+
+form section {
+    padding: 20px;
+    margin-top: 3vh;
+}
+
+form button {
+    height: 10vh;
+}
+
+.bloco1 {
+    display: flex;
+    /* background-color: plum; */
+    flex-direction: column;
+    padding-right: 20vh;
+}
+
+.bloco2 {
+    display: flex;
+    /* background-color: purple; */
+    flex-direction: column;
+    border-left: 1px solid black;
+    padding-left: 20vh;
+}
+
+input[type="email"],
+input[type="tel"],
+#nome, #telefone,
+input[type="password"]  {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+/* input[type="email"],
+input[type="tel"],
+#nome, #telefone,
+input[type="password"]:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px black;
+} */
+
+#salvar {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: black;
+  color: #fff;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* input[type="email"],
+input[type="tel"],
+#nome, #telefone,
+input[type="password"]:hover {
+  background-color: black;
+} */
+
+
+select {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  select:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #0071c5;
+  }
+  
+  /* Personalize a seta do select */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select:after {
+    content: '\25BC'; /* Adiciona uma seta personalizada */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 16px;
+    pointer-events: none; /* A seta não é clicável */
+  }
+
+
+
+  input[type="file"] {
+    display: none; /* Oculta o input do tipo file */
+  }
+  
+  .custom-file-upload {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #ddd;
+  }
+  
+  .custom-file-upload::before {
+    content: 'Enviar arquivo'; /* Texto do botão */
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 6px;
+  }
+  
+  .custom-file-upload:hover::before {
+    background-color: #333;
+    color: #fff;
+  }
+
