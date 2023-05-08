@@ -53,14 +53,18 @@ router.put('/adm/produtos/atualizar/:id', admController.atualizarProduto)
 
 router.get('/adm/categorias/editar/:id', admController.showEditCategoriaAdm)
 router.post('/adm/categorias/atualizar/:id', admController.atualizarCategoria)
+
+router.get('/adm/administradores/editar/:id', admController.showEditAdminAdm)
+router.post('/adm/administradores/atualizar/:id', admController.atualizarAdmnistradores)
+
 router.get('/adm/clientes/editar/:id', admController.showEditClienteAdm)
 router.get('/adm/pedidos/editar/:id', admController.showEditPedidoAdm)
-router.get('/adm/administradores/editar/:id', admController.showEditAdminAdm)
 
 //Rotas adm para deletar
 router.delete('/deleteproduto/:id?', admController.deleteProduto)
 router.delete('/deleteCategoria/:id?', admController.deleteCategoria)
 router.delete('/deleteAdmin/:id?', admController.deleteAdmin)
+router.delete('/deleteCliente/:id?', admController.deleteCliente)
 
 
 // ---------------------------------- EM PROGRESSO -------------------------------------

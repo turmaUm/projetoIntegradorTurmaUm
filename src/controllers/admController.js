@@ -353,7 +353,8 @@ const admController = {
     res.render("adm/forms/form-edit-pedido");
   },
   showEditAdminAdm: async (req, res) => {
-    res.render("adm/forms/form-edit-adm");
+    const editAdmin = await Administradores.findOne({where:{id: req.params.id}})
+    res.render("adm/forms/form-edit-adm", {editAdmin: editAdmin});
   },
   ShowEditProduto: async (req, res) => {
     let { id } = req.params;
@@ -388,8 +389,21 @@ const admController = {
     await Produtos.destroy({where:{id:req.params.id}})
     res.redirect("/produtos-adm");
   },
+  atualizarProduto: async (req, res) => {
+    let id = req.params.id;
 
-  
+    await Produtos.update(
+      {
+        nome: req.body.nome,
+        preco: req.body.preco,
+        categoriaId: req.body.categorias,
+      },
+      { where: { id: id } }
+    );
+
+    res.redirect("/produtos-adm");
+  },
+
   // ------- CRUD CATEGORIA COMPLETO ------------
   showSalvarCategoriaAdm: async (req,res)=>{
     let novaCategoria = await Categorias.create({nome:req.body.nome})
@@ -424,21 +438,23 @@ const admController = {
   deleteAdmin:async(req,res)=>{
     await Administradores.destroy({where:{id:req.params.id}})
     res.redirect('/resultado-administradores-adm')
+  },
+  atualizarAdmnistradores: async(req, res)=>{
+     await Administradores.update({
+      nome:req.body.nome,
+      email:req.body.email,
+      senha:req.body.senha},
+      {where:{id:req.params.id}})
+
+      res.redirect('/resultado-administradores-adm')
 
   },
-  atualizarProduto: async (req, res) => {
-    let id = req.params.id;
 
-    await Produtos.update(
-      {
-        nome: req.body.nome,
-        preco: req.body.preco,
-        categoriaId: req.body.categorias,
-      },
-      { where: { id: id } }
-    );
+  //-------------- UD CLIENTE --------------
+  deleteCliente: async (req,res) => {
+    await Clientes.destroy({where:{id:req.params.id}})
+    res.redirect('/resultado-clientes-adm')
 
-    res.redirect("/produtos-adm");
   },
   delete: (req, res) => {
     // let posicao = arraydb.findIndex(p => p.id == id);
