@@ -336,14 +336,15 @@ const admController = {
     const categoria = await Categorias.findAll()
     res.render("adm/forms/form-add-produto.ejs", {fornecedor,categoria});
   },
-  showCadastrarCategoriaAdm: async (req, res) => {
+  showCadastrarCategoriaAdm: (req, res) => {
     res.render("adm/forms/form-add-categoria");
   },
   showCadastrarAdminAdm: async (req, res) => {
     res.render("adm/forms/form-add-adm");
   },
   showEditCategoriaAdm: async (req, res) => {
-    res.render("adm/forms/form-edit-categoria");
+    const categoria = await Categorias.findOne({where:{id:req.params.id}})
+    res.render("adm/forms/form-edit-categoria", {categoria:categoria});
   },
   showEditClienteAdm: async (req, res) => {
     res.render("adm/forms/form-edit-cliente");
@@ -369,7 +370,8 @@ const admController = {
   },
 
   // ------------------------------------ POST/DELETE ------------------------------------------
-
+  
+  // ------- CRUD PRODUTO COMPLETO ------------
   showSalvarProdutosAdm: async (req, res) => {
     let produto = await Produtos.create({
       nome: req.body.nome,
@@ -381,6 +383,48 @@ const admController = {
     // console.log(produto.toJSON());
 
     res.redirect("/produtos-adm");
+  },
+  deleteProduto: async (req,res)=>{
+    await Produtos.destroy({where:{id:req.params.id}})
+    res.redirect("/produtos-adm");
+  },
+
+  
+  // ------- CRUD CATEGORIA COMPLETO ------------
+  showSalvarCategoriaAdm: async (req,res)=>{
+    let novaCategoria = await Categorias.create({nome:req.body.nome})
+    res.redirect("/categorias-adm");
+  },
+  deleteCategoria: async (req,res)=>{
+    await Categorias.destroy({where:{id:req.params.id}})
+    res.redirect("/categorias-adm");
+  },
+  atualizarCategoria:async(req,res)=>{
+    await Categorias.update({nome:req.body.nome},{where:{id:req.params.id}})
+    res.redirect("/categorias-adm");
+  },
+
+  // ------- CRUD ADMIN COMPLETO ------------
+  showSalvarAdminAdm: async(req,res)=>{
+    try{
+      let novoAdmin = await Administradores.create({
+          nome:req.body.nome,
+          telefone:req.body.telefone,
+          email:req.body.email,
+          senha:req.body.senha
+  
+      })
+
+    }
+    catch(e){
+      console.error("Error")
+    }
+    res.redirect('/resultado-administradores-adm')
+  },
+  deleteAdmin:async(req,res)=>{
+    await Administradores.destroy({where:{id:req.params.id}})
+    res.redirect('/resultado-administradores-adm')
+
   },
   atualizarProduto: async (req, res) => {
     let id = req.params.id;

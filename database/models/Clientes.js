@@ -48,6 +48,6 @@ module.exports = (sequelize, DataTypes) => {
             as: 'avaliacoes'
         })
     }
-
+        // Clientes.sync({alter:true})
         return Clientes
 }

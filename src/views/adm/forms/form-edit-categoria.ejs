@@ -43,12 +43,12 @@
           </div>
         </section>
 
-        <form action="/salvar-produto-adm" method="post" class="formEdit">
+        <form action="/adm/categorias/atualizar/<%= categoria.id %>" method="post" class="formEdit">
             
             <section class="bloco1">
                 <label>
-                    <h4>Nome:</h4>
-                    <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
+                    <h4>Categoria:</h4>
+                    <input type="text" name="nome" id="nome" value="<%= categoria.nome %>" />
                     <button type="submit">Salvar</button>
                 </label>
         
