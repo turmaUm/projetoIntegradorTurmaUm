@@ -431,15 +431,14 @@ const admController = {
   // ------- CRUD ADMIN COMPLETO ------------
   showSalvarAdminAdm: async(req,res)=>{
     try{
-
-      let senhaCriptografada = bcrypt.hashSync(req.body.senha, 10);
-
       let novoAdmin = await Administradores.create({
           nome:req.body.nome,
           telefone:req.body.telefone,
           email:req.body.email,
-          senha:senhaCriptografada
+          senha:req.body.senha
+  
       })
+
     }
     catch(e){
       console.error("Error")
@@ -451,13 +450,10 @@ const admController = {
     res.redirect('/resultado-administradores-adm')
   },
   atualizarAdmnistradores: async(req, res)=>{
-
-    let senhaCriptografada = bcrypt.hashSync(req.body.senha, 10);
-
      await Administradores.update({
       nome:req.body.nome,
       email:req.body.email,
-      senha:senhaCriptografada},
+      senha:req.body.senha},
       {where:{id:req.params.id}})
 
       res.redirect('/resultado-administradores-adm')
