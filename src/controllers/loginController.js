@@ -46,13 +46,18 @@ const loginController = {
             if(!validaSenha){
                return res.render('cliente/login', {error: "Falha no login!"}) 
             }
-            req.session.user = user.nome
+            req.session.user = user[0].nome;
             res.redirect('/home')
         }
     },
     logout: (req,res) => {
         delete req.session.user
         res.redirect('/home');
+    },
+    logoutAdm: (req,res) => {
+        delete req.session.adm;
+        req.session.admLogado = false;
+        res.redirect('/login-adm');
     },
     showLoginAdm: (req, res) => {
         res.render('adm/login-adm')
@@ -64,6 +69,8 @@ const loginController = {
                 email
             }
         })
+        console.log(user);
+        console.log(user[0].senha)
         //Verificar se o usuário foi encontrado
         if(user.length <= 0){
             // res.send('Nenhum usuario encontrado')
@@ -75,7 +82,7 @@ const loginController = {
             }
 
             req.session.admLogado = true;
-
+            req.session.adm = user[0].nome;    
             res.redirect('/clientes-adm')
         }
     }
