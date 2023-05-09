@@ -49,7 +49,7 @@ router.post("/salvar-admin-adm", admController.showSalvarAdminAdm)
 
 //Rotas adm para editar
 router.get('/adm/produtos/editar/:id', admController.ShowEditProduto)
-router.put('/adm/produtos/atualizar/:id', admController.atualizarProduto)
+router.post('/adm/produtos/atualizar/:id', admController.atualizarProduto)
 
 router.get('/adm/categorias/editar/:id', admController.showEditCategoriaAdm)
 router.post('/adm/categorias/atualizar/:id', admController.atualizarCategoria)
@@ -58,6 +58,8 @@ router.get('/adm/administradores/editar/:id', admController.showEditAdminAdm)
 router.post('/adm/administradores/atualizar/:id', admController.atualizarAdmnistradores)
 
 router.get('/adm/clientes/editar/:id', admController.showEditClienteAdm)
+router.post('/adm/clientes/atualizar/:id', admController.atualizarCliente)
+
 router.get('/adm/pedidos/editar/:id', admController.showEditPedidoAdm)
 
 //Rotas adm para deletar

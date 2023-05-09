@@ -24,6 +24,7 @@ const {
   Administradores,
   sequelize,
 } = require("../../database/models");
+const Avaliacoes = require("../../database/models/Avaliacoes");
 
 const admController = {
   // ------------------------------------ GET/SHOW --------------------------------
@@ -347,7 +348,13 @@ const admController = {
     res.render("adm/forms/form-edit-categoria", {categoria:categoria});
   },
   showEditClienteAdm: async (req, res) => {
-    res.render("adm/forms/form-edit-cliente");
+    const editCliente = await Clientes.findOne({where:{id:req.params.id}},
+      {include: [
+        {model:Pedidos, as:'pedidos'},{model:Enderecos, as:'enderecos'}
+        ,{model:Avaliacoes, as:'valiacoes'}
+      ]})
+    console.log(editCliente)  
+    res.render("adm/forms/form-edit-cliente",{cliente:editCliente});
   },
   showEditPedidoAdm: async (req, res) => {
     res.render("adm/forms/form-edit-pedido");
@@ -357,17 +364,18 @@ const admController = {
     res.render("adm/forms/form-edit-adm", {editAdmin: editAdmin});
   },
   ShowEditProduto: async (req, res) => {
-    let { id } = req.params;
+    
 
-    let produto = await Produtos.findAll({
-      where: {
-        id: id,
-      },
-    });
+    let produto = await Produtos.findOne({where: {id: req.params.id}},
+      {include: [{association:'categorias'},  // Isso daqui o apelido/alias  das ligações feitas no associate no modelo movie
+      {association:'fornecedores'}]});
+      let categorias = await Categorias.findAll()
+      let fornecedores = await Fornecedores.findAll()
+    // console.log(req.params.id)
+    // console.log(produto)
+    // produto = produto[0].toJSON();
 
-    produto = produto[0].toJSON();
-
-    res.render("adm/forms/form-edit-produto", { prod: produto });
+    res.render("adm/forms/form-edit-produto", {produto, fornecedores, categorias });
   },
 
   // ------------------------------------ POST/DELETE ------------------------------------------
@@ -397,11 +405,12 @@ const admController = {
         nome: req.body.nome,
         preco: req.body.preco,
         categoriaId: req.body.categorias,
+        fornecedores_id:req.body.fornecedores
       },
       { where: { id: id } }
     );
 
-    res.redirect("/produtos-adm");
+    res.redirect("/resultado-produtos-adm'");
   },
 
   // ------- CRUD CATEGORIA COMPLETO ------------
@@ -456,6 +465,16 @@ const admController = {
     res.redirect('/resultado-clientes-adm')
 
   },
+  atualizarCliente:async(req,res)=>{
+    await Clientes.update({
+      nome:req.body.nome,
+      telefone:req.body.telefone,
+      email:req.body.email
+    },{where:{id:req.params.id}})
+    
+    res.redirect('/resultado-clientes-adm')
+  },
+
   delete: (req, res) => {
     // let posicao = arraydb.findIndex(p => p.id == id);
     // // console.log(posicao)

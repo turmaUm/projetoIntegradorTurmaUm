@@ -43,35 +43,37 @@
           </div>
         </section>
 
-        <form action="/salvar-produto-adm" method="post" class="formEdit">
+        <form action="/adm/produtos/atualizar/<%= produto.id %>" method="post" class="formEdit">
             
             <section class="bloco1">
                 <label>
                     <h4>Nome:</h4>
-                    <input type="text" name="nome" id="nome" placeholder="coloque aqui o nome do produto" />
+                    <input type="text" name="nome" id="nome" value="<%= produto.nome %>" />
                 </label>
         
                 <label for="categorias">
                     <h4>Categoria:</h4>
                     <select name="categorias" id="categorias">
-                        <option value="1">Categoria 1</option>
-                        <option value="2">Categoria 2</option>
-                        <option value="3">Categoria 3</option>
-                        <option value="4">Categoria 4</option>
-                        <option value="5">Categoria 5</option>
-                      </select>
+                      <% categorias.forEach(categoria => { %>
+                        <option value="<%= categoria.id %>"><%= categoria.nome %></option>                  
+                      <% }); %>
+                    </select>
                 </label>
     
-                <label>
+                <label for="fornecedores">
                     <h4>Fornecedor:</h4>
-                    <input type="text" name="fornecedor" id="fornecedor" placeholder="coloque aqui o nome do fornecedor/empresa fornecedora" />
+                    <select name="fornecedores" id="fornecedores">
+                      <% fornecedores.forEach(fornecedor => { %>
+                        <option value="<%= fornecedor.id %>"><%= fornecedor.nome %></option>                  
+                      <% }); %>
+                    </select>
                 </label>
             </section>
     
             <section class="bloco2">
                 <label>
                     <h4>Preço:</h4>
-                    <input type="text" name="preco" id="preco" placeholder="coloque aqui o preço do produto" />
+                    <input type="text" name="preco" id="preco" value="<%= produto.preco %>" />
                 </label>
         
                 <label>
