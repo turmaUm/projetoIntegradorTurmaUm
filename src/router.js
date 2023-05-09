@@ -5,7 +5,8 @@ const loginController = require('./controllers/loginController')
 const userPanelController = require('./controllers/userPanelController')
 const userSession = require('./middlewares/userSession')
 const admController = require('./controllers/admController')
-
+const verificaSeLogado = require('./middlewares/verificaSeLogado')
+const { Router } = require('express')
 const router = express.Router()
 
 //Rotas cliente
@@ -19,7 +20,7 @@ router.get('/addCarrinho', userSession, clientController.addCarrinho)
 router.get('/carrinho', userSession, clientController.showCarrinho)
 router.get('/deleteCarrinho/:id/:tamanho/:cor', userSession, clientController.deleteCarrinho)
 router.get('/finalizarCompra', userSession, clientController.finalizarCompra)
-router.get('/teste', userSession, admController.teste)
+router.get('/teste', userSession, verificaSeLogado, admController.teste)
 router.get('/cliente/pedidos', userSession, clientController.showPedidos)
 router.get('/politica', userSession, clientController.showPolitica)
 
@@ -27,49 +28,43 @@ router.get('/politica', userSession, clientController.showPolitica)
 router.get('/login-adm', loginController.showLoginAdm)
 router.post('/login-adm', loginController.loginAdm)
 
-router.get('/categorias-adm', admController.showResultadoCategoriasAdm)
-router.get('/clientes-adm', admController.showResultadoClientesAdm)
-router.get('/produtos-adm', admController.showResultadoProdutosAdm)
-router.get('/pedidos-adm', admController.showResultadoPedidosAdm)
+router.get('/categorias-adm',  verificaSeLogado, admController.showResultadoCategoriasAdm)
+router.get('/clientes-adm', verificaSeLogado, admController.showResultadoClientesAdm)
+router.get('/produtos-adm', verificaSeLogado, admController.showResultadoProdutosAdm)
+router.get('/pedidos-adm', verificaSeLogado, admController.showResultadoPedidosAdm)
 
-router.get('/resultado-clientes-adm', admController.showResultadoClientesAdm)
-router.get('/resultado-produtos-adm', admController.showResultadoProdutosAdm)
-router.get('/resultado-pedidos-adm', admController.showResultadoPedidosAdm)
-router.get('/resultado-administradores-adm', admController.showResultadoAdminsAdm)
+router.get('/resultado-clientes-adm', verificaSeLogado, admController.showResultadoClientesAdm)
+router.get('/resultado-produtos-adm', verificaSeLogado, admController.showResultadoProdutosAdm)
+router.get('/resultado-pedidos-adm', verificaSeLogado, admController.showResultadoPedidosAdm)
+router.get('/resultado-administradores-adm', verificaSeLogado, admController.showResultadoAdminsAdm)
 
 //Rotas adm para cadastrar
-router.get("/adm/cadastrar-produto", admController.showCadastrarProdutosAdm)
-router.get("/adm/cadastrar-categoria", admController.showCadastrarCategoriaAdm)
-router.get("/adm/cadastrar-adm", admController.showCadastrarAdminAdm)
-router.post("/salvar-produto-adm", admController.showSalvarProdutosAdm)
-router.post("/salvar-categoria-adm", admController.showSalvarCategoriaAdm)
-router.post("/salvar-admin-adm", admController.showSalvarAdminAdm)
-
-
+router.get("/adm/cadastrar-produto", verificaSeLogado, admController.showCadastrarProdutosAdm)
+router.get("/adm/cadastrar-categoria", verificaSeLogado, admController.showCadastrarCategoriaAdm)
+router.get("/adm/cadastrar-adm", verificaSeLogado, admController.showCadastrarAdminAdm)
+router.post("/salvar-produto-adm", verificaSeLogado, admController.showSalvarProdutosAdm)
+router.post("/salvar-categoria-adm", verificaSeLogado, admController.showSalvarCategoriaAdm)
+router.post("/salvar-admin-adm", verificaSeLogado, admController.showSalvarAdminAdm)
 
 //Rotas adm para editar
 router.get('/adm/produtos/editar/:id', admController.ShowEditProduto)
 router.post('/adm/produtos/atualizar/:id', admController.atualizarProduto)
 
-router.get('/adm/categorias/editar/:id', admController.showEditCategoriaAdm)
-router.post('/adm/categorias/atualizar/:id', admController.atualizarCategoria)
+router.get('/adm/categorias/editar/:id', verificaSeLogado, admController.showEditCategoriaAdm)
+router.post('/adm/categorias/atualizar/:id', verificaSeLogado, admController.atualizarCategoria)
 
-router.get('/adm/administradores/editar/:id', admController.showEditAdminAdm)
-router.post('/adm/administradores/atualizar/:id', admController.atualizarAdmnistradores)
+router.get('/adm/administradores/editar/:id', verificaSeLogado, admController.showEditAdminAdm)
+router.post('/adm/administradores/atualizar/:id', verificaSeLogado, admController.atualizarAdmnistradores)
 
-router.get('/adm/clientes/editar/:id', admController.showEditClienteAdm)
-router.post('/adm/clientes/atualizar/:id', admController.atualizarCliente)
-
-router.get('/adm/pedidos/editar/:id', admController.showEditPedidoAdm)
+router.get('/adm/clientes/editar/:id', verificaSeLogado, admController.showEditClienteAdm)
+router.get('/adm/pedidos/editar/:id', verificaSeLogado, admController.showEditPedidoAdm)
 
 //Rotas adm para deletar
-router.delete('/deleteproduto/:id?', admController.deleteProduto)
-router.delete('/deleteCategoria/:id?', admController.deleteCategoria)
-router.delete('/deleteAdmin/:id?', admController.deleteAdmin)
-router.delete('/deleteCliente/:id?', admController.deleteCliente)
-
-
-// ---------------------------------- EM PROGRESSO -------------------------------------
+router.delete('/deleteproduto/:id?', verificaSeLogado, admController.deleteProduto)
+router.delete('/deleteCategoria/:id?', verificaSeLogado, admController.deleteCategoria)
+router.delete('/deleteAdmin/:id?', verificaSeLogado, admController.deleteAdmin)
+router.delete('/deleteCliente/:id?', verificaSeLogado, admController.deleteCliente)
+router.get('/adm/logout', verificaSeLogado, loginController.logoutAdm)
 
 router.get('/login', userSession, loginController.showLogin)
 router.post('/cadastro', loginController.userRegister)

@@ -28,12 +28,14 @@
         <section class="cabecalho">
           <div class="userbar">
             <div class="user">
-              <span>Alexandre Assis Rezende Santos</span>
+              <% if(locals.admSession) { %>
+                <span>Olá, <%=admSession %> </span>
+              <% } %>
             </div>
             <nav>
               <a href="">Perfil</a>
               |
-              <a href="">Sair</a>
+              <a href="/adm/logout">Sair</a>
             </nav>
           </div>
 
