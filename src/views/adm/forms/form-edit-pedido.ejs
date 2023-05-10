@@ -79,8 +79,24 @@
                   
                   <% for( let produto of pedidos.produtos ) { %>
                     <tr>
-                      <div>
-                        <td><%= produto.nome %></td>
+                      <div class="teste">
+                        <td >
+                          <%= produto.nome %> 
+                          <div class ="produtoAcao">
+                            <!-- <div>
+                              <form action="/adm/produtos/editar/<%= produto.id %>" method="get">
+                                <button type="submit">Editar</button>
+                              </form>
+                            </div>
+                              
+                            <div>
+                              <form action="/deleteproduto/<%= produto.id %>?_method=DELETE" method="post">
+                                <button type="submit">X</button>
+                              </form>
+                            </div> -->
+                              
+                          </div>
+                        </td>
 
                       </div>
                       
