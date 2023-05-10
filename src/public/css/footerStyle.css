@@ -8,17 +8,24 @@
 
 .container-total {
   background-color: rgb(240, 240, 240);
+  
 
 }
 .row {
   display: flex;
   justify-content: center;
   padding: 45px 0px;
+  
 }
-
+.container-part{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
 .container-part h3 {
   line-height: 44px;
   font-size: 32px;
+  /* border: 2px solid black; */
 }
 
 .noticias {
@@ -26,23 +33,28 @@
   font-weight: 400;
   line-height: 16.45px;
   letter-spacing: -0.3px;
+  /* border: 2px solid black; */
 }
 
 .form-group {
+  display: flex;
+  justify-content: center;
   margin: 41px 0px;
   height: 50px;
   width: 100%;
+  /* border: 2px solid black; */
 }
 
 .email {
   height: 36px;
-  width: 70%;
+  width: 25%;
   border-radius: 5px;
+  
 }
 
 .botao {
-  height: 38px;
-  width: 122px;
+  height: 36px;
+  width: 100px;
   color: white;
   background-color: black;
   box-shadow: none;
@@ -59,23 +71,36 @@
   letter-spacing: -0.4px;
   font-weight: 600;
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  /* border: 2px solid black; */
+}
+
+/* .divcol-md{
+  display: flex;
+} */
+.col-md{
+  display: flex;
+  flex-direction: column;
+  align-items: center
 }
 
 .col-md ul {
   list-style: none;
   width: 190px;
   font-weight: 500;
+  
+  /* border: 2px solid black; */
 }
 
 .col-md li {
   color: #111111;
   padding: 0px 10px;
-  text-align: left;
+  text-align: match-parent;
   size: 14px;
   line-height: 24px;
   letter-spacing: -0.2px;
   font-weight: 500;
+  
 }
 
 .col-md a {
