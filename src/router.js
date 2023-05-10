@@ -32,6 +32,7 @@ router.get('/categorias-adm',  verificaSeLogado, admController.showResultadoCate
 router.get('/clientes-adm', verificaSeLogado, admController.showResultadoClientesAdm)
 router.get('/produtos-adm', verificaSeLogado, admController.showResultadoProdutosAdm)
 router.get('/pedidos-adm', verificaSeLogado, admController.showResultadoPedidosAdm)
+router.get('/admins-adm', verificaSeLogado, admController.showResultadoAdminsAdm)
 
 router.get('/resultado-clientes-adm', verificaSeLogado, admController.showResultadoClientesAdm)
 router.get('/resultado-produtos-adm', verificaSeLogado, admController.showResultadoProdutosAdm)
