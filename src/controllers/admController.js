@@ -94,7 +94,7 @@ const admController = {
       limit: resultadoPorBusca,
       offset: (pagina - 1) * resultadoPorBusca,
     });
-
+    console.log(produtos)
     res.render("adm/produtos-adm", {
       produtos,
       consulta,

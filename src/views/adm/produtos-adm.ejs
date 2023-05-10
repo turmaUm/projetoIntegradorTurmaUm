@@ -91,33 +91,40 @@
           </tr>
 
           <% for( let produto of produtos ) { %>
-            <tr>
-
-              <td><%= produto.id %> - <%= produto.nome %></td>
-              <td><%= produto.categorias.nome %></td>
-              <td><%= produto.tamanhos.nome %></td>
-              <td><%= produto.cores.nome %></td>
-              <td><%= produto.fornecedores.nome %></td>
-              <td><%= produto.preco %> </td>
-
-              <td>
-                <div class ="acao">
-                  <div>
-                    <form action="/adm/produtos/editar/<%= produto.id %>" method="get">
-                      <button type="submit">Editar</button>
-                    </form>
-                  </div>
-                    
-                  <div>
-                    <form action="/deleteproduto/<%= produto.id %>?_method=DELETE" method="post">
-                      <button type="submit">X</button>
-                    </form>
-                  </div>
-                    
-                </div>
-              </td>
-            
-            </tr>
+            <% for (let i = 0; i < produto.tamanhos.length; i++) { %>
+              <% for (let ii = 0; ii < produto.cores.length; ii++) { %>
+                
+                
+                <tr>
+                  
+                  <td><%= produto.id %> - <%= produto.nome %></td>
+                  <td><%= produto.categorias.nome %></td>
+                  <td><%= produto.tamanhos[i].nome %></td>
+                  <td><%= produto.cores[ii].nome %></td>
+                  <td><%= produto.fornecedores.nome %></td>
+                  <td><%= produto.preco %> </td>
+                  
+                  <td>
+                    <div class ="acao">
+                      <div>
+                        <form action="/adm/produtos/editar/<%= produto.id %>" method="get">
+                          <button type="submit">Editar</button>
+                        </form>
+                      </div>
+                      
+                      <div>
+                        <form action="/deleteproduto/<%= produto.id %>?_method=DELETE" method="post">
+                          <button type="submit">X</button>
+                        </form>
+                      </div>
+                      
+                    </div>
+                  </td>
+                  
+                </tr>
+                
+              <% } %>
+            <% } %> 
           <% } %>
 
 
