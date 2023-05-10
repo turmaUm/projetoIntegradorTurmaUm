@@ -94,7 +94,7 @@ const admController = {
       limit: resultadoPorBusca,
       offset: (pagina - 1) * resultadoPorBusca,
     });
-    console.log(produtos)
+    // console.log(produtos)
     res.render("adm/produtos-adm", {
       produtos,
       consulta,
@@ -343,7 +343,22 @@ const admController = {
 
     const fornecedor = await Fornecedores.findAll()
     const categoria = await Categorias.findAll()
-    res.render("adm/forms/form-add-produto.ejs", {fornecedor,categoria});
+    const tamanhos = await Tamanhos.findAll()
+    const cores = await Cores.findAll()
+    // const tamanhos = await Tamanhos.findAll({include:[
+    //   {model:Produtos, as:"produto", through: 'produto_tamanho', attributes:["nome"]}
+    // ], where:{id:2}})
+
+    
+    // for(let tamanho of tamanhos){
+    //   console.log(tamanho.produto[2].nome)
+    // }
+    
+    // tamanhos.produto.forEach(element => {
+    //   console.log(element)
+    // });
+    // console.log(tamanhos)
+    res.render("adm/forms/form-add-produto.ejs", {fornecedor,categoria, tamanhos, cores});
   },
   showCadastrarCategoriaAdm: (req, res) => {
     res.render("adm/forms/form-add-categoria");
@@ -474,6 +489,9 @@ const admController = {
       categoriaId: req.body.categoriaId,
       fornecedores_id:req.body.fornecedorId
     });
+    
+    let setCor = produto.setCores(req.body.cores)
+    let setTamanho = produto.setTamanhos(req.body.tamanhos)
 
     // console.log(produto.toJSON());
 

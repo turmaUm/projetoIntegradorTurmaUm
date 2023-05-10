@@ -70,6 +70,14 @@
                      <% }); %>
                     </select>
                 </label>
+                <label for="cores">
+                  <h4>Cor:</h4>
+                  <select name="cores" id="cores">
+                    <% cores.forEach(cores => {  %>
+                      <option value="<%= cores.id%>"><%= cores.nome%></option> %></option>   
+                   <% }); %>
+                  </select>
+              </label>
             </section>
     
             <section class="bloco2">
@@ -77,6 +85,17 @@
                     <h4>Preço:</h4>
                     <input type="text" name="preco" id="preco" placeholder="coloque aqui o preço do produto" />
                 </label>
+
+                <label for="tamanhos">
+                  <h4>Tamanho:</h4>
+                  <select name="tamanhos" id="tamanhos">
+                    <% tamanhos.forEach(tamanhos => {  %>
+                      <option value="<%= tamanhos.id%>"><%= tamanhos.nome%></option> %></option>   
+                   <% }); %>
+                  </select>
+              </label>
+
+              
         
                 <label>
                     <h4>Foto:</h4>
