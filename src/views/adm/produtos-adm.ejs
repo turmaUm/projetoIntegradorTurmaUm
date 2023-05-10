@@ -81,6 +81,8 @@
           <tr id="cabecalhotable">
             <th>Produto</th>
             <th>Categoria</th>
+            <th>Tamanho</th>
+            <th>Cor</th>
             <th>Fornecedor</th>
             <th>Preço</th>
             <th>Ações</th>
@@ -93,19 +95,21 @@
 
               <td><%= produto.id %> - <%= produto.nome %></td>
               <td><%= produto.categorias.nome %></td>
+              <td><%= produto.tamanhos.nome %></td>
+              <td><%= produto.cores.nome %></td>
               <td><%= produto.fornecedores.nome %></td>
               <td><%= produto.preco %> </td>
 
               <td>
                 <div class ="acao">
                   <div>
-                    <form action="/adm/produtos/editar/<%= produto.id %>" method="get">
+                    <form action="<%= produto.id %>" method="get">
                       <button type="submit">Editar</button>
                     </form>
                   </div>
                     
                   <div>
-                    <form action="/deleteproduto/<%= produto.id %>?_method=DELETE" method="post">
+                    <form action="<%= produto.id %>?_method=DELETE" method="post">
                       <button type="submit">X</button>
                     </form>
                   </div>

@@ -40,10 +40,10 @@
           </div>
           <div class="cabecalhoInter">
             <h3>Pedidos</h3>
-            <div class="add">
+            <!-- <div class="add">
               <button class="adicionar" type="button">Adicionar</button>
             </div>
-          </div>
+          </div> -->
         </section>
 
         <form class="tablepesquisar" action="/resultado-pedidos-adm" method="GET">
@@ -110,7 +110,7 @@
                     </div>
                       
                     <div>
-                      <form action="/delete/<%= pedido.id %>?_method=DELETE" method="post">
+                      <form action="/deletePedido/<%= pedido.id %>?_method=DELETE" method="post">
                         <button type="submit">X</button>
                       </form>
                     </div>

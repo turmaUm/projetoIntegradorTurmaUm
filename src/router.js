@@ -57,13 +57,18 @@ router.get('/adm/administradores/editar/:id', verificaSeLogado, admController.sh
 router.post('/adm/administradores/atualizar/:id', verificaSeLogado, admController.atualizarAdmnistradores)
 
 router.get('/adm/clientes/editar/:id', verificaSeLogado, admController.showEditClienteAdm)
+router.post('/adm/clientes/atualizar/:id', verificaSeLogado, admController.atualizarCliente)
+
 router.get('/adm/pedidos/editar/:id', verificaSeLogado, admController.showEditPedidoAdm)
+router.post('/adm/pedidos/atualizar/:id', verificaSeLogado, admController.atualizarPedido)
 
 //Rotas adm para deletar
 router.delete('/deleteproduto/:id?', verificaSeLogado, admController.deleteProduto)
 router.delete('/deleteCategoria/:id?', verificaSeLogado, admController.deleteCategoria)
 router.delete('/deleteAdmin/:id?', verificaSeLogado, admController.deleteAdmin)
 router.delete('/deleteCliente/:id?', verificaSeLogado, admController.deleteCliente)
+router.delete('/deletePedido/:id?', verificaSeLogado, admController.deletePedido)
+
 router.get('/adm/logout', verificaSeLogado, loginController.logoutAdm)
 
 router.get('/login', userSession, loginController.showLogin)

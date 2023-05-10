@@ -24,8 +24,12 @@ const {
   ProdutosPedidos,
   Administradores,
   sequelize,
+  Cores,
+  Tamanhos,
+  Avaliacoes
 } = require("../../database/models");
-const Avaliacoes = require("../../database/models/Avaliacoes");
+
+
 
 const admController = {
   // ------------------------------------ GET/SHOW --------------------------------
@@ -56,7 +60,8 @@ const admController = {
       },
       include: [
         { model: Categorias, as: "categorias", attributes: ["nome"] },
-        { model: Fornecedores, as: "fornecedores", attributes: ["nome"] },
+        { model: Fornecedores, as: "fornecedores", attributes: ["nome"] }
+        
       ],
     });
 
@@ -83,6 +88,8 @@ const admController = {
       include: [
         { model: Categorias, as: "categorias", attributes: ["nome"] },
         { model: Fornecedores, as: "fornecedores", attributes: ["nome"] },
+        { model: Cores, as: "cores", through:'produto_cor', attributes: ["id", "nome"] },
+        { model: Tamanhos, as: "tamanhos", through:'produto_tamanho', attributes: ["id" , "nome"] }
       ],
       limit: resultadoPorBusca,
       offset: (pagina - 1) * resultadoPorBusca,
@@ -358,7 +365,32 @@ const admController = {
     res.render("adm/forms/form-edit-cliente",{cliente:editCliente});
   },
   showEditPedidoAdm: async (req, res) => {
-    res.render("adm/forms/form-edit-pedido");
+    const formasDePagamento = await FormasDePagamento.findAll()
+    const pedidos = await Pedidos.findOne({
+      include: [
+        {
+          model: Enderecos,
+          as: "enderecos",
+          attributes: ["logradouro", "numero"],
+        },
+        {
+          model: Produtos,
+          as: "produtos",
+          through: "produtos_pedidos",
+          attributes: ["id", "nome"],
+        },
+        { model: Clientes, as: "clientes", attributes: ["nome"] },
+        {
+          model: FormasDePagamento,
+          as: "formas_de_pagamento",
+          attributes: ["nome"],
+        },
+      ],
+      where:{id:req.params.id}
+     })
+    // console.log(formasDePagamento);
+    // console.log(pedidos)
+    res.render("adm/forms/form-edit-pedido",{formasDePagamento, pedidos});
   },
   showEditAdminAdm: async (req, res) => {
     const editAdmin = await Administradores.findOne({where:{id: req.params.id}})
@@ -380,7 +412,60 @@ const admController = {
   },
 
   // ------------------------------------ POST/DELETE ------------------------------------------
-  
+ // ---------------UD PEDIDO -------------
+  atualizarPedido: async (req,res)=>{
+    //Pegando o id do cliente
+
+    const pedidos = await Pedidos.findOne({where:{id:req.params.id},
+      include:[
+        {
+          model: Enderecos,
+          as: "enderecos",
+          attributes: ["logradouro", "numero"],
+        },
+        {
+          model: Produtos,
+          as: "produtos",
+          through: "produtos_pedidos",
+          attributes: ["id", "nome"],
+        },
+        { model: Clientes, as: "clientes", attributes: ["nome"] },
+        {
+          model: FormasDePagamento,
+          as: "formas_de_pagamento",
+          attributes: ["nome"],
+        },
+
+      ]}) 
+    
+      console.log(req.body)
+      //Atualizando a tabela de endereços 
+      await Enderecos.update({
+        bairro:req.body.bairro,
+        logradouro:req.body.rua,
+        numero:req.body.numero,
+        cidade:2,
+        cep:req.body.cep,
+      },{where:{clientes_id:pedidos.dataValues.clientes_id}})
+      
+      //Atualizando a tabela de pedidos
+      await Pedidos.update({
+        formas_de_pagamento_id:req.body.formaDePagamento
+      },{where:{id:pedidos.dataValues.id}})
+      
+      
+
+      res.redirect("/pedidos-adm")
+  },
+  deletePedido:async(req,res)=>{
+    const pedidoDeleted = await Pedidos.destroy({
+      where:{id:req.params.id}
+    })
+    console.log(pedidoDeleted)
+
+    res.redirect("/pedidos-adm")
+  },
+
   // ------- CRUD PRODUTO COMPLETO ------------
   showSalvarProdutosAdm: async (req, res) => {
     let produto = await Produtos.create({
