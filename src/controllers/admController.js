@@ -496,7 +496,7 @@ const admController = {
       { where: { id: id } }
     );
 
-    res.redirect("/resultado-produtos-adm'");
+    res.redirect("/resultado-produtos-adm");
   },
 
   // ------- CRUD CATEGORIA COMPLETO ------------
