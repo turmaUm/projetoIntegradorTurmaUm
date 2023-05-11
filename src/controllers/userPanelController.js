@@ -2,34 +2,34 @@ const clientes = require('../../db/clientes.json');
 const bcrypt = require('bcrypt'); 
 const fs = require('fs');
 const path = require('path');
+const { Clientes } = require('../../database/models')
 
 const userPanelController = {
     showCliente: (req, res) => {
         res.render('cliente/cliente')
     },
-    showEditarPerfil: (req, res) => {
+    showEditarPerfil: async (req, res) => {
         // const id = req.params.id;
-        const { id } = req.params
-        const user = clientes.find( user => user.id == id)
-        // console.log(user);
-
+        const { id } = req.params;
+        const user = await Clientes.findByPk(id);
+        console.log(user);
         res.render('cliente/editar-perfil', {user});
     },
-    atualizarPerfil: (req,res) => {
+    atualizarPerfil: async (req,res) => {
         const { id } = req.params
-        const user = clientes.find( user => user.id == id)
-        let senhaComCriptografia = bcrypt.hashSync(req.body.nova_senha, 10); 
-        //Se encontrar o usuario dentro do arquivo JSON, o 'if' faz a alteração de todos os campos, reescrevendo. 
-        if(user != undefined){
-            user.nome = req.body.nome
-            user.email = req.body.email
-            user.telefone = req.body.telefone
-            user.enderecos.push(req.body.endereco)
-            user.senha = senhaComCriptografia
-        }
-        // console.log(user);
-        fs.writeFileSync(path.join(__dirname, '..', '..', 'db', 'clientes.json'), JSON.stringify(clientes, null, 4))
-        res.render('cliente/editar-perfil', {user});
+        let senhaComCriptografia = bcrypt.hashSync(req.body.novaSenha, 10); 
+        const usuarioAtualizado = await Clientes.update({
+            nome: req.body.nome,
+            email: req.body.email,
+            telefone: req.body.telefone,
+            senha: senhaComCriptografia
+        }, {
+            where: {
+                id
+            }
+        });
+        console.log(usuarioAtualizado);
+        res.render('cliente/editar-perfil', {user: usuarioAtualizado});
     }
 }
 

@@ -77,7 +77,7 @@ router.post('/cadastro', loginController.userRegister)
 router.post('/login', loginController.login)
 router.get('/logout', loginController.logout)
 
-router.get('/cliente', userSession, userPanelController.showCliente)
+router.get('/cliente/:id', userSession, userPanelController.showCliente)
 router.get('/cliente/editar/:id', userSession, userPanelController.showEditarPerfil)
 router.post('/cliente/editar/:id', userSession, userPanelController.atualizarPerfil)
 

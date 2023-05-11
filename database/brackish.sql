@@ -129,8 +129,6 @@ create table imagens(
     FOREIGN KEY (produtos_id) REFERENCES produtos(id)
 ); 
 
-
-
 INSERT INTO administradores (nome, email, senha) VALUES 
     ('Erick', 'erickadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
     ('Alexandre', 'alexandreadm@email', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),

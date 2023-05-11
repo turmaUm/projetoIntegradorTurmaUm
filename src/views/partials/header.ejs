@@ -5,15 +5,15 @@
     <div class="containerHeader" id="containerHeader">
         <a href="/home">BRACKISH</a>
         <nav>
-            <a href="/cliente">Cliente</a>
-            |
-            <a href="/login">Cadastro</a>
-            |
             <% if(locals.userSession){  %>
-                <a href=""> Olá, <%= userSession %></a>
+                <a href="/cliente/<%= userSession.id %>">Minha conta</a>
+                |
+                <a href=""> Olá, <%= userSession.nome %></a>
                 |    
                 <a href="/logout">Sair</a>  
             <% } else { %>
+                <a href="/login">Cadastro</a>
+                |
                 <a href="/login">Login</a>
             <% } %> 
 
