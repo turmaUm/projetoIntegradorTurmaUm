@@ -132,37 +132,37 @@ create table imagens(
 
 
 INSERT INTO administradores (nome, email, senha) VALUES 
-    ('Admin1', 'admin1@example.com', 'senha123'),
-    ('Admin2', 'admin2@example.com', 'senha456'),
-    ('Admin3', 'admin3@example.com', 'senha789'),
-    ('Admin4', 'admin4@example.com', 'senha101'),
-    ('Admin5', 'admin5@example.com', 'senha112');
+    ('Erick', 'erickadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
+    ('Alexandre', 'alexandreadm@email', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
+    ('Antonio', 'antonioadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
+    ('Maria', 'mariaadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
+    ('João', 'joaoadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq');
 
 INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES 
-    ('Cliente1', '11910706382', 'cliente1@example.com', 'senha123', NOW()),
-    ('Cliente2', '11910706383', 'cliente2@example.com', 'senha456', NOW()),
-    ('Cliente3', '11910706384', 'cliente3@example.com', 'senha789', NOW()),
-    ('Cliente4', '11910706385', 'cliente4@example.com', 'senha101', NOW()),
-    ('Cliente5', '11910706386', 'cliente5@example.com', 'senha112', NOW()),
-    ('João Silva', '11998765532', 'joao.silva@example.com', 'senha123', NOW()),
-    ('Maria Souza', '11987454321', 'maria.souza@example.com', 'senha456', NOW()),
-    ('Pedro Santos', '11976545210', 'pedro.santos@example.com', 'senha789', NOW()),
-    ('Fernanda Oliveira', '11962432109', 'fernanda.oliveira@example.com', 'senha101', NOW()),
-    ('Ricardo Rocha', '11954321198', 'ricardo.rocha@example.com', 'senha112', NOW()),
-    ('Camila Almeida', '11943219987', 'camila.almeida@example.com', 'senha123', NOW()),
-    ('Lucas Ferreira', '11932189876', 'lucas.ferreira@example.com', 'senha456', NOW()),
-    ('Amanda Costa', '11921498765', 'amanda.costa@example.com', 'senha789', NOW()),
-    ('Gustavo Pereira', '11918987654', 'gustavo.pereira@example.com', 'senha101', NOW()),
-    ('Isabela Lima', '11909871543', 'isabela.lima@example.com', 'senha112', NOW()),
-    ('Renato Santos', '11998365432', 'renato.santos@example.com', 'senha123', NOW()),
-    ('Larissa Oliveira', '11986654321', 'larissa.oliveira@example.com', 'senha456', NOW()),
-    ('Felipe Oliveira', '11987654329', 'felipe.oliveira@example.com', 'senha123', NOW()),
-    ('Julia Santos', '11976543215', 'julia.santos@example.com', 'senha456', NOW()),
-    ('Roberto Silva', '11965437109', 'roberto.silva@example.com', 'senha789', NOW()),
-    ('Ana Clara Souza', '11954323098', 'anaclara.souza@example.com', 'senha101', NOW()),
-    ('Gabriel Pereira', '11948210987', 'gabriel.pereira@example.com', 'senha112', NOW()),
-    ('Mariana Almeida', '11932108876', 'mariana.almeida@example.com', 'senha123', NOW()),
-    ('Pedro Henrique Lima', '11924098765', 'pedrohenrique.lima@example.com', 'senha456', NOW());
+    ('Cliente1', '11910706382', 'cliente1@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Cliente2', '11910706383', 'cliente2@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Cliente3', '11910706384', 'cliente3@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Cliente4', '11910706385', 'cliente4@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Cliente5', '11910706386', 'cliente5@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('João Silva', '11998765532', 'joao.silva@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Maria Souza', '11987454321', 'maria.souza@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Pedro Santos', '11976545210', 'pedro.santos@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Fernanda Oliveira', '11962432109', 'fernanda.oliveira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Ricardo Rocha', '11954321198', 'ricardo.rocha@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Camila Almeida', '11943219987', 'camila.almeida@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Lucas Ferreira', '11932189876', 'lucas.ferreira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Amanda Costa', '11921498765', 'amanda.costa@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Gustavo Pereira', '11918987654', 'gustavo.pereira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Isabela Lima', '11909871543', 'isabela.lima@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Renato Santos', '11998365432', 'renato.santos@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Larissa Oliveira', '11986654321', 'larissa.oliveira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Felipe Oliveira', '11987654329', 'felipe.oliveira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Julia Santos', '11976543215', 'julia.santos@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Roberto Silva', '11965437109', 'roberto.silva@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Ana Clara Souza', '11954323098', 'anaclara.souza@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Gabriel Pereira', '11948210987', 'gabriel.pereira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Mariana Almeida', '11932108876', 'mariana.almeida@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Pedro Henrique Lima', '11924098765', 'pedrohenrique.lima@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW());
     
 
 INSERT INTO categorias (nome) VALUES 

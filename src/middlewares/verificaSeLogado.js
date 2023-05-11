@@ -1,7 +1,7 @@
 const verificaSeLogado = (req, res, next) => {
     
-    if(true){ //req.session.admLogado
-        // res.locals.admSession = req.session.adm;
+    if(req.session.admLogado){ 
+        res.locals.admSession = req.session.adm;
         next();
     } else {
         res.redirect('/login-adm');
