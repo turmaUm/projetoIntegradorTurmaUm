@@ -16,6 +16,7 @@ const {
   Produtos,
   Categorias,
   Cores,
+  Tamanhos,
   Clientes,
   Fornecedores,
   Pedidos,
@@ -58,29 +59,42 @@ const clientController = {
     // definindo constantes
 
     // puxando categoria inserida na query
-    const idCategoria = req.query.categoria;
+    let idCategoria = req.query.categoria;
 
     // declarando um objeto vazio para adicionar parâmetros
     const where = {}
 
     const precoMin = req.query['price-min-filter']
-
     const precoMax = req.query['price-max-filter']
+    let cores = req.query['color-filter']
+    let tamanhos = req.query['size-filter']
 
-    const cores = req.query['color-filter']
 
     // se existir algum valor no idCategoria, adiciona ele no where
 
-    if(idCategoria != undefined) {
-        where.categoriaId = idCategoria
+   if(idCategoria == undefined){
+      idCategoria = ["2","7","3","11","4","13"]
+   }
+    if(cores == undefined){
+      cores = ["1","2","3","4","5","6","7","8","9","10","11"]
     }
-
+    if(tamanhos == undefined) {
+      tamanhos =["1","2","3","4","5","6","7","8","9","10","11"]
+    }
+    
     // puxando produtos do banco de dados com filtros, usando os parametros do where adicionados previamente
 
     let produtosDb = await Produtos.findAll({
-      include: 'categorias',
-      where: where
-    });
+      include:[
+        {model:Categorias, as:"categorias",where:{id:idCategoria}, attribute:['nome']},
+        {model:Cores, as:"cores", through:'produto_cor', where:{id:cores}, attribute:['nome']},
+        {model:Tamanhos, as:"tamanhos", through:'produto_tamanho',where:{id:tamanhos}, attribute:['nome']}
+      ]});
+
+    // let produtosDb = await Produtos.findAll({
+    //   include: 'categorias',
+    //   where: where
+    // });
 
     // --------------------------------------------------------------------
 
@@ -100,6 +114,14 @@ const clientController = {
     //         } }
     //     ]
     // });
+    console.log(produtosDb)
+    console.log(cores)
+    console.log(precoMax)
+    console.log(precoMin)
+    console.log(tamanhos)
+    console.log(idCategoria)
+    
+    //console.log(req.query)
 
     res.render("display/resultado-busca", { produtos: produtosDb, idCategoria });
 
