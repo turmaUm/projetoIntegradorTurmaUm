@@ -37,36 +37,35 @@
                             </div>
 
                             <form action="/addCarrinho" method="get">
-                                    <div class="box-cores">
-                                        <h5>Cor</h5>
-                                        <div class="cores">
-                                            <% for(let prod of produto.cor) { %>
-                                                <input class="<%= prod %>" type="button" name="cor" value="<%= prod %>"> <!--   tem que ter o mesmo nome * -->
-                                            <% } %>
-                                        </div>
+                                <div class="box-cores">
+                                    <h5>Cor</h5>
+                                    <div class="cores">
+                                        <% for(let prod of produto.cores) { %>
+                                            <input class="<%= prod.nome %>" type="button" name="cor" value="<%= prod.nome %>"> <!--   tem que ter o mesmo nome * -->
+                                        <% } %>
                                     </div>
-                                    <div class="box-tamanhos">
-                                        <h5>Tamanho</h5>
-                                        <div class="tamanhos">
-                                            <% for(let prod of produto.tamanho) { %>
-                                                <input class="tam1" type="button" name="tamanho" value="<%= prod %>"> <!--   tem que ter o mesmo nome ** -->
-                                            <% } %>
-                                        </div>
-                                        <div id="numeracaoProdutos">
-                                            <button class="remove" type="button"> - </button>
-                                            <input class="qtd-camisa" step="1" min="0" max="100" value="1" name="quantidade">
-                                            <button class="add" type="button"> + </button>
-                                        </div>
+                                </div>
+                                <div class="box-tamanhos">
+                                    <h5>Tamanho</h5>
+                                    <div class="tamanhos">
+                                        <% for(let prod of produto.tamanhos) { %>
+                                            <input class="tam1" type="button" name="tamanho" value="<%= prod.nome %>"> <!--   tem que ter o mesmo nome ** -->
+                                        <% } %>
                                     </div>
-                                    <div class="select-prod">
-                                        <button type="submit" class="comprar"> Adicionar ao carrinho </button>
-                                        <input type="hidden" id="cor-selecionada" name="cor" value=""> <!--   tem que ter o mesmo nome * -->
-                                        <input type="hidden" id="tamanho-selecionado" name="tamanho" value=""> <!--   tem que ter o mesmo nome ** -->
-                                        <input type="hidden" name="id" value=<%= produto.id %>>
-                                        <!-- <input type="hidden" id="teste" name="teste" value=""> o input hidden ele é enviado no formulario igual a email e cia -->
+                                    <div id="numeracaoProdutos">
+                                        <button class="remove" type="button"> - </button>
+                                        <input class="qtd-camisa" step="1" min="0" max="100" value="1" name="quantidade">
+                                        <button class="add" type="button"> + </button>
                                     </div>
-                                
+                                </div>
+                                <div class="select-prod">
+                                    <button type="submit" class="comprar"> Adicionar ao carrinho </button>
+                                    <input type="hidden" id="cor-selecionada" name="cor" value=""> <!--   tem que ter o mesmo nome * -->
+                                    <input type="hidden" id="tamanho-selecionado" name="tamanho" value=""> <!--   tem que ter o mesmo nome ** -->
+                                    <!-- <input type="hidden" id="teste" name="teste" value=""> o input hidden ele é enviado no formulario igual a email e cia -->
+                                    <input type="hidden" name="id" value=<%= produto.id %>>
                                     
+                                </div>
                             </form>
             
                         </div>

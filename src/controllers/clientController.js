@@ -48,15 +48,22 @@ const clientController = {
   showLogin: (req, res) => {
     res.render("cliente/login");
   },
-  showProduto: (req, res) => {
+  showProduto: async (req, res) => {
     let { id } = req.query;
 // ------- codigo antigo --------
     let produto = produtosCliente.find((p) => p.id == id);
 
-    res.render("display/produto", { produto: produto });
+    
 
 // --------------------------------------------------------- 
-
+    let produtoDb = await Produtos.findOne({where:{id:id},
+    include:[
+      {model:Cores, as:"cores", through:'produto_cor', attribute:['nome']},
+      {model:Tamanhos, as:"tamanhos", through:'produto_tamanho', attribute:['nome']},
+      {model:Categorias, as:"categorias", attribute:['nome']}
+    ]})
+    
+    res.render("display/produto", { produto: produtoDb.toJSON()});
 
   },
   showResultadoBusca: async (req, res) => {
