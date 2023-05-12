@@ -51,10 +51,8 @@ const clientController = {
   showProduto: async (req, res) => {
     let { id } = req.query;
 // ------- codigo antigo --------
-    let produto = produtosCliente.find((p) => p.id == id);
-
-    
-
+    // let produto = produtosCliente.find((p) => p.id == id);
+    // res.render("display/produto", { produto: produto})
 // --------------------------------------------------------- 
     let produtoDb = await Produtos.findOne({where:{id:id},
     include:[
