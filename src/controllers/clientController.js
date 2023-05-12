@@ -56,9 +56,7 @@ const clientController = {
     res.render("display/produto", { produto: produto });
   },
   showResultadoBusca: async (req, res) => {
-    // definindo constantes
-
-    // puxando categoria inserida na query
+   // puxando categoria inserida na query
     let idCategoria = req.query.categoria;
   
     if (typeof idCategoria === 'string') {  // Quando o filtro não detalha a categoria
@@ -155,8 +153,8 @@ const clientController = {
     // console.log(precoMax)
     // console.log(precoMin)
     // console.log(tamanhos)
-    console.log(typeof idCategoria)
-    console.log(idCategoria)
+    // console.log(typeof idCategoria)
+    // console.log(idCategoria)
     // console.log(produtosDb2)
     
     //console.log(req.query)
