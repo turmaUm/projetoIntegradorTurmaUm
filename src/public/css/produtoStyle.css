@@ -230,18 +230,35 @@ main {
 
 #numeracaoProdutos {
   display: flex;
-  border: 1px solid #333;
+  border: 1px solid #333; 
   border-radius: 5px;
+  width: 15%;
+  margin-top: 10px;
+  margin-left: 0px;
+  align-items: center;
+  
 }
-#numeracaoProdutos:last-child {
+/* #numeracaoProdutos:last-child {
   margin-left: auto;
+} */
+#numeracaoProdutos input{
+  
+  width: 80%;
+  /* height: 110%; */
+  /* border: none; */
+
 }
 #numeracaoProdutos button {
   background-color: transparent;
+  /* border: 1px solid #333; */
   border: none;
   width: 1rem;
   font-size: 1.1rem;
   text-align: center;
+}
+#numeracaoProdutos button:hover{
+  background-color: #333;
+  color: #fff;
 }
 .select-prod button:hover {
   background-color: #333;
