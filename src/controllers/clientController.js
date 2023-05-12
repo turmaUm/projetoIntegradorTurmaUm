@@ -60,41 +60,75 @@ const clientController = {
 
     // puxando categoria inserida na query
     let idCategoria = req.query.categoria;
+  
+    if (typeof idCategoria === 'string') {  // Quando o filtro não detalha a categoria
+      idCategoria = idCategoria.split(',')  //Vem um string da query, assim é necessirio transformar
+                                            //em array para ser usando no where
+    }
 
     // declarando um objeto vazio para adicionar parâmetros
-    const where = {}
-
-    const precoMin = req.query['price-min-filter']
-    const precoMax = req.query['price-max-filter']
+    
+    var precoMin = req.query['price-min-filter']
+    var precoMax = req.query['price-max-filter']
     let cores = req.query['color-filter']
     let tamanhos = req.query['size-filter']
 
 
     // se existir algum valor no idCategoria, adiciona ele no where
+    if(precoMin == undefined){
+      precoMin = '0'
+    }else if(precoMin == ''){
+      precoMin = '0'
+    }
 
-   if(idCategoria == undefined){
-      idCategoria = ["2","7","3","11","4","13"]
-   }
+    if(precoMax== undefined){
+      precoMax = '10000'
+    }else if(precoMax == ''){
+      precoMax = '10000'
+    }
+
+    if(idCategoria == undefined){
+      let arrayCategoria = []
+      const allCategoria = await Categorias.findAll()
+      for(let all of allCategoria){
+        arrayCategoria.push(all.id.toString())
+      }
+      idCategoria = arrayCategoria
+    }
     if(cores == undefined){
-      cores = ["1","2","3","4","5","6","7","8","9","10","11"]
+      let arrayCores =[]
+      const allCores = await Cores.findAll()
+      for(let all of allCores){
+        arrayCores.push(all.id.toString())
+      }
+      cores = arrayCores
     }
     if(tamanhos == undefined) {
-      tamanhos =["1","2","3","4","5","6","7","8","9","10","11"]
+      let arrayTamanhos =[]
+      const allTamanhos = await Tamanhos.findAll()
+      for(let all of allTamanhos){
+        arrayTamanhos.push(all.id.toString())
+      }
+      tamanhos = arrayTamanhos
     }
     
     // puxando produtos do banco de dados com filtros, usando os parametros do where adicionados previamente
 
-    let produtosDb = await Produtos.findAll({
+    let produtosDb = await Produtos.findAll({where:{preco:{[Op.between]:[precoMin, precoMax]}},
       include:[
         {model:Categorias, as:"categorias",where:{id:idCategoria}, attribute:['nome']},
         {model:Cores, as:"cores", through:'produto_cor', where:{id:cores}, attribute:['nome']},
         {model:Tamanhos, as:"tamanhos", through:'produto_tamanho',where:{id:tamanhos}, attribute:['nome']}
       ]});
-
+    
+    // let produtosDb2 = await Produtos.findAll({where:{preco:{[Op.between]:[precoMin, precoMax]}},
+    //   include:[
+    //     {model:Categorias, as:"categorias",where:{id:idCategoria}, attribute:['nome']},
+    //     {model:Cores, as:"cores", through:'produto_cor', where:{id:cores}, attribute:['nome']},]})
     // let produtosDb = await Produtos.findAll({
     //   include: 'categorias',
     //   where: where
-    // });
+    // });, where:{preco:{[Op.between]:[precoMin, precoMax]}}
 
     // --------------------------------------------------------------------
 
@@ -114,12 +148,16 @@ const clientController = {
     //         } }
     //     ]
     // });
-    console.log(produtosDb)
-    console.log(cores)
-    console.log(precoMax)
-    console.log(precoMin)
-    console.log(tamanhos)
+    
+    // console.log(arrayCategoria)
+    // console.log(produtosDb)
+    // console.log(cores)
+    // console.log(precoMax)
+    // console.log(precoMin)
+    // console.log(tamanhos)
+    console.log(typeof idCategoria)
     console.log(idCategoria)
+    // console.log(produtosDb2)
     
     //console.log(req.query)
 
