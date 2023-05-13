@@ -169,3 +169,23 @@ select {
     color: #fff;
   }
 
+  .cores-boxes, .tamanhos-boxes {
+    background-color: #f8f9fa;;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    
+  }
+  .cores-boxes2, .tamanhos-boxes2{
+    display: flex;
+    /* background-color:blue; */
+    align-items: center;
+    margin-left: 25%;
+    height: 4vh;
+  }
+  .cores-boxes2 label, .tamanhos-boxes2 label{
+    /* background-color:violet; */
+    margin-top:5vh
+  }
+  .cores-boxes2 input, .tamanhos-boxes2 input{
+    width: 20%;
+  }

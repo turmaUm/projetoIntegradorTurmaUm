@@ -72,11 +72,14 @@
                 </label>
                 <label for="cores">
                   <h4>Cor:</h4>
-                  <select name="cores" id="cores">
+                  <div class="cores-boxes">
                     <% cores.forEach(cores => {  %>
-                      <option value="<%= cores.id%>"><%= cores.nome%></option> %></option>   
-                   <% }); %>
-                  </select>
+                      <div class="cores-boxes2">
+                        <input type="checkbox" name="cores" id="cores" value="<%= cores.id %>">
+                        <label for="cores"><%= cores.nome %></label>
+                      </div>
+                    <% }); %>
+                  </div>
               </label>
             </section>
     
@@ -88,11 +91,14 @@
 
                 <label for="tamanhos">
                   <h4>Tamanho:</h4>
-                  <select name="tamanhos" id="tamanhos">
-                    <% tamanhos.forEach(tamanhos => {  %>
-                      <option value="<%= tamanhos.id%>"><%= tamanhos.nome%></option> %></option>   
-                   <% }); %>
-                  </select>
+                  <div class="tamanhos-boxes">
+                      <% tamanhos.forEach(tamanho => {  %>
+                        <div class="tamanhos-boxes2">
+                          <input type="checkbox" name="tamanhos" id="tamanhos" value="<%= tamanho.id %>">
+                          <label for="tamanhos"><%= tamanho.nome %></label>
+                        </div>
+                      <% }); %>
+                    </div>
               </label>
 
               

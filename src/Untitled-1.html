@@ -1,0 +1,11 @@
+<select name="cores" id="cores">
+                    <% cores.forEach(cores => {  %>
+                      <option value="<%= cores.id%>"><%= cores.nome%></option> %></option>   
+                   <% }); %>
+                  </select>
+
+                  <select name="tamanhos" id="tamanhos">
+                    <% tamanhos.forEach(tamanhos => {  %>
+                      <option value="<%= tamanhos.id%>"><%= tamanhos.nome%></option> %></option>   
+                   <% }); %>
+                  </select>

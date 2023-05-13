@@ -493,9 +493,10 @@ const admController = {
     let setCor = produto.setCores(req.body.cores)
     let setTamanho = produto.setTamanhos(req.body.tamanhos)
 
-    // console.log(produto.toJSON());
+    console.log(produto.toJSON());
 
     res.redirect("/produtos-adm");
+    // res.send(req.body)
   },
   deleteProduto: async (req,res)=>{
     await Produtos.destroy({where:{id:req.params.id}})
