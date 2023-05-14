@@ -178,6 +178,28 @@ const clientController = {
   showCarrinho: (req, res) => {
     res.render("compra/carrinho", { produtos: req.session.carrinho });
   },
+  showBusca: async (req, res) => {
+    let trecho = req.query.busca
+
+    let produtosFiltrados = await Produtos.findAll({
+      where: {
+        nome: { [Op.like]: `%${trecho}%` },
+      },
+    })
+
+    let idCategoria = undefined
+
+    if(idCategoria == undefined){
+      let arrayCategoria = []
+      const allCategoria = await Categorias.findAll()
+      for(let all of allCategoria){
+        arrayCategoria.push(all.id.toString())
+      }
+      idCategoria = arrayCategoria
+    }
+
+    res.render('display/resultado-busca', { produtos: produtosFiltrados, idCategoria })
+  },
 
   // ------------------------------------ POST/DELETE --------------------------------------
 
