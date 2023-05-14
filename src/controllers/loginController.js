@@ -46,6 +46,9 @@ const loginController = {
             if(!validaSenha){
                return res.render('cliente/login', {error: "Falha no login!"}) 
             }
+
+            req.session.userLogado = true
+            
             req.session.user = {
                 id: user[0].id,
                 nome:user[0].nome

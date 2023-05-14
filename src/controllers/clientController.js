@@ -36,9 +36,19 @@ const clientController = {
   showPedidos: (req, res) => {
     res.render("cliente/pedidos");
   },
-  showPagamento: (req, res) => {
-    
-    res.render("compra/checkout-pagamento");
+  showPagamento: async (req, res) => {
+    let cliente = await Clientes.findOne({
+      where: {
+        id: req.session.user.id
+      },
+      include: [
+        {model: Enderecos, as: "enderecos", attribute: ['bairro', 'logradouro', 'numero']},
+      ]
+    })
+
+    cliente = cliente.toJSON()
+
+    res.render("compra/checkout-pagamento", { cliente });
   },
   showFinalizacao: (req, res) => {
     res.render("compra/finalizacao-compra");
