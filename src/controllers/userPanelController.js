@@ -28,8 +28,14 @@ const userPanelController = {
                 id
             }
         });
-        console.log(usuarioAtualizado);
-        res.render('cliente/editar-perfil', {user: usuarioAtualizado});
+  
+        req.session.regenerate(function (err) {
+            req.session.user = {
+                id: parseInt(id),
+                nome: req.body.nome,
+            };
+            return res.redirect(`/cliente/editar/${id}`);
+        });
     }
 }
 
