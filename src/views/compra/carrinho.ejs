@@ -16,7 +16,7 @@
 
                
 
-                <% if (produtos == undefined) { %>
+                <% if (produtos == undefined || produtos.length == 0) { %>
                     <div class="carrinhoVazio">
                         <h1>Carrinho Vazio</h1>
                     </div>
@@ -43,8 +43,8 @@
                                 <img src=<%= prod.endereco %> alt="imagem1">
                                     <div class="spanDescricaoDoProduto">
                                             <span><%= prod.nome %></span>
-                                            <span><%= prod.corescolha %></span>
-                                            <span><%= prod.tamanhoescolha %></span>
+                                            <span><%= prod.cores[0].nome %></span>
+                                            <span><%= prod.tamanhos[0].nome %></span>
                                     </div>  
                             </div>
                                 
@@ -62,7 +62,7 @@
                                     <span class="valorTotal" name="precoquantidade" ><%= prod.preco*prod.quantidade %></span>
                                     <input type="hidden" class="valorTotalH" name="valorTotalH" value=<%= prod.preco*prod.quantidade %>>
 
-                                    <form action="/deleteCarrinho/<%= prod.id %>/<%= prod.tamanhoescolha %>/<%= prod.corescolha %>" method="get">
+                                    <form action="/deleteCarrinho/<%= prod.id %>/<%= prod.tamanhos[0].nome %>/<%= prod.cores[0].nome %>" method="get">
                                         <button class="delete" type="submit"><img src="/img/lixeira.png" alt=""></button>
                                     </form>    
                         </section>

@@ -180,12 +180,17 @@ const clientController = {
 
   // ------------------------------------ POST/DELETE --------------------------------------
 
-  addCarrinho: (req, res) => {
-    let addCarrinho = produtosCliente.find((p) => p.id == req.query.id);
-    addCarrinho.quantidade = req.query.quantidade;
-    addCarrinho.corescolha = req.query.cor;
-    addCarrinho.tamanhoescolha = req.query.tamanho;
-
+  addCarrinho: async (req, res) => {
+  
+    let addCarrinho2 = await Produtos.findOne({where:{id:req.query.id},
+    include:[
+      {model:Cores, as:"cores", through:'produto_cor', where:{nome:req.query.cor}, attribute:['nome']},
+      {model:Tamanhos, as:"tamanhos", through:'produto_tamanho',where:{nome:req.query.tamanho}, attribute:['nome']}
+    ]})
+    //transformando em JSON
+    let addCarrinhoJSON = addCarrinho2.toJSON()
+    addCarrinhoJSON.quantidade = req.query.quantidade 
+  
     if (!req.session.carrinho) {
       req.session.carrinho = [];
     }
@@ -193,20 +198,25 @@ const clientController = {
     if (
       req.session.carrinho.findIndex(
         (p) =>
-          p.id == addCarrinho.id &&
-          p.tamanhoescolha == addCarrinho.tamanhoescolha &&
-          p.corescolha == addCarrinho.corescolha
+          p.id == addCarrinhoJSON.id &&
+          p.tamanhos[0].nome == addCarrinhoJSON.tamanhos[0].nome &&
+          p.cores[0].nome == addCarrinhoJSON.cores[0].nome
       ) != -1
     ) {
-      let obj = req.session.carrinho.find((p) => p.id == addCarrinho.id);
-      let cal = Number(obj.quantidade) + Number(addCarrinho.quantidade);
+      let obj = req.session.carrinho.find((p) =>
+      p.id == addCarrinhoJSON.id &&
+      p.tamanhos[0].nome == addCarrinhoJSON.tamanhos[0].nome &&
+      p.cores[0].nome == addCarrinhoJSON.cores[0].nome);
+
+      let cal = Number(obj.quantidade) + Number(addCarrinhoJSON.quantidade);
       obj.quantidade = cal.toString();
+      // console.log(obj)
       // console.log('funcionou')
     } else {
-      req.session.carrinho.push(addCarrinho);
+      req.session.carrinho.push(addCarrinhoJSON);
     }
     // console.log('<><><><><><><><><><><><><><><><>')
-    console.log(req.session.carrinho);
+    // console.log(req.session.carrinho);
     res.redirect(`/produto?id=${req.query.id}`);
 
     // if((req.session.carrinho.findIndex(p=>p.id == addCarrinho.id ))
@@ -218,7 +228,7 @@ const clientController = {
   deleteCarrinho: (req, res) => {
     let { id, tamanho, cor } = req.params;
     let posicao = req.session.carrinho.findIndex(
-      (p) => p.id == id && p.tamanhoescolha == tamanho && p.corescolha == cor
+      (p) => p.id == id && p.tamanhos[0].nome == tamanho && p.cores[0].nome == cor
     );
     req.session.carrinho.splice(posicao, 1);
     res.redirect("/carrinho");

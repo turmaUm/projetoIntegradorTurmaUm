@@ -9,3 +9,23 @@
                       <option value="<%= tamanhos.id%>"><%= tamanhos.nome%></option> %></option>   
                    <% }); %>
                   </select>
+
+
+                  if (
+                    req.session.carrinho.findIndex(
+                      (p) =>
+                        p.id == addCarrinho.id &&
+                        p.tamanhoescolha == addCarrinho.tamanhoescolha &&
+                        p.corescolha == addCarrinho.corescolha
+                    ) != -1
+                  ) {
+                    let obj = req.session.carrinho.find((p) => p.id == addCarrinho.id);
+                    let cal = Number(obj.quantidade) + Number(addCarrinho.quantidade);
+                    obj.quantidade = cal.toString();
+                    // console.log('funcionou')
+                  } else {
+                    req.session.carrinho.push(addCarrinho);
+                  }
+                  console.log('<><><><><><><><><><><><><><><><>')
+                  console.log(req.session.carrinho);
+                  res.redirect(`/produto?id=${req.query.id}`);
