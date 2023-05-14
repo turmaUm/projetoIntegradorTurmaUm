@@ -37,6 +37,7 @@ const clientController = {
     res.render("cliente/pedidos");
   },
   showPagamento: (req, res) => {
+    
     res.render("compra/checkout-pagamento");
   },
   showFinalizacao: (req, res) => {

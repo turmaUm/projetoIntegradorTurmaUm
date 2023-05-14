@@ -10,9 +10,9 @@ const { Router } = require('express')
 const router = express.Router()
 
 //Rotas cliente
-router.get('/checkout-endereco', userSession, clientController.showEndereco)
-router.get('/checkout-pagamento', userSession, clientController.showPagamento)
-router.get('/finalizacao', userSession,clientController.showFinalizacao)
+router.get('/checkout-endereco', userSession, verificaSeLogado, clientController.showEndereco)
+router.get('/checkout-pagamento', userSession, verificaSeLogado, clientController.showPagamento)
+router.get('/finalizacao', userSession, clientController.showFinalizacao)
 router.get('/home', userSession, clientController.showHome)
 router.get('/produto', userSession, clientController.showProduto)
 router.get('/resultado-busca', userSession, clientController.showResultadoBusca)
