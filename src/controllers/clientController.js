@@ -45,10 +45,12 @@ const clientController = {
         {model: Enderecos, as: "enderecos", attribute: ['bairro', 'logradouro', 'numero']},
       ]
     })
-
     cliente = cliente.toJSON()
 
-    res.render("compra/checkout-pagamento", { cliente });
+    console.log(cliente)
+    // let {idProduto} = req.query
+
+    res.render("compra/checkout-pagamento", { cliente});
   },
   showFinalizacao: (req, res) => {
     res.render("compra/finalizacao-compra");

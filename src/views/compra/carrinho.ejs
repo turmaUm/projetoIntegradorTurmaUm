@@ -42,9 +42,9 @@
                             <div class="ImagemEdescricao">
                                 <img src=<%= prod.endereco %> alt="imagem1">
                                     <div class="spanDescricaoDoProduto">
-                                            <span><%= prod.nome %></span>
-                                            <span><%= prod.cores[0].nome %></span>
-                                            <span><%= prod.tamanhos[0].nome %></span>
+                                            <span class="nomeProduto"><%= prod.nome %></span>
+                                            <span class="corProduto"><%= prod.cores[0].nome %></span>
+                                            <span class="tamanhoProduto"><%= prod.tamanhos[0].nome %></span>
                                     </div>  
                             </div>
                                 
@@ -84,10 +84,13 @@
                                     <form action="/checkout-pagamento" method="get">
                         
                                         <% for( let prod of produtos ) { %>
+                                            <input type="hidden" class='idProdutoHidden' name="idProduto" value="<%= prod.id %>">
                                             <input type="hidden" class="quantidadeHidden" name='quantidade'>
                                             <input type="hidden" class='valorTotalHidden' name="valorTotal">
-                                            <input type="hidden" class="quantidadeHidden" name='quantidade'>
-                                            <input type="hidden" class='valorTotalHidden' name="valorTotal">
+                                            <input type="hidden" class="nomeProdutoHidden" name='nomeProduto' value="<%= prod.nome %>">
+                                            <input type="hidden" class='corProdutoHidden' name="corProduto" value="<%= prod.cores[0].nome %>">
+                                            <input type="hidden" class='tamanhoProdutoHidden' name="tamanhoProduto" value="<%= prod.tamanhos[0].nome %>">
+                                            
                                         <% } %>
                                             <input type="hidden" name="valorTotalTotal" value=<%= count %>>
                                         <button class="inputPrazo" type="submit">Prosseguir</button>

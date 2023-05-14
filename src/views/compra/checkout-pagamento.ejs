@@ -59,7 +59,7 @@
                 </div>
 
                 <div id="boleto" class="tabcontent">
-                    <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
+                    <p>Clique em "Finalizar" para finalizar o pagamento via Bolete</p>
                 </div>
 
                 <div id="cartao" class="tabcontent">
@@ -102,9 +102,14 @@
                     <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
                     <div class="endereco">
                         <select id="endereco-select">
-                          <option value="endereco1">Endereço 1</option>
+                            <% for(let i=0; i< cliente.enderecos.length; i++) { %>
+                                <option value="<%= cliente.enderecos[i].id %>"><%= `${cliente.enderecos[i].logradouro}, ${cliente.enderecos[i].numero}
+                                , ${cliente.enderecos[i].bairro}` %></option>  %></option>
+                            <% } %>
+
+                          <!-- <option value="endereco1">Endereço 1</option>
                           <option value="endereco2">Endereço 2</option>
-                          <option value="endereco3">Endereço 3</option>
+                          <option value="endereco3">Endereço 3</option> -->
                         </select>
                       </div>
                       <div class="botoes">
