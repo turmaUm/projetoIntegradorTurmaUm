@@ -33,14 +33,13 @@
             <a href="/resultado-busca?categoria=13">Promoções</a>
         </nav>
 
-        <div class="pesquisar" id="pesquisar">
-            <input type="text" placeholder="Buscar">
+        <form class="pesquisar" id="pesquisar" method="GET" action="/busca">
+            <input type="text" placeholder="Buscar" name="busca" id="busca">
             <button type="submit">
-                <a href="/resultado_busca.html">
                 <img src="/img/loupe.png" alt="">
                 </a>
             </button>
-        </div>
+        </form>
         <a href="/carrinho" id="carrinho">
             <img src="/img/carrinho.png" alt="carrinho">
             <% if (locals.carrinho == undefined) { %>

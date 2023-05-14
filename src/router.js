@@ -23,6 +23,7 @@ router.get('/finalizarCompra', userSession, clientController.finalizarCompra)
 router.get('/teste', userSession, verificaSeLogado, admController.teste)
 router.get('/cliente/pedidos', userSession, clientController.showPedidos)
 router.get('/politica', userSession, clientController.showPolitica)
+router.get('/busca', clientController.showBusca)
 
 //Rotas adm
 router.get('/login-adm', loginController.showLoginAdm)
