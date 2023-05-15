@@ -34,7 +34,7 @@ router.post('/cadastrar-pedido', clientController.cadastraPedido)
 router.get('/login-adm', loginController.showLoginAdm)
 router.post('/login-adm', loginController.loginAdm)
 
-router.get('/categorias-adm',  verificaSeLogado, admController.showResultadoCategoriasAdm)
+router.get('/categorias-adm', verificaSeLogado, admController.showResultadoCategoriasAdm)
 router.get('/clientes-adm', verificaSeLogado, admController.showResultadoClientesAdm)
 router.get('/produtos-adm', verificaSeLogado, admController.showResultadoProdutosAdm)
 router.get('/pedidos-adm', verificaSeLogado, admController.showResultadoPedidosAdm)

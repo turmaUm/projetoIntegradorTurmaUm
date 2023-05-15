@@ -75,8 +75,7 @@ const loginController = {
                 email
             }
         })
-        console.log(user);
-        console.log(user[0].senha)
+        
         //Verificar se o usuário foi encontrado
         if(user.length <= 0){
             // res.send('Nenhum usuario encontrado')

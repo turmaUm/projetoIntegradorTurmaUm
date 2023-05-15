@@ -130,19 +130,14 @@ create table imagens(
 ); 
 
 INSERT INTO administradores (nome, email, senha) VALUES 
-    ('Erick', 'erickadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
+    ('Erick', 'erickestanislau25@gmail.com', '$2a$12$Aq0a08.byMnfrEppkdrqV.S24ylzbsnefNvgLAg3mjh8rqek/OyC6'),
     ('Alexandre', 'alexandreadm@email', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
     ('Antonio', 'antonioadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
     ('Maria', 'mariaadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq'),
     ('João', 'joaoadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq');
 
 INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES 
-    ('Cliente1', '11910706382', 'cliente1@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
-    ('Cliente2', '11910706383', 'cliente2@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
-    ('Cliente3', '11910706384', 'cliente3@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
-    ('Cliente4', '11910706385', 'cliente4@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
-    ('Cliente5', '11910706386', 'cliente5@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
-    ('João Silva', '11998765532', 'joao.silva@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
+    ('Erick Estanislau', '11998765532', 'erickestanislau25@gmail.com', '$2a$12$Aq0a08.byMnfrEppkdrqV.S24ylzbsnefNvgLAg3mjh8rqek/OyC6', NOW()),
     ('Maria Souza', '11987454321', 'maria.souza@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
     ('Pedro Santos', '11976545210', 'pedro.santos@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
     ('Fernanda Oliveira', '11962432109', 'fernanda.oliveira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
@@ -223,16 +218,16 @@ INSERT INTO produtos (nome, preco, descricao, endereco, categoriaId, fornecedore
 
 
 INSERT INTO enderecos (clientes_id, bairro, logradouro, numero, cidade, cep) VALUES 
-    (1, 'Centro', 'Rua A', '123', 1, '12345-678'),
-    (2, 'Jardins', 'Rua B', '456', 2, '23456-789'),
-    (3, 'Vila Olímpia', 'Rua C', '789', 3, '34567-890'),
+    (1, 'Centro', 'Rua Armando', '123', 1, '12345-678'),
+    (1, 'Jardins', 'Rua Plínio', '456', 2, '23456-789'),
+    (1, 'Vila Olímpia', 'Rua Travessa', '789', 3, '34567-890'),
     (4, 'Moema', 'Rua D', '1010', 4, '45678-901'),
     (5, 'Itaim Bibi', 'Rua E', '1111', 5, '56789-012');
 
 INSERT INTO pedidos (enderecos_id, clientes_id, formas_de_pagamento_id, createdAt) VALUES 
     (1, 1, 1, NOW()),
-    (2, 2, 2, NOW()),
-    (3, 3, 3, NOW()),
+    (2, 1, 2, NOW()),
+    (3, 1, 3, NOW()),
     (4, 4, 4, NOW()),
     (5, 5, 5, NOW());
 
@@ -262,9 +257,10 @@ INSERT INTO imagens (produtos_id, caminho) VALUES
 INSERT INTO formas_de_pagamento (nome) VALUES
 ("Cartão de crédito"),
 ("Boleto bancário"),
+('Pix'),
 ("Transferência bancária"),
-("PayPal"),
-("Dinheiro");
+("Dinheiro"),
+("PayPal");
 
 INSERT INTO cores (nome) VALUES
 ('azul'),
