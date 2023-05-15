@@ -35,7 +35,7 @@
                 </ol>
         </div>
 
-        <form class="divSize" method="POST" action="/cadastrar-pedido">
+        <div class="divSize">
             <div class="divInterna">
                 <p class="editFormPag"><strong>Escolha a forma de pagamento</strong></p>
 
@@ -99,36 +99,38 @@
                         </div>
                     </div>
                 </div> -->
-            
-                <div class="endereco">
-                    <select name="formasPagamento" id="endereco-select">
-                        <% for(let i=0; i< formasPagamento.length; i++) { %>
-                            <option value="<%= formasPagamento[i].id %>"><%= formasPagamento[i].nome %></option>
-                        <% } %>
-                    </select>
-                </div> 
-
-                <div class="enderecosCobranca">
-                    
-                    <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+                <form method="POST" action="/cadastrar-pedido">
 
                     <div class="endereco">
-                        <select id="endereco" name="endereco">
-                            <% for(let i=0; i< cliente.enderecos.length; i++) { %>
-                                <option value="<%= cliente.enderecos[i].id %>"><%= `${cliente.enderecos[i].logradouro}, ${cliente.enderecos[i].numero}
-                                , ${cliente.enderecos[i].bairro}` %></option>
+                        <select name="formasPagamento" >
+                            <% for(let i=0; i< formasPagamento.length; i++) { %>
+                                <option value="<%= formasPagamento[i].id %>"><%= formasPagamento[i].nome %></option>
                             <% } %>
                         </select>
-                    </div>
+                    </div> 
 
-                    <div class="botoes">
-                        <button class="adicionar">Adicionar endereço</button>
-                        <button class="finalizar" type="submit">Finalizar</button>
-                      </div>                    
+                    <div class="enderecosCobranca">
+                        
+                        <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+
+                        <div class="endereco">
+                            <select id="endereco" name="endereco">
+                                <% for(let i=0; i< cliente.enderecos.length; i++) { %>
+                                    <option value="<%= cliente.enderecos[i].id %>"><%= `${cliente.enderecos[i].logradouro}, ${cliente.enderecos[i].numero}
+                                    , ${cliente.enderecos[i].bairro}` %></option>
+                                <% } %>
+                            </select>
+                        </div>
+
+                        <div class="botoes">
+                            <button class="adicionar">Adicionar endereço</button>
+                            <button class="finalizar" type="submit">Finalizar</button>
+                        </div>                    
                     </div>
-                </div>
+                </form>
+                
             </div>
-        </form>
+        </div>
 
         <script src="/js/pagamento.js"></script>
         

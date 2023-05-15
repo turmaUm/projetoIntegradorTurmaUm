@@ -28,7 +28,7 @@ router.get('/busca', clientController.showBusca)
 
 //Rotas post cliente
 
-router.post('/cadastrar-pedido', clientController.showBusca)
+router.post('/cadastrar-pedido', clientController.cadastraPedido)
 
 //Rotas adm
 router.get('/login-adm', loginController.showLoginAdm)

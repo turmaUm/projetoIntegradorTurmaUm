@@ -47,14 +47,15 @@ const clientController = {
     })
 
     cliente = cliente.toJSON()
-
-    // let formasPagamento = await FormasDePagamento.findAll()
-
     let formasPagamento = await FormasDePagamento.findAll();
-    
     formasPagamento = formasPagamento.map(e => e.toJSON());
+    //Criação da req.session
+    req.session.infoprodutos = req.query
+    // console.log(req.session.infoprodutos)
 
     res.render("compra/checkout-pagamento", { cliente, formasPagamento});
+
+    
   },
   showFinalizacao: (req, res) => {
     res.render("compra/finalizacao-compra");
@@ -234,14 +235,24 @@ const clientController = {
   },
   cadastraPedido: async (req, res) => {
     let enderecoId = req.body.endereco
+    let formasPagamento = req.body.formasPagamento
+    let {id} = req.session.user
+    let {idProduto} = req.session.infoprodutos
 
-    console.log(enderecoId)
+    // console.log(enderecoId)
+    // console.log(formasPagamento)
+    // console.log(id)
+    console.log(req.session.infoprodutos)
+    
+    const pedido = await Pedidos.create({
+      enderecos_id: enderecoId ,
+      clientes_id: id,
+      formas_de_pagamento_id: formasPagamento
+    })
 
-    // await Pedidos.create({
-    //   enderecos_id: ,
-    //   cliente_id:,
-    //   formas_de_pagamento_id
-    // })
+    pedido.setProdutos(idProduto)  // Preciso dos id's dos produtos comprados
+    req.session.carrinho = [];
+    res.render("display/home")
   }
 };
 
