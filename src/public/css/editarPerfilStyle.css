@@ -79,13 +79,8 @@
 	max-width: 500px;
 	margin: 0 auto;
 	margin-top: 0;
-	/* border: 1px solid #ccc; */
 	border-radius: 5px;
   }
-  
-  /* .form-group {
-	margin-bottom: 20px;
-  } */
   
   label {
 	display: block;
@@ -130,7 +125,7 @@
 
 /* ------------------NOVAS REGRAS------------------------ */
 
-form {
+#formEditCliente {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -173,14 +168,12 @@ form button {
 
 .bloco1 {
     display: flex;
-    /* background-color: plum; */
     flex-direction: column;
     padding-right: 20vh;
 }
 
 .bloco2 {
     display: flex;
-    /* background-color: purple; */
     flex-direction: column;
     border-left: 1px solid black;
     padding-left: 20vh;
@@ -201,15 +194,6 @@ input[type="password"]  {
   margin-bottom: 10px;
 }
 
-/* input[type="email"],
-input[type="tel"],
-#nome, #telefone,
-input[type="password"]:focus {
-  outline: none;
-  background-color: #fff;
-  box-shadow: 0px 0px 5px black;
-} */
-
 #salvar {
   display: block;
   width: 100%;
@@ -223,14 +207,6 @@ input[type="password"]:focus {
   cursor: pointer;
 }
 
-/* input[type="email"],
-input[type="tel"],
-#nome, #telefone,
-input[type="password"]:hover {
-  background-color: black;
-} */
-
-
 select {
     display: block;
     width: 100%;
@@ -241,7 +217,7 @@ select {
     font-size: 16px;
     font-family: Arial, sans-serif;
     margin-bottom: 10px;
-    appearance: none; /* Remove a seta padrão do select */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
   }
@@ -252,26 +228,25 @@ select {
     box-shadow: 0px 0px 5px #0071c5;
   }
   
-  /* Personalize a seta do select */
   select::-ms-expand {
     display: none;
   }
   
   select:after {
-    content: '\25BC'; /* Adiciona uma seta personalizada */
+    content: '\25BC';
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     color: #333;
     font-size: 16px;
-    pointer-events: none; /* A seta não é clicável */
+    pointer-events: none;
   }
 
 
 
   input[type="file"] {
-    display: none; /* Oculta o input do tipo file */
+    display: none;
   }
   
   .custom-file-upload {
@@ -291,7 +266,7 @@ select {
   }
   
   .custom-file-upload::before {
-    content: 'Enviar arquivo'; /* Texto do botão */
+    content: 'Enviar arquivo';
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
@@ -306,4 +281,3 @@ select {
     background-color: #333;
     color: #fff;
   }
-
