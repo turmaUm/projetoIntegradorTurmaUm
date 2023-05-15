@@ -14,6 +14,7 @@
     </div>
 
     <main id="mainEnd">
+
         <div class="mainDiv">
             <div id="mainResume">
                 <ol class="ol">
@@ -32,13 +33,13 @@
                         <div class="stepbar-res"></div>
                     </li>
                 </ol>
-            </div>
+        </div>
 
-         <div class="divSize">
+        <form class="divSize" method="POST" action="/cadastrar-pedido">
             <div class="divInterna">
                 <p class="editFormPag"><strong>Escolha a forma de pagamento</strong></p>
 
-                <div class="divFormPag">
+                <!-- <div class="divFormPag">
                     <button id="tabPadrao" class="labelPaypal tab-button" onclick="abrirTab(event, 'paypal')">
                         <img src="/img/paypal.png" alt="">
                     </button>
@@ -51,20 +52,20 @@
                         <img src="/img/iconecard2.png" alt="">
                         Cartão
                     </button>
-                </div>
+                </div> -->
 
-                <div id="paypal" class="tabcontent">
+                <!-- <div id="paypal" class="tabcontent" name="paypal">
                     <h4 class="paypalH4">Pagamento Parcelado</h4>
                     <p>Clique em "Finalizar" para finalizar o pagamento via PayPal</p>
                 </div>
 
-                <div id="boleto" class="tabcontent">
+                <div id="boleto" class="tabcontent" name="boleto">
                     <p>Clique em "Finalizar" para finalizar o pagamento via Bolete</p>
                 </div>
 
-                <div id="cartao" class="tabcontent">
+                <div id="cartao" class="tabcontent" name="cartao">
                     <div class="formParcelas">
-                        <form action method="get" class="formOptions">
+                        <div class="formOptions">
                             <label for="parcela">Selecione o número de parcelas:</label><br>
                             <select name="parcela" id="">
                                 <option value="1">1x de R$ 3.919,00 sem juros</option>
@@ -73,14 +74,15 @@
                                 <option value="4">4x de R$ 979,75 sem juros</option>
                                 <option value="5">5x de R$ 783,80 sem juros</option>
                             </select>
-                        </form>
+                         </div>
                     </div>
+                    
                     <span class="information">Pagamento em até 5x com parcela mínima de R$ 5</span>
 
                     <p style="margin-top: 3%; font-size: 1em; margin-bottom: 3%;">DADOS DO CARTÃO</p>
 
                     <div class="inforCartao">
-                        <form action="/registro">
+                        <div action="/registro">
                             <label for="nome">Nome do titular do cartão</label>
                             <input class="input-nome" type="text" name="nome" id="">
                             <div class="inputNumeroCartao">
@@ -94,34 +96,39 @@
                             <input class="cvm" type="text" name="cvm">
                             <input class="checkboxSalvarDados" type="checkbox" name="salvarDados">
                             <label for="salvarDados">Salvar dados do pagamento</label>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </div> -->
+            
+                <div class="endereco">
+                    <select name="formasPagamento" id="endereco-select">
+                        <% for(let i=0; i< formasPagamento.length; i++) { %>
+                            <option value="<%= formasPagamento[i].id %>"><%= formasPagamento[i].nome %></option>
+                        <% } %>
+                    </select>
+                </div> 
 
                 <div class="enderecosCobranca">
+                    
                     <p style="margin-top: 40px;">ENDEREÇO DE COBRANÇA</p>
+
                     <div class="endereco">
-                        <select id="endereco-select">
+                        <select id="endereco" name="endereco">
                             <% for(let i=0; i< cliente.enderecos.length; i++) { %>
                                 <option value="<%= cliente.enderecos[i].id %>"><%= `${cliente.enderecos[i].logradouro}, ${cliente.enderecos[i].numero}
-                                , ${cliente.enderecos[i].bairro}` %></option>  %></option>
+                                , ${cliente.enderecos[i].bairro}` %></option>
                             <% } %>
-
-                          <!-- <option value="endereco1">Endereço 1</option>
-                          <option value="endereco2">Endereço 2</option>
-                          <option value="endereco3">Endereço 3</option> -->
                         </select>
-                      </div>
-                      <div class="botoes">
+                    </div>
+
+                    <div class="botoes">
                         <button class="adicionar">Adicionar endereço</button>
-                        <button class="finalizar">Finalizar</button>
-                      </div>
+                        <button class="finalizar" type="submit">Finalizar</button>
+                      </div>                    
+                    </div>
                 </div>
             </div>
-         </div>
-   
-
-        </div>
+        </form>
 
         <script src="/js/pagamento.js"></script>
         

@@ -26,6 +26,10 @@ router.get('/cliente/pedidos', userSession, clientController.showPedidos)
 router.get('/politica', userSession, clientController.showPolitica)
 router.get('/busca', clientController.showBusca)
 
+//Rotas post cliente
+
+router.post('/cadastrar-pedido', clientController.showBusca)
+
 //Rotas adm
 router.get('/login-adm', loginController.showLoginAdm)
 router.post('/login-adm', loginController.loginAdm)

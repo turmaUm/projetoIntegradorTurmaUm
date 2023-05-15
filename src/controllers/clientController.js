@@ -45,12 +45,16 @@ const clientController = {
         {model: Enderecos, as: "enderecos", attribute: ['bairro', 'logradouro', 'numero']},
       ]
     })
+
     cliente = cliente.toJSON()
 
-    console.log(cliente)
-    // let {idProduto} = req.query
+    // let formasPagamento = await FormasDePagamento.findAll()
 
-    res.render("compra/checkout-pagamento", { cliente});
+    let formasPagamento = await FormasDePagamento.findAll();
+    
+    formasPagamento = formasPagamento.map(e => e.toJSON());
+
+    res.render("compra/checkout-pagamento", { cliente, formasPagamento});
   },
   showFinalizacao: (req, res) => {
     res.render("compra/finalizacao-compra");
@@ -63,10 +67,7 @@ const clientController = {
   },
   showProduto: async (req, res) => {
     let { id } = req.query;
-// ------- codigo antigo --------
-    // let produto = produtosCliente.find((p) => p.id == id);
-    // res.render("display/produto", { produto: produto})
-// --------------------------------------------------------- 
+
     let produtoDb = await Produtos.findOne({where:{id:id},
     include:[
       {model:Cores, as:"cores", through:'produto_cor', attribute:['nome']},
@@ -140,46 +141,6 @@ const clientController = {
         {model:Cores, as:"cores", through:'produto_cor', where:{id:cores}, attribute:['nome']},
         {model:Tamanhos, as:"tamanhos", through:'produto_tamanho',where:{id:tamanhos}, attribute:['nome']}
       ]});
-    
-    // let produtosDb2 = await Produtos.findAll({where:{preco:{[Op.between]:[precoMin, precoMax]}},
-    //   include:[
-    //     {model:Categorias, as:"categorias",where:{id:idCategoria}, attribute:['nome']},
-    //     {model:Cores, as:"cores", through:'produto_cor', where:{id:cores}, attribute:['nome']},]})
-    // let produtosDb = await Produtos.findAll({
-    //   include: 'categorias',
-    //   where: where
-    // });, where:{preco:{[Op.between]:[precoMin, precoMax]}}
-
-    // --------------------------------------------------------------------
-
-    // tentativas de filtros falhas, caso queira usar de parâmetro para começar
-
-    // if(cores != undefined) {
-    //     where.
-    // }
-
-    // let produtosDb = await Produtos.findAll({
-    //     include: [
-    //         {model: Categorias, as: 'categorias'},
-    //         {model: Cores, as: 'cores', through: 'produto_cor', attributes: {
-    //             where: {
-    //                 id: {[Op.or]: cores}
-    //             }
-    //         } }
-    //     ]
-    // });
-    
-    // console.log(arrayCategoria)
-    // console.log(produtosDb)
-    // console.log(cores)
-    // console.log(precoMax)
-    // console.log(precoMin)
-    // console.log(tamanhos)
-    // console.log(typeof idCategoria)
-    // console.log(idCategoria)
-    // console.log(produtosDb2)
-    
-    //console.log(req.query)
 
     res.render("display/resultado-busca", { produtos: produtosDb, idCategoria });
 
@@ -271,6 +232,17 @@ const clientController = {
   finalizarCompra: (req, res) => {
     res.send(req.query);
   },
+  cadastraPedido: async (req, res) => {
+    let enderecoId = req.body.endereco
+
+    console.log(enderecoId)
+
+    // await Pedidos.create({
+    //   enderecos_id: ,
+    //   cliente_id:,
+    //   formas_de_pagamento_id
+    // })
+  }
 };
 
 module.exports = clientController;
