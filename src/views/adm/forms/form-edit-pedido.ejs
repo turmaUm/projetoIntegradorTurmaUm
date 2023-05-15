@@ -49,15 +49,15 @@
             
             <section class="bloco1">
                 <label>
-                    <h4>Endenreço:</h4>
-                    <input type="text" name="bairro" id="bairro" placeholder="coloque aqui o bairro" />
-                    <input type="text" name="rua" id="rua" placeholder="coloque aqui a rua"/>
-                    <input type="text" name="numero" id="numero" placeholder="numero"/>
-                    <input type="text" name="cep" id="cep" placeholder="cep" />
+                    <h4>Endereço:</h4>
+                    <input type="text" class="inputEndereco" name="bairro" id="bairro" placeholder="Bairro" />
+                    <input type="text" class="inputEndereco" name="rua" id="rua" placeholder="Rua"/>
+                    <input type="text" class="inputEndereco" name="numero" id="numero" placeholder="Número"/>
+                    <input type="text" class="inputEndereco" name="cep" id="cep" placeholder="CEP" />
                 </label>
         
                 <label for="formaDePagamento">
-                    <h4>Formas de Pagamento:</h4>
+                    <h4>Formas de agamento:</h4>
                     <select name="formaDePagamento" id="formaDePagamento">
                       <% formasDePagamento.forEach(formaDePagamento => { %>
                         <option value="<%= formaDePagamento.dataValues.id %>"><%= formaDePagamento.dataValues.nome %></option>

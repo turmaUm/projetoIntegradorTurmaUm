@@ -230,7 +230,7 @@ main {
 
 #numeracaoProdutos {
   display: flex;
-  border: 1px solid #333; 
+  /* border: 1px solid #333;  */
   border-radius: 5px;
   width: 15%;
   margin-top: 10px;

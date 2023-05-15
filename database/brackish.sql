@@ -137,7 +137,7 @@ INSERT INTO administradores (nome, email, senha) VALUES
     ('João', 'joaoadm@email.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq');
 
 INSERT INTO clientes (nome, telefone, email, senha, createdAt) VALUES 
-    ('Erick Estanislau', '11998765532', 'erickestanislau25@gmail.com', '$2a$12$Aq0a08.byMnfrEppkdrqV.S24ylzbsnefNvgLAg3mjh8rqek/OyC6', NOW()),
+    ('Erick Estanislau', '11998765532', 'erickestanislau25@gmail.com', '$2a$12$lzav/EWDdK6.CgVjrnB/0ObHnFqtXMIs0jdvb7D43HjJ1EoFpOm52', NOW()),
     ('Maria Souza', '11987454321', 'maria.souza@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
     ('Pedro Santos', '11976545210', 'pedro.santos@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),
     ('Fernanda Oliveira', '11962432109', 'fernanda.oliveira@example.com', '$2a$12$Sg4U9nUZCN1.7kXEUxkG9ejqT1XpxPSxMIqdlTHqOXPzO3IUVkzTq', NOW()),

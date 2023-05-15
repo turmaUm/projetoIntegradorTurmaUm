@@ -126,7 +126,7 @@
                 <li><a href="/pedidos-adm?pagina=<%= pagina - 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> < </a></li>
     
             <% for(let i=primeiroNumero; i<=ultimoNumero; i++){%>
-              <li <%= i == pagina ? ' style=background-color:red ' : ''  %> ><a href="/pedidos-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
+              <li <%= i == pagina ? ' style=background-color:black ' : ''  %> ><a href="/pedidos-adm?pagina=<%= i %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> <%= i %> </a></li>
             <% } %>
     
                 <li><a href="/pedidos-adm?pagina=<%= pagina + 1 %>&pesquisar=<%= consulta %>&resPorBusca=<%= resultadoPorBusca %>"> > </a></li>

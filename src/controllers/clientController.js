@@ -33,7 +33,20 @@ const clientController = {
   showEndereco: (req, res) => {
     res.render("compra/checkout-endereco");
   },
-  showPedidos: (req, res) => {
+  showPedidos: async (req, res) => {
+
+    // let {id} = req.session.user
+
+    // let pedidos = await Pedidos.findAll({
+    //   where: {
+    //     clientes_id: id
+    //   }
+    // })
+
+    // pedidos = pedidos.map(e => e.toJSON());
+
+    // console.log(pedidos)
+
     res.render("cliente/pedidos");
   },
   showPagamento: async (req, res) => {
@@ -245,7 +258,7 @@ const clientController = {
     console.log(req.session.infoprodutos)
     
     const pedido = await Pedidos.create({
-      enderecos_id: enderecoId ,
+      enderecos_id: enderecoId,
       clientes_id: id,
       formas_de_pagamento_id: formasPagamento
     })

@@ -69,6 +69,10 @@ input {
   margin-bottom: 10px;
 }
 
+.inputEndereco {
+  margin-bottom: 1vh;
+}
+
 input:focus {
   outline: none;
   background-color: #fff;
